@@ -1,0 +1,123 @@
+
+Processing server_newT0.C...
+Added ROOT file: run028867_0385_dataflow5_datawriter_0_20240823T055509_michelt0.root
+Added ROOT file: run028867_0385_dataflow0_datawriter_0_20240823T055509_michelt0.root
+Added ROOT file: run028867_0385_dataflow3_datawriter_0_20240823T055509_michelt0.root
+
+
+
+iEntry (EVENT COUNT)===============================: 0
+#pdt0 of the event: 2212
+
+
+
+
+iEntry (EVENT COUNT)===============================: 1
+#pdt0 of the event: 2346
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+pandorat0 (T0 TRACK COUNT)-------------------: 1
+======Michel e CAND! (score>0.03) COUNT======
+Michel score: 0.21601,  Michel hits: 8
+Run: 28867,  Event: 95493,  TrackID: 4
+Vertex(x, y, z) = (41.3886, 590.701, 284.764)
+End(x, y, z) = (-66.5609, 172.121, 447.424)
+
+Distance to APA plane (+/-): 289.785 cm
+
+Closest OpCh (y, z): (153.66, 427.071); Label: 87
+86 96 106 
+87 97 107 
+88 98 108 
+
+
+
+iEntry (EVENT COUNT)===============================: 2
+#pdt0 of the event: 2061
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+
+
+iEntry (EVENT COUNT)===============================: 3
+#pdt0 of the event: 2198
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+
+
+iEntry (EVENT COUNT)===============================: 4
+#pdt0 of the event: 2102
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+pandorat0 (T0 TRACK COUNT)-------------------: 1
+
+pandorat0 (T0 TRACK COUNT)-------------------: 2
+======Michel e CAND! (score>0.03) COUNT======
+Michel score: 0.947971,  Michel hits: 1
+Run: 28867,  Event: 95504,  TrackID: 5
+Vertex(x, y, z) = (-21.4362, 462.589, 15.7135)
+End(x, y, z) = (50.1556, 15.7493, 51.6583)
+
+Distance to APA plane (+/-): 306.19 cm
+
+Closest OpCh (y, z): (32.16, 35.4612); Label: 79
+57 67 77 
+58 68 78 
+59 69 79 
+======Michel e CAND! (score>0.03) COUNT======
+Michel score: 0.337584,  Michel hits: 1
+Run: 28867,  Event: 95504,  TrackID: 6
+Vertex(x, y, z) = (34.2814, 452.109, 10.848)
+End(x, y, z) = (-150.164, 262.129, 289.144)
+
+Distance to APA plane (+/-): 206.182 cm
+
+Closest OpCh (y, z): (275.159, 267.521); Label: 115
+104 114 124 
+105 115 125 
+106 116 126 
+
+
+
+iEntry (EVENT COUNT)===============================: 5
+#pdt0 of the event: 2152
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+======Michel e CAND! (score>0.03) COUNT======
+Michel score: 0.106299,  Michel hits: 7
+Run: 28867,  Event: 95483,  TrackID: 4
+Vertex(x, y, z) = (60.6279, 595.288, 137.385)
+End(x, y, z) = (-97.371, 210.877, 106.808)
+
+Distance to APA plane (+/-): 258.975 cm
+
+Closest OpCh (y, z): (214.41, 84.6112); Label: 146
+135 145 155 
+136 146 156 
+137 147 157 
+
+
+
+iEntry (EVENT COUNT)===============================: 6
+#pdt0 of the event: 2352
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+
+
+iEntry (EVENT COUNT)===============================: 7
+#pdt0 of the event: 1629
+
+
+pandorat0 (T0 TRACK COUNT)-------------------: 0
+
+Total events saved: 0
