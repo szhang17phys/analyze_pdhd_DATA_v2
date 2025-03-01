@@ -1,7 +1,7 @@
 import re
 
 # Input file
-input_file = "../../server/beamRun28867_1000Files/print.txt"
+input_file = "../../server/beamRun28867_1000Files/print_1000Files.txt"
 
 # Output files
 decay_x_file = "./statResult/decayX.txt"
