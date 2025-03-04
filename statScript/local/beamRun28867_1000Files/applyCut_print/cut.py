@@ -1,3 +1,6 @@
+#Shu: Only keep contents related to Michel electron---
+#Mar 3, 2025---
+
 import re
 
 def extract_michel_blocks(input_file, output_file):
