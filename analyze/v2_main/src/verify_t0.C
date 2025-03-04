@@ -3,7 +3,17 @@
 
 
   //Shu: Do not forget to modify kMaxWF correspondingly---
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0062_dataflow1_datawriter_0_20240822T211158_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0092_dataflow4_datawriter_0_20240822T222238_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0111_dataflow0_datawriter_0_20240822T224946_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0128_dataflow6_datawriter_0_20240822T231849_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0345_dataflow4_datawriter_0_20240823T045508_michelt0.root");
+  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0360_dataflow1_datawriter_0_20240823T051742_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0385_dataflow5_datawriter_0_20240823T055509_michelt0.root");
+
+
+
 
 
   //Grid points (opch positions) in (y, z) plane
@@ -104,8 +114,8 @@
     for(size_t i = 0; i<pandorat0->size(); ++i){
 
       //Shu: track contains Michel e candidate---
-//      if ((*michelscore)[i]>0.1 && (*endx)[i]<275.1 && (*endx)[i]>275.0){
-      if ((*michelscore)[i]>0.1){
+      if ((*michelscore)[i]>0.1 && (*endx)[i]<-87 && (*endx)[i]>-88){
+//      if ((*michelscore)[i]>0.1){
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;
@@ -227,7 +237,7 @@
           float dt = (*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3;
 
           //Shu: make sure internal and external triggers are close---
-          if(dt>-0.12 && dt < 0.02){
+          if(dt>-0.15 && dt < 0.05){
 
             //Shu: choose opch with good TPC & PDS matching---
             int ch = (*pdchannel)[j];

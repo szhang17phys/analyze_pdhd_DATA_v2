@@ -2,9 +2,8 @@ import ROOT
 import re
 import os
 
-# Input and output filenames
-input_file = "./extract_event4042_trackID2.root"
-output_file = "./wvfFinder_event4042_trackID2.root"
+# Input filename (example)
+input_file = "../../../../t0_rootFiles/small_test/event_extract/extract_event85604_trackID7.root"
 
 # Open the input ROOT file
 f_in = ROOT.TFile(input_file, "READ")
@@ -40,8 +39,23 @@ if not max_group:
     exit()
 
 max_prefix, max_hist_list = max_group
+num_waveforms = len(max_hist_list)
+print(f"\nSelecting group: {max_prefix} with {num_waveforms} histograms.")
 
-print(f"\nSelecting group: {max_prefix} with {len(max_hist_list)} histograms.")
+
+# Extract the event and track parts from the input filename.
+# This regex expects the input filename to be like "extract_event85604_trackID7.root"
+basename = os.path.basename(input_file)
+match_et = re.search(r"extract_(event\d+_trackID\d+)\.root", basename)
+if match_et:
+    event_track_part = match_et.group(1)
+else:
+    event_track_part = "unknown"
+
+# Build the output file name.
+# The output file will be placed in the sibling folder "wvf_finder" relative to the input file's parent.
+output_dir = "../../../../t0_rootFiles/small_test/wvf_finder/"
+output_file = os.path.join(output_dir, f"wvfFind_{event_track_part}_opNum{num_waveforms}.root")
 
 # Open output ROOT file
 f_out = ROOT.TFile(output_file, "RECREATE")
@@ -53,10 +67,10 @@ c1.Divide(3, 3)  # 3x3 layout
 # Sort histograms by channel number
 max_hist_list.sort()
 
-# Sum histogram
+# Sum histogram (to hold the sum of all histograms in the group)
 total_hist = None
 
-# Copy histograms to the new file and draw them
+# Copy histograms to the new file and draw them on canvas
 for i, (ch, hist_name) in enumerate(max_hist_list):
     hist = f_in.Get(hist_name)
     if not hist:
@@ -73,7 +87,7 @@ for i, (ch, hist_name) in enumerate(max_hist_list):
     else:
         total_hist.Add(hist)
 
-    # Draw on canvas
+    # Draw histogram on canvas (first 9 pads)
     pad_num = i + 1
     if pad_num <= 9:
         c1.cd(pad_num)
