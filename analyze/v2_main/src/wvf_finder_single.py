@@ -15,7 +15,7 @@ keys = [key.GetName() for key in f_in.GetListOfKeys()]
 hist_groups = {}
 
 # Regex to extract the prefix (supports both dtNdot and dtPdot)
-pattern = re.compile(r"(dt[NP]dot\d+us)_ch(\d+)")
+pattern = re.compile(r"(dt[NP]dot\d+ms)_ch(\d+)")
 
 for key in keys:
     match = pattern.match(key)
@@ -26,9 +26,11 @@ for key in keys:
             hist_groups[prefix] = []
         hist_groups[prefix].append((ch, key))  # Store channel and name
 
-# Count and display the number of histograms per group
+# Print histogram counts and related channel numbers per group
 for prefix, hists in hist_groups.items():
-    print(f"{prefix}: {len(hists)} histograms")
+    # Extract and sort channel numbers from the histogram list
+    channels = sorted(ch for ch, _ in hists)
+    print(f"{prefix}: {len(hists)} histograms, opchs: {channels}")
 
 # Find the group with the most histograms
 max_group = max(hist_groups.items(), key=lambda x: len(x[1]), default=None)

@@ -105,9 +105,9 @@
                 dtFormatted.Remove(0, 2);  // Remove "0."
 
                 if (dt < 0)
-                  dtString = Form("dtNdot%sus", dtFormatted.Data());
+                  dtString = Form("dtNdot%sms", dtFormatted.Data());
                 else
-                  dtString = Form("dtPdot%sus", dtFormatted.Data());
+                  dtString = Form("dtPdot%sms", dtFormatted.Data());
 
 
                 // Format the waveform name

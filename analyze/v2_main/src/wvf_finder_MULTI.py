@@ -11,7 +11,7 @@ input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.en
 print(f"Found {len(input_files)} ROOT files in {input_dir}")
 
 # Regex to extract histogram prefix and channel number
-pattern = re.compile(r"(dt[NP]dot\d+us)_ch(\d+)")
+pattern = re.compile(r"(dt[NP]dot\d+ms)_ch(\d+)")
 
 # Process each ROOT file
 for input_file in input_files:
@@ -38,9 +38,12 @@ for input_file in input_files:
                 hist_groups[prefix] = []
             hist_groups[prefix].append((ch, key))
 
-    # Print histogram counts per group
+    # Print histogram counts and related channel numbers per group
     for prefix, hists in hist_groups.items():
-        print(f"{prefix}: {len(hists)} histograms")
+        # Extract and sort channel numbers from the histogram list
+        channels = sorted(ch for ch, _ in hists)
+        print(f"{prefix}: {len(hists)} histograms, opchs: {channels}")
+
 
     # Find the group with the most histograms
     max_group = max(hist_groups.items(), key=lambda x: len(x[1]), default=None)

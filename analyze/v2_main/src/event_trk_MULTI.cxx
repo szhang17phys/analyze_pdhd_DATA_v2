@@ -98,7 +98,7 @@
     // Fill overall timing histogram
     for (size_t i = 0; i < pandorat0->size(); ++i) {
       std::cout<<"pandorat0 i-----------------------: "<<i<<std::endl;
-      
+
       for (size_t j = 0; j < pdt0->size(); ++j) {
         hdt->Fill((*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3);
       }
@@ -158,9 +158,9 @@
                   TString dtFormatted = Form("%.7f", abs_dt);
                   dtFormatted.Remove(0, 2);  // Remove leading "0."
                   if (dt < 0)
-                    dtString = Form("dtNdot%sus", dtFormatted.Data());
+                    dtString = Form("dtNdot%sms", dtFormatted.Data());
                   else
-                    dtString = Form("dtPdot%sus", dtFormatted.Data());
+                    dtString = Form("dtPdot%sms", dtFormatted.Data());
 
                   // Create waveform name and histogram
                   TString hwfName = Form("%s_ch%d", dtString.Data(), ch);
