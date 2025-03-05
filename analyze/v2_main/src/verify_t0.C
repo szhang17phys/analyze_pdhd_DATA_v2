@@ -136,8 +136,12 @@
     for(size_t i = 0; i<pandorat0->size(); ++i){
 
       //Shu: track contains Michel e candidate---
-//      if ((*michelscore)[i]>0.1 && (*endx)[i]<-87 && (*endx)[i]>-88){
-      if ((*michelscore)[i]>0.1){
+      //(score > 0.4 and hits > 5 and 
+      //-356 < end_x < 356 and
+      //30 < end_y < 580 and
+      //30 < end_z < 435):
+//      if ((*michelscore)[i]>0.1 ){
+      if ((*michelscore)[i]>0.3 && (*michelhits)[i]>5 && (*endx)[i]<356 && (*endx)[i]>-356 && (*endy)[i]<580 && (*endy)[i]>30 && (*endz)[i]<435 && (*endz)[i]>30  ){
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;

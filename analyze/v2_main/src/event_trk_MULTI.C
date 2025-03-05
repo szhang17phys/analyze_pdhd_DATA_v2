@@ -24,8 +24,8 @@
   // Read candidate event and track IDs from text files
   std::vector<int> candidateEvents;
   std::vector<int> candidateTracks;
-  std::ifstream eventFile("../../../../t0_rootFiles/data/candidates_list/eventID_filtered_sorted.txt");
-  std::ifstream trackFile("../../../../t0_rootFiles/data/candidates_list/trackID_filtered_sorted.txt");
+  std::ifstream eventFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/eventID_filtered_sorted.txt");
+  std::ifstream trackFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/trackID_filtered_sorted.txt");
 
   int tempEvent, tempTrack;
   while (eventFile >> tempEvent && trackFile >> tempTrack) {
@@ -39,7 +39,7 @@
   // Read candidate allowed channels from opchs_filtered_sorted.txt.
   // Each line should contain the allowed channels (space-separated) for the corresponding candidate record.
   std::vector< std::vector<int> > candidateOpchs;
-  std::ifstream opchsFile("../../../../t0_rootFiles/data/candidates_list/opchs_filtered_sorted.txt");
+  std::ifstream opchsFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/opchs_filtered_sorted.txt");
   std::string line;
   while (std::getline(opchsFile, line)) {
     if(line.size() == 0) continue; // skip empty lines
