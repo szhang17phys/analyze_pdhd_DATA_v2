@@ -94,10 +94,12 @@
   for (int iEntry = 0; anatree->LoadTree(iEntry) >= 0; ++iEntry) {
     anatree->GetEntry(iEntry);
     std::cout << "\niEntry=====================================: " << iEntry << std::endl;
+    std::cout << "Event label: "<< event << std::endl;
 
     // Fill overall timing histogram
     for (size_t i = 0; i < pandorat0->size(); ++i) {
       std::cout<<"pandorat0 i-----------------------: "<<i<<std::endl;
+      std::cout<<"Track ID: "<<(*trkid)[i]<<std::endl;
 
       for (size_t j = 0; j < pdt0->size(); ++j) {
         hdt->Fill((*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3);
@@ -185,9 +187,11 @@
         } // end loop over pandora t0 entries
       } // end loop over candidate records for event
 
-      // Move candidate pointer forward past all entries for the current event
-      candIdx = tempIdx;
+      candIdx = 0;//Sometimes one event has >1 trckIDs for Michel
     } // end candidate event check
+
+    //Shu: reset candIdx! 20250305---
+    candIdx = 0;
   } // end event loop
 
   // Draw and save the overall timing histogram

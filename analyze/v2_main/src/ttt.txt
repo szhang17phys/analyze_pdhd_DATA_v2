@@ -651,20 +651,6 @@ iEntry====================: 83
 pandorat0 i----------: 0
 pandorat0 i----------: 1
 pandorat0 i----------: 2
-======Michel electron candidate!======
-Michel score: 0.302392,  Michel hits: 10
-Run: 28867,  Event: 9360,  TrackID: 1
-End(x, y, z) = (-36.0601, 265.952, 290.441)
-Distance to APA: 320.286 cm
-
-Closest OpCh (y, z): (275.159,267.521); Label: 115
-
-104 114 124 
-105 115 125 
-106 116 126 
-Target Opch: 114; wvf label: 648; PDSt0: -603.392us; dt: -0.0466433us
-Target Opch: 105; wvf label: 1252; PDSt0: -603.904us; dt: -0.0461313us
-Target Opch: 104; wvf label: 1269; PDSt0: -603.904us; dt: -0.0461313us
 
 iEntry====================: 84
 #pdt0 of the event: 2424
@@ -1965,32 +1951,6 @@ iEntry====================: 254
 
 pandorat0 i----------: 0
 pandorat0 i----------: 1
-======Michel electron candidate!======
-Michel score: 0.309819,  Michel hits: 12
-Run: 28867,  Event: 85863,  TrackID: 16
-End(x, y, z) = (-7.81389, 276.209, 293.177)
-Distance to APA: 348.532 cm
-
-Closest OpCh (y, z): (275.159,316.671); Label: 105
-
-94 104 114 
-95 105 115 
-96 106 116 
-Target Opch: 115; wvf label: 661; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 115; wvf label: 662; PDSt0: -2422.27us; dt: -0.0289006us
-Target Opch: 104; wvf label: 702; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 104; wvf label: 703; PDSt0: -2420.99us; dt: -0.0301807us
-Target Opch: 105; wvf label: 725; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 105; wvf label: 726; PDSt0: -2421.76us; dt: -0.0294126us
-Target Opch: 106; wvf label: 792; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 106; wvf label: 793; PDSt0: -2417.92us; dt: -0.0332527us
-Target Opch: 114; wvf label: 810; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 114; wvf label: 811; PDSt0: -2422.27us; dt: -0.0289006us
-Target Opch: 94; wvf label: 982; PDSt0: -2442.75us; dt: -0.00842065us
-Target Opch: 94; wvf label: 983; PDSt0: -2425.86us; dt: -0.0253167us
-Target Opch: 96; wvf label: 1284; PDSt0: -2443.01us; dt: -0.00816455us
-Target Opch: 96; wvf label: 1285; PDSt0: -2417.92us; dt: -0.0332527us
-Target Opch: 95; wvf label: 1398; PDSt0: -2426.88us; dt: -0.0242927us
 
 iEntry====================: 255
 #pdt0 of the event: 2290
@@ -2245,23 +2205,6 @@ pandorat0 i----------: 1
 pandorat0 i----------: 2
 pandorat0 i----------: 3
 pandorat0 i----------: 4
-======Michel electron candidate!======
-Michel score: 0.317964,  Michel hits: 14
-Run: 28867,  Event: 4074,  TrackID: 1
-End(x, y, z) = (-208.333, 121.284, 292.461)
-------------Decay close to APA planes!------------
-Distance to APA: 148.013 cm
-
-Closest OpCh (y, z): (92.9099,316.671); Label: 108
-
-97 107 117 
-98 108 118 
-99 109 119 
-Target Opch: 118; wvf label: 773; PDSt0: -969.984us; dt: -0.0409145us
-Target Opch: 119; wvf label: 1333; PDSt0: -969.984us; dt: -0.0409145us
-Target Opch: 109; wvf label: 1370; PDSt0: -969.984us; dt: -0.0409145us
-Target Opch: 99; wvf label: 1385; PDSt0: -969.984us; dt: -0.0409145us
-Target Opch: 108; wvf label: 1402; PDSt0: -969.984us; dt: -0.0409145us
 
 iEntry====================: 292
 #pdt0 of the event: 2051
@@ -2341,17 +2284,6 @@ iEntry====================: 303
 #pdt0 of the event: 2165
 
 pandorat0 i----------: 0
-======Michel electron candidate!======
-Michel score: 0.30458,  Michel hits: 15
-Run: 28867,  Event: 4170,  TrackID: 19
-End(x, y, z) = (-38.1232, 318.685, 53.541)
-Distance to APA: 318.223 cm
-
-Closest OpCh (y, z): (335.909,35.4612); Label: 154
-
-133 143 153 
-134 144 154 
-135 145 155 
 
 iEntry====================: 304
 #pdt0 of the event: 1669
@@ -2411,22 +2343,6 @@ pandorat0 i----------: 1
 pandorat0 i----------: 2
 pandorat0 i----------: 3
 pandorat0 i----------: 4
-======Michel electron candidate!======
-Michel score: 0.398852,  Michel hits: 8
-Run: 28867,  Event: 89329,  TrackID: 4
-End(x, y, z) = (-50.0904, 71.19, 373.173)
-Distance to APA: 306.256 cm
-
-Closest OpCh (y, z): (92.9099,377.921); Label: 98
-
-87 97 107 
-88 98 108 
-89 99 109 
-Target Opch: 88; wvf label: 1318; PDSt0: -346.112us; dt: -0.0559432us
-Target Opch: 108; wvf label: 1410; PDSt0: -346.368us; dt: -0.0556872us
-Target Opch: 109; wvf label: 1524; PDSt0: -346.112us; dt: -0.0559432us
-Target Opch: 89; wvf label: 1546; PDSt0: -346.112us; dt: -0.0559432us
-Target Opch: 99; wvf label: 1580; PDSt0: -346.112us; dt: -0.0559432us
 
 iEntry====================: 315
 #pdt0 of the event: 1932
@@ -2461,22 +2377,6 @@ iEntry====================: 321
 #pdt0 of the event: 2044
 
 pandorat0 i----------: 0
-======Michel electron candidate!======
-Michel score: 0.330309,  Michel hits: 16
-Run: 28867,  Event: 89385,  TrackID: 1
-End(x, y, z) = (-150.253, 139.783, 232.34)
-Distance to APA: 206.093 cm
-
-Closest OpCh (y, z): (153.66,267.521); Label: 117
-
-106 116 126 
-107 117 127 
-108 118 128 
-Target Opch: 118; wvf label: 578; PDSt0: -104.704us; dt: -0.0558599us
-Target Opch: 118; wvf label: 579; PDSt0: -186.624us; dt: 0.0260601us
-Target Opch: 108; wvf label: 601; PDSt0: -104.704us; dt: -0.0558599us
-Target Opch: 106; wvf label: 1240; PDSt0: -186.624us; dt: 0.0260601us
-Target Opch: 106; wvf label: 1241; PDSt0: -104.704us; dt: -0.0558599us
 
 iEntry====================: 322
 #pdt0 of the event: 2244
@@ -2891,17 +2791,6 @@ pandorat0 i----------: 0
 pandorat0 i----------: 1
 pandorat0 i----------: 2
 pandorat0 i----------: 3
-======Michel electron candidate!======
-Michel score: 0.342111,  Michel hits: 18
-Run: 28867,  Event: 18713,  TrackID: 3
-End(x, y, z) = (-93.7504, 105.876, 87.0897)
-Distance to APA: 262.596 cm
-
-Closest OpCh (y, z): (92.9099,84.6112); Label: 148
-
-137 147 157 
-138 148 158 
-139 149 159 
 
 iEntry====================: 385
 #pdt0 of the event: 2365
@@ -3789,26 +3678,6 @@ iEntry====================: 507
 pandorat0 i----------: 0
 pandorat0 i----------: 1
 pandorat0 i----------: 2
-======Michel electron candidate!======
-Michel score: 0.374264,  Michel hits: 28
-Run: 28867,  Event: 89131,  TrackID: 9
-End(x, y, z) = (23.2591, 252.43, 78.4871)
-Distance to APA: 333.087 cm
-
-Closest OpCh (y, z): (275.159,84.6112); Label: 65
-
-54 64 74 
-55 65 75 
-56 66 76 
-Target Opch: 56; wvf label: 1361; PDSt0: -3.328us; dt: -0.0687105us
-Target Opch: 54; wvf label: 1616; PDSt0: -35.84us; dt: -0.0361985us
-Target Opch: 76; wvf label: 1672; PDSt0: -35.584us; dt: -0.0364545us
-Target Opch: 65; wvf label: 1785; PDSt0: -90.88us; dt: 0.0188415us
-Target Opch: 65; wvf label: 1786; PDSt0: -1.792us; dt: -0.0702465us
-Target Opch: 74; wvf label: 1858; PDSt0: -3.584us; dt: -0.0684545us
-Target Opch: 75; wvf label: 1879; PDSt0: -35.584us; dt: -0.0364545us
-Target Opch: 75; wvf label: 1880; PDSt0: -3.328us; dt: -0.0687105us
-Target Opch: 55; wvf label: 2009; PDSt0: -35.84us; dt: -0.0361985us
 
 iEntry====================: 508
 #pdt0 of the event: 2326

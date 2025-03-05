@@ -2,17 +2,6 @@
   TChain *anatree = new TChain("t0/anatree");
 
 
-  //Shu: Do not forget to modify kMaxWF correspondingly---
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0062_dataflow1_datawriter_0_20240822T211158_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0092_dataflow4_datawriter_0_20240822T222238_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0111_dataflow0_datawriter_0_20240822T224946_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0128_dataflow6_datawriter_0_20240822T231849_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0345_dataflow4_datawriter_0_20240823T045508_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0360_dataflow1_datawriter_0_20240823T051742_michelt0.root");
-//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0385_dataflow5_datawriter_0_20240823T055509_michelt0.root");
-
-
   //---- Read ROOT files from folder --------------------------------
   const char* directory = "../../../../t0_rootFiles/data/small_test/initial_t0Files/";
   TSystemDirectory dir(directory, directory);
@@ -31,9 +20,6 @@
     }
   }
   //------------------------------------------------------------------
-
-
-
 
 
 
@@ -141,7 +127,7 @@
       //30 < end_y < 580 and
       //30 < end_z < 435):
 //      if ((*michelscore)[i]>0.1 ){
-      if ((*michelscore)[i]>0.4 && (*michelhits)[i]>5 && (*endx)[i]<356 && (*endx)[i]>-356 && (*endy)[i]<580 && (*endy)[i]>30 && (*endz)[i]<435 && (*endz)[i]>30  ){
+      if ((*michelscore)[i]>0.3 && (*michelhits)[i]>5 && (*endx)[i]<356 && (*endx)[i]>-356 && (*endy)[i]<580 && (*endy)[i]>30 && (*endz)[i]<435 && (*endz)[i]>30  ){
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;
@@ -183,12 +169,9 @@
           }
         }
 
-//        std::cout << "Closest y, z distances: " << minYDiff << ", " << minZDiff << std::endl;
-
         //Step 3: Compute the corresponding channel number---
         int channel = closestZIndex * 10 + closestYIndex;
 //        channel = 60;//Only for test
-
 
         //Step 4: Find nearby opchs---
         int column = channel / 10;  // Tens digit
