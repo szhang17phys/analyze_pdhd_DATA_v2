@@ -3,7 +3,7 @@ import re
 import os
 
 # Input filename (example)
-input_file = "../../../../t0_rootFiles/small_test/event_extract/extract_event85604_trackID7.root"
+input_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/small_test/event_extract/extract_event85604_trackID7.root"
 
 # Open the input ROOT file
 f_in = ROOT.TFile(input_file, "READ")
@@ -56,7 +56,7 @@ else:
 
 # Build the output file name.
 # The output file will be placed in the sibling folder "wvf_finder" relative to the input file's parent.
-output_dir = "../../../../t0_rootFiles/small_test/wvf_finder/"
+output_dir = "./singleTest_results/"
 output_file = os.path.join(output_dir, f"wvfFind_{event_track_part}_opNum{num_waveforms}.root")
 
 # Open output ROOT file

@@ -3,7 +3,7 @@
 
 
   //Shu: Do not forget to modify kMaxWF correspondingly---
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
+  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/small_test/initial_t0Files/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
 
 
   int run;

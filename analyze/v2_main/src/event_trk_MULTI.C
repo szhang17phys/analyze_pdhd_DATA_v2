@@ -3,7 +3,7 @@
   TChain *anatree = new TChain("t0/anatree");
 
   //---- Read ROOT files from folder --------------------------------
-  const char* directory = "../../../../t0_rootFiles/small_test/initial_t0Files/";
+  const char* directory = "../../../../t0_rootFiles/data/small_test/initial_t0Files/";
   TSystemDirectory dir(directory, directory);
   TList* fileList = dir.GetListOfFiles();
   TIterator *fileIter = fileList->MakeIterator();
@@ -24,8 +24,8 @@
   // Read candidate event and track IDs from text files
   std::vector<int> candidateEvents;
   std::vector<int> candidateTracks;
-  std::ifstream eventFile("../../../../t0_rootFiles/candidates_list/eventID_filtered_sorted.txt");
-  std::ifstream trackFile("../../../../t0_rootFiles/candidates_list/trackID_filtered_sorted.txt");
+  std::ifstream eventFile("../../../../t0_rootFiles/data/candidates_list/eventID_filtered_sorted.txt");
+  std::ifstream trackFile("../../../../t0_rootFiles/data/candidates_list/trackID_filtered_sorted.txt");
 
   int tempEvent, tempTrack;
   while (eventFile >> tempEvent && trackFile >> tempTrack) {
@@ -39,7 +39,7 @@
   // Read candidate allowed channels from opchs_filtered_sorted.txt.
   // Each line should contain the allowed channels (space-separated) for the corresponding candidate record.
   std::vector< std::vector<int> > candidateOpchs;
-  std::ifstream opchsFile("../../../../t0_rootFiles/candidates_list/opchs_filtered_sorted.txt");
+  std::ifstream opchsFile("../../../../t0_rootFiles/data/candidates_list/opchs_filtered_sorted.txt");
   std::string line;
   while (std::getline(opchsFile, line)) {
     if(line.size() == 0) continue; // skip empty lines
@@ -133,7 +133,7 @@
             std::cout << "Matching track ID " << (*trkid)[i] << " found for event " << event << " (candidate record " << candRecord << ")!\n";
 
             // Define output file name and open a new ROOT file to save the waveforms
-            TString outputFileName = Form("../../../../t0_rootFiles/small_test/event_extract/extract_event%d_trackID%d.root", event, (*trkid)[i]);
+            TString outputFileName = Form("../../../../t0_rootFiles/data/small_test/event_extract/extract_event%d_trackID%d.root", event, (*trkid)[i]);
             TFile file(outputFileName, "RECREATE");
 
             int nwfs = 0;  // Counter for waveforms saved

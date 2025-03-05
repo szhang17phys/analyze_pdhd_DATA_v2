@@ -9,8 +9,30 @@
 //  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0111_dataflow0_datawriter_0_20240822T224946_michelt0.root");
 //  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0128_dataflow6_datawriter_0_20240822T231849_michelt0.root");
 //  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0345_dataflow4_datawriter_0_20240823T045508_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0360_dataflow1_datawriter_0_20240823T051742_michelt0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0360_dataflow1_datawriter_0_20240823T051742_michelt0.root");
 //  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/initial_t0Files/run028867_0385_dataflow5_datawriter_0_20240823T055509_michelt0.root");
+
+
+  //---- Read ROOT files from folder --------------------------------
+  const char* directory = "../../../../t0_rootFiles/data/small_test/initial_t0Files/";
+  TSystemDirectory dir(directory, directory);
+  TList* fileList = dir.GetListOfFiles();
+  TIterator *fileIter = fileList->MakeIterator();
+  TObject *obj;
+  while ((obj = fileIter->Next())) {
+    TSystemFile *file = (TSystemFile*)obj;
+    TString fileName = file->GetName();
+
+    // Only add ROOT files to the TChain
+    if (fileName.EndsWith(".root")) {
+      TString fullFilePath = TString(directory) + "/" + fileName;
+      anatree->Add(fullFilePath);
+      std::cout << "Added ROOT file: " << fileName << std::endl;
+    }
+  }
+  //------------------------------------------------------------------
+
+
 
 
 
@@ -114,8 +136,8 @@
     for(size_t i = 0; i<pandorat0->size(); ++i){
 
       //Shu: track contains Michel e candidate---
-      if ((*michelscore)[i]>0.1 && (*endx)[i]<-87 && (*endx)[i]>-88){
-//      if ((*michelscore)[i]>0.1){
+//      if ((*michelscore)[i]>0.1 && (*endx)[i]<-87 && (*endx)[i]>-88){
+      if ((*michelscore)[i]>0.1){
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;

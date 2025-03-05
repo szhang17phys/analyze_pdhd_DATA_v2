@@ -3,8 +3,8 @@ import re
 import os
 
 # Directories for input and output files
-input_dir = "../../../../t0_rootFiles/small_test/event_extract/"
-output_dir = "../../../../t0_rootFiles/small_test/wvf_finder/"
+input_dir = "../../../../t0_rootFiles/data/small_test/event_extract/"
+output_dir = "../../../../t0_rootFiles/data/small_test/wvf_finder/"
 
 # Get list of all ROOT files in the input directory
 input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith(".root")]
