@@ -1,0 +1,39 @@
+#include "services_dune.fcl"
+#include "services_vdcoldbox.fcl" 
+#include "tools_dune.fcl"	
+
+process_name: RunDetchecks
+
+
+services: {
+    TFileService: { fileName: "pdhd_Detchecks_out.root" }
+    TimeTracker: {}
+    RandomNumberGenerator: {}
+    WireReadout:                @local::dune_wire_readout
+    DetectorPropertiesService:  @local::protodunehd_detproperties
+    FileCatalogMetadata:        @local::art_file_catalog_mc
+                                @table::protodunehd_reco_services
+    LArPropertiesService:       @local::dunefd_properties
+    Geometry:                   @local::protodunehdv6_geo
+}
+
+services.AuxDetGeometry.GDML: "protodunehd_v6_refactored.gdml"
+services.AuxDetGeometry.Name: "protodunehdv6"
+
+
+
+source: {
+    module_type: RootInput
+    maxEvents: -1
+}
+
+
+physics: {
+    analyzers: {
+        checks: {
+            module_type:    "Detchecks"
+        }
+    }
+    ana: [ checks ]
+    end_paths: [ ana ]
+}

@@ -48,7 +48,8 @@
       for (int iEntry = 0; iEntry < anatree->GetEntries(); ++iEntry) {
         anatree->GetEntry(iEntry);
 
-        std::cout << "\nEvent: " << event << " | Track IDs: ";
+        // Print Run, Event, and Track IDs in the requested format
+        std::cout << "Run: " << run << " | Event: " << event << " | Track IDs: ";
         for (size_t i = 0; i < trkid->size(); ++i) {
           std::cout << (*trkid)[i] << " ";
         }
