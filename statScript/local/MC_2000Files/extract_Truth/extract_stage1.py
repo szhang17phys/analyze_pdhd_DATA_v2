@@ -2,8 +2,8 @@ import os
 import re
 
 # Input and output directories
-data_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/mc/beam_cosmics_onlineExample/extract_truth"
-output_file = "aggregated_extracted_info.txt"
+data_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/mc/beam_cosmics_onlineExample/extract_truth/jeremy_extract"
+output_file = "info_jeremy_stage1.txt"
 
 # Storage for extracted data
 extracted_lines = []
