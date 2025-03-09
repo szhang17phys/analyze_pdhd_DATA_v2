@@ -1,108 +1,715 @@
+
+
+
 ===== Processing file: 20240411T051301Z_191609_025531_g4_stage1_g4_stage2_sce_off.txt =====
+
 root://xrootd.pic.es:1094/pnfs/pic.es/data/dune/RSE/hd-protodune/7f/db/prod_beam_p1GeV_cosmics_protodunehd_20240411T051301Z_191609_025531_g4_stage1_g4_stage2_sce_off_detsim_reco.root
 
 [1st record] run: 191609 subRun: 630 event: 651
-trk#3
-trk#6
-trk#9
-trk#11
-trk#12
-trk#13
-trk#14
-trk#16
-trk#18
-trk#20
-trk#22
-trk#23
-trk#24
-trk#26
-trk#28
-trk#29
-trk#32
-trk#35
-trk#37
-trk#39
-trk#42
-trk#46
+trk#0
+trk#1
+trk#2
+trk#3   looking at michel (e+) / mcp::TrackID: 849117 / 0 hits
+trk#4
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 182667 / 0 hits
+trk#7
+trk#8
+trk#9   looking at michel (e+) / mcp::TrackID: 650623 / 0 hits
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 293421 / 0 hits
+trk#12   looking at michel (e-) / mcp::TrackID: 475601 / 0 hits
+trk#13   looking at michel (e-) / mcp::TrackID: 753170 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 381286 / 71 hits
+trk#15
+trk#16   looking at michel (e-) / mcp::TrackID: 712220 / 0 hits
+trk#17
+trk#18   looking at michel (e+) / mcp::TrackID: 290154 / 0 hits
+trk#19
+trk#20   looking at michel (e+) / mcp::TrackID: 595344 / 0 hits
+trk#21
+trk#22   looking at michel (e+) / mcp::TrackID: 766696 / 0 hits
+trk#23   looking at michel (e+) / mcp::TrackID: 624547 / 26 hits
+trk#24   looking at michel (e-) / mcp::TrackID: 188574 / 0 hits
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 433735 / 84 hits
+trk#27
+trk#28   looking at michel (e+) / mcp::TrackID: 625714 / 0 hits
+trk#29   looking at michel (e+) / mcp::TrackID: 625714 / 0 hits
+trk#30
+trk#31
+trk#32   looking at michel (e+) / mcp::TrackID: 520671 / 0 hits
+trk#33
+trk#34
+trk#35   looking at michel (e+) / mcp::TrackID: 710730 / 0 hits
+trk#36
+trk#37   looking at michel (e+) / mcp::TrackID: 308821 / 0 hits
+trk#38
+trk#39   looking at michel (e+) / mcp::TrackID: 622817 / 0 hits
+trk#40
+trk#41
+trk#42   looking at michel (e-) / mcp::TrackID: 167306 / 0 hits
+trk#43
+trk#44
+trk#45
+trk#46   looking at michel (e-) / mcp::TrackID: 244873 / 0 hits
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
+trk#83
+trk#84
+trk#85
+trk#86
+trk#87
+trk#88
+trk#89
+trk#90
+trk#91
+trk#92
+trk#93
+trk#94
+trk#95
+trk#96
 
 [2nd record] run: 191609 subRun: 630 event: 652
-trk#1
-trk#4
-trk#5
-trk#7
-trk#8
-trk#9
-trk#10
-trk#11
-trk#13
-trk#14
-trk#15
-trk#16
-trk#17
-trk#18
-trk#22
-trk#25
-trk#26
-trk#29
-trk#30
-trk#31
-trk#34
-trk#36
-trk#37
-trk#41
+trk#0
+trk#1   looking at michel (e+) / mcp::TrackID: 564453 / 0 hits
+trk#2
+trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 504579 / 0 hits
+trk#5   looking at michel (e-) / mcp::TrackID: 136240 / 0 hits
+trk#6
+trk#7   looking at michel (e+) / mcp::TrackID: 367561 / 0 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 142602 / 0 hits
+trk#9   looking at michel (e+) / mcp::TrackID: 229509 / 0 hits
+trk#10   looking at michel (e+) / mcp::TrackID: 233094 / 102 hits
+trk#11   looking at michel (e-) / mcp::TrackID: 431169 / 0 hits
+trk#12
+trk#13   looking at michel (e-) / mcp::TrackID: 359953 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 281026 / 0 hits
+trk#15   looking at michel (e-) / mcp::TrackID: 199739 / 0 hits
+trk#16   looking at michel (e-) / mcp::TrackID: 358728 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 649421 / 78 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 425715 / 0 hits
+trk#19
+trk#20
+trk#21
+trk#22   looking at michel (e+) / mcp::TrackID: 279787 / 0 hits
+trk#23
+trk#24
+trk#25   looking at michel (e+) / mcp::TrackID: 198363 / 104 hits
+trk#26   looking at michel (e+) / mcp::TrackID: 601183 / 0 hits
+trk#27
+trk#28
+trk#29   looking at michel (e-) / mcp::TrackID: 229120 / 81 hits
+trk#30   looking at michel (e-) / mcp::TrackID: 559890 / 0 hits
+trk#31   looking at michel (e+) / mcp::TrackID: 335256 / 0 hits
+trk#32
+trk#33
+trk#34   looking at michel (e+) / mcp::TrackID: 378518 / 0 hits
+trk#35
+trk#36   looking at michel (e+) / mcp::TrackID: 300112 / 131 hits
+trk#37   looking at michel (e+) / mcp::TrackID: 693858 / 0 hits
+trk#38
+trk#39
+trk#40
+trk#41   looking at michel (e+) / mcp::TrackID: 157279 / 0 hits
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
 
 [3rd record] run: 191609 subRun: 630 event: 653
-trk#1
-trk#2
-trk#3
-trk#4
-trk#6
-trk#7
-trk#8
-trk#10
-trk#11
-trk#12
-trk#13
-trk#14
-trk#15
-trk#16
-trk#17
-trk#19
-trk#23
-trk#24
-trk#26
-
-[4th record] run: 191609 subRun: 630 event: 654
 trk#0
-trk#4
-trk#6
-trk#7
-trk#8
-trk#10
-trk#11
-trk#14
-trk#16
-trk#17
+trk#1   looking at michel (e+) / mcp::TrackID: 72254 / 0 hits
+trk#2   looking at michel (e+) / mcp::TrackID: 345174 / 0 hits
+trk#3   looking at michel (e-) / mcp::TrackID: 131757 / 36 hits
+trk#4   looking at michel (e+) / mcp::TrackID: 641694 / 0 hits
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 649066 / 0 hits
+trk#7   looking at michel (e-) / mcp::TrackID: 140610 / 0 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 497682 / 0 hits
+trk#9
+trk#10   looking at michel (e-) / mcp::TrackID: 406017 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 70390 / 106 hits
+trk#12   looking at michel (e+) / mcp::TrackID: 499514 / 0 hits
+trk#13   looking at michel (e-) / mcp::TrackID: 378530 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 618404 / 0 hits
+trk#15   looking at michel (e-) / mcp::TrackID: 131757 / 36 hits
+trk#16   looking at michel (e-) / mcp::TrackID: 117347 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 658223 / 9 hits
 trk#18
-trk#19
+trk#19   looking at michel (e+) / mcp::TrackID: 747449 / 0 hits
+trk#20
+trk#21
 trk#22
-trk#23
-trk#24
-trk#26
+trk#23   looking at michel (e-) / mcp::TrackID: 698155 / 0 hits
+trk#24   looking at michel (e+) / mcp::TrackID: 15386 / 0 hits
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 285673 / 0 hits
 trk#27
+trk#28
+trk#29
 trk#30
 trk#31
 trk#32
+trk#33
 trk#34
+trk#35
+trk#36
 trk#37
 trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+
+[4th record] run: 191609 subRun: 630 event: 654
+trk#0   looking at michel (e+) / mcp::TrackID: 214997 / 0 hits
+trk#1
+trk#2
+trk#3
+trk#4   looking at michel (e-) / mcp::TrackID: 406961 / 0 hits
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 127784 / 0 hits
+trk#7   looking at michel (e-) / mcp::TrackID: 161703 / 0 hits
+trk#8   looking at michel (e-) / mcp::TrackID: 309874 / 0 hits
+trk#9
+trk#10   looking at michel (e+) / mcp::TrackID: 561837 / 41 hits
+trk#11   looking at michel (e-) / mcp::TrackID: 323426 / 0 hits
+trk#12
+trk#13
+trk#14   looking at michel (e-) / mcp::TrackID: 601903 / 88 hits
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 266311 / 114 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 219603 / 59 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 95502 / 0 hits
+trk#19   looking at michel (e+) / mcp::TrackID: 508531 / 0 hits
+trk#20
+trk#21
+trk#22   looking at michel (e+) / mcp::TrackID: 572966 / 7 hits
+trk#23   looking at michel (e-) / mcp::TrackID: 514886 / 0 hits
+trk#24   looking at michel (e+) / mcp::TrackID: 291527 / 0 hits
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 383902 / 0 hits
+trk#27   looking at michel (e+) / mcp::TrackID: 530944 / 0 hits
+trk#28
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 326723 / 0 hits
+trk#31   looking at michel (e+) / mcp::TrackID: 50802 / 0 hits
+trk#32   looking at michel (e+) / mcp::TrackID: 668887 / 107 hits
+trk#33
+trk#34   looking at michel (e+) / mcp::TrackID: 264492 / 89 hits
+trk#35
+trk#36
+trk#37   looking at michel (e-) / mcp::TrackID: 406961 / 0 hits
+trk#38   looking at michel (e+) / mcp::TrackID: 222492 / 0 hits
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
 
 [5th record] run: 191609 subRun: 630 event: 655
-trk#0
-trk#4
+trk#0   looking at michel (e+) / mcp::TrackID: 77044 / 0 hits
+trk#1
+trk#2
+trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 652322 / 0 hits
+trk#5
+trk#6
+trk#7
+trk#8
+trk#9   looking at michel (e-) / mcp::TrackID: 647947 / 0 hits
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 298155 / 81 hits
+trk#12
+trk#13   looking at michel (e+) / mcp::TrackID: 398015 / 7 hits
+trk#14
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 604617 / 71 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 199587 / 0 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 419963 / 0 hits
+trk#19   looking at michel (e+) / mcp::TrackID: 31439 / 106 hits
+trk#20   looking at michel (e+) / mcp::TrackID: 657757 / 0 hits
+trk#21   looking at michel (e+) / mcp::TrackID: 448011 / 88 hits
+trk#22   looking at michel (e-) / mcp::TrackID: 246473 / 0 hits
+trk#23   looking at michel (e+) / mcp::TrackID: 485010 / 82 hits
+trk#24
+trk#25   looking at michel (e+) / mcp::TrackID: 499941 / 0 hits
+trk#26
+trk#27
+trk#28   looking at michel (e+) / mcp::TrackID: 475837 / 0 hits
+trk#29   looking at michel (e-) / mcp::TrackID: 11579 / 0 hits
+trk#30   looking at michel (e+) / mcp::TrackID: 397323 / 0 hits
+trk#31
+trk#32   looking at michel (e+) / mcp::TrackID: 336507 / 0 hits
+trk#33
+trk#34   looking at michel (e+) / mcp::TrackID: 298680 / 0 hits
+trk#35
+trk#36   looking at michel (e+) / mcp::TrackID: 507294 / 28 hits
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+
+[6th record] run: 191609 subRun: 630 event: 656
+trk#0   looking at michel (e+) / mcp::TrackID: 357508 / 0 hits
+trk#1   looking at michel (e+) / mcp::TrackID: 404002 / 0 hits
+trk#2   looking at michel (e+) / mcp::TrackID: 70118 / 0 hits
+trk#3   looking at michel (e+) / mcp::TrackID: 384558 / 0 hits
+trk#4   looking at michel (e-) / mcp::TrackID: 406508 / 0 hits
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 344099 / 0 hits
+trk#7
+trk#8
 trk#9
-trk#11
+trk#10   looking at michel (e-) / mcp::TrackID: 317501 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 403141 / 125 hits
+trk#12
 trk#13
+trk#14   looking at michel (e-) / mcp::TrackID: 57432 / 0 hits
+trk#15   looking at michel (e+) / mcp::TrackID: 19940 / 0 hits
+trk#16   looking at michel (e+) / mcp::TrackID: 561013 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 108492 / 0 hits
+trk#18
+trk#19
+trk#20
+trk#21
+trk#22   looking at michel (e-) / mcp::TrackID: 189988 / 0 hits
+trk#23   looking at michel (e+) / mcp::TrackID: 410541 / 124 hits
+trk#24   looking at michel (e-) / mcp::TrackID: 5128 / 0 hits
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 601347 / 0 hits
+trk#27
+trk#28   looking at michel (e+) / mcp::TrackID: 464735 / 0 hits
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 416517 / 0 hits
+trk#31
+trk#32   looking at michel (e+) / mcp::TrackID: 70118 / 0 hits
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+
+[7th record] run: 191609 subRun: 630 event: 657
+trk#0   looking at michel (e+) / mcp::TrackID: 130457 / 0 hits
+trk#1
+trk#2
+trk#3
+trk#4
+trk#5
+trk#6   looking at michel (e-) / mcp::TrackID: 530855 / 0 hits
+trk#7   looking at michel (e+) / mcp::TrackID: 304711 / 0 hits
+trk#8
+trk#9
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 6956 / 0 hits
+trk#12
+trk#13
+trk#14
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 370277 / 0 hits
+trk#17
+trk#18   looking at michel (e+) / mcp::TrackID: 768421 / 0 hits
+trk#19
+trk#20
+trk#21
+trk#22
+trk#23
+trk#24   looking at michel (e+) / mcp::TrackID: 541299 / 0 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 399747 / 70 hits
+trk#26
+trk#27
+trk#28
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 644786 / 0 hits
+trk#31
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+
+[8th record] run: 191609 subRun: 630 event: 658
+trk#0
+trk#1
+trk#2   looking at michel (e+) / mcp::TrackID: 363597 / 0 hits
+trk#3   looking at michel (e-) / mcp::TrackID: 317259 / 36 hits
+trk#4   looking at michel (e-) / mcp::TrackID: 78484 / 25 hits
+trk#5   looking at michel (e+) / mcp::TrackID: 443089 / 0 hits
+trk#6   looking at michel (e-) / mcp::TrackID: 176766 / 0 hits
+trk#7   looking at michel (e+) / mcp::TrackID: 565796 / 63 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 328492 / 0 hits
+trk#9   looking at michel (e+) / mcp::TrackID: 132945 / 0 hits
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 424429 / 0 hits
+trk#12   looking at michel (e+) / mcp::TrackID: 139089 / 83 hits
+trk#13   looking at michel (e+) / mcp::TrackID: 479693 / 0 hits
+trk#14   looking at michel (e-) / mcp::TrackID: 535013 / 76 hits
+trk#15
+trk#16
+trk#17
+trk#18
+trk#19
+trk#20   looking at michel (e-) / mcp::TrackID: 23394 / 0 hits
+trk#21   looking at michel (e+) / mcp::TrackID: 487190 / 0 hits
+trk#22
+trk#23   looking at michel (e+) / mcp::TrackID: 545684 / 56 hits
+trk#24
+trk#25
+trk#26
+trk#27
+trk#28   looking at michel (e-) / mcp::TrackID: 317259 / 36 hits
+trk#29   looking at michel (e-) / mcp::TrackID: 317259 / 36 hits
+trk#30
+trk#31
+trk#32
+trk#33
+trk#34   looking at michel (e-) / mcp::TrackID: 176766 / 0 hits
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+
+[9th record] run: 191609 subRun: 630 event: 659
+trk#0
+trk#1
+trk#2   looking at michel (e+) / mcp::TrackID: 267704 / 0 hits
+trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 390164 / 0 hits
+trk#5
+trk#6
+trk#7   looking at michel (e+) / mcp::TrackID: 391492 / 35 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 167952 / 0 hits
+trk#9
+trk#10
+trk#11
+trk#12   looking at michel (e+) / mcp::TrackID: 300005 / 72 hits
+trk#13   looking at michel (e-) / mcp::TrackID: 595216 / 0 hits
+trk#14   looking at michel (e-) / mcp::TrackID: 536915 / 0 hits
+trk#15
+trk#16
+trk#17   looking at michel (e-) / mcp::TrackID: 24934 / 0 hits
+trk#18
+trk#19
+trk#20   looking at michel (e+) / mcp::TrackID: 23263 / 98 hits
+trk#21   looking at michel (e-) / mcp::TrackID: 319612 / 0 hits
+trk#22   looking at michel (e-) / mcp::TrackID: 598009 / 0 hits
+trk#23
+trk#24   looking at michel (e-) / mcp::TrackID: 134161 / 0 hits
+trk#25
+trk#26
+trk#27   looking at michel (e+) / mcp::TrackID: 641054 / 63 hits
+trk#28   looking at michel (e+) / mcp::TrackID: 444448 / 0 hits
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 613259 / 0 hits
+trk#31   looking at michel (e+) / mcp::TrackID: 231903 / 0 hits
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+
+[10th record] run: 191609 subRun: 630 event: 660
+trk#0   looking at michel (e+) / mcp::TrackID: 272139 / 0 hits
+trk#1
+trk#2   looking at michel (e+) / mcp::TrackID: 617775 / 0 hits
+trk#3   looking at michel (e-) / mcp::TrackID: 616460 / 0 hits
+trk#4
+trk#5   looking at michel (e+) / mcp::TrackID: 434040 / 0 hits
+trk#6   looking at michel (e+) / mcp::TrackID: 180015 / 0 hits
+trk#7
+trk#8   looking at michel (e-) / mcp::TrackID: 357235 / 60 hits
+trk#9
+trk#10   looking at michel (e+) / mcp::TrackID: 232536 / 0 hits
+trk#11
+trk#12
+trk#13   looking at michel (e+) / mcp::TrackID: 153712 / 0 hits
+trk#14   looking at michel (e-) / mcp::TrackID: 537952 / 0 hits
+trk#15
 trk#16
 trk#17
 trk#18
@@ -111,311 +718,845 @@ trk#20
 trk#21
 trk#22
 trk#23
-trk#25
-trk#28
-trk#29
-trk#30
-trk#32
-trk#34
-trk#36
-
-[6th record] run: 191609 subRun: 630 event: 656
-trk#0
-trk#1
-trk#2
-trk#3
-trk#4
-trk#6
-trk#10
-trk#11
-trk#14
-trk#15
-trk#16
-trk#17
-trk#22
-trk#23
 trk#24
+trk#25
 trk#26
-trk#28
-trk#30
-trk#32
-
-[7th record] run: 191609 subRun: 630 event: 657
-trk#0
-trk#6
-trk#7
-trk#11
-trk#16
-trk#18
-trk#24
-trk#25
-trk#30
-
-[8th record] run: 191609 subRun: 630 event: 658
-trk#2
-trk#3
-trk#4
-trk#5
-trk#6
-trk#7
-trk#8
-trk#9
-trk#11
-trk#12
-trk#13
-trk#14
-trk#20
-trk#21
-trk#23
-trk#28
-trk#29
-trk#34
-
-[9th record] run: 191609 subRun: 630 event: 659
-trk#2
-trk#4
-trk#7
-trk#8
-trk#12
-trk#13
-trk#14
-trk#17
-trk#20
-trk#21
-trk#22
-trk#24
 trk#27
 trk#28
+trk#29
 trk#30
 trk#31
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
 
-[10th record] run: 191609 subRun: 630 event: 660
-trk#0
-trk#2
-trk#3
-trk#5
-trk#6
-trk#8
-trk#10
-trk#13
-trk#14
+
+
 
 
 ===== Processing file: prod_beam_p1GeV_cosmics_protodunehd_20240413T151416Z_8667_064557_g4_stage1_g4_stage2_sce_off_detsim_reco.txt =====
+
 root://xrootd.pic.es:1094/pnfs/pic.es/data/dune/RSE/hd-protodune/d3/00/prod_beam_p1GeV_cosmics_protodunehd_20240413T151416Z_8667_064557_g4_stage1_g4_stage2_sce_off_detsim_reco.root
 
 [1st record] run: 8667 subRun: 906 event: 881
-trk#2
-trk#3
-trk#6
-trk#10
-trk#12
-trk#13
-trk#14
-trk#16
-trk#17
-trk#18
-trk#19
-trk#20
-trk#22
-trk#24
-trk#25
-trk#26
-trk#32
-trk#33
-
-[2nd record] run: 8667 subRun: 906 event: 882
-trk#1
-trk#3
-trk#5
-trk#7
-trk#8
-trk#10
-trk#12
-trk#14
-trk#15
-trk#16
-trk#18
-trk#19
-trk#21
-trk#24
-trk#26
-trk#29
-trk#31
-trk#32
-trk#33
-trk#34
-
-[3rd record] run: 8667 subRun: 906 event: 883
 trk#0
 trk#1
+trk#2   looking at michel (e+) / mcp::TrackID: 121113 / 0 hits
+trk#3   looking at michel (e+) / mcp::TrackID: 368135 / 0 hits
 trk#4
 trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 531970 / 92 hits
 trk#7
 trk#8
 trk#9
-trk#10
+trk#10   looking at michel (e+) / mcp::TrackID: 454491 / 0 hits
 trk#11
-trk#18
-trk#25
-trk#27
-
-[4th record] run: 8667 subRun: 906 event: 884
-trk#1
-trk#3
-trk#5
-trk#7
-trk#8
-trk#9
-trk#10
-trk#11
-trk#14
+trk#12   looking at michel (e+) / mcp::TrackID: 207747 / 0 hits
+trk#13   looking at michel (e+) / mcp::TrackID: 463907 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 313919 / 0 hits
 trk#15
-trk#16
-trk#17
-trk#18
-trk#20
+trk#16   looking at michel (e-) / mcp::TrackID: 456668 / 0 hits
+trk#17   looking at michel (e-) / mcp::TrackID: 60415 / 1 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 683781 / 0 hits
+trk#19   looking at michel (e+) / mcp::TrackID: 85415 / 0 hits
+trk#20   looking at michel (e+) / mcp::TrackID: 660214 / 0 hits
 trk#21
-trk#22
+trk#22   looking at michel (e+) / mcp::TrackID: 4367 / 0 hits
 trk#23
-trk#24
-trk#25
-trk#26
+trk#24   looking at michel (e+) / mcp::TrackID: 256611 / 0 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 155244 / 0 hits
+trk#26   looking at michel (e+) / mcp::TrackID: 254371 / 0 hits
 trk#27
 trk#28
 trk#29
 trk#30
-trk#40
-
-[5th record] run: 8667 subRun: 906 event: 885
-trk#0
-trk#2
-trk#3
-trk#5
-trk#7
-trk#8
-trk#9
-trk#12
-trk#14
-trk#16
-trk#18
-trk#19
-trk#23
-trk#24
-trk#25
-trk#26
-trk#28
-trk#29
-
-[6th record] run: 8667 subRun: 906 event: 886
-trk#0
-trk#4
-trk#5
-trk#6
-trk#8
-trk#10
-trk#11
-trk#13
-trk#14
-trk#16
-trk#17
-trk#19
-trk#21
-trk#23
-trk#24
-trk#25
-trk#30
 trk#31
-trk#32
+trk#32   looking at michel (e-) / mcp::TrackID: 524510 / 0 hits
+trk#33   looking at michel (e+) / mcp::TrackID: 93389 / 0 hits
 trk#34
 trk#35
-
-[7th record] run: 8667 subRun: 906 event: 887
-trk#1
-trk#2
-trk#4
-trk#5
-trk#6
-trk#7
-trk#11
-trk#12
-trk#13
-trk#14
-trk#15
-trk#16
-trk#19
-trk#20
-trk#23
-trk#26
-trk#27
-trk#28
-trk#29
-trk#30
-trk#31
-trk#33
-
-[8th record] run: 8667 subRun: 906 event: 888
-trk#2
-trk#7
-trk#10
-trk#11
-trk#16
-trk#17
-trk#18
-trk#20
-trk#21
-trk#24
-trk#26
-trk#28
-trk#32
 trk#36
+trk#37
 trk#38
 trk#39
 trk#40
 trk#41
 trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
 
-[9th record] run: 8667 subRun: 906 event: 889
+[2nd record] run: 8667 subRun: 906 event: 882
 trk#0
-trk#1
+trk#1   looking at michel (e+) / mcp::TrackID: 383509 / 0 hits
+trk#2
+trk#3   looking at michel (e+) / mcp::TrackID: 215143 / 0 hits
+trk#4
+trk#5   looking at michel (e+) / mcp::TrackID: 610350 / 0 hits
+trk#6
+trk#7   looking at michel (e-) / mcp::TrackID: 490028 / 0 hits
+trk#8   looking at michel (e-) / mcp::TrackID: 267743 / 0 hits
+trk#9
+trk#10   looking at michel (e+) / mcp::TrackID: 349278 / 0 hits
+trk#11
+trk#12   looking at michel (e+) / mcp::TrackID: 281884 / 0 hits
+trk#13
+trk#14   looking at michel (e+) / mcp::TrackID: 270387 / 0 hits
+trk#15   looking at michel (e+) / mcp::TrackID: 329876 / 72 hits
+trk#16   looking at michel (e+) / mcp::TrackID: 617385 / 0 hits
+trk#17
+trk#18   looking at michel (e+) / mcp::TrackID: 534555 / 0 hits
+trk#19   looking at michel (e-) / mcp::TrackID: 329301 / 0 hits
+trk#20
+trk#21   looking at michel (e-) / mcp::TrackID: 428913 / 35 hits
+trk#22
+trk#23
+trk#24   looking at michel (e+) / mcp::TrackID: 63688 / 0 hits
+trk#25
+trk#26   looking at michel (e-) / mcp::TrackID: 377517 / 0 hits
+trk#27
+trk#28
+trk#29   looking at michel (e+) / mcp::TrackID: 123966 / 104 hits
+trk#30
+trk#31   looking at michel (e+) / mcp::TrackID: 591282 / 0 hits
+trk#32   looking at michel (e-) / mcp::TrackID: 499534 / 0 hits
+trk#33   looking at michel (e+) / mcp::TrackID: 383509 / 0 hits
+trk#34   looking at michel (e+) / mcp::TrackID: 210222 / 0 hits
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+
+[3rd record] run: 8667 subRun: 906 event: 883
+trk#0   looking at michel (e+) / mcp::TrackID: 87564 / 1 hits
+trk#1   looking at michel (e+) / mcp::TrackID: 102708 / 60 hits
 trk#2
 trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 349220 / 0 hits
+trk#5   looking at michel (e+) / mcp::TrackID: 357251 / 0 hits
 trk#6
-trk#11
-trk#12
-trk#14
-trk#17
-trk#18
-trk#20
-trk#21
-trk#22
-trk#26
-trk#30
-trk#33
-trk#36
-trk#39
-trk#43
-trk#45
-
-[10th record] run: 8667 subRun: 906 event: 890
-trk#0
-trk#2
-trk#4
-trk#6
-trk#9
+trk#7   looking at michel (e+) / mcp::TrackID: 557067 / 0 hits
+trk#8   looking at michel (e-) / mcp::TrackID: 352006 / 0 hits
+trk#9   looking at michel (e+) / mcp::TrackID: 519229 / 0 hits
+trk#10   looking at michel (e+) / mcp::TrackID: 70000 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 361511 / 130 hits
 trk#12
 trk#13
 trk#14
+trk#15
 trk#16
 trk#17
-trk#18
+trk#18   looking at michel (e-) / mcp::TrackID: 60544 / 66 hits
+trk#19
+trk#20
 trk#21
 trk#22
 trk#23
 trk#24
-trk#25
-trk#27
+trk#25   looking at michel (e+) / mcp::TrackID: 244250 / 0 hits
+trk#26
+trk#27   looking at michel (e+) / mcp::TrackID: 348153 / 0 hits
+trk#28
+trk#29
 trk#30
 trk#31
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+
+[4th record] run: 8667 subRun: 906 event: 884
+trk#0
+trk#1   looking at michel (e+) / mcp::TrackID: 101328 / 0 hits
+trk#2
+trk#3   looking at michel (e+) / mcp::TrackID: 637427 / 0 hits
+trk#4
+trk#5   looking at michel (e+) / mcp::TrackID: 138994 / 80 hits
+trk#6
+trk#7   looking at michel (e+) / mcp::TrackID: 268604 / 0 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 597037 / 0 hits
+trk#9   looking at michel (e+) / mcp::TrackID: 98557 / 0 hits
+trk#10   looking at michel (e+) / mcp::TrackID: 149515 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 417324 / 0 hits
+trk#12
+trk#13
+trk#14   looking at michel (e+) / mcp::TrackID: 138994 / 80 hits
+trk#15   looking at michel (e+) / mcp::TrackID: 90542 / 0 hits
+trk#16   looking at michel (e-) / mcp::TrackID: 257490 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 329414 / 49 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 346227 / 88 hits
+trk#19
+trk#20   looking at michel (e+) / mcp::TrackID: 238813 / 0 hits
+trk#21   looking at michel (e+) / mcp::TrackID: 148248 / 0 hits
+trk#22   looking at michel (e+) / mcp::TrackID: 538136 / 0 hits
+trk#23   looking at michel (e+) / mcp::TrackID: 318158 / 0 hits
+trk#24   looking at michel (e+) / mcp::TrackID: 276861 / 0 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 140489 / 97 hits
+trk#26   looking at michel (e+) / mcp::TrackID: 280646 / 0 hits
+trk#27   looking at michel (e+) / mcp::TrackID: 207108 / 0 hits
+trk#28   looking at michel (e+) / mcp::TrackID: 369570 / 0 hits
+trk#29   looking at michel (e+) / mcp::TrackID: 276861 / 0 hits
+trk#30   looking at michel (e+) / mcp::TrackID: 201672 / 0 hits
+trk#31
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40   looking at michel (e-) / mcp::TrackID: 77813 / 0 hits
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
+
+[5th record] run: 8667 subRun: 906 event: 885
+trk#0   looking at michel (e+) / mcp::TrackID: 561348 / 0 hits
+trk#1
+trk#2   looking at michel (e+) / mcp::TrackID: 188115 / 112 hits
+trk#3   looking at michel (e+) / mcp::TrackID: 394634 / 0 hits
+trk#4
+trk#5   looking at michel (e-) / mcp::TrackID: 148504 / 0 hits
+trk#6
+trk#7   looking at michel (e+) / mcp::TrackID: 643561 / 39 hits
+trk#8   looking at michel (e+) / mcp::TrackID: 649847 / 76 hits
+trk#9   looking at michel (e+) / mcp::TrackID: 601518 / 0 hits
+trk#10
+trk#11
+trk#12   looking at michel (e+) / mcp::TrackID: 457546 / 0 hits
+trk#13
+trk#14   looking at michel (e-) / mcp::TrackID: 223202 / 0 hits
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 649265 / 0 hits
+trk#17
+trk#18   looking at michel (e+) / mcp::TrackID: 413668 / 0 hits
+trk#19   looking at michel (e+) / mcp::TrackID: 117790 / 59 hits
+trk#20
+trk#21
+trk#22
+trk#23   looking at michel (e+) / mcp::TrackID: 150637 / 0 hits
+trk#24   looking at michel (e-) / mcp::TrackID: 366296 / 26 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 443226 / 0 hits
+trk#26   looking at michel (e+) / mcp::TrackID: 340012 / 85 hits
+trk#27
+trk#28   looking at michel (e-) / mcp::TrackID: 540358 / 0 hits
+trk#29   looking at michel (e+) / mcp::TrackID: 228129 / 62 hits
+trk#30
+trk#31
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
+trk#83
+trk#84
+trk#85
+trk#86
+trk#87
+trk#88
+trk#89
+trk#90
+trk#91
+trk#92
+trk#93
+trk#94
+trk#95
+trk#96
+trk#97
+trk#98
+
+[6th record] run: 8667 subRun: 906 event: 886
+trk#0   looking at michel (e+) / mcp::TrackID: 179631 / 0 hits
+trk#1
+trk#2
+trk#3
+trk#4   looking at michel (e-) / mcp::TrackID: 477882 / 0 hits
+trk#5   looking at michel (e+) / mcp::TrackID: 412628 / 0 hits
+trk#6   looking at michel (e+) / mcp::TrackID: 496805 / 0 hits
+trk#7
+trk#8   looking at michel (e+) / mcp::TrackID: 76453 / 0 hits
+trk#9
+trk#10   looking at michel (e+) / mcp::TrackID: 421535 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 464403 / 0 hits
+trk#12
+trk#13   looking at michel (e+) / mcp::TrackID: 442659 / 29 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 433379 / 0 hits
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 375623 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 225413 / 83 hits
+trk#18
+trk#19   looking at michel (e+) / mcp::TrackID: 453052 / 0 hits
+trk#20
+trk#21   looking at michel (e+) / mcp::TrackID: 427231 / 0 hits
+trk#22
+trk#23   looking at michel (e+) / mcp::TrackID: 155644 / 0 hits
+trk#24   looking at michel (e+) / mcp::TrackID: 605818 / 71 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 47114 / 94 hits
+trk#26
+trk#27
+trk#28
+trk#29
+trk#30   looking at michel (e-) / mcp::TrackID: 307579 / 0 hits
+trk#31   looking at michel (e+) / mcp::TrackID: 342233 / 0 hits
+trk#32   looking at michel (e+) / mcp::TrackID: 197449 / 0 hits
+trk#33
+trk#34   looking at michel (e-) / mcp::TrackID: 560820 / 0 hits
+trk#35   looking at michel (e+) / mcp::TrackID: 457563 / 110 hits
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+
+[7th record] run: 8667 subRun: 906 event: 887
+trk#0
+trk#1   looking at michel (e+) / mcp::TrackID: 60352 / 0 hits
+trk#2   looking at michel (e+) / mcp::TrackID: 304010 / 0 hits
+trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 540516 / 0 hits
+trk#5   looking at michel (e+) / mcp::TrackID: 185379 / 0 hits
+trk#6   looking at michel (e-) / mcp::TrackID: 699993 / 0 hits
+trk#7   looking at michel (e+) / mcp::TrackID: 145205 / 0 hits
+trk#8
+trk#9
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 427116 / 0 hits
+trk#12   looking at michel (e+) / mcp::TrackID: 236368 / 0 hits
+trk#13   looking at michel (e+) / mcp::TrackID: 273681 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 635237 / 0 hits
+trk#15   looking at michel (e-) / mcp::TrackID: 400539 / 0 hits
+trk#16   looking at michel (e+) / mcp::TrackID: 206250 / 0 hits
+trk#17
+trk#18
+trk#19   looking at michel (e+) / mcp::TrackID: 245066 / 0 hits
+trk#20   looking at michel (e+) / mcp::TrackID: 255879 / 10 hits
+trk#21
+trk#22
+trk#23   looking at michel (e+) / mcp::TrackID: 379373 / 0 hits
+trk#24
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 245066 / 0 hits
+trk#27   looking at michel (e-) / mcp::TrackID: 135260 / 0 hits
+trk#28   looking at michel (e+) / mcp::TrackID: 348067 / 0 hits
+trk#29   looking at michel (e+) / mcp::TrackID: 42584 / 0 hits
+trk#30   looking at michel (e+) / mcp::TrackID: 451108 / 0 hits
+trk#31   looking at michel (e-) / mcp::TrackID: 399052 / 0 hits
+trk#32
+trk#33   looking at michel (e+) / mcp::TrackID: 408568 / 0 hits
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+
+[8th record] run: 8667 subRun: 906 event: 888
+trk#0
+trk#1
+trk#2   looking at michel (e-) / mcp::TrackID: 352270 / 0 hits
+trk#3
+trk#4
+trk#5
+trk#6
+trk#7   looking at michel (e+) / mcp::TrackID: 472993 / 0 hits
+trk#8
+trk#9
+trk#10   looking at michel (e-) / mcp::TrackID: 68326 / 0 hits
+trk#11   looking at michel (e+) / mcp::TrackID: 667410 / 0 hits
+trk#12
+trk#13
+trk#14
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 683400 / 80 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 382152 / 0 hits
+trk#18   looking at michel (e-) / mcp::TrackID: 440143 / 0 hits
+trk#19
+trk#20   looking at michel (e+) / mcp::TrackID: 418683 / 0 hits
+trk#21   looking at michel (e+) / mcp::TrackID: 622066 / 0 hits
+trk#22
+trk#23
+trk#24   looking at michel (e+) / mcp::TrackID: 99316 / 0 hits
+trk#25
+trk#26   looking at michel (e-) / mcp::TrackID: 274802 / 0 hits
+trk#27
+trk#28   looking at michel (e+) / mcp::TrackID: 193545 / 0 hits
+trk#29
+trk#30
+trk#31
+trk#32   looking at michel (e+) / mcp::TrackID: 415962 / 41 hits
+trk#33
+trk#34
+trk#35
+trk#36   looking at michel (e+) / mcp::TrackID: 4064 / 0 hits
+trk#37
+trk#38   looking at michel (e+) / mcp::TrackID: 25527 / 0 hits
+trk#39   looking at michel (e+) / mcp::TrackID: 78331 / 0 hits
+trk#40   looking at michel (e+) / mcp::TrackID: 382152 / 0 hits
+trk#41   looking at michel (e-) / mcp::TrackID: 485184 / 0 hits
+trk#42   looking at michel (e+) / mcp::TrackID: 563723 / 0 hits
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
+trk#83
+trk#84
+trk#85
+trk#86
+trk#87
+trk#88
+trk#89
+trk#90
+trk#91
+trk#92
+trk#93
+trk#94
+trk#95
+trk#96
+trk#97
+
+[9th record] run: 8667 subRun: 906 event: 889
+trk#0   looking at michel (e+) / mcp::TrackID: 383083 / 0 hits
+trk#1   looking at michel (e+) / mcp::TrackID: 68931 / 0 hits
+trk#2   looking at michel (e+) / mcp::TrackID: 191351 / 75 hits
+trk#3   looking at michel (e-) / mcp::TrackID: 484881 / 0 hits
+trk#4
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 426624 / 1 hits
+trk#7
+trk#8
+trk#9
+trk#10
+trk#11   looking at michel (e+) / mcp::TrackID: 521895 / 101 hits
+trk#12   looking at michel (e+) / mcp::TrackID: 193029 / 0 hits
+trk#13
+trk#14   looking at michel (e+) / mcp::TrackID: 100125 / 0 hits
+trk#15
+trk#16
+trk#17   looking at michel (e+) / mcp::TrackID: 191351 / 75 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 462274 / 0 hits
+trk#19
+trk#20   looking at michel (e+) / mcp::TrackID: 570237 / 0 hits
+trk#21   looking at michel (e+) / mcp::TrackID: 479395 / 0 hits
+trk#22   looking at michel (e+) / mcp::TrackID: 218930 / 0 hits
+trk#23
+trk#24
+trk#25
+trk#26   looking at michel (e+) / mcp::TrackID: 462274 / 0 hits
+trk#27
+trk#28
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 343958 / 118 hits
+trk#31
+trk#32
+trk#33   looking at michel (e+) / mcp::TrackID: 439143 / 0 hits
+trk#34
+trk#35
+trk#36   looking at michel (e-) / mcp::TrackID: 15689 / 0 hits
+trk#37
+trk#38
+trk#39   looking at michel (e-) / mcp::TrackID: 15689 / 0 hits
+trk#40
+trk#41
+trk#42
+trk#43   looking at michel (e+) / mcp::TrackID: 191351 / 75 hits
+trk#44
+trk#45   looking at michel (e+) / mcp::TrackID: 445287 / 0 hits
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
+trk#83
+trk#84
+trk#85
+trk#86
+trk#87
+trk#88
+trk#89
+trk#90
+trk#91
+trk#92
+
+[10th record] run: 8667 subRun: 906 event: 890
+trk#0   looking at michel (e+) / mcp::TrackID: 87211 / 0 hits
+trk#1
+trk#2   looking at michel (e-) / mcp::TrackID: 497292 / 0 hits
+trk#3
+trk#4   looking at michel (e+) / mcp::TrackID: 458071 / 0 hits
+trk#5
+trk#6   looking at michel (e+) / mcp::TrackID: 325678 / 0 hits
+trk#7
+trk#8
+trk#9   looking at michel (e+) / mcp::TrackID: 322876 / 70 hits
+trk#10
+trk#11
+trk#12   looking at michel (e+) / mcp::TrackID: 263261 / 10 hits
+trk#13   looking at michel (e+) / mcp::TrackID: 104301 / 0 hits
+trk#14   looking at michel (e+) / mcp::TrackID: 131488 / 111 hits
+trk#15
+trk#16   looking at michel (e+) / mcp::TrackID: 112957 / 0 hits
+trk#17   looking at michel (e+) / mcp::TrackID: 265025 / 0 hits
+trk#18   looking at michel (e+) / mcp::TrackID: 594462 / 0 hits
+trk#19
+trk#20
+trk#21   looking at michel (e+) / mcp::TrackID: 610483 / 0 hits
+trk#22   looking at michel (e+) / mcp::TrackID: 654626 / 61 hits
+trk#23   looking at michel (e-) / mcp::TrackID: 572170 / 0 hits
+trk#24   looking at michel (e+) / mcp::TrackID: 11293 / 0 hits
+trk#25   looking at michel (e+) / mcp::TrackID: 670812 / 65 hits
+trk#26
+trk#27   looking at michel (e+) / mcp::TrackID: 604666 / 90 hits
+trk#28
+trk#29
+trk#30   looking at michel (e+) / mcp::TrackID: 188103 / 10 hits
+trk#31   looking at michel (e+) / mcp::TrackID: 439371 / 0 hits
+trk#32
+trk#33
+trk#34
+trk#35
+trk#36
+trk#37
+trk#38
+trk#39
+trk#40
+trk#41
+trk#42
+trk#43
+trk#44
+trk#45
+trk#46
+trk#47
+trk#48
+trk#49
+trk#50
+trk#51
+trk#52
+trk#53
+trk#54
+trk#55
+trk#56
+trk#57
+trk#58
+trk#59
+trk#60
+trk#61
+trk#62
+trk#63
+trk#64
+trk#65
+trk#66
+trk#67
+trk#68
+trk#69
+trk#70
+trk#71
+trk#72
+trk#73
+trk#74
+trk#75
+trk#76
+trk#77
+trk#78
+trk#79
+trk#80
+trk#81
+trk#82
 
 

@@ -1,0 +1,89 @@
+[#18659] (from 'cosmicgenerator::SinglesGen' particle #328) ID=2855: mu+ mass=0.105658 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via primary by the gods at ( -626.019, 865, 919.467; -199904 ) cm with momentum ( 1.29314, -0.84041, -1.10777; 1.90179 ) GeV/c
+  ends by Decay at ( 208.021, 348.644, 169.336; -198214 ) cm with momentum ( 0, 0, -0; 0.105658 ) GeV/c into 288 particles from ID=337153 to ID=337440
+  comes with a trajectory 1234.89 cm long in 2 points:
+      ( -626.019, 865, 919.467; -199904 ) -- ( 208.021, 348.644, 169.336; -198214 )
+
+
+
+
+[#353242] (from 'cosmicgenerator::SinglesGen') ID=337440: e+ mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via Decay from ID=2855 at ( 208.021, 348.644, 169.336; -198214 ) cm with momentum ( -0.0432486, 0.0172825, 0.0225135; 0.0517324 ) GeV/c
+  ends by annihil at ( 195.735, 348.311, 179.205; -198213 ) cm with momentum ( -0, 0, 0; 0.000510999 ) GeV/c into 16 particles from ID=337441 to ID=337456
+  comes with a trajectory 15.7629 cm long in 2 points:
+      ( 208.021, 348.644, 169.336; -198214 ) -- ( 195.735, 348.311, 179.205; -198213 )
+
+
+
+
+  [#329293] (from 'cosmicgenerator::SinglesGen') ID=313490: e- mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via muMinusCaptureAtRest from ID=2907 at ( 55.2786, 111.028, 214.451; -665925 ) cm with momentum ( 0.0282479, -0.0266109, 0.0290734; 0.0484934 ) GeV/c
+  ends by eIoni at ( 61.9466, 96.268, 219.158; -665924 ) cm with momentum ( 0, 0, -0; 0.000510999 ) GeV/c into 17 particles from ID=313493 to ID=313509
+  comes with a trajectory 16.8663 cm long in 2 points:
+      ( 55.2786, 111.028, 214.451; -665925 ) -- ( 61.9466, 96.268, 219.158; -665924 )
+
+
+
+
+[#105943] (from 'cosmicgenerator::SinglesGen') ID=90139: e- mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via muMinusCaptureAtRest from ID=3123 at ( -228.618, 19.5502, 446.615; -1.12291e+06 ) cm with momentum ( 0.0171356, 0.0226529, -0.0274927; 0.0395335 ) GeV/c
+  ends by eIoni at ( -223.29, 28.8197, 434.832; -1.12291e+06 ) cm with momentum ( -0, -0, 0; 0.000510999 ) GeV/c into 10 particles from ID=90142 to ID=90151
+  comes with a trajectory 15.9105 cm long in 2 points:
+      ( -228.618, 19.5502, 446.615; -1.12291e+06 ) -- ( -223.29, 28.8197, 434.832; -1.12291e+06 )
+
+
+
+
+[#480875] (from 'cosmicgenerator::SinglesGen') ID=465073: e- mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via muMinusCaptureAtRest from ID=2724 at ( 319.931, 235.167, 300.301; 442658 ) cm with momentum ( 0.00292736, -0.0507965, 0.00115305; 0.0508965 ) GeV/c
+  ends by eIoni at ( 319.386, 230.239, 301.285; 442658 ) cm with momentum ( -0, 0, -0; 0.000510999 ) GeV/c into 6 particles from ID=465076 to ID=465081
+  comes with a trajectory 5.05519 cm long in 2 points:
+      ( 319.931, 235.167, 300.301; 442658 ) -- ( 319.386, 230.239, 301.285; 442658 )
+
+
+
+
+
+[#365567] (from 'cosmicgenerator::SinglesGen') ID=349765: e+ mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via Decay from ID=2842 at ( 1219.57, -1106.49, 433.974; -1.32846e+06 ) cm with momentum ( 0.00729791, 0.0267963, 0.0312847; 0.0418365 ) GeV/c
+  ends by annihil at ( 1222.98, -1103.07, 438.47; -1.32846e+06 ) cm with momentum ( -0, 0, 0; 0.000510999 ) GeV/c into 11 particles from ID=349766 to ID=349776
+  comes with a trajectory 6.59949 cm long in 2 points:
+      ( 1219.57, -1106.49, 433.974; -1.32846e+06 ) -- ( 1222.98, -1103.07, 438.47; -1.32846e+06 )
+
+
+
+
+[#648268] (from 'cosmicgenerator::SinglesGen') ID=632469: e+ mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via Decay from ID=2578 at ( 447.446, -555.704, -784.972; -1.30955e+06 ) cm with momentum ( -0.0167895, 0.0111775, -0.0163582; 0.0259745 ) GeV/c
+  ends by annihil at ( 445.032, -553.979, -789.737; -1.30955e+06 ) cm with momentum ( 0, 0, 0; 0.000510999 ) GeV/c into 11 particles from ID=632470 to ID=632480
+  comes with a trajectory 5.61316 cm long in 2 points:
+      ( 447.446, -555.704, -784.972; -1.30955e+06 ) -- ( 445.032, -553.979, -789.737; -1.30955e+06 )
+
+
+
+
+
+[#47877] (from 'cosmicgenerator::SinglesGen') ID=32073: e+ mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via Decay from ID=3200 at ( 305.897, 129.814, 278.766; -614537 ) cm with momentum ( -0.0222941, 0.0156032, -0.00433791; 0.0275602 ) GeV/c
+  ends by annihil at ( 298.239, 131.683, 275.719; -614537 ) cm with momentum ( 0, -0, -0; 0.000510999 ) GeV/c into 17 particles from ID=32074 to ID=32090
+  comes with a trajectory 8.45148 cm long in 2 points:
+      ( 305.897, 129.814, 278.766; -614537 ) -- ( 298.239, 131.683, 275.719; -614537 )
+
+
+
+
+
+......
+
+
+
+[#353987] (from 'cosmicgenerator::SinglesGen') ID=338185: e+ mass=0.000510999 GeV/c2  status=1 (stable final state); generator vertex ( 0, 0, 0; 0 )
+  created via Decay from ID=2854 at ( 278.049, 201.947, 30.6628; 503452 ) cm with momentum ( -0.0264699, 0.0174324, 0.024576; 0.0401096 ) GeV/c
+  ends by annihil at ( 272.799, 204.727, 35.1728; 503452 ) cm with momentum ( 0, -0, -0; 0.000510999 ) GeV/c into 17 particles from ID=338186 to ID=338202
+  comes with a trajectory 7.45886 cm long in 2 points:
+      ( 278.049, 201.947, 30.6628; 503452 ) -- ( 272.799, 204.727, 35.1728; 503452 )
+
+
+
+
+
