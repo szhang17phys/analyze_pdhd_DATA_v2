@@ -69,7 +69,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     TObject* obj;
     TCanvas canvas("batch_canvas", "Canvas for Saving", 800, 600);
     
-    TH1D* peakStatistics = new TH1D("peak_statistics", "Peak Locations Distribution", 100, 0, 1000);
+    TH1D* peakStatistics = new TH1D("peak_statistics", "Peak Locations Distribution", 1024, 0, 1024);
     // Vector to collect peak positions from "ch" waveforms for the merged histogram
     std::vector<double> allPeakPositions2;
     
@@ -191,7 +191,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
             }
         }
         
-        TH1D* peakStatistics2 = new TH1D("peak_statistics_2", "Merged Peak Locations Distribution", 100, 0, 1000);
+        TH1D* peakStatistics2 = new TH1D("peak_statistics_2", "Merged Peak Locations Distribution", 1024, 0, 1024);
         for (auto val : mergedPeakValues) {
             peakStatistics2->Fill(val);
         }
@@ -207,6 +207,6 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
 }
 
 void peakWVF_finder_single() {
-    const char* inputFile = "../../../../t0_rootFiles/data/small_test/decon_wvfs/event92832_run28867.root";
+    const char* inputFile = "../../../../t0_rootFiles/data/small_test/decon_wvfs/run28870_0022_dataflow7_event5671.root";
     processAllHistograms(inputFile, 0.1);
 };
