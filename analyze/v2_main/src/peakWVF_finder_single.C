@@ -113,7 +113,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     // Process the "hwftot" histogram if present
     if (inputFile->Get("hwftot")) {
         TH1D* hwftotHist = (TH1D*)inputFile->Get("hwftot");
-        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.7);//threshold as 0.7---
+        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.5);//threshold as 0.5---
         std::cout << "\n\n------Detected " << hwftotPeaks.size() << " peaks in hwftot:------" << std::endl;
         
         std::vector<double> hwftotPeakX, hwftotPeakY;
@@ -207,6 +207,6 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
 }
 
 void peakWVF_finder_single() {
-    const char* inputFile = "../../../../t0_rootFiles/data/small_test/decon_wvfs/run28870_0022_dataflow7_event5671.root";
+    const char* inputFile = "../../../../t0_rootFiles/data/small_test/decon_wvfs/event92832_run28867.root";
     processAllHistograms(inputFile, 0.1);
 };

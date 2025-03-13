@@ -1,0 +1,384 @@
+Found 47 ROOT files in ../../../../t0_rootFiles/data/small_test/wvf_extract/
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85764_trackID11.root
+dtNdot0408690ms: 1 histograms, opchs: [114]
+dtNdot0244850ms: 1 histograms, opchs: [113]
+dtNdot0902770ms: 1 histograms, opchs: [112]
+Selecting group: dtNdot0408690ms with 1 histograms, opchs: [114]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85764_trackID11_opNum1.root
+Selecting group: dtNdot0244850ms with 1 histograms, opchs: [113]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85764_trackID11_opNum1_2.root
+Selecting group: dtNdot0902770ms with 1 histograms, opchs: [112]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85764_trackID11_opNum1_3.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85823_trackID0.root
+dtNdot0399801ms: 5 histograms, opchs: [88, 89, 99, 108, 109]
+dtNdot0576441ms: 1 histograms, opchs: [99]
+dtPdot0212039ms: 1 histograms, opchs: [88]
+dtNdot0571321ms: 1 histograms, opchs: [88]
+Selecting group: dtNdot0399801ms with 5 histograms, opchs: [88, 89, 99, 108, 109]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85823_trackID0_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event9328_trackID7.root
+dtNdot0904518ms: 9 histograms, opchs: [36, 37, 38, 46, 47, 48, 56, 57, 58]
+dtNdot0412998ms: 2 histograms, opchs: [38, 46]
+Selecting group: dtNdot0904518ms with 9 histograms, opchs: [36, 37, 38, 46, 47, 48, 56, 57, 58]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event9328_trackID7_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event18825_trackID25.root
+dtNdot0359324ms: 5 histograms, opchs: [101, 102, 111, 112, 113]
+Selecting group: dtNdot0359324ms with 5 histograms, opchs: [101, 102, 111, 112, 113]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event18825_trackID25_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event8833_trackID1.root
+dtNdot0507067ms: 4 histograms, opchs: [99, 108, 109, 118]
+dtNdot0509627ms: 1 histograms, opchs: [119]
+Selecting group: dtNdot0507067ms with 4 histograms, opchs: [99, 108, 109, 118]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event8833_trackID1_opNum4.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85612_trackID16.root
+dtNdot0673810ms: 8 histograms, opchs: [25, 26, 27, 36, 37, 45, 46, 47]
+dtNdot0317970ms: 1 histograms, opchs: [37]
+dtNdot0320530ms: 1 histograms, opchs: [25]
+dtNdot0312850ms: 6 histograms, opchs: [26, 35, 36, 45, 46, 47]
+dtNdot0676370ms: 1 histograms, opchs: [35]
+Selecting group: dtNdot0673810ms with 8 histograms, opchs: [25, 26, 27, 36, 37, 45, 46, 47]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85612_trackID16_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22102_trackID4.root
+dtNdot0527649ms: 3 histograms, opchs: [93, 94, 113]
+dtNdot1313569ms: 1 histograms, opchs: [115]
+Selecting group: dtNdot0527649ms with 3 histograms, opchs: [93, 94, 113]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22102_trackID4_opNum3.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event31854_trackID4.root
+dtPdot0487701ms: 9 histograms, opchs: [45, 46, 47, 55, 56, 57, 65, 66, 67]
+dtNdot0582379ms: 8 histograms, opchs: [45, 46, 47, 56, 57, 65, 66, 67]
+dtNdot0433899ms: 1 histograms, opchs: [55]
+dtNdot0369899ms: 1 histograms, opchs: [56]
+dtPdot0226581ms: 1 histograms, opchs: [46]
+Selecting group: dtPdot0487701ms with 9 histograms, opchs: [45, 46, 47, 55, 56, 57, 65, 66, 67]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event31854_trackID4_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event13662_trackID9.root
+dtNdot0394467ms: 8 histograms, opchs: [16, 17, 18, 26, 27, 28, 37, 38]
+dtNdot1054948ms: 7 histograms, opchs: [18, 26, 27, 28, 36, 37, 38]
+dtNdot0471267ms: 1 histograms, opchs: [36]
+Selecting group: dtNdot0394467ms with 8 histograms, opchs: [16, 17, 18, 26, 27, 28, 37, 38]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event13662_trackID9_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event18849_trackID1.root
+dtNdot0567007ms: 7 histograms, opchs: [37, 38, 39, 48, 49, 57, 58]
+Selecting group: dtNdot0567007ms with 7 histograms, opchs: [37, 38, 39, 48, 49, 57, 58]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event18849_trackID1_opNum7.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event4090_trackID2.root
+dtNdot0326243ms: 4 histograms, opchs: [96, 106, 108, 118]
+Selecting group: dtNdot0326243ms with 4 histograms, opchs: [96, 106, 108, 118]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event4090_trackID2_opNum4.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event3994_trackID25.root
+dtPdot0044778ms: 5 histograms, opchs: [104, 105, 106, 114, 115]
+Selecting group: dtPdot0044778ms with 5 histograms, opchs: [104, 105, 106, 114, 115]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event3994_trackID25_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event18785_trackID5.root
+dtNdot0441925ms: 3 histograms, opchs: [88, 108, 109]
+dtNdot0756806ms: 5 histograms, opchs: [88, 89, 99, 108, 109]
+Selecting group: dtNdot0756806ms with 5 histograms, opchs: [88, 89, 99, 108, 109]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event18785_trackID5_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85604_trackID7.root
+dtNdot0191892ms: 8 histograms, opchs: [94, 95, 96, 104, 105, 106, 114, 115]
+dtNdot0406932ms: 1 histograms, opchs: [96]
+Selecting group: dtNdot0191892ms with 8 histograms, opchs: [94, 95, 96, 104, 105, 106, 114, 115]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85604_trackID7_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event91438_trackID12.root
+dtNdot0853766ms: 8 histograms, opchs: [22, 23, 24, 32, 33, 42, 43, 44]
+Selecting group: dtNdot0853766ms with 8 histograms, opchs: [22, 23, 24, 32, 33, 42, 43, 44]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event91438_trackID12_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85855_trackID8.root
+dtNdot0926190ms: 8 histograms, opchs: [55, 56, 65, 66, 67, 75, 76, 77]
+Selecting group: dtNdot0926190ms with 8 histograms, opchs: [55, 56, 65, 66, 67, 75, 76, 77]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85855_trackID8_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event15537_trackID13.root
+dtNdot0518926ms: 6 histograms, opchs: [35, 36, 37, 45, 47, 55]
+Selecting group: dtNdot0518926ms with 6 histograms, opchs: [35, 36, 37, 45, 47, 55]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event15537_trackID13_opNum6.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event13694_trackID12.root
+dtPdot0014698ms: 9 histograms, opchs: [82, 83, 84, 92, 93, 94, 102, 103, 104]
+dtNdot1413780ms: 1 histograms, opchs: [102]
+dtNdot0259221ms: 4 histograms, opchs: [82, 83, 102, 103]
+dtNdot0220822ms: 1 histograms, opchs: [104]
+dtNdot0256661ms: 1 histograms, opchs: [93]
+dtNdot0197781ms: 1 histograms, opchs: [94]
+Selecting group: dtPdot0014698ms with 9 histograms, opchs: [82, 83, 84, 92, 93, 94, 102, 103, 104]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event13694_trackID12_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event8689_trackID16.root
+dtNdot0095876ms: 1 histograms, opchs: [105]
+Selecting group: dtNdot0095876ms with 1 histograms, opchs: [105]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event8689_trackID16_opNum1.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event8761_trackID21.root
+dtNdot0045269ms: 5 histograms, opchs: [102, 103, 104, 113, 114]
+Selecting group: dtNdot0045269ms with 5 histograms, opchs: [102, 103, 104, 113, 114]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event8761_trackID21_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22086_trackID5.root
+dtNdot0478609ms: 3 histograms, opchs: [108, 118, 119]
+dtNdot0432529ms: 1 histograms, opchs: [109]
+Selecting group: dtNdot0478609ms with 3 histograms, opchs: [108, 118, 119]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22086_trackID5_opNum3.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event27616_trackID34.root
+dtPdot0437679ms: 8 histograms, opchs: [21, 22, 23, 31, 32, 33, 41, 42]
+dtNdot0076881ms: 8 histograms, opchs: [21, 22, 23, 31, 32, 33, 42, 43]
+dtPdot0268719ms: 3 histograms, opchs: [31, 41, 42]
+dtNdot0284241ms: 1 histograms, opchs: [31]
+dtNdot0146001ms: 1 histograms, opchs: [41]
+Selecting group: dtPdot0437679ms with 8 histograms, opchs: [21, 22, 23, 31, 32, 33, 41, 42]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event27616_trackID34_opNum8.root
+Selecting group: dtNdot0076881ms with 8 histograms, opchs: [21, 22, 23, 31, 32, 33, 42, 43]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event27616_trackID34_opNum8_2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event9344_trackID8.root
+dtNdot0068992ms: 1 histograms, opchs: [94]
+dtNdot0634752ms: 2 histograms, opchs: [84, 96]
+Selecting group: dtNdot0634752ms with 2 histograms, opchs: [84, 96]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event9344_trackID8_opNum2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event93206_trackID7.root
+dtNdot0657535ms: 6 histograms, opchs: [14, 15, 24, 25, 34, 35]
+dtNdot0660095ms: 1 histograms, opchs: [36]
+Selecting group: dtNdot0657535ms with 6 histograms, opchs: [14, 15, 24, 25, 34, 35]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event93206_trackID7_opNum6.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event89417_trackID4.root
+dtNdot0345469ms: 2 histograms, opchs: [106, 118]
+Selecting group: dtNdot0345469ms with 2 histograms, opchs: [106, 118]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event89417_trackID4_opNum2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event13654_trackID4.root
+dtNdot0032546ms: 3 histograms, opchs: [26, 35, 36]
+dtNdot0465186ms: 8 histograms, opchs: [25, 26, 27, 35, 36, 37, 45, 47]
+dtNdot0685346ms: 1 histograms, opchs: [26]
+dtNdot0841506ms: 6 histograms, opchs: [25, 27, 35, 37, 45, 46]
+dtNdot0035106ms: 3 histograms, opchs: [25, 45, 47]
+dtNdot0672546ms: 1 histograms, opchs: [47]
+dtNdot0467746ms: 1 histograms, opchs: [46]
+dtNdot0669986ms: 1 histograms, opchs: [46]
+dtNdot0721186ms: 1 histograms, opchs: [36]
+Selecting group: dtNdot0465186ms with 8 histograms, opchs: [25, 26, 27, 35, 36, 37, 45, 47]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event13654_trackID4_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85871_trackID1.root
+dtNdot0433187ms: 8 histograms, opchs: [81, 82, 83, 91, 93, 101, 102, 103]
+dtNdot1170467ms: 9 histograms, opchs: [81, 82, 83, 91, 92, 93, 101, 102, 103]
+dtNdot0435747ms: 1 histograms, opchs: [92]
+Selecting group: dtNdot1170467ms with 9 histograms, opchs: [81, 82, 83, 91, 92, 93, 101, 102, 103]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85871_trackID1_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event9376_trackID13.root
+dtNdot0248315ms: 9 histograms, opchs: [11, 12, 13, 21, 22, 23, 31, 32, 33]
+Selecting group: dtNdot0248315ms with 9 histograms, opchs: [11, 12, 13, 21, 22, 23, 31, 32, 33]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event9376_trackID13_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event29643_trackID9.root
+dtNdot0293682ms: 4 histograms, opchs: [38, 39, 47, 48]
+dtNdot0577842ms: 5 histograms, opchs: [37, 39, 49, 57, 58]
+dtNdot0390962ms: 4 histograms, opchs: [37, 57, 58, 59]
+dtNdot0460082ms: 1 histograms, opchs: [38]
+dtNdot0654642ms: 1 histograms, opchs: [38]
+dtNdot0470322ms: 1 histograms, opchs: [48]
+dtNdot0639282ms: 1 histograms, opchs: [48]
+dtNdot0296242ms: 1 histograms, opchs: [49]
+dtNdot0672562ms: 1 histograms, opchs: [47]
+dtNdot0580402ms: 1 histograms, opchs: [59]
+Selecting group: dtNdot0577842ms with 5 histograms, opchs: [37, 39, 49, 57, 58]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event29643_trackID9_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event93054_trackID0.root
+dtNdot0766871ms: 9 histograms, opchs: [5, 6, 7, 15, 16, 17, 25, 26, 27]
+dtNdot1399191ms: 3 histograms, opchs: [5, 15, 25]
+dtNdot1401751ms: 1 histograms, opchs: [16]
+dtNdot0170392ms: 1 histograms, opchs: [15]
+Selecting group: dtNdot0766871ms with 9 histograms, opchs: [5, 6, 7, 15, 16, 17, 25, 26, 27]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event93054_trackID0_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event9240_trackID0.root
+dtNdot0638067ms: 5 histograms, opchs: [88, 89, 99, 108, 109]
+Selecting group: dtNdot0638067ms with 5 histograms, opchs: [88, 89, 99, 108, 109]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event9240_trackID0_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event25311_trackID37.root
+dtPdot0117843ms: 8 histograms, opchs: [84, 85, 94, 95, 96, 104, 105, 106]
+dtNdot0094637ms: 1 histograms, opchs: [96]
+Selecting group: dtPdot0117843ms with 8 histograms, opchs: [84, 85, 94, 95, 96, 104, 105, 106]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event25311_trackID37_opNum8.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event9288_trackID23.root
+dtNdot0168828ms: 6 histograms, opchs: [17, 19, 29, 37, 38, 39]
+dtNdot0171389ms: 2 histograms, opchs: [18, 27]
+Selecting group: dtNdot0168828ms with 6 histograms, opchs: [17, 19, 29, 37, 38, 39]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event9288_trackID23_opNum6.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event23036_trackID10.root
+dtNdot0357840ms: 4 histograms, opchs: [80, 82, 91, 100]
+dtNdot0360400ms: 1 histograms, opchs: [90]
+Selecting group: dtNdot0357840ms with 4 histograms, opchs: [80, 82, 91, 100]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event23036_trackID10_opNum4.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event31918_trackID12.root
+dtNdot0724163ms: 2 histograms, opchs: [32, 34]
+dtPdot0077117ms: 1 histograms, opchs: [44]
+dtNdot0726723ms: 1 histograms, opchs: [44]
+Selecting group: dtNdot0724163ms with 2 histograms, opchs: [32, 34]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event31918_trackID12_opNum2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event85804_trackID13.root
+dtPdot0429983ms: 5 histograms, opchs: [42, 51, 52, 61, 62]
+dtNdot1016417ms: 1 histograms, opchs: [40]
+Selecting group: dtPdot0429983ms with 5 histograms, opchs: [42, 51, 52, 61, 62]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event85804_trackID13_opNum5.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event8769_trackID15.root
+dtPdot0027814ms: 8 histograms, opchs: [34, 35, 36, 44, 45, 54, 55, 56]
+dtNdot0384346ms: 4 histograms, opchs: [34, 44, 54, 55]
+dtNdot0660826ms: 8 histograms, opchs: [34, 35, 36, 44, 45, 46, 55, 56]
+dtNdot0386906ms: 3 histograms, opchs: [35, 45, 56]
+dtNdot0873305ms: 3 histograms, opchs: [35, 36, 44]
+dtPdot0483494ms: 5 histograms, opchs: [44, 45, 54, 55, 56]
+dtNdot0033626ms: 1 histograms, opchs: [46]
+dtNdot0663386ms: 1 histograms, opchs: [54]
+Selecting group: dtPdot0027814ms with 8 histograms, opchs: [34, 35, 36, 44, 45, 54, 55, 56]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event8769_trackID15_opNum8.root
+Selecting group: dtNdot0660826ms with 8 histograms, opchs: [34, 35, 36, 44, 45, 46, 55, 56]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event8769_trackID15_opNum8_2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event91430_trackID11.root
+dtPdot0347498ms: 9 histograms, opchs: [83, 84, 85, 93, 94, 95, 103, 104, 105]
+dtNdot0248982ms: 3 histograms, opchs: [93, 94, 95]
+Selecting group: dtPdot0347498ms with 9 histograms, opchs: [83, 84, 85, 93, 94, 95, 103, 104, 105]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event91430_trackID11_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event31782_trackID5.root
+dtNdot0552537ms: 7 histograms, opchs: [27, 28, 29, 37, 38, 39, 47]
+dtNdot0388697ms: 1 histograms, opchs: [49]
+dtNdot0616537ms: 1 histograms, opchs: [49]
+dtNdot0386138ms: 1 histograms, opchs: [47]
+dtNdot0445017ms: 1 histograms, opchs: [48]
+dtNdot0629337ms: 1 histograms, opchs: [48]
+Selecting group: dtNdot0552537ms with 7 histograms, opchs: [27, 28, 29, 37, 38, 39, 47]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event31782_trackID5_opNum7.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22246_trackID3.root
+dtNdot0297791ms: 1 histograms, opchs: [118]
+dtNdot0776510ms: 3 histograms, opchs: [108, 118, 119]
+dtNdot0300350ms: 4 histograms, opchs: [99, 108, 109, 119]
+Selecting group: dtNdot0300350ms with 4 histograms, opchs: [99, 108, 109, 119]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22246_trackID3_opNum4.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22158_trackID21.root
+dtPdot0256410ms: 2 histograms, opchs: [88, 108]
+dtNdot0450150ms: 2 histograms, opchs: [88, 89]
+dtNdot1061990ms: 1 histograms, opchs: [89]
+Selecting group: dtPdot0256410ms with 2 histograms, opchs: [88, 108]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22158_trackID21_opNum2.root
+Selecting group: dtNdot0450150ms with 2 histograms, opchs: [88, 89]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22158_trackID21_opNum2_2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22908_trackID1.root
+dtNdot0371835ms: 9 histograms, opchs: [27, 28, 29, 37, 38, 39, 47, 48, 49]
+dtNdot1093755ms: 3 histograms, opchs: [37, 48, 49]
+Selecting group: dtNdot0371835ms with 9 histograms, opchs: [27, 28, 29, 37, 38, 39, 47, 48, 49]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22908_trackID1_opNum9.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event15593_trackID12.root
+dtNdot0280566ms: 4 histograms, opchs: [85, 94, 95, 105]
+dtNdot1332726ms: 7 histograms, opchs: [84, 85, 94, 95, 104, 105, 106]
+dtNdot0278006ms: 1 histograms, opchs: [104]
+dtNdot1127926ms: 1 histograms, opchs: [84]
+dtNdot0050166ms: 1 histograms, opchs: [106]
+dtNdot0836086ms: 1 histograms, opchs: [85]
+Selecting group: dtNdot1332726ms with 7 histograms, opchs: [84, 85, 94, 95, 104, 105, 106]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event15593_trackID12_opNum7.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event31958_trackID5.root
+dtNdot0043288ms: 3 histograms, opchs: [105, 106, 115]
+dtPdot0179432ms: 1 histograms, opchs: [115]
+Selecting group: dtNdot0043288ms with 3 histograms, opchs: [105, 106, 115]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event31958_trackID5_opNum3.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event92162_trackID3.root
+dtNdot0278120ms: 2 histograms, opchs: [105, 106]
+dtNdot0280680ms: 1 histograms, opchs: [115]
+Selecting group: dtNdot0278120ms with 2 histograms, opchs: [105, 106]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event92162_trackID3_opNum2.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22110_trackID9.root
+dtNdot0514079ms: 3 histograms, opchs: [85, 96, 105]
+dtNdot0979999ms: 1 histograms, opchs: [85]
+dtNdot0977439ms: 1 histograms, opchs: [95]
+dtNdot0516639ms: 1 histograms, opchs: [106]
+Selecting group: dtNdot0514079ms with 3 histograms, opchs: [85, 96, 105]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22110_trackID9_opNum3.root
+
+====================================
+Processing file: ../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event22820_trackID13.root
+dtNdot0558599ms: 9 histograms, opchs: [6, 7, 8, 16, 17, 18, 26, 27, 28]
+dtNdot0893959ms: 6 histograms, opchs: [6, 17, 18, 26, 27, 28]
+dtNdot1411078ms: 1 histograms, opchs: [27]
+dtNdot0891399ms: 1 histograms, opchs: [16]
+Selecting group: dtNdot0558599ms with 9 histograms, opchs: [6, 7, 8, 16, 17, 18, 26, 27, 28]
+Saved results to ../../../../t0_rootFiles/data/small_test/merged_wvf_coincidence/wvfFind_event22820_trackID13_opNum9.root

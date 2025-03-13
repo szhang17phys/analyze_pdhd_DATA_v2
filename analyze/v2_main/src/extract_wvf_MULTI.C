@@ -135,7 +135,7 @@
             std::cout << "Matching track ID " << (*trkid)[i] << " found for event " << event << " (candidate record " << candRecord << ")!\n";
 
             // Define output file name and open a new ROOT file to save the waveforms
-            TString outputFileName = Form("../../../../t0_rootFiles/data/small_test/event_extract/extract_event%d_trackID%d.root", event, (*trkid)[i]);
+            TString outputFileName = Form("../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event%d_trackID%d.root", event, (*trkid)[i]);
             TFile file(outputFileName, "RECREATE");
 
             int nwfs = 0;  // Counter for waveforms saved
@@ -149,8 +149,9 @@
             // Loop over PDS t0 entries for waveform extraction
             for (size_t j = 0; j < pdt0->size(); ++j) {
               float dt = (*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3;
-              // Apply timing matching constraint
-              if (dt > -0.12 && dt < 0.02) {
+
+              //Apply timing matching constraint---------------------------------------
+              if (dt > -0.15 && dt < 0.05) {
                 int ch = (*pdchannel)[j];
                 // Instead of fixed channels, check if 'ch' is in allowedCh list
                 if (std::find(allowedCh.begin(), allowedCh.end(), ch) != allowedCh.end()) {

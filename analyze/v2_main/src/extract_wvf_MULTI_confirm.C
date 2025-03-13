@@ -1,7 +1,6 @@
 {
   TChain *anatree = new TChain("t0/anatree");
 
-
   //---- Read ROOT files from folder --------------------------------
   const char* directory = "../../../../t0_rootFiles/data/small_test/initial_t0Files/";
   TSystemDirectory dir(directory, directory);
@@ -21,9 +20,6 @@
   }
   //------------------------------------------------------------------
 
-
-
-
   //Grid points (opch positions) in (y, z) plane
   std::vector<double> yGrid = {578.909, 518.159, 457.409, 396.659, 335.909, 275.159, 214.41, 153.66, 92.9099, 32.16};
   std::vector<double> zGrid = {427.071, 377.921, 316.671, 267.521, 195.011, 145.861, 84.6112, 35.4612};
@@ -41,7 +37,6 @@
     {8, 18, 28, 38, 48, 58, 68, 78},
     {9, 19, 29, 39, 49, 59, 69, 79}
   };
-
 
   int run;
   int event;
@@ -80,7 +75,6 @@
   anatree->SetBranchAddress("nWF", &nWF);
   anatree->SetBranchAddress("waveform", waveform);
 
-
   TCanvas *c1 = new TCanvas("c1","c1",1200,1200);
   c1->Divide(4,4);
   c1->Print("michel.ps[");
@@ -95,10 +89,21 @@
 
   int nwfs = 0;
 
-  //iEntry: event---
+  // Variable to keep track of the current file being processed
+  std::string prevFileName = "";
+
+  // iEntry: event---
   for(int iEntry = 0; anatree->LoadTree(iEntry) >=0; ++iEntry){
 
     anatree->GetEntry(iEntry);
+
+    // Print the ROOT file name each time a new file is encountered.
+    TFile *currFile = anatree->GetCurrentFile();
+    std::string currFileName = currFile->GetName();
+    if (currFileName != prevFileName) {
+      std::cout << "\nProcessing ROOT file: " << currFileName << std::endl;
+      prevFileName = currFileName;
+    }
 
     //Shu: Test------
     std::cout<<"\niEntry====================: "<<iEntry<<std::endl;
@@ -113,10 +118,7 @@
       for (size_t j = 0; j<pdt0->size(); ++j){
         hdt->Fill((*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3);
       }
-
     }
-
-
 
     //Shu: loop over tracks with t0 tagging---
     for(size_t i = 0; i<pandorat0->size(); ++i){
@@ -127,24 +129,18 @@
       //30 < end_y < 580 and
       //30 < end_z < 435):
 //      if ((*michelscore)[i]>0.1 ){
-      if ((*michelscore)[i]>0.3 && (*michelhits)[i]>5 && (*endx)[i]<356 && (*endx)[i]>-356 && (*endy)[i]<580 && (*endy)[i]>30 && (*endz)[i]<435 && (*endz)[i]>30  ){
+      if ((*michelscore)[i]>=0.4 && (*michelhits)[i]>5 && (*endx)[i]<356 && (*endx)[i]>-356 && (*endy)[i]<580 && (*endy)[i]>30 && (*endz)[i]<435 && (*endz)[i]>30  ){
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;
 
         cout<<"Michel score: "<<(*michelscore)[i]<<",  Michel hits: "<<(*michelhits)[i]<<endl;
         cout<<"Run: "<<run<<",  Event: "<<event<<",  TrackID: "<<(*trkid)[i]<<endl;
+        cout<<"Start(x, y, z) = ("<<(*vtxx)[i]<<", "<<(*vtxy)[i]<<", "<<(*vtxz)[i]<<")"<<endl;//starting point!---
         cout<<"End(x, y, z) = ("<<(*endx)[i]<<", "<<(*endy)[i]<<", "<<(*endz)[i]<<")"<<endl;
 
 
-        //Check if close to APA planes------
-        if ((*endx)[i] < -156 || (*endx)[i] > 156){
-          cout<<"------------Decay close to APA planes!------------"<<endl;
-        }
-        std::cout<<"Distance to APA: "<<(356.346-std::abs((*endx)[i]))<<" cm\n"<<std::endl;
-
-
-
+        std::cout<<"Distance to (+-) APA: "<<(356.346-std::abs((*endx)[i]))<<" cm\n"<<std::endl;
 
         //opch finder-------------------------------------------------------
         //Step 1: Find the closest grid point in y---
@@ -229,10 +225,6 @@
         }
         //--------------------------------------------------------
 
-
-
-
-
         //Shu: initialize wvfs---
         for(int t = 1; t<=1024; ++t){
           hwftot->SetBinContent(t,0);//Shu: total wvfs---
@@ -245,14 +237,13 @@
         for(size_t j = 0; j<pdt0->size(); ++j){
           float dt = (*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3;
 
-          //Shu: make sure internal and external triggers are close---
+          //Shu: make sure internal and external triggers are close--------------------------------
           if(dt>-0.15 && dt < 0.05){
 
             //Shu: choose opch with good TPC & PDS matching---
             int ch = (*pdchannel)[j];
 
 //            std::cout<<"Opch: "<<ch<<"; wvf label: "<<j<<"; PDSt0: "<<(*pdt0)[j]<<"us; dt: "<<dt<<"us"<<std::endl;
-
 
             if(ch==opchSquare[0]){
               c1->cd(1);
@@ -290,7 +281,6 @@
               std::cout<<"Target Opch: "<<ch<<"; wvf label: "<<j<<"; PDSt0: "<<(*pdt0)[j]<<"us; dt: "<<dt<<"us"<<std::endl;
             }
 
-
             if(ch==opchSquare[3]){
               c1->cd(5);
               for(int k = 1; k<=1024; ++k){
@@ -327,7 +317,6 @@
               std::cout<<"Target Opch: "<<ch<<"; wvf label: "<<j<<"; PDSt0: "<<(*pdt0)[j]<<"us; dt: "<<dt<<"us"<<std::endl;
             }
 
-
             if(ch==opchSquare[6]){
               c1->cd(9);
               for(int k = 1; k<=1024; ++k){
@@ -361,19 +350,15 @@
 
             //Shu: All opch with small (tpc-pds) timing will be kept---
             hwf->Write(Form("ch%d",ch));
-
           }
 
           //Shu: Total wvf---
           c1->cd(13);
           hwftot->DrawCopy();
-
         }
       }
     }
-
   }
-
 
   c1->Print("michel.ps]");
 
@@ -386,7 +371,4 @@
   c2->Print("dt.pdf");
 
   cout<<"\nTotal events saved: "<<nwfs<<endl;
-
-
-
-}
+};
