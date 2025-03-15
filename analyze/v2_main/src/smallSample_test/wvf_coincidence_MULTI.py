@@ -3,8 +3,8 @@ import re
 import os
 
 # Directories for input and output files
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/event_wvf_extract/"
-output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/wvf_Timing_concidence/"
+input_dir = "../../../../t0_rootFiles/data/small_test/wvf_extract/"
+output_dir = "../../../../t0_rootFiles/data/small_test/noMerge_wvf_coincidence/"
 
 # Get list of all ROOT files in the input directory
 input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith(".root")]
@@ -55,7 +55,7 @@ for input_file in input_files:
     # Select all groups that have the maximum count
     max_groups = [(prefix, hists) for prefix, hists in orig_groups.items() if len(hists) == max_count]
     
-    # Extract event and trackID from the input filename.
+    # Extract event and track parts from the input filename.
     basename = os.path.basename(input_file)
     match_et = re.search(r"extract_(event\d+_trackID\d+)\.root", basename)
     if match_et:
