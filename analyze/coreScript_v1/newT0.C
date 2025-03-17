@@ -3,14 +3,8 @@
 
 
   //Shu: Do not forget to modify kMaxWF correspondingly---
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0016_dataflow2_datawriter_0_20240822T193107_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0062_dataflow1_datawriter_0_20240822T211158_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0092_dataflow4_datawriter_0_20240822T222238_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0111_dataflow0_datawriter_0_20240822T224946_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0128_dataflow6_datawriter_0_20240822T231849_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0345_dataflow4_datawriter_0_20240823T045508_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0360_dataflow1_datawriter_0_20240823T051742_michelt0.root");
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/small_test/run028867_0385_dataflow5_datawriter_0_20240823T055509_michelt0.root");
+  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/analyze_DATA_pdhd/result_server/decon_wvf/michelt0_run028059_1633_dataflow2_Decon.root");
+
 
 
   //Grid points (opch positions) in (y, z) plane
@@ -50,7 +44,7 @@
 
   int nWF;
   constexpr int kMaxWF =4000;
-  int waveform[kMaxWF][1024];
+  float waveform[kMaxWF][1024];
 
   anatree->SetBranchAddress("run", &run);
   anatree->SetBranchAddress("event", &event);
@@ -110,9 +104,11 @@
     //Shu: loop over tracks with t0 tagging---
     for(size_t i = 0; i<pandorat0->size(); ++i){
 
-      //Shu: track contains Michel e candidate---
-      if ((*michelscore)[i]>0.1 && (*endx)[i]<275.1 && (*endx)[i]>275.0){
-//      if ((*michelscore)[i]>0.1){
+
+      //Shu: track contains Michel e candidate---------------------------
+      if ((*michelscore)[i]>0.3 && (*endx)[i]<-62 && (*endx)[i]>-63){
+//      if ((*michelscore)[i]>0.3){
+      //-----------------------------------------------------------------
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;
@@ -154,7 +150,7 @@
           }
         }
 
-//        std::cout << "Closest y, z distances: " << minYDiff << ", " << minZDiff << std::endl;
+        std::cout << "Closest y, z distances: " << minYDiff << ", " << minZDiff << std::endl;
 
         //Step 3: Compute the corresponding channel number---
         int channel = closestZIndex * 10 + closestYIndex;
@@ -233,13 +229,20 @@
         for(size_t j = 0; j<pdt0->size(); ++j){
           float dt = (*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3;
 
+
+
+          //---"dt cut / wvf num cut"----------------------------------------
           //Shu: make sure internal and external triggers are close---
-          if(dt>-0.12 && dt < 0.02){
+          //dt is different for different runs!!!---
+          //Further: wider range; apply wvf num cut!!!---
+          if(dt > -0.2 && dt < 0.1){
+//          if(dt > 0.0725323 && dt < 0.0725325){
+          //-----------------------------------------------------------------
+
+
 
             //Shu: choose opch with good TPC & PDS matching---
             int ch = (*pdchannel)[j];
-
-//            std::cout<<"Opch: "<<ch<<"; wvf label: "<<j<<"; PDSt0: "<<(*pdt0)[j]<<"us; dt: "<<dt<<"us"<<std::endl;
 
 
             if(ch==opchSquare[0]){
