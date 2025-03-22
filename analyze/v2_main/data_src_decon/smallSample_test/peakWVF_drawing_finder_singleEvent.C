@@ -70,7 +70,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     TCanvas canvas("batch_canvas", "Canvas for Saving", 800, 600);
     
     TH1D* peakStatistics = new TH1D("peak_statistics", "Peak Locations Distribution", 1024, 0, 1024);
-    // Vector to collect peak positions from "ch" waveforms for the merged histogram
+    // Vector to collect peak positions from histograms containing "ch"
     std::vector<double> allPeakPositions2;
     
     while ((obj = nextKey())) {
@@ -84,12 +84,15 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
         
         std::vector<double> peakX, peakY;
         for (const auto& peak : peaks) {
-            std::cout << "Peak at bin " << peak.binIndex << ", Left Height: " << peak.leftHeight << ", Right Height: " << peak.rightHeight << std::endl;
+            std::cout << "Peak at bin " << peak.binIndex 
+                      << ", Left Height: " << peak.leftHeight 
+                      << ", Right Height: " << peak.rightHeight << std::endl;
             double peakPos = hist->GetBinCenter(peak.binIndex);
             peakX.push_back(peakPos);
             peakY.push_back(hist->GetBinContent(peak.binIndex));
-            // For "ch" waveforms, fill the original peak_statistics and also store the value for merged statistics.
-            if (histName.rfind("ch", 0) == 0) {
+            // For histograms whose name contains "ch", fill the peak_statistics histogram
+            // and collect values for merged statistics.
+            if (histName.find("ch") != std::string::npos) {
                 peakStatistics->Fill(peakPos);
                 allPeakPositions2.push_back(peakPos);
             }
@@ -113,12 +116,14 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     // Process the "hwftot" histogram if present
     if (inputFile->Get("hwftot")) {
         TH1D* hwftotHist = (TH1D*)inputFile->Get("hwftot");
-        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.5);//threshold as 0.5---
+        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.5); // threshold as 0.5
         std::cout << "\n\n------Detected " << hwftotPeaks.size() << " peaks in hwftot:------" << std::endl;
         
         std::vector<double> hwftotPeakX, hwftotPeakY;
         for (const auto& peak : hwftotPeaks) {
-            std::cout << "Peak at bin " << peak.binIndex << ", Left Height: " << peak.leftHeight << ", Right Height: " << peak.rightHeight << std::endl;
+            std::cout << "Peak at bin " << peak.binIndex 
+                      << ", Left Height: " << peak.leftHeight 
+                      << ", Right Height: " << peak.rightHeight << std::endl;
             hwftotPeakX.push_back(hwftotHist->GetBinCenter(peak.binIndex));
             hwftotPeakY.push_back(hwftotHist->GetBinContent(peak.binIndex));
         }
@@ -206,7 +211,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     std::cout << "\n\nAll histograms processed and saved in " << outputFileName << std::endl;
 }
 
-void peakWVF_finder_single() {
-    const char* inputFile = "../../../../t0_rootFiles/data/small_test/decon_wvfs/event92832_run28867.root";
+void peakWVF_drawing_finder_singleEvent() {
+    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event9328_trackID7_opNum9.root";
     processAllHistograms(inputFile, 0.1);
-};
+}
