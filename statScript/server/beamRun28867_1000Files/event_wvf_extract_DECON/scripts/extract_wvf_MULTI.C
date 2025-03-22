@@ -1,9 +1,13 @@
 {
+  //Commented by Shu (20250321):
+  //Pay attention that the variable type of DECON waveform is float, NOT int---
+
+
   // Create a TChain and add ROOT files from the directory
   TChain *anatree = new TChain("t0/anatree");
 
   //---- Read ROOT files from folder --------------------------------
-  const char* directory = "../../../../t0_rootFiles/data/small_test/initial_t0Files/";
+  const char* directory = "/pnfs/dune/scratch/users/szh2/pdhd_DATA_Michel/beamRun_28867_DECON/michelt0_1k/";
   TSystemDirectory dir(directory, directory);
   TList* fileList = dir.GetListOfFiles();
   TIterator *fileIter = fileList->MakeIterator();
@@ -24,8 +28,8 @@
   // Read candidate event and track IDs from text files
   std::vector<int> candidateEvents;
   std::vector<int> candidateTracks;
-  std::ifstream eventFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/eventID_filtered_sorted.txt");
-  std::ifstream trackFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/trackID_filtered_sorted.txt");
+  std::ifstream eventFile("./eventID_filtered_sorted.txt");
+  std::ifstream trackFile("./trackID_filtered_sorted.txt");
 
   int tempEvent, tempTrack;
   while (eventFile >> tempEvent && trackFile >> tempTrack) {
@@ -39,7 +43,7 @@
   // Read candidate allowed channels from opchs_filtered_sorted.txt.
   // Each line should contain the allowed channels (space-separated) for the corresponding candidate record.
   std::vector< std::vector<int> > candidateOpchs;
-  std::ifstream opchsFile("../../../statScript/local/beamRun28867_1000Files/applyCut_print/sorted_candidates_list/opchs_filtered_sorted.txt");
+  std::ifstream opchsFile("./opchs_filtered_sorted.txt");
   std::string line;
   while (std::getline(opchsFile, line)) {
     if(line.size() == 0) continue; // skip empty lines
@@ -67,7 +71,8 @@
   std::vector<float> *pdt0 = 0;
   int nWF;
   constexpr int kMaxWF = 4000;
-  int waveform[kMaxWF][1024];
+//  int waveform[kMaxWF][1024];
+  float waveform[kMaxWF][1024];
 
   anatree->SetBranchAddress("run", &run);
   anatree->SetBranchAddress("event", &event);
@@ -135,7 +140,7 @@
             std::cout << "Matching track ID " << (*trkid)[i] << " found for event " << event << " (candidate record " << candRecord << ")!\n";
 
             // Define output file name and open a new ROOT file to save the waveforms
-            TString outputFileName = Form("../../../../t0_rootFiles/data/small_test/wvf_extract/extract_event%d_trackID%d.root", event, (*trkid)[i]);
+            TString outputFileName = Form("/exp/dune/data/users/szh2/running_results/PDHD_keepupData_list/beamRun_28867/event_wvf_extract_DECON/extracted_files/extractDecon_event%d_trackID%d.root", event, (*trkid)[i]);
             TFile file(outputFileName, "RECREATE");
 
             int nwfs = 0;  // Counter for waveforms saved
@@ -150,7 +155,8 @@
             for (size_t j = 0; j < pdt0->size(); ++j) {
               float dt = (*pandorat0)[i]*1e-3 - (*pdt0)[j]*1e-3;
 
-              //Apply timing matching constraint---------------------------------------
+
+              //Apply timing matching constraint (IMPORTANT!)----------------------------------
               if (dt > -0.15 && dt < 0.05) {
                 int ch = (*pdchannel)[j];
                 // Instead of fixed channels, check if 'ch' is in allowedCh list
@@ -198,5 +204,5 @@
   // Draw and save the overall timing histogram
   TCanvas *cALLdt = new TCanvas("cALLdt", "cALLdt", 1000, 600);
   hdt->Draw();
-  cALLdt->Print("dt.pdf");
+  cALLdt->Print("dt_1000Files.pdf");
 }
