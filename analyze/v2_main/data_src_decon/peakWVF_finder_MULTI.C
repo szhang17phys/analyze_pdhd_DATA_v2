@@ -156,9 +156,9 @@ void processSingleFile(const char* inputFileName, double heightThreshold) {
     }
     
     // Write the results to text files (appending one line per file).
-    std::ofstream muonFile("muonTime.txt", std::ios::app);
-    std::ofstream michelTimeFile("michelTime.txt", std::ios::app);
-    std::ofstream michelCoincidenceFile("michelCoincidence.txt", std::ios::app);
+    std::ofstream muonFile("muonTime_peakFinder.txt", std::ios::app);
+    std::ofstream michelTimeFile("michelTime_peakFinder.txt", std::ios::app);
+    std::ofstream michelCoincidenceFile("michelCoincidence_peakFinder.txt", std::ios::app);
     
     if (!mergedFrequencies.empty()) {
         muonFile << inputFileName << ": " << mergedFrequencies[0].first << "\n";
