@@ -151,7 +151,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
         
         // Group adjacent values (difference between successive entries <= 1)
         for (size_t i = 1; i < allPeakPositions2.size(); ++i) {
-            if (allPeakPositions2[i] - allPeakPositions2[i-1] <= 1.0) {
+            if (allPeakPositions2[i] - allPeakPositions2[i-1] <= 2.0) {
                 currentGroup.push_back(allPeakPositions2[i]);
             } else {
                 // Compute the mode (most frequent rounded value) for the current group
@@ -212,6 +212,6 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
 }
 
 void peakWVF_drawing_finder_singleEvent() {
-    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event9328_trackID7_opNum9.root";
+    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event95410_trackID4_opNum9.root";
     processAllHistograms(inputFile, 0.1);
 }
