@@ -1,0 +1,15 @@
+time_last: True
+pass_name_through_stages: True
+art_out_base: <your_output>
+timestamp_outname: True
+justin_stage_outname: True
+justin_jobid_outname: True
+
+
+job_stages:
+  pdsdecon
+    input_from: "job"
+    fcl: protodunehd_deconvolution_run.fcl
+    nevents: 10
+    art_out: True
+    tfile_out: False
