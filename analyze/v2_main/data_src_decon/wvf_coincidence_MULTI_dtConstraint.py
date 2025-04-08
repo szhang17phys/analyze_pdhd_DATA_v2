@@ -3,8 +3,8 @@ import re
 import os
 
 # Directories for input and output files
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/event_wvf_extract/"
-output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/wvf_Timing_concidence/"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_event_wvf_extract/"
+output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvf_Timing_concidence_dtConstraint/"
 
 # Get list of all ROOT files in the input directory
 input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith(".root")]
@@ -12,6 +12,16 @@ print(f"Found {len(input_files)} ROOT files in {input_dir}")
 
 # Regex to extract histogram prefix and channel number
 pattern = re.compile(r"(dt[NP]dot\d+ms)_ch(\d+)")
+
+def parse_dt(prefix):
+    """
+    Convert a dt prefix string like "dtNdot0673810ms" or "dtPdot0027814ms" to float value in ms.
+    """
+    if not prefix.startswith("dt"):
+        return None
+    sign = -1 if prefix[2] == 'N' else 1
+    num_str = prefix[6:-2]
+    return sign * float("0." + num_str)
 
 def get_opchs(hist_list):
     """Return a sorted list of unique opch numbers from a list of (ch, key) tuples."""
@@ -40,31 +50,36 @@ for input_file in input_files:
             ch = int(ch)
             orig_groups.setdefault(prefix, []).append((ch, key))
 
-    # Print original group details
-    for prefix, hists in orig_groups.items():
+    # Filter groups based on dt timing window [-0.1, 0.02] ms
+    filtered_groups = {
+        prefix: hists for prefix, hists in orig_groups.items()
+        if -0.1 <= parse_dt(prefix) <= 0.02
+    }
+
+    # Print details of filtered groups
+    for prefix, hists in filtered_groups.items():
         opchs = get_opchs(hists)
         print(f"{prefix}: {len(hists)} histograms, opchs: {opchs}")
 
-    if not orig_groups:
-        print("No valid histograms found in", input_file, ". Skipping.")
+    if not filtered_groups:
+        print("No valid histograms in timing window for", input_file, ". Skipping.")
         f_in.Close()
         continue
 
-    # Determine the maximum number of histograms among the original groups
-    max_count = max(len(hists) for hists in orig_groups.values())
+    # Determine the maximum number of histograms among the filtered groups
+    max_count = max(len(hists) for hists in filtered_groups.values())
     # Select all groups that have the maximum count
-    max_groups = [(prefix, hists) for prefix, hists in orig_groups.items() if len(hists) == max_count]
-    
+    max_groups = [(prefix, hists) for prefix, hists in filtered_groups.items() if len(hists) == max_count]
+
     # Extract event and trackID from the input filename.
     basename = os.path.basename(input_file)
-    match_et = re.search(r"extract_(event\d+_trackID\d+)\.root", basename)
+    match_et = re.search(r"extractDecon_(event\d+_trackID\d+)\.root", basename)
     if match_et:
         event_track_part = match_et.group(1)
     else:
         event_track_part = "unknown"
-    
+
     # Output a separate ROOT file for each maximum group.
-    # The first group gets the default name, and additional ones get suffixes _2, _3, etc.
     for idx, (sel_prefix, sel_hist_list) in enumerate(max_groups):
         opchs = get_opchs(sel_hist_list)
         if idx == 0:
@@ -73,25 +88,25 @@ for input_file in input_files:
             outfile_name = f"wvfFind_{event_track_part}_opNum{len(sel_hist_list)}_{idx+1}.root"
         output_file = os.path.join(output_dir, outfile_name)
         print(f"Selecting group: {sel_prefix} with {len(sel_hist_list)} histograms, opchs: {opchs}")
-    
+
         # Open output ROOT file
         f_out = ROOT.TFile(output_file, "RECREATE")
-    
+
         # Create a unique canvas (append selected group prefix to canvas name)
         canvas_name = "c1_" + os.path.splitext(basename)[0] + f"_{sel_prefix}"
         c1 = ROOT.TCanvas(canvas_name, "Canvas", 1200, 1200)
-        c1.Divide(3, 3)  # 3x3 layout
-    
+        c1.Divide(3, 3)
+
         # Sort histograms by channel number
         sel_hist_list.sort()
-        total_hist = None  # To hold the sum of the histograms
-    
+        total_hist = None
+
         # Loop over histograms in the selected group
         for i_hist, (ch, hist_name) in enumerate(sel_hist_list):
             hist = f_in.Get(hist_name)
             if not hist:
                 continue
-            hist.SetDirectory(0)  # Detach from input file
+            hist.SetDirectory(0)
             f_out.cd()
             hist.Write()
             if total_hist is None:
@@ -99,17 +114,16 @@ for input_file in input_files:
                 total_hist.SetTitle("Summed Histogram")
             else:
                 total_hist.Add(hist)
-            # Draw on canvas pad (column-major order for a 3x3 grid)
             pad_num = ((i_hist % 3) * 3) + (i_hist // 3) + 1
             if pad_num <= 9:
                 c1.cd(pad_num)
                 hist.Draw()
-    
+
         if total_hist:
             total_hist.Write()
         f_out.cd()
         c1.Write()
         f_out.Close()
         print(f"Saved results to {output_file}")
-    
+
     f_in.Close()

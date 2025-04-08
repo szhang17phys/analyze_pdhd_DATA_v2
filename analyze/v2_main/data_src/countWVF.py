@@ -2,8 +2,8 @@ import os
 import ROOT
 
 #For results without Merge---
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/wvf_Timing_concidence"
-output_txt = "./count_wvfNum_noMerge_1k.txt"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/wvf_Timing_concidence_merged_dtConstraint"
+output_txt = "./count_wvfNum_merged_1k_dtConstraint.txt"
 
 #For results after merge---
 #input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/wvf_Timing_concidence_merged"

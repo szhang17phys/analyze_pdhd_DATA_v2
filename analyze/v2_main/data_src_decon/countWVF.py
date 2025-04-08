@@ -6,8 +6,8 @@ import ROOT
 #output_txt = "./count_wvfNum_noMerge_1k_DECON.txt"
 
 #For results after merge---
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvf_Timing_concidence_merged"
-output_txt = "./count_wvfNum_merged_1k_DECON.txt"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvf_Timing_concidence_dtConstraint"
+output_txt = "./count_wvfNum_noMerge_1k_DECON_dtConstraint.txt"
 
 # List to hold the counts from each ROOT file.
 counts = []

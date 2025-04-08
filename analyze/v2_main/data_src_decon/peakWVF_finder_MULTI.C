@@ -156,9 +156,9 @@ void processSingleFile(const char* inputFileName, double heightThreshold) {
     }
     
     // Write the results to text files (appending one line per file).
-    std::ofstream muonFile("muonTime_peakFinder.txt", std::ios::app);
-    std::ofstream michelTimeFile("michelTime_peakFinder.txt", std::ios::app);
-    std::ofstream michelCoincidenceFile("michelCoincidence_peakFinder.txt", std::ios::app);
+    std::ofstream muonFile("peakFinder_muonTime.txt", std::ios::app);
+    std::ofstream michelTimeFile("peakFinder_michelTime.txt", std::ios::app);
+    std::ofstream michelCoincidenceFile("peakFinder_michelCoincidence.txt", std::ios::app);
     
     if (!mergedFrequencies.empty()) {
         muonFile << inputFileName << ": " << mergedFrequencies[0].first << "\n";
@@ -206,6 +206,6 @@ void processDirectory(const char* directoryName, double heightThreshold) {
 
 // Main entry point: process all ROOT files in the directory one by one.
 void peakWVF_finder_MULTI() {
-    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged";
+    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged_dtConstraint";
     processDirectory(inputDirectory, 0.1);
 }
