@@ -116,7 +116,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     // Process the "hwftot" histogram if present
     if (inputFile->Get("hwftot")) {
         TH1D* hwftotHist = (TH1D*)inputFile->Get("hwftot");
-        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.5); // threshold as 0.5
+        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 1.0); // threshold as 0.5
         std::cout << "\n\n------Detected " << hwftotPeaks.size() << " peaks in hwftot:------" << std::endl;
         
         std::vector<double> hwftotPeakX, hwftotPeakY;
@@ -212,6 +212,6 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
 }
 
 void peakWVF_drawing_finder_singleEvent() {
-    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event95410_trackID4_opNum9.root";
+    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event94849_trackID1_opNum9.root";
     processAllHistograms(inputFile, 0.1);
 }

@@ -164,6 +164,6 @@ void processHistograms(const char* inputFileName, double heightThreshold) {
 
 // Main function to run the peak finder on a single file
 void peakWVF_finder_singleEvent() {
-    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event93206_trackID7_opNum5_merged.root"; // Change this to your ROOT file
+    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event94849_trackID1_opNum9.root"; // Change this to your ROOT file
     processHistograms(inputFile, 0.1);
 }
