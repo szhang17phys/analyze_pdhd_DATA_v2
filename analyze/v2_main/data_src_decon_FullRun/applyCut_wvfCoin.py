@@ -3,9 +3,12 @@ import glob
 import uproot
 import shutil
 
+#Shu: Based on merged result; 20250417---
+#Could change #wvf>=5 ---> #wvf>=4
+
 # Define source and destination directories
-source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvf_Timing_concidence_merged_dtConstraint"
-dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged_dtConstraint"
+source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k/decon_wvf_coincidence_merged"
+dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k/decon_applyCut_wvfCoin_merged"
 
 # Create destination directory if it doesn't exist
 if not os.path.exists(dest_dir):
@@ -25,8 +28,12 @@ for file_path in glob.glob(os.path.join(source_dir, "*.root")):
                     count_ms_ch += 1
 
             print(f"  Found {count_ms_ch} TH1D histograms containing 'ms_ch'.")
-            # If more than 4 such histograms, copy the file to the destination directory
+
+
+            #wvfCoin cut-----------------------------------------------------------------------
             if count_ms_ch > 4:
+
+
                 shutil.copy(file_path, dest_dir)
                 print("  File copied to destination.")
     except Exception as e:

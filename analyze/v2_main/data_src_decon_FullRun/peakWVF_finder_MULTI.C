@@ -206,6 +206,6 @@ void processDirectory(const char* directoryName, double heightThreshold) {
 
 // Main entry point: process all ROOT files in the directory one by one.
 void peakWVF_finder_MULTI() {
-    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged_dtConstraint";
+    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k/decon_applyCut_wvfCoin_merged";
     processDirectory(inputDirectory, 0.1);
 }
