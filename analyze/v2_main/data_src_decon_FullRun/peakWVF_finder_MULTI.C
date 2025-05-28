@@ -99,6 +99,9 @@ void processSingleFile(const char* inputFileName, double heightThreshold) {
         return a.first < b.first;
     });
     
+
+
+    
     // Merge frequencies for bins that are within ±2.
     std::vector<std::pair<int,int>> mergedFrequencies;
     std::vector<std::pair<int,int>> currentGroup;
@@ -127,6 +130,9 @@ void processSingleFile(const char* inputFileName, double heightThreshold) {
             }
         }
     }
+
+
+
     // Process any remaining group.
     if (!currentGroup.empty()) {
         int groupSum = 0;
