@@ -227,13 +227,17 @@ void processSingleFile(const char* inputFileName, double heightThreshold) {
             michelTimeFile << inputFileName << ": " << mergedFrequencies[1].first << "\n";
             michelCoincidenceFile << inputFileName << ": " << mergedFrequencies[1].second << "\n";
         } else {
-            michelTimeFile << inputFileName << ": N/A\n";
-            michelCoincidenceFile << inputFileName << ": N/A\n";
+//            michelTimeFile << inputFileName << ": N/A\n";
+//            michelCoincidenceFile << inputFileName << ": N/A\n";
+            michelTimeFile << inputFileName << ": 1\n";//Modified on 20250530---
+            michelCoincidenceFile << inputFileName << ": 1\n";//Modified on 20250530---
         }
     } else {
         muonFile << inputFileName << ": N/A\n";
-        michelTimeFile << inputFileName << ": N/A\n";
-        michelCoincidenceFile << inputFileName << ": N/A\n";
+//        michelTimeFile << inputFileName << ": N/A\n";
+//        michelCoincidenceFile << inputFileName << ": N/A\n";
+        michelTimeFile << inputFileName << ": 1\n";//Modified on 20250530---
+        michelCoincidenceFile << inputFileName << ": 1\n";//Modified on 20250530---
     }
     
     muonFile.close();
