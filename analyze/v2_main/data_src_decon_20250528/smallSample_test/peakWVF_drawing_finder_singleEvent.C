@@ -89,15 +89,21 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
     // Vector to collect peak positions from histograms containing "ch"
     std::vector<double> allPeakPositions2;
     
+
+
     while ((obj = nextKey())) {
         std::string histName = obj->GetName();
         TH1D* hist = (TH1D*)inputFile->Get(histName.c_str());
         if (!hist || !hist->InheritsFrom("TH1D")) continue;
-        
+
         hist->SetName(histName.c_str()); // Ensure the name remains correct
-        std::vector<Peak> peaks = findPeaks(hist, heightThreshold);
+
+        // Use fixed threshold for "total", otherwise use default--------------------------
+        double thresholdToUse = (histName == "total") ? 0.5 : heightThreshold;
+
+        std::vector<Peak> peaks = findPeaks(hist, thresholdToUse);
         std::cout << "\nDetected " << peaks.size() << " peaks in " << histName << ":" << std::endl;
-        
+
         std::vector<double> peakX, peakY;
         for (const auto& peak : peaks) {
             std::cout << "Peak at bin " << peak.binIndex 
@@ -106,6 +112,7 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
             double peakPos = hist->GetBinCenter(peak.binIndex);
             peakX.push_back(peakPos);
             peakY.push_back(hist->GetBinContent(peak.binIndex));
+
             // For histograms whose name contains "ch", fill the peak_statistics histogram
             // and collect values for merged statistics.
             if (histName.find("ch") != std::string::npos) {
@@ -113,49 +120,52 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
                 allPeakPositions2.push_back(peakPos);
             }
         }
-        
+
         hist->Write();
-        
+
         canvas.cd();
         hist->SetLineColor(kBlue);
         hist->Draw();
-        
+
         TGraph* peakMarkers = new TGraph(peakX.size(), &peakX[0], &peakY[0]);
         peakMarkers->SetMarkerStyle(20);
         peakMarkers->SetMarkerSize(1.2);
         peakMarkers->SetMarkerColor(kRed);
         peakMarkers->Draw("P SAME");
-        
+
         canvas.Write(Form("%s_peakFinded", histName.c_str()));
     }
+
+
+
     
-    // Process the "hwftot" histogram if present
-    if (inputFile->Get("hwftot")) {
-        TH1D* hwftotHist = (TH1D*)inputFile->Get("hwftot");
-        std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 1.0); // threshold as 0.5
-        std::cout << "\n\n------Detected " << hwftotPeaks.size() << " peaks in hwftot:------" << std::endl;
+    // // Process the "hwftot" histogram if present
+    // if (inputFile->Get("hwftot")) {
+    //     TH1D* hwftotHist = (TH1D*)inputFile->Get("hwftot");
+    //     std::vector<Peak> hwftotPeaks = findPeaks(hwftotHist, 0.5); // threshold as 0.5
+    //     std::cout << "\n\n------Detected " << hwftotPeaks.size() << " peaks in 'total':------" << std::endl;
         
-        std::vector<double> hwftotPeakX, hwftotPeakY;
-        for (const auto& peak : hwftotPeaks) {
-            std::cout << "Peak at bin " << peak.binIndex 
-                      << ", Left Height: " << peak.leftHeight 
-                      << ", Right Height: " << peak.rightHeight << std::endl;
-            hwftotPeakX.push_back(hwftotHist->GetBinCenter(peak.binIndex));
-            hwftotPeakY.push_back(hwftotHist->GetBinContent(peak.binIndex));
-        }
+    //     std::vector<double> hwftotPeakX, hwftotPeakY;
+    //     for (const auto& peak : hwftotPeaks) {
+    //         std::cout << "Peak at bin " << peak.binIndex 
+    //                   << ", Left Height: " << peak.leftHeight 
+    //                   << ", Right Height: " << peak.rightHeight << std::endl;
+    //         hwftotPeakX.push_back(hwftotHist->GetBinCenter(peak.binIndex));
+    //         hwftotPeakY.push_back(hwftotHist->GetBinContent(peak.binIndex));
+    //     }
         
-        TCanvas hwftotCanvas("hwftot_peakCanvas", "hwftot Peak Finding", 800, 600);
-        hwftotHist->SetLineColor(kBlue);
-        hwftotHist->Draw();
+    //     TCanvas hwftotCanvas("hwftot_peakCanvas", "hwftot Peak Finding", 800, 600);
+    //     hwftotHist->SetLineColor(kBlue);
+    //     hwftotHist->Draw();
         
-        TGraph* hwftotPeakMarkers = new TGraph(hwftotPeakX.size(), &hwftotPeakX[0], &hwftotPeakY[0]);
-        hwftotPeakMarkers->SetMarkerStyle(20);
-        hwftotPeakMarkers->SetMarkerSize(1.2);
-        hwftotPeakMarkers->SetMarkerColor(kRed);
-        hwftotPeakMarkers->Draw("P SAME");
+    //     TGraph* hwftotPeakMarkers = new TGraph(hwftotPeakX.size(), &hwftotPeakX[0], &hwftotPeakY[0]);
+    //     hwftotPeakMarkers->SetMarkerStyle(20);
+    //     hwftotPeakMarkers->SetMarkerSize(1.2);
+    //     hwftotPeakMarkers->SetMarkerColor(kRed);
+    //     hwftotPeakMarkers->Draw("P SAME");
         
-        hwftotCanvas.Write();
-    }
+    //     hwftotCanvas.Write();
+    // }
     
 
 
@@ -260,6 +270,30 @@ void processAllHistograms(const char* inputFileName, double heightThreshold) {
 }
 
 void peakWVF_drawing_finder_singleEvent() {
-    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data/Decon_wvfNumCut5_merged/wvfFind_event94849_trackID1_opNum9.root";
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event9848_trackID27_opNum9.root";
+
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event95280_trackID24_opNum5.root";
+
+//     const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event94961_trackID17_opNum5_merged.root";
+
+//     const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event94325_trackID9_opNum4_merged.root";
+    
+//     const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event93261_trackID24_opNum8.root"; 
+    
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event9240_trackID0_opNum5.root";  
+
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event88685_trackID11_opNum6.root";  
+
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event88367_trackID2_opNum5_2.root";  
+
+//    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event87967_trackID8_opNum9.root";  
+
+    const char* inputFile = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_3k_new20250528/decon_wvf_coincidence_applyCut/wvfFind_event80924_trackID5_opNum4_merged.root";  
+
+
+
     processAllHistograms(inputFile, 0.1);
+
 }
+
+
