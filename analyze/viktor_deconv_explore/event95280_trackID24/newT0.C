@@ -3,8 +3,9 @@
 
 
   //Shu: Do not forget to modify kMaxWF correspondingly---
-  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/analyze_DATA_pdhd/result_server/decon_wvf/michelt0_Decon_run028867_0374_dataflow0.root");
-
+  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/viktor_decon_test/michelt0_Decon_run028867_0384_dataflow0.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/viktor_decon_test/michelt0_Decon_run028867_0382_dataflow1.root");
+//  anatree->Add("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/viktor_decon_test/michelt0_Decon_run028867_0103_dataflow0.root");
 
 
   //Grid points (opch positions) in (y, z) plane
@@ -105,10 +106,13 @@
     for(size_t i = 0; i<pandorat0->size(); ++i){
 
 
-      //Shu: track contains Michel e candidate---------------------------
-//      if ((*michelscore)[i]>0.3 && (*endx)[i]<-62 && (*endx)[i]>-63){
-      if ((*michelscore)[i]>0.3){
-      //-----------------------------------------------------------------
+
+      //Shu: track contains Michel e candidate----------------------------------------
+      if ((*michelscore)[i]>0.3 && (*endx)[i]<-49 && (*endx)[i]>-50){
+//      if ((*michelscore)[i]>0.3){
+      //------------------------------------------------------------------------------
+
+
 
         //Shu:---
         std::cout<<"======Michel electron candidate!======"<<std::endl;
@@ -231,13 +235,13 @@
 
 
 
-          //---"dt cut / wvf num cut"----------------------------------------
+          //---"dt cut / wvf num cut"----------------------------------------------------------
           //Shu: make sure internal and external triggers are close---
           //dt is different for different runs!!!---
           //Further: wider range; apply wvf num cut!!!---
-          if(dt > -0.2 && dt < 0.1){
+          if(dt > -0.017 && dt < -0.016){
 //          if(dt > 0.0725323 && dt < 0.0725325){
-          //-----------------------------------------------------------------
+          //-----------------------------------------------------------------------------------
 
 
 
