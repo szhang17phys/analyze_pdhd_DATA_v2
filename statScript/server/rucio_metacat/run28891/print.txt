@@ -1,0 +1,3524 @@
+------------------------------------------------------------
+Processing input file: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/5e/f5/np04hd_raw_run028891_0670_dataflow5_datawriter_0_20240824T081632_reco_stage1_reco_stage2_20240824T100245_keepup.root
+Extracted base: run028891_0670_dataflow5_datawriter_0_20240824T081632
+Final output file will be named: michelt0_decon_run028891_0670_dataflow5_datawriter_0_20240824T081632.root
+Running deconvolution...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:27:28 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+%MSG-i PathConfiguration:  Early 07-Jun-2025 21:27:30 CDT JobSetup
+Multiple end paths have been combined into one end path,
+"end_path" since order is irrelevant.
+%MSG
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:27:32 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:27:32 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+Deconvolution::BuildExtraFilter sigma is 5.52105
+%MSG-i Deconvolution::Deconvolution():  Deconvolution:opdec@Construction  07-Jun-2025 21:27:32 CDT ModuleConstruction
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 113 SPE template files.
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 2 noise template files.
+Input waveform polarity set to: -1
+Default white noise RMS: 4.5
+
+Ignoring channels:
+    -1, 3, 86, 87, 97, 107, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 
+
+%MSG
+07-Jun-2025 21:27:33 CDT  Initiating request to open input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/5e/f5/np04hd_raw_run028891_0670_dataflow5_datawriter_0_20240824T081632_reco_stage1_reco_stage2_20240824T100245_keepup.root"
+07-Jun-2025 21:27:34 CDT  Opened input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/5e/f5/np04hd_raw_run028891_0670_dataflow5_datawriter_0_20240824T081632_reco_stage1_reco_stage2_20240824T100245_keepup.root"
+Begin processing the 1st record. run: 28891 subRun: 1 event: 166165 at 07-Jun-2025 21:27:35 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:35 CDT run: 28891 subRun: 1 event: 166165
+Number of waveforms to process: 2584
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:36 CDT run: 28891 subRun: 1 event: 166165
+
+Number of deconvolved waveforms in this event: 2521
+Number of deconvolved waveforms to be saved in this event: 2521
+
+%MSG
+07-Jun-2025 21:27:36 CDT  Opened output file with pattern "deconv_gen.root"
+%MSG-i FastCloning:  PostProcessEvent 07-Jun-2025 21:27:36 CDT  run: 28891 subRun: 1 event: 166165
+Fast cloning event data products from input file.
+%MSG
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 166173 at 07-Jun-2025 21:27:38 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:38 CDT run: 28891 subRun: 1 event: 166173
+Number of waveforms to process: 1954
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:39 CDT run: 28891 subRun: 1 event: 166173
+
+Number of deconvolved waveforms in this event: 1897
+Number of deconvolved waveforms to be saved in this event: 1897
+
+%MSG
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 166181 at 07-Jun-2025 21:27:39 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:39 CDT run: 28891 subRun: 1 event: 166181
+Number of waveforms to process: 2056
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:40 CDT run: 28891 subRun: 1 event: 166181
+
+Number of deconvolved waveforms in this event: 1994
+Number of deconvolved waveforms to be saved in this event: 1994
+
+%MSG
+Begin processing the 4th record. run: 28891 subRun: 1 event: 166189 at 07-Jun-2025 21:27:40 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:40 CDT run: 28891 subRun: 1 event: 166189
+Number of waveforms to process: 2443
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:41 CDT run: 28891 subRun: 1 event: 166189
+
+Number of deconvolved waveforms in this event: 2382
+Number of deconvolved waveforms to be saved in this event: 2382
+
+%MSG
+Begin processing the 5th record. run: 28891 subRun: 1 event: 166197 at 07-Jun-2025 21:27:41 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:41 CDT run: 28891 subRun: 1 event: 166197
+Number of waveforms to process: 2512
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:42 CDT run: 28891 subRun: 1 event: 166197
+
+Number of deconvolved waveforms in this event: 2450
+Number of deconvolved waveforms to be saved in this event: 2450
+
+%MSG
+Begin processing the 6th record. run: 28891 subRun: 1 event: 166205 at 07-Jun-2025 21:27:42 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:42 CDT run: 28891 subRun: 1 event: 166205
+Number of waveforms to process: 2242
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:43 CDT run: 28891 subRun: 1 event: 166205
+
+Number of deconvolved waveforms in this event: 2186
+Number of deconvolved waveforms to be saved in this event: 2186
+
+%MSG
+Begin processing the 7th record. run: 28891 subRun: 1 event: 166213 at 07-Jun-2025 21:27:43 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:43 CDT run: 28891 subRun: 1 event: 166213
+Number of waveforms to process: 2158
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:43 CDT run: 28891 subRun: 1 event: 166213
+
+Number of deconvolved waveforms in this event: 2093
+Number of deconvolved waveforms to be saved in this event: 2093
+
+%MSG
+Begin processing the 8th record. run: 28891 subRun: 1 event: 166221 at 07-Jun-2025 21:27:44 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:44 CDT run: 28891 subRun: 1 event: 166221
+Number of waveforms to process: 2701
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:45 CDT run: 28891 subRun: 1 event: 166221
+
+Number of deconvolved waveforms in this event: 2637
+Number of deconvolved waveforms to be saved in this event: 2637
+
+%MSG
+Begin processing the 9th record. run: 28891 subRun: 1 event: 166229 at 07-Jun-2025 21:27:45 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:45 CDT run: 28891 subRun: 1 event: 166229
+Number of waveforms to process: 1879
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:46 CDT run: 28891 subRun: 1 event: 166229
+
+Number of deconvolved waveforms in this event: 1822
+Number of deconvolved waveforms to be saved in this event: 1822
+
+%MSG
+Begin processing the 10th record. run: 28891 subRun: 1 event: 166237 at 07-Jun-2025 21:27:46 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:46 CDT run: 28891 subRun: 1 event: 166237
+Number of waveforms to process: 2599
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:47 CDT run: 28891 subRun: 1 event: 166237
+
+Number of deconvolved waveforms in this event: 2535
+Number of deconvolved waveforms to be saved in this event: 2535
+
+%MSG
+Begin processing the 11th record. run: 28891 subRun: 1 event: 166245 at 07-Jun-2025 21:27:47 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:47 CDT run: 28891 subRun: 1 event: 166245
+Number of waveforms to process: 2560
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:48 CDT run: 28891 subRun: 1 event: 166245
+
+Number of deconvolved waveforms in this event: 2502
+Number of deconvolved waveforms to be saved in this event: 2502
+
+%MSG
+Begin processing the 12th record. run: 28891 subRun: 1 event: 166253 at 07-Jun-2025 21:27:48 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:48 CDT run: 28891 subRun: 1 event: 166253
+Number of waveforms to process: 2038
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:49 CDT run: 28891 subRun: 1 event: 166253
+
+Number of deconvolved waveforms in this event: 1981
+Number of deconvolved waveforms to be saved in this event: 1981
+
+%MSG
+Begin processing the 13th record. run: 28891 subRun: 1 event: 166261 at 07-Jun-2025 21:27:49 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:49 CDT run: 28891 subRun: 1 event: 166261
+Number of waveforms to process: 1960
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:49 CDT run: 28891 subRun: 1 event: 166261
+
+Number of deconvolved waveforms in this event: 1901
+Number of deconvolved waveforms to be saved in this event: 1901
+
+%MSG
+Begin processing the 14th record. run: 28891 subRun: 1 event: 166269 at 07-Jun-2025 21:27:50 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:50 CDT run: 28891 subRun: 1 event: 166269
+Number of waveforms to process: 2677
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:50 CDT run: 28891 subRun: 1 event: 166269
+
+Number of deconvolved waveforms in this event: 2614
+Number of deconvolved waveforms to be saved in this event: 2614
+
+%MSG
+Begin processing the 15th record. run: 28891 subRun: 1 event: 166277 at 07-Jun-2025 21:27:51 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:51 CDT run: 28891 subRun: 1 event: 166277
+Number of waveforms to process: 2065
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:51 CDT run: 28891 subRun: 1 event: 166277
+
+Number of deconvolved waveforms in this event: 2014
+Number of deconvolved waveforms to be saved in this event: 2014
+
+%MSG
+Begin processing the 16th record. run: 28891 subRun: 1 event: 166285 at 07-Jun-2025 21:27:52 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:52 CDT run: 28891 subRun: 1 event: 166285
+Number of waveforms to process: 2275
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:52 CDT run: 28891 subRun: 1 event: 166285
+
+Number of deconvolved waveforms in this event: 2200
+Number of deconvolved waveforms to be saved in this event: 2200
+
+%MSG
+Begin processing the 17th record. run: 28891 subRun: 1 event: 166293 at 07-Jun-2025 21:27:53 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:53 CDT run: 28891 subRun: 1 event: 166293
+Number of waveforms to process: 2776
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:53 CDT run: 28891 subRun: 1 event: 166293
+
+Number of deconvolved waveforms in this event: 2707
+Number of deconvolved waveforms to be saved in this event: 2707
+
+%MSG
+Begin processing the 18th record. run: 28891 subRun: 1 event: 166301 at 07-Jun-2025 21:27:54 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:54 CDT run: 28891 subRun: 1 event: 166301
+Number of waveforms to process: 2414
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:54 CDT run: 28891 subRun: 1 event: 166301
+
+Number of deconvolved waveforms in this event: 2359
+Number of deconvolved waveforms to be saved in this event: 2359
+
+%MSG
+Begin processing the 19th record. run: 28891 subRun: 1 event: 166309 at 07-Jun-2025 21:27:55 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:55 CDT run: 28891 subRun: 1 event: 166309
+Number of waveforms to process: 2593
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:55 CDT run: 28891 subRun: 1 event: 166309
+
+Number of deconvolved waveforms in this event: 2532
+Number of deconvolved waveforms to be saved in this event: 2532
+
+%MSG
+Begin processing the 20th record. run: 28891 subRun: 1 event: 166317 at 07-Jun-2025 21:27:56 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:56 CDT run: 28891 subRun: 1 event: 166317
+Number of waveforms to process: 1870
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:56 CDT run: 28891 subRun: 1 event: 166317
+
+Number of deconvolved waveforms in this event: 1812
+Number of deconvolved waveforms to be saved in this event: 1812
+
+%MSG
+Begin processing the 21st record. run: 28891 subRun: 1 event: 166325 at 07-Jun-2025 21:27:57 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:57 CDT run: 28891 subRun: 1 event: 166325
+Number of waveforms to process: 2107
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:57 CDT run: 28891 subRun: 1 event: 166325
+
+Number of deconvolved waveforms in this event: 2050
+Number of deconvolved waveforms to be saved in this event: 2050
+
+%MSG
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 166333 at 07-Jun-2025 21:27:58 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:58 CDT run: 28891 subRun: 1 event: 166333
+Number of waveforms to process: 2413
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:58 CDT run: 28891 subRun: 1 event: 166333
+
+Number of deconvolved waveforms in this event: 2352
+Number of deconvolved waveforms to be saved in this event: 2352
+
+%MSG
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 166341 at 07-Jun-2025 21:27:59 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:27:59 CDT run: 28891 subRun: 1 event: 166341
+Number of waveforms to process: 2680
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:27:59 CDT run: 28891 subRun: 1 event: 166341
+
+Number of deconvolved waveforms in this event: 2617
+Number of deconvolved waveforms to be saved in this event: 2617
+
+%MSG
+Begin processing the 24th record. run: 28891 subRun: 1 event: 166349 at 07-Jun-2025 21:28:00 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:00 CDT run: 28891 subRun: 1 event: 166349
+Number of waveforms to process: 2600
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:00 CDT run: 28891 subRun: 1 event: 166349
+
+Number of deconvolved waveforms in this event: 2547
+Number of deconvolved waveforms to be saved in this event: 2547
+
+%MSG
+Begin processing the 25th record. run: 28891 subRun: 1 event: 166357 at 07-Jun-2025 21:28:01 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:01 CDT run: 28891 subRun: 1 event: 166357
+Number of waveforms to process: 2194
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:01 CDT run: 28891 subRun: 1 event: 166357
+
+Number of deconvolved waveforms in this event: 2138
+Number of deconvolved waveforms to be saved in this event: 2138
+
+%MSG
+Begin processing the 26th record. run: 28891 subRun: 1 event: 166365 at 07-Jun-2025 21:28:02 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:02 CDT run: 28891 subRun: 1 event: 166365
+Number of waveforms to process: 2149
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:02 CDT run: 28891 subRun: 1 event: 166365
+
+Number of deconvolved waveforms in this event: 2089
+Number of deconvolved waveforms to be saved in this event: 2089
+
+%MSG
+Begin processing the 27th record. run: 28891 subRun: 1 event: 166373 at 07-Jun-2025 21:28:02 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:02 CDT run: 28891 subRun: 1 event: 166373
+Number of waveforms to process: 2500
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:03 CDT run: 28891 subRun: 1 event: 166373
+
+Number of deconvolved waveforms in this event: 2430
+Number of deconvolved waveforms to be saved in this event: 2430
+
+%MSG
+Begin processing the 28th record. run: 28891 subRun: 1 event: 166381 at 07-Jun-2025 21:28:03 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:03 CDT run: 28891 subRun: 1 event: 166381
+Number of waveforms to process: 2503
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:04 CDT run: 28891 subRun: 1 event: 166381
+
+Number of deconvolved waveforms in this event: 2445
+Number of deconvolved waveforms to be saved in this event: 2445
+
+%MSG
+Begin processing the 29th record. run: 28891 subRun: 1 event: 166389 at 07-Jun-2025 21:28:04 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:05 CDT run: 28891 subRun: 1 event: 166389
+Number of waveforms to process: 2659
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:05 CDT run: 28891 subRun: 1 event: 166389
+
+Number of deconvolved waveforms in this event: 2596
+Number of deconvolved waveforms to be saved in this event: 2596
+
+%MSG
+Begin processing the 30th record. run: 28891 subRun: 1 event: 166397 at 07-Jun-2025 21:28:06 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:06 CDT run: 28891 subRun: 1 event: 166397
+Number of waveforms to process: 2509
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:06 CDT run: 28891 subRun: 1 event: 166397
+
+Number of deconvolved waveforms in this event: 2448
+Number of deconvolved waveforms to be saved in this event: 2448
+
+%MSG
+Begin processing the 31st record. run: 28891 subRun: 1 event: 166405 at 07-Jun-2025 21:28:07 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:28:07 CDT run: 28891 subRun: 1 event: 166405
+Number of waveforms to process: 2248
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:28:07 CDT run: 28891 subRun: 1 event: 166405
+
+Number of deconvolved waveforms in this event: 2189
+Number of deconvolved waveforms to be saved in this event: 2189
+
+%MSG
+07-Jun-2025 21:28:09 CDT  Closed output file "deconv_gen.root"
+07-Jun-2025 21:28:09 CDT  Closed input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/5e/f5/np04hd_raw_run028891_0670_dataflow5_datawriter_0_20240824T081632_reco_stage1_reco_stage2_20240824T100245_keepup.root"
+%MSG-i NuRandomService:  RootOutput:out1@EndJob 07-Jun-2025 21:28:09 CDT  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 10883070
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 opdecoana
+TrigReport         31         31          0 out1
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 31.200709 Real = 33.939233
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2746.16 VmHWM = 2117.88
+
+Art has completed and will exit with status 0.
+Running Michel time matching...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:28:33 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:28:36 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:28:36 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:28:36 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:28:36 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:28:36 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:28:36 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+IFDH constructor, got keys:
+service_type, 
+IFDH: didn't find a base uri...
+
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c runmicheltime.fcl -s deconv_gen.root
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0xac5fe70
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0xac124b0
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.02401
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0xac27df0
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+AdcThresholdSignalFinder::ctor: Configuration parameters:
+AdcThresholdSignalFinder::ctor:       LogLevel: 1
+AdcThresholdSignalFinder::ctor:      Threshold: 5e-1
+AdcThresholdSignalFinder::ctor:     BinsBefore: 10
+AdcThresholdSignalFinder::ctor:      BinsAfter: 20
+AdcThresholdSignalFinder::ctor:   FlagPositive: true
+AdcThresholdSignalFinder::ctor:   FlagNegative: true
+ExpTailPedRemover::ctor: Parameters:
+ExpTailPedRemover::ctor:               LogLevel: 1
+ExpTailPedRemover::ctor:             SignalFlag: 3
+ExpTailPedRemover::ctor:   SignalIterationLimit: 10
+ExpTailPedRemover::ctor:             SignalTool: adcTailSignalFinderKe
+ExpTailPedRemover::ctor:              DecayTime: 2200
+ExpTailPedRemover::ctor:                MaxTick: 21000
+ExpTailPedRemover::ctor:              PedDegree: 0
+ExpTailPedRemover::ctor:               PedTick0: 3000
+ExpTailPedRemover::ctor:               PedFreqs: []
+ExpTailPedRemover::ctor:   IncludeChannelRanges: [apa1z, apa2z, apa3z, apa4z, apa5z, apa6z, apa1c, apa2c, apa3c, apa4c, apa5c, apa6c]
+ExpTailPedRemover::ctor:   NoWarnStatuses: [1]
+ExpTailPedRemover::ctor:   ExcludeChannelRanges: []
+ExpTailPedRemover::ctor: Channel checking enabled for 5760 channels.
+ToolBasedRawDigitPrepService::ctor:     Found tool pdspTailPedRemovalZKe @ 0xac5ff20
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x58d5360
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+ToolBasedRawDigitPrepService::ctor:            pdspTailPedRemovalZKe
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:28:39 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:28:39 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+07-Jun-2025 21:28:40 CDT  Initiating request to open input file "deconv_gen.root"
+07-Jun-2025 21:28:40 CDT  Opened input file "deconv_gen.root"
+db: runtime1724487383
+Begin processing the 1st record. run: 28891 subRun: 1 event: 166165 at 07-Jun-2025 21:28:41 CDT
+
+RDTimeStamp daq: 107780461446504949
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2521
+
+
+All OpChs: Num of All([0, inf)) wvf: 2521
+
+
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 166173 at 07-Jun-2025 21:28:41 CDT
+
+RDTimeStamp daq: 107780461519438788
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1897
+
+
+All OpChs: Num of All([0, inf)) wvf: 1897
+
+
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 166181 at 07-Jun-2025 21:28:42 CDT
+
+RDTimeStamp daq: 107780461812543161
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1994
+
+
+All OpChs: Num of All([0, inf)) wvf: 1994
+
+
+Begin processing the 4th record. run: 28891 subRun: 1 event: 166189 at 07-Jun-2025 21:28:42 CDT
+
+RDTimeStamp daq: 107780462198092669
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2382
+
+
+All OpChs: Num of All([0, inf)) wvf: 2382
+
+
+Begin processing the 5th record. run: 28891 subRun: 1 event: 166197 at 07-Jun-2025 21:28:43 CDT
+
+RDTimeStamp daq: 107780462230270042
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2450
+
+
+All OpChs: Num of All([0, inf)) wvf: 2450
+
+
+Begin processing the 6th record. run: 28891 subRun: 1 event: 166205 at 07-Jun-2025 21:28:43 CDT
+
+RDTimeStamp daq: 107780462310245008
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2186
+
+
+All OpChs: Num of All([0, inf)) wvf: 2186
+
+
+Begin processing the 7th record. run: 28891 subRun: 1 event: 166213 at 07-Jun-2025 21:28:44 CDT
+
+RDTimeStamp daq: 107780462386178215
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2093
+
+
+All OpChs: Num of All([0, inf)) wvf: 2093
+
+
+Begin processing the 8th record. run: 28891 subRun: 1 event: 166221 at 07-Jun-2025 21:28:44 CDT
+
+RDTimeStamp daq: 107780462545061274
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2637
+
+
+All OpChs: Num of All([0, inf)) wvf: 2637
+
+
+Begin processing the 9th record. run: 28891 subRun: 1 event: 166229 at 07-Jun-2025 21:28:45 CDT
+
+RDTimeStamp daq: 107780463033472201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1822
+
+
+All OpChs: Num of All([0, inf)) wvf: 1822
+
+
+Begin processing the 10th record. run: 28891 subRun: 1 event: 166237 at 07-Jun-2025 21:28:46 CDT
+
+RDTimeStamp daq: 107780463146494316
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2535
+
+
+All OpChs: Num of All([0, inf)) wvf: 2535
+
+
+Begin processing the 11th record. run: 28891 subRun: 1 event: 166245 at 07-Jun-2025 21:28:46 CDT
+
+RDTimeStamp daq: 107780463172781112
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2502
+
+
+All OpChs: Num of All([0, inf)) wvf: 2502
+
+
+Begin processing the 12th record. run: 28891 subRun: 1 event: 166253 at 07-Jun-2025 21:28:47 CDT
+
+RDTimeStamp daq: 107780463241680134
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1981
+
+
+All OpChs: Num of All([0, inf)) wvf: 1981
+
+
+Begin processing the 13th record. run: 28891 subRun: 1 event: 166261 at 07-Jun-2025 21:28:47 CDT
+
+RDTimeStamp daq: 107780463277588671
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1901
+
+
+All OpChs: Num of All([0, inf)) wvf: 1901
+
+
+Begin processing the 14th record. run: 28891 subRun: 1 event: 166269 at 07-Jun-2025 21:28:48 CDT
+
+RDTimeStamp daq: 107780463672887397
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2614
+
+
+All OpChs: Num of All([0, inf)) wvf: 2614
+
+
+Begin processing the 15th record. run: 28891 subRun: 1 event: 166277 at 07-Jun-2025 21:28:48 CDT
+
+RDTimeStamp daq: 107780463981211062
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2014
+
+
+All OpChs: Num of All([0, inf)) wvf: 2014
+
+
+Begin processing the 16th record. run: 28891 subRun: 1 event: 166285 at 07-Jun-2025 21:28:49 CDT
+
+RDTimeStamp daq: 107780464063280176
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2200
+
+
+All OpChs: Num of All([0, inf)) wvf: 2200
+
+
+Begin processing the 17th record. run: 28891 subRun: 1 event: 166293 at 07-Jun-2025 21:28:50 CDT
+
+RDTimeStamp daq: 107780464112089871
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2707
+
+
+All OpChs: Num of All([0, inf)) wvf: 2707
+
+
+Begin processing the 18th record. run: 28891 subRun: 1 event: 166301 at 07-Jun-2025 21:28:50 CDT
+
+RDTimeStamp daq: 107780464231933791
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2359
+
+
+All OpChs: Num of All([0, inf)) wvf: 2359
+
+
+Begin processing the 19th record. run: 28891 subRun: 1 event: 166309 at 07-Jun-2025 21:28:51 CDT
+
+RDTimeStamp daq: 107780464575891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2532
+
+
+All OpChs: Num of All([0, inf)) wvf: 2532
+
+
+Begin processing the 20th record. run: 28891 subRun: 1 event: 166317 at 07-Jun-2025 21:28:52 CDT
+
+RDTimeStamp daq: 107780464888212674
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1812
+
+
+All OpChs: Num of All([0, inf)) wvf: 1812
+
+
+Begin processing the 21st record. run: 28891 subRun: 1 event: 166325 at 07-Jun-2025 21:28:52 CDT
+
+RDTimeStamp daq: 107780464930931884
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2050
+
+
+All OpChs: Num of All([0, inf)) wvf: 2050
+
+
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 166333 at 07-Jun-2025 21:28:52 CDT
+
+RDTimeStamp daq: 107780465026174671
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2352
+
+
+All OpChs: Num of All([0, inf)) wvf: 2352
+
+
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 166341 at 07-Jun-2025 21:28:53 CDT
+
+RDTimeStamp daq: 107780465090385291
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2617
+
+
+All OpChs: Num of All([0, inf)) wvf: 2617
+
+
+Begin processing the 24th record. run: 28891 subRun: 1 event: 166349 at 07-Jun-2025 21:28:54 CDT
+
+RDTimeStamp daq: 107780465200891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2547
+
+
+All OpChs: Num of All([0, inf)) wvf: 2547
+
+
+Begin processing the 25th record. run: 28891 subRun: 1 event: 166357 at 07-Jun-2025 21:28:54 CDT
+
+RDTimeStamp daq: 107780465700891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2138
+
+
+All OpChs: Num of All([0, inf)) wvf: 2138
+
+
+Begin processing the 26th record. run: 28891 subRun: 1 event: 166365 at 07-Jun-2025 21:28:55 CDT
+
+RDTimeStamp daq: 107780465817814166
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2089
+
+
+All OpChs: Num of All([0, inf)) wvf: 2089
+
+
+Begin processing the 27th record. run: 28891 subRun: 1 event: 166373 at 07-Jun-2025 21:28:55 CDT
+
+RDTimeStamp daq: 107780465874390294
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2430
+
+
+All OpChs: Num of All([0, inf)) wvf: 2430
+
+
+Begin processing the 28th record. run: 28891 subRun: 1 event: 166381 at 07-Jun-2025 21:28:56 CDT
+
+RDTimeStamp daq: 107780465936777043
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2445
+
+
+All OpChs: Num of All([0, inf)) wvf: 2445
+
+
+Begin processing the 29th record. run: 28891 subRun: 1 event: 166389 at 07-Jun-2025 21:28:56 CDT
+
+RDTimeStamp daq: 107780465978963139
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2596
+
+
+All OpChs: Num of All([0, inf)) wvf: 2596
+
+
+Begin processing the 30th record. run: 28891 subRun: 1 event: 166397 at 07-Jun-2025 21:28:57 CDT
+
+RDTimeStamp daq: 107780466128866155
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2448
+
+
+All OpChs: Num of All([0, inf)) wvf: 2448
+
+
+Begin processing the 31st record. run: 28891 subRun: 1 event: 166405 at 07-Jun-2025 21:28:58 CDT
+
+RDTimeStamp daq: 107780466575891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2189
+
+
+All OpChs: Num of All([0, inf)) wvf: 2189
+
+
+07-Jun-2025 21:28:58 CDT  Closed input file "deconv_gen.root"
+
+=========================================================================================================================
+TimeTracker printout (sec)                 Min           Avg           Max         Median          RMS         nEvts   
+=========================================================================================================================
+Full event                              0.366281      0.560023      0.822957      0.548022      0.118238        31     
+-------------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)                 0.000206916   0.000289662   0.000490157   0.000268613   6.93425e-05      31     
+end_path:t0:MichelTimingDataDeconHD     0.365955      0.559631       0.8226       0.547614      0.118231        31     
+=========================================================================================================================
+%MSG-i NuRandomService:  MichelTimingDataDeconHD:t0@EndJob  07-Jun-2025 21:28:58 CDT ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 111449186
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+====================================================================================================
+MemoryTracker summary (base-10 MB units used)
+
+  Peak virtual memory usage (VmPeak)  : 2118.44 MB
+  Peak resident set size usage (VmHWM): 776.196 MB
+====================================================================================================
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 t0
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 16.856926 Real = 17.401951
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2118.44 VmHWM = 776.196
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.
+Moving and renaming michelt0_Decon.root to /pnfs/dune/scratch/users/szh2/pdhd_DATA_Michel/beamRun_28891_DECON/test/michelt0_decon_run028891_0670_dataflow5_datawriter_0_20240824T081632.root
+Successfully processed: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/5e/f5/np04hd_raw_run028891_0670_dataflow5_datawriter_0_20240824T081632_reco_stage1_reco_stage2_20240824T100245_keepup.root
+------------------------------------------------------------
+Processing input file: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/a3/78/np04hd_raw_run028891_0674_dataflow0_datawriter_0_20240824T082156_reco_stage1_reco_stage2_20240824T100359_keepup.root
+Extracted base: run028891_0674_dataflow0_datawriter_0_20240824T082156
+Final output file will be named: michelt0_decon_run028891_0674_dataflow0_datawriter_0_20240824T082156.root
+Running deconvolution...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:29:02 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+%MSG-i PathConfiguration:  Early 07-Jun-2025 21:29:03 CDT JobSetup
+Multiple end paths have been combined into one end path,
+"end_path" since order is irrelevant.
+%MSG
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:29:04 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:29:04 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+Deconvolution::BuildExtraFilter sigma is 5.52105
+%MSG-i Deconvolution::Deconvolution():  Deconvolution:opdec@Construction  07-Jun-2025 21:29:04 CDT ModuleConstruction
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 113 SPE template files.
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 2 noise template files.
+Input waveform polarity set to: -1
+Default white noise RMS: 4.5
+
+Ignoring channels:
+    -1, 3, 86, 87, 97, 107, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 
+
+%MSG
+07-Jun-2025 21:29:04 CDT  Initiating request to open input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/a3/78/np04hd_raw_run028891_0674_dataflow0_datawriter_0_20240824T082156_reco_stage1_reco_stage2_20240824T100359_keepup.root"
+07-Jun-2025 21:29:05 CDT  Opened input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/a3/78/np04hd_raw_run028891_0674_dataflow0_datawriter_0_20240824T082156_reco_stage1_reco_stage2_20240824T100359_keepup.root"
+Begin processing the 1st record. run: 28891 subRun: 1 event: 167160 at 07-Jun-2025 21:29:06 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:06 CDT run: 28891 subRun: 1 event: 167160
+Number of waveforms to process: 2431
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:06 CDT run: 28891 subRun: 1 event: 167160
+
+Number of deconvolved waveforms in this event: 2363
+Number of deconvolved waveforms to be saved in this event: 2363
+
+%MSG
+07-Jun-2025 21:29:06 CDT  Opened output file with pattern "deconv_gen.root"
+%MSG-i FastCloning:  PostProcessEvent 07-Jun-2025 21:29:06 CDT  run: 28891 subRun: 1 event: 167160
+Fast cloning event data products from input file.
+%MSG
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 167168 at 07-Jun-2025 21:29:09 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:09 CDT run: 28891 subRun: 1 event: 167168
+Number of waveforms to process: 1696
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:09 CDT run: 28891 subRun: 1 event: 167168
+
+Number of deconvolved waveforms in this event: 1634
+Number of deconvolved waveforms to be saved in this event: 1634
+
+%MSG
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 167176 at 07-Jun-2025 21:29:10 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:10 CDT run: 28891 subRun: 1 event: 167176
+Number of waveforms to process: 2242
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:10 CDT run: 28891 subRun: 1 event: 167176
+
+Number of deconvolved waveforms in this event: 2178
+Number of deconvolved waveforms to be saved in this event: 2178
+
+%MSG
+Begin processing the 4th record. run: 28891 subRun: 1 event: 167184 at 07-Jun-2025 21:29:11 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:11 CDT run: 28891 subRun: 1 event: 167184
+Number of waveforms to process: 1807
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:11 CDT run: 28891 subRun: 1 event: 167184
+
+Number of deconvolved waveforms in this event: 1747
+Number of deconvolved waveforms to be saved in this event: 1747
+
+%MSG
+Begin processing the 5th record. run: 28891 subRun: 1 event: 167192 at 07-Jun-2025 21:29:11 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:11 CDT run: 28891 subRun: 1 event: 167192
+Number of waveforms to process: 1870
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:12 CDT run: 28891 subRun: 1 event: 167192
+
+Number of deconvolved waveforms in this event: 1814
+Number of deconvolved waveforms to be saved in this event: 1814
+
+%MSG
+Begin processing the 6th record. run: 28891 subRun: 1 event: 167200 at 07-Jun-2025 21:29:12 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:12 CDT run: 28891 subRun: 1 event: 167200
+Number of waveforms to process: 2896
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:13 CDT run: 28891 subRun: 1 event: 167200
+
+Number of deconvolved waveforms in this event: 2832
+Number of deconvolved waveforms to be saved in this event: 2832
+
+%MSG
+Begin processing the 7th record. run: 28891 subRun: 1 event: 167208 at 07-Jun-2025 21:29:13 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:13 CDT run: 28891 subRun: 1 event: 167208
+Number of waveforms to process: 2278
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:14 CDT run: 28891 subRun: 1 event: 167208
+
+Number of deconvolved waveforms in this event: 2209
+Number of deconvolved waveforms to be saved in this event: 2209
+
+%MSG
+Begin processing the 8th record. run: 28891 subRun: 1 event: 167216 at 07-Jun-2025 21:29:14 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:14 CDT run: 28891 subRun: 1 event: 167216
+Number of waveforms to process: 2065
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:15 CDT run: 28891 subRun: 1 event: 167216
+
+Number of deconvolved waveforms in this event: 2002
+Number of deconvolved waveforms to be saved in this event: 2002
+
+%MSG
+Begin processing the 9th record. run: 28891 subRun: 1 event: 167224 at 07-Jun-2025 21:29:15 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:15 CDT run: 28891 subRun: 1 event: 167224
+Number of waveforms to process: 2647
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:16 CDT run: 28891 subRun: 1 event: 167224
+
+Number of deconvolved waveforms in this event: 2580
+Number of deconvolved waveforms to be saved in this event: 2580
+
+%MSG
+Begin processing the 10th record. run: 28891 subRun: 1 event: 167232 at 07-Jun-2025 21:29:16 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:16 CDT run: 28891 subRun: 1 event: 167232
+Number of waveforms to process: 1867
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:16 CDT run: 28891 subRun: 1 event: 167232
+
+Number of deconvolved waveforms in this event: 1808
+Number of deconvolved waveforms to be saved in this event: 1808
+
+%MSG
+Begin processing the 11th record. run: 28891 subRun: 1 event: 167240 at 07-Jun-2025 21:29:17 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:17 CDT run: 28891 subRun: 1 event: 167240
+Number of waveforms to process: 2254
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:17 CDT run: 28891 subRun: 1 event: 167240
+
+Number of deconvolved waveforms in this event: 2191
+Number of deconvolved waveforms to be saved in this event: 2191
+
+%MSG
+Begin processing the 12th record. run: 28891 subRun: 1 event: 167248 at 07-Jun-2025 21:29:18 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:18 CDT run: 28891 subRun: 1 event: 167248
+Number of waveforms to process: 1564
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:18 CDT run: 28891 subRun: 1 event: 167248
+
+Number of deconvolved waveforms in this event: 1509
+Number of deconvolved waveforms to be saved in this event: 1509
+
+%MSG
+Begin processing the 13th record. run: 28891 subRun: 1 event: 167256 at 07-Jun-2025 21:29:18 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:18 CDT run: 28891 subRun: 1 event: 167256
+Number of waveforms to process: 2239
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:19 CDT run: 28891 subRun: 1 event: 167256
+
+Number of deconvolved waveforms in this event: 2177
+Number of deconvolved waveforms to be saved in this event: 2177
+
+%MSG
+Begin processing the 14th record. run: 28891 subRun: 1 event: 167264 at 07-Jun-2025 21:29:19 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:19 CDT run: 28891 subRun: 1 event: 167264
+Number of waveforms to process: 2323
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:20 CDT run: 28891 subRun: 1 event: 167264
+
+Number of deconvolved waveforms in this event: 2266
+Number of deconvolved waveforms to be saved in this event: 2266
+
+%MSG
+Begin processing the 15th record. run: 28891 subRun: 1 event: 167272 at 07-Jun-2025 21:29:20 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:20 CDT run: 28891 subRun: 1 event: 167272
+Number of waveforms to process: 2365
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:21 CDT run: 28891 subRun: 1 event: 167272
+
+Number of deconvolved waveforms in this event: 2308
+Number of deconvolved waveforms to be saved in this event: 2308
+
+%MSG
+Begin processing the 16th record. run: 28891 subRun: 1 event: 167280 at 07-Jun-2025 21:29:21 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:21 CDT run: 28891 subRun: 1 event: 167280
+Number of waveforms to process: 2557
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:22 CDT run: 28891 subRun: 1 event: 167280
+
+Number of deconvolved waveforms in this event: 2496
+Number of deconvolved waveforms to be saved in this event: 2496
+
+%MSG
+Begin processing the 17th record. run: 28891 subRun: 1 event: 167288 at 07-Jun-2025 21:29:22 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:22 CDT run: 28891 subRun: 1 event: 167288
+Number of waveforms to process: 1942
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:23 CDT run: 28891 subRun: 1 event: 167288
+
+Number of deconvolved waveforms in this event: 1888
+Number of deconvolved waveforms to be saved in this event: 1888
+
+%MSG
+Begin processing the 18th record. run: 28891 subRun: 1 event: 167296 at 07-Jun-2025 21:29:23 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:23 CDT run: 28891 subRun: 1 event: 167296
+Number of waveforms to process: 2686
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:24 CDT run: 28891 subRun: 1 event: 167296
+
+Number of deconvolved waveforms in this event: 2625
+Number of deconvolved waveforms to be saved in this event: 2625
+
+%MSG
+Begin processing the 19th record. run: 28891 subRun: 1 event: 167304 at 07-Jun-2025 21:29:24 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:24 CDT run: 28891 subRun: 1 event: 167304
+Number of waveforms to process: 1975
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:25 CDT run: 28891 subRun: 1 event: 167304
+
+Number of deconvolved waveforms in this event: 1918
+Number of deconvolved waveforms to be saved in this event: 1918
+
+%MSG
+Begin processing the 20th record. run: 28891 subRun: 1 event: 167312 at 07-Jun-2025 21:29:25 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:25 CDT run: 28891 subRun: 1 event: 167312
+Number of waveforms to process: 1492
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:26 CDT run: 28891 subRun: 1 event: 167312
+
+Number of deconvolved waveforms in this event: 1434
+Number of deconvolved waveforms to be saved in this event: 1434
+
+%MSG
+Begin processing the 21st record. run: 28891 subRun: 1 event: 167320 at 07-Jun-2025 21:29:26 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:26 CDT run: 28891 subRun: 1 event: 167320
+Number of waveforms to process: 1999
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:26 CDT run: 28891 subRun: 1 event: 167320
+
+Number of deconvolved waveforms in this event: 1941
+Number of deconvolved waveforms to be saved in this event: 1941
+
+%MSG
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 167328 at 07-Jun-2025 21:29:27 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:27 CDT run: 28891 subRun: 1 event: 167328
+Number of waveforms to process: 2143
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:27 CDT run: 28891 subRun: 1 event: 167328
+
+Number of deconvolved waveforms in this event: 2088
+Number of deconvolved waveforms to be saved in this event: 2088
+
+%MSG
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 167336 at 07-Jun-2025 21:29:28 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:28 CDT run: 28891 subRun: 1 event: 167336
+Number of waveforms to process: 2002
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:28 CDT run: 28891 subRun: 1 event: 167336
+
+Number of deconvolved waveforms in this event: 1947
+Number of deconvolved waveforms to be saved in this event: 1947
+
+%MSG
+Begin processing the 24th record. run: 28891 subRun: 1 event: 167344 at 07-Jun-2025 21:29:28 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:28 CDT run: 28891 subRun: 1 event: 167344
+Number of waveforms to process: 2506
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:29 CDT run: 28891 subRun: 1 event: 167344
+
+Number of deconvolved waveforms in this event: 2437
+Number of deconvolved waveforms to be saved in this event: 2437
+
+%MSG
+Begin processing the 25th record. run: 28891 subRun: 1 event: 167352 at 07-Jun-2025 21:29:30 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:30 CDT run: 28891 subRun: 1 event: 167352
+Number of waveforms to process: 1969
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:30 CDT run: 28891 subRun: 1 event: 167352
+
+Number of deconvolved waveforms in this event: 1910
+Number of deconvolved waveforms to be saved in this event: 1910
+
+%MSG
+Begin processing the 26th record. run: 28891 subRun: 1 event: 167360 at 07-Jun-2025 21:29:30 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:30 CDT run: 28891 subRun: 1 event: 167360
+Number of waveforms to process: 2521
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:31 CDT run: 28891 subRun: 1 event: 167360
+
+Number of deconvolved waveforms in this event: 2463
+Number of deconvolved waveforms to be saved in this event: 2463
+
+%MSG
+Begin processing the 27th record. run: 28891 subRun: 1 event: 167368 at 07-Jun-2025 21:29:31 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:31 CDT run: 28891 subRun: 1 event: 167368
+Number of waveforms to process: 2098
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:32 CDT run: 28891 subRun: 1 event: 167368
+
+Number of deconvolved waveforms in this event: 2039
+Number of deconvolved waveforms to be saved in this event: 2039
+
+%MSG
+Begin processing the 28th record. run: 28891 subRun: 1 event: 167376 at 07-Jun-2025 21:29:32 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:32 CDT run: 28891 subRun: 1 event: 167376
+Number of waveforms to process: 1408
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:33 CDT run: 28891 subRun: 1 event: 167376
+
+Number of deconvolved waveforms in this event: 1355
+Number of deconvolved waveforms to be saved in this event: 1355
+
+%MSG
+Begin processing the 29th record. run: 28891 subRun: 1 event: 167384 at 07-Jun-2025 21:29:33 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:33 CDT run: 28891 subRun: 1 event: 167384
+Number of waveforms to process: 1912
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:33 CDT run: 28891 subRun: 1 event: 167384
+
+Number of deconvolved waveforms in this event: 1853
+Number of deconvolved waveforms to be saved in this event: 1853
+
+%MSG
+Begin processing the 30th record. run: 28891 subRun: 1 event: 167392 at 07-Jun-2025 21:29:34 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:34 CDT run: 28891 subRun: 1 event: 167392
+Number of waveforms to process: 2251
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:34 CDT run: 28891 subRun: 1 event: 167392
+
+Number of deconvolved waveforms in this event: 2193
+Number of deconvolved waveforms to be saved in this event: 2193
+
+%MSG
+Begin processing the 31st record. run: 28891 subRun: 1 event: 167400 at 07-Jun-2025 21:29:35 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:29:35 CDT run: 28891 subRun: 1 event: 167400
+Number of waveforms to process: 1822
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:29:35 CDT run: 28891 subRun: 1 event: 167400
+
+Number of deconvolved waveforms in this event: 1765
+Number of deconvolved waveforms to be saved in this event: 1765
+
+%MSG
+07-Jun-2025 21:29:36 CDT  Closed output file "deconv_gen.root"
+07-Jun-2025 21:29:36 CDT  Closed input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/a3/78/np04hd_raw_run028891_0674_dataflow0_datawriter_0_20240824T082156_reco_stage1_reco_stage2_20240824T100359_keepup.root"
+%MSG-i NuRandomService:  RootOutput:out1@EndJob 07-Jun-2025 21:29:36 CDT  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 806818092
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 opdecoana
+TrigReport         31         31          0 out1
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 28.241084 Real = 30.875051
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2601.91 VmHWM = 1973.9
+
+Art has completed and will exit with status 0.
+Running Michel time matching...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:29:59 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:30:01 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:30:01 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:30:01 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:30:01 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:30:01 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:30:01 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+IFDH constructor, got keys:
+service_type, 
+IFDH: didn't find a base uri...
+
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c runmicheltime.fcl -s deconv_gen.root
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0x8288750
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0xa7c0320
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.02401
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0xa033180
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+AdcThresholdSignalFinder::ctor: Configuration parameters:
+AdcThresholdSignalFinder::ctor:       LogLevel: 1
+AdcThresholdSignalFinder::ctor:      Threshold: 5e-1
+AdcThresholdSignalFinder::ctor:     BinsBefore: 10
+AdcThresholdSignalFinder::ctor:      BinsAfter: 20
+AdcThresholdSignalFinder::ctor:   FlagPositive: true
+AdcThresholdSignalFinder::ctor:   FlagNegative: true
+ExpTailPedRemover::ctor: Parameters:
+ExpTailPedRemover::ctor:               LogLevel: 1
+ExpTailPedRemover::ctor:             SignalFlag: 3
+ExpTailPedRemover::ctor:   SignalIterationLimit: 10
+ExpTailPedRemover::ctor:             SignalTool: adcTailSignalFinderKe
+ExpTailPedRemover::ctor:              DecayTime: 2200
+ExpTailPedRemover::ctor:                MaxTick: 21000
+ExpTailPedRemover::ctor:              PedDegree: 0
+ExpTailPedRemover::ctor:               PedTick0: 3000
+ExpTailPedRemover::ctor:               PedFreqs: []
+ExpTailPedRemover::ctor:   IncludeChannelRanges: [apa1z, apa2z, apa3z, apa4z, apa5z, apa6z, apa1c, apa2c, apa3c, apa4c, apa5c, apa6c]
+ExpTailPedRemover::ctor:   NoWarnStatuses: [1]
+ExpTailPedRemover::ctor:   ExcludeChannelRanges: []
+ExpTailPedRemover::ctor: Channel checking enabled for 5760 channels.
+ToolBasedRawDigitPrepService::ctor:     Found tool pdspTailPedRemovalZKe @ 0xa74c8e0
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x5402360
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+ToolBasedRawDigitPrepService::ctor:            pdspTailPedRemovalZKe
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:30:05 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:30:05 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+07-Jun-2025 21:30:05 CDT  Initiating request to open input file "deconv_gen.root"
+07-Jun-2025 21:30:06 CDT  Opened input file "deconv_gen.root"
+db: runtime1724487715
+Begin processing the 1st record. run: 28891 subRun: 1 event: 167160 at 07-Jun-2025 21:30:06 CDT
+
+RDTimeStamp daq: 107780482206738252
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2363
+
+
+All OpChs: Num of All([0, inf)) wvf: 2363
+
+
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 167168 at 07-Jun-2025 21:30:07 CDT
+
+RDTimeStamp daq: 107780482311136902
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1634
+
+
+All OpChs: Num of All([0, inf)) wvf: 1634
+
+
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 167176 at 07-Jun-2025 21:30:07 CDT
+
+RDTimeStamp daq: 107780482788985997
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2178
+
+
+All OpChs: Num of All([0, inf)) wvf: 2178
+
+
+Begin processing the 4th record. run: 28891 subRun: 1 event: 167184 at 07-Jun-2025 21:30:08 CDT
+
+RDTimeStamp daq: 107780482980708858
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1747
+
+
+All OpChs: Num of All([0, inf)) wvf: 1747
+
+
+Begin processing the 5th record. run: 28891 subRun: 1 event: 167192 at 07-Jun-2025 21:30:08 CDT
+
+RDTimeStamp daq: 107780483046703166
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1814
+
+
+All OpChs: Num of All([0, inf)) wvf: 1814
+
+
+Begin processing the 6th record. run: 28891 subRun: 1 event: 167200 at 07-Jun-2025 21:30:08 CDT
+
+RDTimeStamp daq: 107780483125248390
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2832
+
+
+All OpChs: Num of All([0, inf)) wvf: 2832
+
+
+Begin processing the 7th record. run: 28891 subRun: 1 event: 167208 at 07-Jun-2025 21:30:09 CDT
+
+RDTimeStamp daq: 107780483503042078
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2209
+
+
+All OpChs: Num of All([0, inf)) wvf: 2209
+
+
+Begin processing the 8th record. run: 28891 subRun: 1 event: 167216 at 07-Jun-2025 21:30:10 CDT
+
+RDTimeStamp daq: 107780483812759724
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2002
+
+
+All OpChs: Num of All([0, inf)) wvf: 2002
+
+
+Begin processing the 9th record. run: 28891 subRun: 1 event: 167224 at 07-Jun-2025 21:30:10 CDT
+
+RDTimeStamp daq: 107780483869134767
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2580
+
+
+All OpChs: Num of All([0, inf)) wvf: 2580
+
+
+Begin processing the 10th record. run: 28891 subRun: 1 event: 167232 at 07-Jun-2025 21:30:11 CDT
+
+RDTimeStamp daq: 107780483894466367
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1808
+
+
+All OpChs: Num of All([0, inf)) wvf: 1808
+
+
+Begin processing the 11th record. run: 28891 subRun: 1 event: 167240 at 07-Jun-2025 21:30:12 CDT
+
+RDTimeStamp daq: 107780483967161701
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2191
+
+
+All OpChs: Num of All([0, inf)) wvf: 2191
+
+
+Begin processing the 12th record. run: 28891 subRun: 1 event: 167248 at 07-Jun-2025 21:30:12 CDT
+
+RDTimeStamp daq: 107780484032583993
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1509
+
+
+All OpChs: Num of All([0, inf)) wvf: 1509
+
+
+Begin processing the 13th record. run: 28891 subRun: 1 event: 167256 at 07-Jun-2025 21:30:13 CDT
+
+RDTimeStamp daq: 107780484325891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2177
+
+
+All OpChs: Num of All([0, inf)) wvf: 2177
+
+
+Begin processing the 14th record. run: 28891 subRun: 1 event: 167264 at 07-Jun-2025 21:30:14 CDT
+
+RDTimeStamp daq: 107780484690651427
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2266
+
+
+All OpChs: Num of All([0, inf)) wvf: 2266
+
+
+Begin processing the 15th record. run: 28891 subRun: 1 event: 167272 at 07-Jun-2025 21:30:14 CDT
+
+RDTimeStamp daq: 107780484758047396
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2308
+
+
+All OpChs: Num of All([0, inf)) wvf: 2308
+
+
+Begin processing the 16th record. run: 28891 subRun: 1 event: 167280 at 07-Jun-2025 21:30:15 CDT
+
+RDTimeStamp daq: 107780484818562310
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2496
+
+
+All OpChs: Num of All([0, inf)) wvf: 2496
+
+
+Begin processing the 17th record. run: 28891 subRun: 1 event: 167288 at 07-Jun-2025 21:30:15 CDT
+
+RDTimeStamp daq: 107780484866734005
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1888
+
+
+All OpChs: Num of All([0, inf)) wvf: 1888
+
+
+Begin processing the 18th record. run: 28891 subRun: 1 event: 167296 at 07-Jun-2025 21:30:16 CDT
+
+RDTimeStamp daq: 107780484909000784
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2625
+
+
+All OpChs: Num of All([0, inf)) wvf: 2625
+
+
+Begin processing the 19th record. run: 28891 subRun: 1 event: 167304 at 07-Jun-2025 21:30:17 CDT
+
+RDTimeStamp daq: 107780485182092946
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1918
+
+
+All OpChs: Num of All([0, inf)) wvf: 1918
+
+
+Begin processing the 20th record. run: 28891 subRun: 1 event: 167312 at 07-Jun-2025 21:30:17 CDT
+
+RDTimeStamp daq: 107780485607510608
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1434
+
+
+All OpChs: Num of All([0, inf)) wvf: 1434
+
+
+Begin processing the 21st record. run: 28891 subRun: 1 event: 167320 at 07-Jun-2025 21:30:18 CDT
+
+RDTimeStamp daq: 107780485661124783
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1941
+
+
+All OpChs: Num of All([0, inf)) wvf: 1941
+
+
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 167328 at 07-Jun-2025 21:30:18 CDT
+
+RDTimeStamp daq: 107780485709821172
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2088
+
+
+All OpChs: Num of All([0, inf)) wvf: 2088
+
+
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 167336 at 07-Jun-2025 21:30:19 CDT
+
+RDTimeStamp daq: 107780485763105285
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1947
+
+
+All OpChs: Num of All([0, inf)) wvf: 1947
+
+
+Begin processing the 24th record. run: 28891 subRun: 1 event: 167344 at 07-Jun-2025 21:30:19 CDT
+
+RDTimeStamp daq: 107780485881272538
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2437
+
+
+All OpChs: Num of All([0, inf)) wvf: 2437
+
+
+Begin processing the 25th record. run: 28891 subRun: 1 event: 167352 at 07-Jun-2025 21:30:20 CDT
+
+RDTimeStamp daq: 107780486333662417
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1910
+
+
+All OpChs: Num of All([0, inf)) wvf: 1910
+
+
+Begin processing the 26th record. run: 28891 subRun: 1 event: 167360 at 07-Jun-2025 21:30:20 CDT
+
+RDTimeStamp daq: 107780486538522809
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2463
+
+
+All OpChs: Num of All([0, inf)) wvf: 2463
+
+
+Begin processing the 27th record. run: 28891 subRun: 1 event: 167368 at 07-Jun-2025 21:30:21 CDT
+
+RDTimeStamp daq: 107780486593972352
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2039
+
+
+All OpChs: Num of All([0, inf)) wvf: 2039
+
+
+Begin processing the 28th record. run: 28891 subRun: 1 event: 167376 at 07-Jun-2025 21:30:22 CDT
+
+RDTimeStamp daq: 107780486640362770
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1355
+
+
+All OpChs: Num of All([0, inf)) wvf: 1355
+
+
+Begin processing the 29th record. run: 28891 subRun: 1 event: 167384 at 07-Jun-2025 21:30:22 CDT
+
+RDTimeStamp daq: 107780486753734296
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1853
+
+
+All OpChs: Num of All([0, inf)) wvf: 1853
+
+
+Begin processing the 30th record. run: 28891 subRun: 1 event: 167392 at 07-Jun-2025 21:30:22 CDT
+
+RDTimeStamp daq: 107780487200891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2193
+
+
+All OpChs: Num of All([0, inf)) wvf: 2193
+
+
+Begin processing the 31st record. run: 28891 subRun: 1 event: 167400 at 07-Jun-2025 21:30:23 CDT
+
+RDTimeStamp daq: 107780487417987520
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1765
+
+
+All OpChs: Num of All([0, inf)) wvf: 1765
+
+
+07-Jun-2025 21:30:23 CDT  Closed input file "deconv_gen.root"
+
+=========================================================================================================================
+TimeTracker printout (sec)                 Min           Avg           Max         Median          RMS         nEvts   
+=========================================================================================================================
+Full event                              0.265946      0.544268       1.01681      0.475874       0.20251        31     
+-------------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)                 0.000228376   0.00276405     0.0774328    0.000258654    0.0136328       31     
+end_path:t0:MichelTimingDataDeconHD     0.265632      0.541395       1.01644      0.472108      0.203547        31     
+=========================================================================================================================
+%MSG-i NuRandomService:  MichelTimingDataDeconHD:t0@EndJob  07-Jun-2025 21:30:23 CDT ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 531413179
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+====================================================================================================
+MemoryTracker summary (base-10 MB units used)
+
+  Peak virtual memory usage (VmPeak)  : 2111.06 MB
+  Peak resident set size usage (VmHWM): 768.991 MB
+====================================================================================================
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 t0
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 16.198273 Real = 16.915534
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2111.06 VmHWM = 768.991
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.
+Moving and renaming michelt0_Decon.root to /pnfs/dune/scratch/users/szh2/pdhd_DATA_Michel/beamRun_28891_DECON/test/michelt0_decon_run028891_0674_dataflow0_datawriter_0_20240824T082156.root
+Successfully processed: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/a3/78/np04hd_raw_run028891_0674_dataflow0_datawriter_0_20240824T082156_reco_stage1_reco_stage2_20240824T100359_keepup.root
+------------------------------------------------------------
+Processing input file: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/1b/e2/np04hd_raw_run028891_0645_dataflow3_datawriter_0_20240824T073612_reco_stage1_reco_stage2_20240824T100358_keepup.root
+Extracted base: run028891_0645_dataflow3_datawriter_0_20240824T073612
+Final output file will be named: michelt0_decon_run028891_0645_dataflow3_datawriter_0_20240824T073612.root
+Running deconvolution...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:30:28 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+%MSG-i PathConfiguration:  Early 07-Jun-2025 21:30:28 CDT JobSetup
+Multiple end paths have been combined into one end path,
+"end_path" since order is irrelevant.
+%MSG
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:30:29 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:30:29 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+Deconvolution::BuildExtraFilter sigma is 5.52105
+%MSG-i Deconvolution::Deconvolution():  Deconvolution:opdec@Construction  07-Jun-2025 21:30:29 CDT ModuleConstruction
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 113 SPE template files.
+Will look in ProtoDUNE/HD/opdetresponse/v0/ for 2 noise template files.
+Input waveform polarity set to: -1
+Default white noise RMS: 4.5
+
+Ignoring channels:
+    -1, 3, 86, 87, 97, 107, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 
+
+%MSG
+07-Jun-2025 21:30:30 CDT  Initiating request to open input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/1b/e2/np04hd_raw_run028891_0645_dataflow3_datawriter_0_20240824T073612_reco_stage1_reco_stage2_20240824T100358_keepup.root"
+07-Jun-2025 21:30:31 CDT  Opened input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/1b/e2/np04hd_raw_run028891_0645_dataflow3_datawriter_0_20240824T073612_reco_stage1_reco_stage2_20240824T100358_keepup.root"
+Begin processing the 1st record. run: 28891 subRun: 1 event: 159963 at 07-Jun-2025 21:30:31 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:31 CDT run: 28891 subRun: 1 event: 159963
+Number of waveforms to process: 2302
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:32 CDT run: 28891 subRun: 1 event: 159963
+
+Number of deconvolved waveforms in this event: 2239
+Number of deconvolved waveforms to be saved in this event: 2239
+
+%MSG
+07-Jun-2025 21:30:32 CDT  Opened output file with pattern "deconv_gen.root"
+%MSG-i FastCloning:  PostProcessEvent 07-Jun-2025 21:30:32 CDT  run: 28891 subRun: 1 event: 159963
+Fast cloning event data products from input file.
+%MSG
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 159971 at 07-Jun-2025 21:30:35 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:35 CDT run: 28891 subRun: 1 event: 159971
+Number of waveforms to process: 1978
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:35 CDT run: 28891 subRun: 1 event: 159971
+
+Number of deconvolved waveforms in this event: 1916
+Number of deconvolved waveforms to be saved in this event: 1916
+
+%MSG
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 159979 at 07-Jun-2025 21:30:35 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:35 CDT run: 28891 subRun: 1 event: 159979
+Number of waveforms to process: 1984
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:36 CDT run: 28891 subRun: 1 event: 159979
+
+Number of deconvolved waveforms in this event: 1928
+Number of deconvolved waveforms to be saved in this event: 1928
+
+%MSG
+Begin processing the 4th record. run: 28891 subRun: 1 event: 159987 at 07-Jun-2025 21:30:36 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:36 CDT run: 28891 subRun: 1 event: 159987
+Number of waveforms to process: 2137
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:37 CDT run: 28891 subRun: 1 event: 159987
+
+Number of deconvolved waveforms in this event: 2079
+Number of deconvolved waveforms to be saved in this event: 2079
+
+%MSG
+Begin processing the 5th record. run: 28891 subRun: 1 event: 159995 at 07-Jun-2025 21:30:37 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:37 CDT run: 28891 subRun: 1 event: 159995
+Number of waveforms to process: 2248
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:38 CDT run: 28891 subRun: 1 event: 159995
+
+Number of deconvolved waveforms in this event: 2195
+Number of deconvolved waveforms to be saved in this event: 2195
+
+%MSG
+Begin processing the 6th record. run: 28891 subRun: 1 event: 160003 at 07-Jun-2025 21:30:38 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:38 CDT run: 28891 subRun: 1 event: 160003
+Number of waveforms to process: 2170
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:39 CDT run: 28891 subRun: 1 event: 160003
+
+Number of deconvolved waveforms in this event: 2116
+Number of deconvolved waveforms to be saved in this event: 2116
+
+%MSG
+Begin processing the 7th record. run: 28891 subRun: 1 event: 160011 at 07-Jun-2025 21:30:39 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:39 CDT run: 28891 subRun: 1 event: 160011
+Number of waveforms to process: 2279
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:40 CDT run: 28891 subRun: 1 event: 160011
+
+Number of deconvolved waveforms in this event: 2210
+Number of deconvolved waveforms to be saved in this event: 2210
+
+%MSG
+Begin processing the 8th record. run: 28891 subRun: 1 event: 160019 at 07-Jun-2025 21:30:40 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:40 CDT run: 28891 subRun: 1 event: 160019
+Number of waveforms to process: 2257
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:41 CDT run: 28891 subRun: 1 event: 160019
+
+Number of deconvolved waveforms in this event: 2200
+Number of deconvolved waveforms to be saved in this event: 2200
+
+%MSG
+Begin processing the 9th record. run: 28891 subRun: 1 event: 160027 at 07-Jun-2025 21:30:41 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:41 CDT run: 28891 subRun: 1 event: 160027
+Number of waveforms to process: 2074
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:41 CDT run: 28891 subRun: 1 event: 160027
+
+Number of deconvolved waveforms in this event: 2018
+Number of deconvolved waveforms to be saved in this event: 2018
+
+%MSG
+Begin processing the 10th record. run: 28891 subRun: 1 event: 160035 at 07-Jun-2025 21:30:42 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:42 CDT run: 28891 subRun: 1 event: 160035
+Number of waveforms to process: 2509
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:42 CDT run: 28891 subRun: 1 event: 160035
+
+Number of deconvolved waveforms in this event: 2441
+Number of deconvolved waveforms to be saved in this event: 2441
+
+%MSG
+Begin processing the 11th record. run: 28891 subRun: 1 event: 160043 at 07-Jun-2025 21:30:43 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:43 CDT run: 28891 subRun: 1 event: 160043
+Number of waveforms to process: 1762
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:43 CDT run: 28891 subRun: 1 event: 160043
+
+Number of deconvolved waveforms in this event: 1710
+Number of deconvolved waveforms to be saved in this event: 1710
+
+%MSG
+Begin processing the 12th record. run: 28891 subRun: 1 event: 160051 at 07-Jun-2025 21:30:44 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:44 CDT run: 28891 subRun: 1 event: 160051
+Number of waveforms to process: 2023
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:44 CDT run: 28891 subRun: 1 event: 160051
+
+Number of deconvolved waveforms in this event: 1971
+Number of deconvolved waveforms to be saved in this event: 1971
+
+%MSG
+Begin processing the 13th record. run: 28891 subRun: 1 event: 160059 at 07-Jun-2025 21:30:44 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:44 CDT run: 28891 subRun: 1 event: 160059
+Number of waveforms to process: 2035
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:45 CDT run: 28891 subRun: 1 event: 160059
+
+Number of deconvolved waveforms in this event: 1981
+Number of deconvolved waveforms to be saved in this event: 1981
+
+%MSG
+Begin processing the 14th record. run: 28891 subRun: 1 event: 160067 at 07-Jun-2025 21:30:45 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:45 CDT run: 28891 subRun: 1 event: 160067
+Number of waveforms to process: 2137
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:46 CDT run: 28891 subRun: 1 event: 160067
+
+Number of deconvolved waveforms in this event: 2080
+Number of deconvolved waveforms to be saved in this event: 2080
+
+%MSG
+Begin processing the 15th record. run: 28891 subRun: 1 event: 160075 at 07-Jun-2025 21:30:46 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:46 CDT run: 28891 subRun: 1 event: 160075
+Number of waveforms to process: 2953
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:47 CDT run: 28891 subRun: 1 event: 160075
+
+Number of deconvolved waveforms in this event: 2891
+Number of deconvolved waveforms to be saved in this event: 2891
+
+%MSG
+Begin processing the 16th record. run: 28891 subRun: 1 event: 160083 at 07-Jun-2025 21:30:47 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:47 CDT run: 28891 subRun: 1 event: 160083
+Number of waveforms to process: 2410
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:48 CDT run: 28891 subRun: 1 event: 160083
+
+Number of deconvolved waveforms in this event: 2344
+Number of deconvolved waveforms to be saved in this event: 2344
+
+%MSG
+Begin processing the 17th record. run: 28891 subRun: 1 event: 160091 at 07-Jun-2025 21:30:48 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:48 CDT run: 28891 subRun: 1 event: 160091
+Number of waveforms to process: 2176
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:49 CDT run: 28891 subRun: 1 event: 160091
+
+Number of deconvolved waveforms in this event: 2121
+Number of deconvolved waveforms to be saved in this event: 2121
+
+%MSG
+Begin processing the 18th record. run: 28891 subRun: 1 event: 160099 at 07-Jun-2025 21:30:49 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:49 CDT run: 28891 subRun: 1 event: 160099
+Number of waveforms to process: 1642
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:50 CDT run: 28891 subRun: 1 event: 160099
+
+Number of deconvolved waveforms in this event: 1585
+Number of deconvolved waveforms to be saved in this event: 1585
+
+%MSG
+Begin processing the 19th record. run: 28891 subRun: 1 event: 160107 at 07-Jun-2025 21:30:50 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:50 CDT run: 28891 subRun: 1 event: 160107
+Number of waveforms to process: 2140
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:50 CDT run: 28891 subRun: 1 event: 160107
+
+Number of deconvolved waveforms in this event: 2076
+Number of deconvolved waveforms to be saved in this event: 2076
+
+%MSG
+Begin processing the 20th record. run: 28891 subRun: 1 event: 160115 at 07-Jun-2025 21:30:51 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:51 CDT run: 28891 subRun: 1 event: 160115
+Number of waveforms to process: 2473
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:51 CDT run: 28891 subRun: 1 event: 160115
+
+Number of deconvolved waveforms in this event: 2411
+Number of deconvolved waveforms to be saved in this event: 2411
+
+%MSG
+Begin processing the 21st record. run: 28891 subRun: 1 event: 160123 at 07-Jun-2025 21:30:52 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:52 CDT run: 28891 subRun: 1 event: 160123
+Number of waveforms to process: 2074
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:52 CDT run: 28891 subRun: 1 event: 160123
+
+Number of deconvolved waveforms in this event: 2020
+Number of deconvolved waveforms to be saved in this event: 2020
+
+%MSG
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 160131 at 07-Jun-2025 21:30:53 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:53 CDT run: 28891 subRun: 1 event: 160131
+Number of waveforms to process: 1810
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:53 CDT run: 28891 subRun: 1 event: 160131
+
+Number of deconvolved waveforms in this event: 1753
+Number of deconvolved waveforms to be saved in this event: 1753
+
+%MSG
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 160139 at 07-Jun-2025 21:30:53 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:53 CDT run: 28891 subRun: 1 event: 160139
+Number of waveforms to process: 2548
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:54 CDT run: 28891 subRun: 1 event: 160139
+
+Number of deconvolved waveforms in this event: 2479
+Number of deconvolved waveforms to be saved in this event: 2479
+
+%MSG
+Begin processing the 24th record. run: 28891 subRun: 1 event: 160147 at 07-Jun-2025 21:30:54 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:54 CDT run: 28891 subRun: 1 event: 160147
+Number of waveforms to process: 2212
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:55 CDT run: 28891 subRun: 1 event: 160147
+
+Number of deconvolved waveforms in this event: 2148
+Number of deconvolved waveforms to be saved in this event: 2148
+
+%MSG
+Begin processing the 25th record. run: 28891 subRun: 1 event: 160155 at 07-Jun-2025 21:30:55 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:55 CDT run: 28891 subRun: 1 event: 160155
+Number of waveforms to process: 2020
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:56 CDT run: 28891 subRun: 1 event: 160155
+
+Number of deconvolved waveforms in this event: 1966
+Number of deconvolved waveforms to be saved in this event: 1966
+
+%MSG
+Begin processing the 26th record. run: 28891 subRun: 1 event: 160163 at 07-Jun-2025 21:30:56 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:56 CDT run: 28891 subRun: 1 event: 160163
+Number of waveforms to process: 2248
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:57 CDT run: 28891 subRun: 1 event: 160163
+
+Number of deconvolved waveforms in this event: 2194
+Number of deconvolved waveforms to be saved in this event: 2194
+
+%MSG
+Begin processing the 27th record. run: 28891 subRun: 1 event: 160171 at 07-Jun-2025 21:30:57 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:57 CDT run: 28891 subRun: 1 event: 160171
+Number of waveforms to process: 1750
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:58 CDT run: 28891 subRun: 1 event: 160171
+
+Number of deconvolved waveforms in this event: 1698
+Number of deconvolved waveforms to be saved in this event: 1698
+
+%MSG
+Begin processing the 28th record. run: 28891 subRun: 1 event: 160179 at 07-Jun-2025 21:30:58 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:58 CDT run: 28891 subRun: 1 event: 160179
+Number of waveforms to process: 2215
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:58 CDT run: 28891 subRun: 1 event: 160179
+
+Number of deconvolved waveforms in this event: 2155
+Number of deconvolved waveforms to be saved in this event: 2155
+
+%MSG
+Begin processing the 29th record. run: 28891 subRun: 1 event: 160187 at 07-Jun-2025 21:30:59 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:30:59 CDT run: 28891 subRun: 1 event: 160187
+Number of waveforms to process: 2212
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:30:59 CDT run: 28891 subRun: 1 event: 160187
+
+Number of deconvolved waveforms in this event: 2152
+Number of deconvolved waveforms to be saved in this event: 2152
+
+%MSG
+Begin processing the 30th record. run: 28891 subRun: 1 event: 160195 at 07-Jun-2025 21:31:00 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:31:00 CDT run: 28891 subRun: 1 event: 160195
+Number of waveforms to process: 2323
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:31:00 CDT run: 28891 subRun: 1 event: 160195
+
+Number of deconvolved waveforms in this event: 2261
+Number of deconvolved waveforms to be saved in this event: 2261
+
+%MSG
+Begin processing the 31st record. run: 28891 subRun: 1 event: 160203 at 07-Jun-2025 21:31:01 CDT
+%MSG-i Deconvolution::produce():  Deconvolution:opdec@BeginModule  07-Jun-2025 21:31:01 CDT run: 28891 subRun: 1 event: 160203
+Number of waveforms to process: 2401
+***Wiener Filter****
+***ApplyPostfilter***
+
+%MSG
+%MSG-i DecoAnalysis::analyze():  DecoAnalysis:opdecoana@BeginModule  07-Jun-2025 21:31:01 CDT run: 28891 subRun: 1 event: 160203
+
+Number of deconvolved waveforms in this event: 2344
+Number of deconvolved waveforms to be saved in this event: 2344
+
+%MSG
+07-Jun-2025 21:31:02 CDT  Closed output file "deconv_gen.root"
+07-Jun-2025 21:31:03 CDT  Closed input file "root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/1b/e2/np04hd_raw_run028891_0645_dataflow3_datawriter_0_20240824T073612_reco_stage1_reco_stage2_20240824T100358_keepup.root"
+%MSG-i NuRandomService:  RootOutput:out1@EndJob 07-Jun-2025 21:31:03 CDT  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 822500618
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 opdecoana
+TrigReport         31         31          0 out1
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 29.420975 Real = 31.413563
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2641.74 VmHWM = 2013.74
+
+Art has completed and will exit with status 0.
+Running Michel time matching...
+%MSG-i MF_INIT_OK:  Early 07-Jun-2025 21:31:25 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+%MSG-i AuxDetGeometryCore:  Early 07-Jun-2025 21:31:28 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:31:28 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 07-Jun-2025 21:31:28 CDT JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_04_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 07-Jun-2025 21:31:28 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 07-Jun-2025 21:31:28 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  07-Jun-2025 21:31:28 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+IFDH constructor, got keys:
+service_type, 
+IFDH: didn't find a base uri...
+
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c runmicheltime.fcl -s deconv_gen.root
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0xab856f0
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0xab6b930
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.02401
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0xab7c650
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+AdcThresholdSignalFinder::ctor: Configuration parameters:
+AdcThresholdSignalFinder::ctor:       LogLevel: 1
+AdcThresholdSignalFinder::ctor:      Threshold: 5e-1
+AdcThresholdSignalFinder::ctor:     BinsBefore: 10
+AdcThresholdSignalFinder::ctor:      BinsAfter: 20
+AdcThresholdSignalFinder::ctor:   FlagPositive: true
+AdcThresholdSignalFinder::ctor:   FlagNegative: true
+ExpTailPedRemover::ctor: Parameters:
+ExpTailPedRemover::ctor:               LogLevel: 1
+ExpTailPedRemover::ctor:             SignalFlag: 3
+ExpTailPedRemover::ctor:   SignalIterationLimit: 10
+ExpTailPedRemover::ctor:             SignalTool: adcTailSignalFinderKe
+ExpTailPedRemover::ctor:              DecayTime: 2200
+ExpTailPedRemover::ctor:                MaxTick: 21000
+ExpTailPedRemover::ctor:              PedDegree: 0
+ExpTailPedRemover::ctor:               PedTick0: 3000
+ExpTailPedRemover::ctor:               PedFreqs: []
+ExpTailPedRemover::ctor:   IncludeChannelRanges: [apa1z, apa2z, apa3z, apa4z, apa5z, apa6z, apa1c, apa2c, apa3c, apa4c, apa5c, apa6c]
+ExpTailPedRemover::ctor:   NoWarnStatuses: [1]
+ExpTailPedRemover::ctor:   ExcludeChannelRanges: []
+ExpTailPedRemover::ctor: Channel checking enabled for 5760 channels.
+ToolBasedRawDigitPrepService::ctor:     Found tool pdspTailPedRemovalZKe @ 0x9790610
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x5863360
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+ToolBasedRawDigitPrepService::ctor:            pdspTailPedRemovalZKe
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:31:31 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 07-Jun-2025 21:31:31 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+07-Jun-2025 21:31:32 CDT  Initiating request to open input file "deconv_gen.root"
+07-Jun-2025 21:31:32 CDT  Opened input file "deconv_gen.root"
+db: runtime1724484962
+Begin processing the 1st record. run: 28891 subRun: 1 event: 159963 at 07-Jun-2025 21:31:33 CDT
+
+RDTimeStamp daq: 107780310158096968
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2239
+
+
+All OpChs: Num of All([0, inf)) wvf: 2239
+
+
+Begin processing the 2nd record. run: 28891 subRun: 1 event: 159971 at 07-Jun-2025 21:31:33 CDT
+
+RDTimeStamp daq: 107780310215935761
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1916
+
+
+All OpChs: Num of All([0, inf)) wvf: 1916
+
+
+Begin processing the 3rd record. run: 28891 subRun: 1 event: 159979 at 07-Jun-2025 21:31:33 CDT
+
+RDTimeStamp daq: 107780310263483546
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1928
+
+
+All OpChs: Num of All([0, inf)) wvf: 1928
+
+
+Begin processing the 4th record. run: 28891 subRun: 1 event: 159987 at 07-Jun-2025 21:31:34 CDT
+
+RDTimeStamp daq: 107780310339700326
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2079
+
+
+All OpChs: Num of All([0, inf)) wvf: 2079
+
+
+Begin processing the 5th record. run: 28891 subRun: 1 event: 159995 at 07-Jun-2025 21:31:34 CDT
+
+RDTimeStamp daq: 107780310825891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2195
+
+
+All OpChs: Num of All([0, inf)) wvf: 2195
+
+
+Begin processing the 6th record. run: 28891 subRun: 1 event: 160003 at 07-Jun-2025 21:31:35 CDT
+
+RDTimeStamp daq: 107780311049384163
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2116
+
+
+All OpChs: Num of All([0, inf)) wvf: 2116
+
+
+Begin processing the 7th record. run: 28891 subRun: 1 event: 160011 at 07-Jun-2025 21:31:36 CDT
+
+RDTimeStamp daq: 107780311186410643
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2210
+
+
+All OpChs: Num of All([0, inf)) wvf: 2210
+
+
+Begin processing the 8th record. run: 28891 subRun: 1 event: 160019 at 07-Jun-2025 21:31:37 CDT
+
+RDTimeStamp daq: 107780311385344932
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2200
+
+
+All OpChs: Num of All([0, inf)) wvf: 2200
+
+
+Begin processing the 9th record. run: 28891 subRun: 1 event: 160027 at 07-Jun-2025 21:31:37 CDT
+
+RDTimeStamp daq: 107780311830652691
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2018
+
+
+All OpChs: Num of All([0, inf)) wvf: 2018
+
+
+Begin processing the 10th record. run: 28891 subRun: 1 event: 160035 at 07-Jun-2025 21:31:38 CDT
+
+RDTimeStamp daq: 107780311974854888
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2441
+
+
+All OpChs: Num of All([0, inf)) wvf: 2441
+
+
+Begin processing the 11th record. run: 28891 subRun: 1 event: 160043 at 07-Jun-2025 21:31:38 CDT
+
+RDTimeStamp daq: 107780312067033741
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1710
+
+
+All OpChs: Num of All([0, inf)) wvf: 1710
+
+
+Begin processing the 12th record. run: 28891 subRun: 1 event: 160051 at 07-Jun-2025 21:31:38 CDT
+
+RDTimeStamp daq: 107780312108583085
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1971
+
+
+All OpChs: Num of All([0, inf)) wvf: 1971
+
+
+Begin processing the 13th record. run: 28891 subRun: 1 event: 160059 at 07-Jun-2025 21:31:39 CDT
+
+RDTimeStamp daq: 107780312376090445
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1981
+
+
+All OpChs: Num of All([0, inf)) wvf: 1981
+
+
+Begin processing the 14th record. run: 28891 subRun: 1 event: 160067 at 07-Jun-2025 21:31:39 CDT
+
+RDTimeStamp daq: 107780312771972716
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2080
+
+
+All OpChs: Num of All([0, inf)) wvf: 2080
+
+
+Begin processing the 15th record. run: 28891 subRun: 1 event: 160075 at 07-Jun-2025 21:31:40 CDT
+
+RDTimeStamp daq: 107780312876510751
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2891
+
+
+All OpChs: Num of All([0, inf)) wvf: 2891
+
+
+Begin processing the 16th record. run: 28891 subRun: 1 event: 160083 at 07-Jun-2025 21:31:41 CDT
+
+RDTimeStamp daq: 107780312977092765
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2344
+
+
+All OpChs: Num of All([0, inf)) wvf: 2344
+
+
+Begin processing the 17th record. run: 28891 subRun: 1 event: 160091 at 07-Jun-2025 21:31:42 CDT
+
+RDTimeStamp daq: 107780313075891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2121
+
+
+All OpChs: Num of All([0, inf)) wvf: 2121
+
+
+Begin processing the 18th record. run: 28891 subRun: 1 event: 160099 at 07-Jun-2025 21:31:42 CDT
+
+RDTimeStamp daq: 107780313575891201
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1585
+
+
+All OpChs: Num of All([0, inf)) wvf: 1585
+
+
+Begin processing the 19th record. run: 28891 subRun: 1 event: 160107 at 07-Jun-2025 21:31:43 CDT
+
+RDTimeStamp daq: 107780313784337077
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2076
+
+
+All OpChs: Num of All([0, inf)) wvf: 2076
+
+
+Begin processing the 20th record. run: 28891 subRun: 1 event: 160115 at 07-Jun-2025 21:31:43 CDT
+
+RDTimeStamp daq: 107780313892756141
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2411
+
+
+All OpChs: Num of All([0, inf)) wvf: 2411
+
+
+Begin processing the 21st record. run: 28891 subRun: 1 event: 160123 at 07-Jun-2025 21:31:44 CDT
+
+RDTimeStamp daq: 107780314099688995
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2020
+
+
+All OpChs: Num of All([0, inf)) wvf: 2020
+
+
+Begin processing the 22nd record. run: 28891 subRun: 1 event: 160131 at 07-Jun-2025 21:31:44 CDT
+
+RDTimeStamp daq: 107780314567483240
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1753
+
+
+All OpChs: Num of All([0, inf)) wvf: 1753
+
+
+Begin processing the 23rd record. run: 28891 subRun: 1 event: 160139 at 07-Jun-2025 21:31:45 CDT
+
+RDTimeStamp daq: 107780314673656485
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2479
+
+
+All OpChs: Num of All([0, inf)) wvf: 2479
+
+
+Begin processing the 24th record. run: 28891 subRun: 1 event: 160147 at 07-Jun-2025 21:31:45 CDT
+
+RDTimeStamp daq: 107780314700625833
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2148
+
+
+All OpChs: Num of All([0, inf)) wvf: 2148
+
+
+Begin processing the 25th record. run: 28891 subRun: 1 event: 160155 at 07-Jun-2025 21:31:46 CDT
+
+RDTimeStamp daq: 107780314768217528
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1966
+
+
+All OpChs: Num of All([0, inf)) wvf: 1966
+
+
+Begin processing the 26th record. run: 28891 subRun: 1 event: 160163 at 07-Jun-2025 21:31:46 CDT
+
+RDTimeStamp daq: 107780315151608286
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2194
+
+
+All OpChs: Num of All([0, inf)) wvf: 2194
+
+
+Begin processing the 27th record. run: 28891 subRun: 1 event: 160171 at 07-Jun-2025 21:31:47 CDT
+
+RDTimeStamp daq: 107780315492363083
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 1698
+
+
+All OpChs: Num of All([0, inf)) wvf: 1698
+
+
+Begin processing the 28th record. run: 28891 subRun: 1 event: 160179 at 07-Jun-2025 21:31:47 CDT
+
+RDTimeStamp daq: 107780315610525444
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2155
+
+
+All OpChs: Num of All([0, inf)) wvf: 2155
+
+
+Begin processing the 29th record. run: 28891 subRun: 1 event: 160187 at 07-Jun-2025 21:31:47 CDT
+
+RDTimeStamp daq: 107780315656755063
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2152
+
+
+All OpChs: Num of All([0, inf)) wvf: 2152
+
+
+Begin processing the 30th record. run: 28891 subRun: 1 event: 160195 at 07-Jun-2025 21:31:48 CDT
+
+RDTimeStamp daq: 107780315724839349
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2261
+
+
+All OpChs: Num of All([0, inf)) wvf: 2261
+
+
+Begin processing the 31st record. run: 28891 subRun: 1 event: 160203 at 07-Jun-2025 21:31:49 CDT
+
+RDTimeStamp daq: 107780316112568709
+
+
+
+Opch<120: Num of Long(>1024) wvf: 0
+
+Opch<120: Num of Short(<1024) wvf: 0
+
+Opch<120: Num of Normal(1024) & Short wvf: 2344
+
+
+All OpChs: Num of All([0, inf)) wvf: 2344
+
+
+07-Jun-2025 21:31:49 CDT  Closed input file "deconv_gen.root"
+
+=========================================================================================================================
+TimeTracker printout (sec)                 Min           Avg           Max         Median          RMS         nEvts   
+=========================================================================================================================
+Full event                              0.311386      0.532218       1.17841      0.498604       0.1687         31     
+-------------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)                 0.00023521     0.0030762     0.0867469    0.00026687     0.0152762       31     
+end_path:t0:MichelTimingDataDeconHD     0.311006      0.529042       1.17809      0.498227      0.168144        31     
+=========================================================================================================================
+%MSG-i NuRandomService:  MichelTimingDataDeconHD:t0@EndJob  07-Jun-2025 21:31:49 CDT ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 14402887
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+====================================================================================================
+MemoryTracker summary (base-10 MB units used)
+
+  Peak virtual memory usage (VmPeak)  : 2098.7 MB
+  Peak resident set size usage (VmHWM): 757.129 MB
+====================================================================================================
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 31 passed = 31 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport         31         31          0 t0
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 15.994256 Real = 16.536425
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 2098.7 VmHWM = 757.129
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.
+Moving and renaming michelt0_Decon.root to /pnfs/dune/scratch/users/szh2/pdhd_DATA_Michel/beamRun_28891_DECON/test/michelt0_decon_run028891_0645_dataflow3_datawriter_0_20240824T073612.root
+Successfully processed: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/1b/e2/np04hd_raw_run028891_0645_dataflow3_datawriter_0_20240824T073612_reco_stage1_reco_stage2_20240824T100358_keepup.root
+------------------------------------------------------------
+All processing completed.
