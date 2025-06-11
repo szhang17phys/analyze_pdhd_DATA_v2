@@ -1,3 +1,0 @@
-Lines in list_part1.txt without correspondence in part1.txt:
-root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/c0/3d/np04hd_raw_run028891_0139_dataflow4_datawriter_0_20240823T190932_reco_stage1_reco_stage2_20240823T202955_keepup.root
-root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/e6/c7/np04hd_raw_run028891_0130_dataflow3_datawriter_0_20240823T185546_reco_stage1_reco_stage2_20240823T214714_keepup.root

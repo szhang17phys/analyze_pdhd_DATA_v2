@@ -4,8 +4,8 @@ import re
 with open("part1.txt", "r") as f1:
     part1_lines = f1.readlines()
 
-# Extract all X_dataflowX segments from part1.txt
-pattern = re.compile(r"(\d{3,5}_dataflow\d+)")
+# Updated pattern: match _1506_dataflow7_datawriter_
+pattern = re.compile(r"(_\d{2,6}_dataflow\d{1,2}_datawriter_)")
 part1_keys = set()
 
 for line in part1_lines:
@@ -13,11 +13,11 @@ for line in part1_lines:
     if match:
         part1_keys.add(match.group(1))
 
-# Check each line in list_part1.txt
-with open("list_part1.txt", "r") as f2:
+# Read rucio_paths_Full.txt
+with open("rucio_paths_Full.txt", "r") as f2:
     list_lines = f2.readlines()
 
-# Find lines in list_part1.txt that don't match any key from part1.txt
+# Find unmatched lines
 unmatched_lines = []
 
 for line in list_lines:
@@ -28,7 +28,7 @@ for line in list_lines:
     else:
         unmatched_lines.append(line.strip())  # No match at all
 
-# Print or save the unmatched lines
-print("Lines in list_part1.txt without correspondence in part1.txt:")
+# Print results
+print("Lines in rucio_paths_Full.txt without correspondence in part1.txt:")
 for line in unmatched_lines:
     print(line)
