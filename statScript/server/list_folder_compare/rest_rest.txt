@@ -1,0 +1,5 @@
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/ef/dd/np04hd_raw_run028116_0052_dataflow4_datawriter_0_20240724T093733_reco_stage1_reco_stage2_20240910T085753_keepup.root
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/36/ba/np04hd_raw_run028116_0778_dataflow5_datawriter_0_20240724T152238_reco_stage1_reco_stage2_20240910T094930_keepup.root
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/ef/6f/np04hd_raw_run028116_0752_dataflow6_datawriter_0_20240724T151013_reco_stage1_reco_stage2_20240910T094929_keepup.root
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/4c/97/np04hd_raw_run028116_0691_dataflow7_datawriter_0_20240724T144107_reco_stage1_reco_stage2_20240910T094914_keepup.root
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/d3/29/np04hd_raw_run028116_0797_dataflow0_datawriter_0_20240724T153147_reco_stage1_reco_stage2_20240910T094936_keepup.root

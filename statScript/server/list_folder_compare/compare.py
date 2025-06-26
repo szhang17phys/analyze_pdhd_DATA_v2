@@ -20,7 +20,7 @@ for line in part1_lines:
 # ===============================
 # --- Process rucio_paths_Full.txt ---
 # ===============================
-with open("rucio_paths_Full.txt", "r") as f2:
+with open("rest_rucio.txt", "r") as f2:
     list_lines = f2.readlines()
 
 rucio_key_to_lines = defaultdict(list)
