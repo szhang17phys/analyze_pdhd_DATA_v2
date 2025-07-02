@@ -1,19 +1,19 @@
 import re
 
 # Define output file paths
-x_path = "posX_extract.txt"
-y_path = "posY_extract.txt"
-z_path = "posZ_extract.txt"
+x_path = "posX_extract_intensity.txt"
+y_path = "posY_extract_intensity.txt"
+z_path = "posZ_extract_intensity.txt"
 
 # Open output files in write mode to overwrite existing content
 with open(x_path, "w") as x_out, open(y_path, "w") as y_out, open(z_path, "w") as z_out:
     
     # Load all lines from print_3000Files_filtered.txt into memory
-    with open("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/beamRun28891_FullRun/applyCut_print/filtered_fullRun_print.txt", "r") as f:
+    with open("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/cosmicRun28116_FullRun/applyCut_print/filtered_fullRun_print.txt", "r") as f:
         filtered_lines = f.readlines()
 
     # Process each line in peakFinder_muonTime_new20250602.txt
-    with open("./peakFinder_muonTime_new20250602.txt", "r") as f:
+    with open("./peakFinder_muonTime_intensity.txt", "r") as f:
         for line in f:
             # Extract event and trackID from the line
             match = re.search(r"event(\d+)_trackID(\d+)", line)
