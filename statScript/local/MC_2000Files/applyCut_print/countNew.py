@@ -1,7 +1,7 @@
 import re
 
 # Input file
-input_file = "./filtered_print.txt"
+input_file = "./filtered_print_1072Files.txt"
 
 # Output files
 decay_x_file = "./newResult/decayX_filtered.txt"
@@ -34,7 +34,7 @@ with open(decay_x_file, "w") as dx, \
             line = line.strip()
             
             # Detect Michel candidate count
-            if line.startswith("======Michel e CAND! (score>0.03) COUNT======"):
+            if line.startswith("======Michel e CAND"):
                 michel_count += 1
             
             # Extract Michel score & Michel hits

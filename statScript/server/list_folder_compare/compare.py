@@ -2,7 +2,9 @@ import re
 from collections import defaultdict
 
 # --- Define the pattern ---
-pattern = re.compile(r"(_\d{2,6}_dataflow\d{1,2}_datawriter_0_\d{8}T\d{6})")
+# Ex: michelt0_MC_decon_20240411T230901Z_192205_038498.root
+#pattern = re.compile(r"(_\d{2,6}_dataflow\d{1,2}_datawriter_0_\d{8}T\d{6})")
+pattern = re.compile(r"(_\d{8}T\d{6}Z_\d{3,7}_\d{3,7})")
 
 # =====================
 # --- Process part1.txt ---
@@ -20,7 +22,7 @@ for line in part1_lines:
 # ===============================
 # --- Process rucio_paths_Full.txt ---
 # ===============================
-with open("rest_rucio.txt", "r") as f2:
+with open("rucio_2k_FNAL.txt", "r") as f2:
     list_lines = f2.readlines()
 
 rucio_key_to_lines = defaultdict(list)

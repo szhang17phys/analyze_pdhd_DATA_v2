@@ -7,8 +7,23 @@ def extract_michel_blocks(input_file, output_file):
     with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
         lines = infile.readlines()
         
+        #---Example------------------------------------------------         
+        # ======Michel e CAND! (score>0.1) COUNT (DECON)======
+        # Michel score: 0.734694,  Michel hits: 5
+        # Run: 8340,  Event: 799,  TrackID: 3
+        # Vertex(x, y, z) = (109.575, 364.426, 347.994)
+            # End(x, y, z) = (-55.7074, 7.12261, 138.448)
+
+        # Distance to APA plane (+/-): 300.639 cm
+
+        # Closest OpCh (y, z): (32.16, 145.861); Label: 139
+        # 127 137 147 
+        # 128 138 148 
+        # 129 139 149 
+        #----------------------------------------------------------       
+
         # Regex patterns to extract required information
-        michel_block_pattern = re.compile(r"======Michel e CAND! \(score>0.03\) COUNT======")
+        michel_block_pattern = re.compile(r"======Michel e CAND!")
         score_pattern = re.compile(r"Michel score: ([\d\.]+)")
         hits_pattern = re.compile(r"Michel hits: (\d+)")
         end_pattern = re.compile(r"End\(x, y, z\) = \((-?\d*\.?\d*), (-?\d*\.?\d*), (-?\d*\.?\d*)\)")
@@ -54,4 +69,4 @@ def extract_michel_blocks(input_file, output_file):
             outfile.write("\n")
 
 # Usage
-extract_michel_blocks("../original_list/initial_print.txt", "./filtered_print.txt")
+extract_michel_blocks("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_2000Files/michelt0_process_original/print_initial_1072Files.txt", "./filtered_print_1072Files.txt")

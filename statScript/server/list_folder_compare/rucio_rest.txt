@@ -1,9 +1,3 @@
-
-===== Keys with multiple corresponding lines in rucio_paths_Full.txt =====
-
-===== Keys with multiple corresponding lines in part1.txt =====
-
-===== Lines in rucio_paths_Full.txt without correspondence in part1.txt =====
 root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/tape_backed/dunepro//hd-protodune/full-reconstructed/2024/mc/out1/pdhd_mc_2024a/00/19/26/02/prod_beam_p1GeV_cosmics_protodunehd_20240413T025942Z_192602_057073_g4_stage1_g4_stage2_sce_off_detsim_reco.root_1717181441
 root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/tape_backed/dunepro//hd-protodune/full-reconstructed/2024/mc/out1/pdhd_mc_2024a/00/00/57/96/prod_beam_p1GeV_cosmics_protodunehd_20240406T150013Z_5796_012836_g4_stage1_g4_stage2_sce_off_detsim_reco.root_1715582961
 root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/tape_backed/dunepro//hd-protodune/full-reconstructed/2024/mc/out1/pdhd_mc_2024a/00/19/06/39/prod_beam_p1GeV_cosmics_protodunehd_20240408T194717Z_190639_001760_g4_stage1_g4_stage2_sce_off_detsim_reco.root
@@ -932,12 +926,3 @@ root://xrootd.echo.stfc.ac.uk:1094/dune:/protodune/RSE/hd-protodune/29/40/prod_b
 root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/dune/hd-protodune/66/c9/prod_beam_p1GeV_cosmics_protodunehd_20240406T174802Z_5871_015621_g4_stage1_g4_stage2_sce_off_detsim_reco.root
 root://ccxrootdegee.in2p3.fr:1094/pnfs/in2p3.fr/data/dune/disk/hd-protodune/82/3a/prod_beam_p1GeV_cosmics_protodunehd_20240406T195533Z_5960_017512_g4_stage1_g4_stage2_sce_off_detsim_reco.root
 root://dune.dcache.nikhef.nl:1094/pnfs/nikhef.nl/data/dune/generic/rucio/hd-protodune/cb/6c/prod_beam_p1GeV_cosmics_protodunehd_20240406T173737Z_5858_015128_g4_stage1_g4_stage2_sce_off_detsim_reco.root
-
-===== Summary =====
-Total lines in part1.txt: 1072
-Total lines in rucio_paths_Full.txt: 2000
-Total unique keys in part1.txt: 1072
-Total unique keys in rucio_paths_Full.txt: 2000
-Total unmatched lines in rucio_paths_Full.txt: 928
-Total keys with duplicated lines in rucio_paths_Full.txt: 0
-Total keys with duplicated lines in part1.txt: 0
