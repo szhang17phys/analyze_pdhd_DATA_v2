@@ -67,7 +67,7 @@ std::vector<Peak> findPeaks(TH1D* hist, double heightThreshold) {
 
 
 
-void processSingleFile(const char* inputFileName) {  
+void processSingleFile(const char* inputFileName, const double thre_summed) {  
 
     // Process input root file ---------------------------------------------------------
     TFile* inputFile = TFile::Open(inputFileName, "READ");
@@ -86,9 +86,11 @@ void processSingleFile(const char* inputFileName) {
     }
     hist->SetDirectory(0);  // Disconnect from file
 
+
     // Set threshold for total histogram===========================
-    double thresholdToUse = 0.5;
+    double thresholdToUse = thre_summed;
     //=============================================================
+
 
     // Find peaks
     std::vector<Peak> peaks = findPeaks(hist, thresholdToUse);
@@ -168,7 +170,7 @@ void processSingleFile(const char* inputFileName) {
 
 
 // Process each ROOT file in the specified directory individually.
-void processDirectory(const char* directoryName) {
+void processDirectory(const char* directoryName, const double thre) {
     TSystemDirectory dir(directoryName, directoryName);
     TList* files = dir.GetListOfFiles();
     if (!files) {
@@ -198,11 +200,10 @@ void processDirectory(const char* directoryName) {
     for (size_t counter = 0; counter < fileList.size(); ++counter) {
         const TString& fullPath = fileList[counter];
 
-        std::cout << "\n[" << counter << "] Processing file: " << fullPath << std::endl;
-        std::cout << "\n\n\nProcessing file: " << fullPath << std::endl;
-        std::cout << "\nThreshold for ms_ch is 0.1, for total is 0.5!" << std::endl;
+        std::cout << "\n\n[" << counter << "] Processing file: " << fullPath << std::endl;
+        std::cout << "\nThreshold for summed wvf: "<< thre << std::endl;
 
-        processSingleFile(fullPath.Data());
+        processSingleFile(fullPath.Data(), thre);
     }
 }
 
@@ -216,7 +217,7 @@ void processDirectory(const char* directoryName) {
 // Main entry point: process all ROOT files in the directory one by one.
 
 //"Part I"----------------------------
-void michel_peakFinder_intensity() {
+void intensity_thre() {
 
     //Suggested by ChatGPT; 20250614; Avoid storing histograms in memory by default
     gROOT->cd(); 
@@ -228,6 +229,6 @@ void michel_peakFinder_intensity() {
     clear2.close();
 
     const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_applyCut";
-    processDirectory(inputDirectory);
+    processDirectory(inputDirectory, 2.8);//Threshold for summed wvf---
 }
 

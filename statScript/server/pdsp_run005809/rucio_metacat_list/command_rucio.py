@@ -6,8 +6,10 @@ import os
 input_file = "run005809_metacat_6856Files.txt"
 output_file = "rucio_paths_Full.txt"
 
+#Example: root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/tape_backed/dunepro//protodune-sp/full-reconstructed/2020/detector/physics/PDSPProd4/00/00/58/09/np04_raw_run005809_0052_dl6_reco1_39134907_0_20201111T043652Z.root
+
 # Regex pattern to extract the root:// URL
-#url_pattern = re.compile(r'(root://[\w\.:/-]+)')
+#url_pattern = re.compile(r'(root://[\w\.:/-]*persistent[\w\.:/-]*)')
 url_pattern = re.compile(r'(root://[\w\.:/-]*persistent[\w\.:/-]*)')
 
 # Get the actual username

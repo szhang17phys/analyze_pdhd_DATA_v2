@@ -153,15 +153,12 @@ private:
 
 
 
-
-
 ana::Truechecks::Truechecks(fhicl::ParameterSet const& p)
     : EDAnalyzer{p},
     iLogLevel(p.get<int>("LogLevel")),
     vvsProducts(p.get<std::vector<std::vector<std::string>>>("Products"))
 {
-    if (iLogLevel >= kBasics) 
-        std::cout << "\n\n\033[93m" << "Truechecks::Truechecks: =================" << "\033[0m" << std::endl;
+    if (iLogLevel >= kBasics) std::cout << "\033[93m" << "Truechecks::Truechecks: ============================================================" << "\033[0m" << std::endl;
     // Basic Utilities
     asGeo = &*art::ServiceHandle<geo::Geometry>();
     asWire = &art::ServiceHandle<geo::WireReadout>()->Get();
@@ -197,21 +194,14 @@ ana::Truechecks::Truechecks(fhicl::ParameterSet const& p)
     // fSamplingRate = detinfo::sampling_rate(clockData) * 1e-3;
     // fDriftVelocity = detProp.DriftVelocity();
 
-    if (iLogLevel >= kBasics) std::cout << "\033[93m" << "End of Truechecks::Truechecks ==========" << "\033[0m\n" << std::endl;
+    if (iLogLevel >= kBasics) std::cout << "\033[93m" << "End of Truechecks::Truechecks ======================================================" << "\033[0m" << std::endl;
 }
-
-
-
-
-
-
-
 
 void ana::Truechecks::analyze(art::Event const& e)
 {
 
     if (iLogLevel >= kBasics) {
-        std::cout << "\n\n\n\033[93m" << "Truechecks::analyze: Initialization evt#" << std::setw(5) << e.id().event() << " ====================================" << "\033[0m" << std::endl;
+        std::cout << "\033[93m" << "Truechecks::analyze: Initialization evt#" << std::setw(5) << e.id().event() << " ====================================" << "\033[0m" << std::endl;
     }
 
     auto const clockData = asDetClocks->DataFor(e);
@@ -219,152 +209,40 @@ void ana::Truechecks::analyze(art::Event const& e)
     fSamplingRate = detinfo::sampling_rate(clockData) * 1e-3;
     fDriftVelocity = detProp.DriftVelocity();
 
+    // auto const & vh_hit = e.getValidHandle<std::vector<recob::Hit>>(tag_hit);
+    // std::vector<art::Ptr<recob::Hit>> vp_hit;
+    // art::fill_ptr_vector(vp_hit, vh_hit);
+
     auto const & vh_trk = e.getValidHandle<std::vector<recob::Track>>(tag_trk);
     std::vector<art::Ptr<recob::Track>> vp_trk;
     art::fill_ptr_vector(vp_trk, vh_trk);
+
+    // art::FindManyP<recob::Hit> fmp_trk2hit(vh_trk, e, tag_trk);
+    // art::FindManyP<recob::Track> fmp_hit2trk(vh_hit, e, tag_trk);
+    // art::FindManyP<recob::SpacePoint> fmp_hit2spt(vh_hit, e, tag_spt);
+
+    std::map<std::string, unsigned> map_decay_count;
+    std::map<std::string, unsigned> map_el_proc_count;
 
     std::vector<unsigned> n_dau;
     std::vector<unsigned> n_muioni;
     std::vector<std::vector<int>> dau_pdg;
     std::vector<std::vector<std::string>> dau_process;
 
-
-    if (iLogLevel >= kInfos) std::cout << "LOOPING over " << vp_trk.size() << " tracks..." << std::endl;
-
-    //Shu: Track-level processing, 20250703---
+    if (iLogLevel >= kInfos) std::cout << "looping over " << vp_trk.size() << " tracks..." << std::endl;
     for (art::Ptr<recob::Track> const& p_trk : vp_trk) {
         if (iLogLevel >= kInfos) std::cout << "trk#" << p_trk->ID() << "\r" << std::flush;
 
-        if (p_trk->Length() < 40) continue; //Shu: remove short tracks (expect muon long enough), 20250703---
+        if (p_trk->Length() < 40) continue;
+        simb::MCParticle const * mcp = truthUtil.GetMCParticleFromRecoTrack(clockData, *p_trk, e, tag_trk.label());
+        if (!mcp) continue;
+        if (abs(mcp->PdgCode()) != 13) continue;
 
-        // Print reco track's reconstructed endpoint
-        std::cout << "\tMuonRecoEnd ("
-                  << p_trk->End().X() << ", "
-                  << p_trk->End().Y() << ", "
-                  << p_trk->End().Z() << ") " << std::endl;
+        map_decay_count[mcp->EndProcess()]++;
 
+        if (mcp->EndProcess() == "Transportation") continue;
 
-
-
-
-        //Shu: The key, all info of track particle can be acquired here, 20250703---
-        //Shu: (ChatGPT) For a certain Pandora reco track, find the most likely MC truth particle---
-        //Shu: This method is convenient, but not always accurate, especially in dense or noisy events. 
-        //It only gives the MCParticle that contributed the most charge via BackTrackerService, 
-        //not necessarily the one that aligns best in 3D
-        //        simb::MCParticle const * mcp = truthUtil.GetMCParticleFromRecoTrack(clockData, *p_trk, e, tag_trk.label());
-
-        //MCPartcile finding for current reco track-------------------------------------------------------
-        // Step 1: Try truthUtil match first
-        simb::MCParticle const* mcp = truthUtil.GetMCParticleFromRecoTrack(clockData, *p_trk, e, tag_trk.label());
-
-        bool use_fallback = false;
-        double dist_truthutil = 9999.0;
-
-        if (mcp && std::abs(mcp->PdgCode()) == 13 && mcp->EndProcess() != "Transportation") {
-            double dx = p_trk->End().X() - mcp->EndX();
-            double dy = p_trk->End().Y() - mcp->EndY();
-            double dz = p_trk->End().Z() - mcp->EndZ();
-            dist_truthutil = std::sqrt(dx * dx + dy * dy + dz * dz);
-            if (dist_truthutil > 15.0) 
-                use_fallback = true;
-        } 
-        else {
-            use_fallback = true;
-        }
-
-
-        // Step 2: Fallback — match by closest muon decay point with IDE energy threshold
-        // Compute energy_by_trackid earlier in the loop
-        // Get hits associated with current reco track p_trk
-        auto const& vh_trk = e.getValidHandle<std::vector<recob::Track>>(tag_trk);
-        art::FindManyP<recob::Hit> trackToHits(vh_trk, e, tag_trk.label());
-
-        std::vector<const recob::Hit*> track_hits;
-        if (trackToHits.isValid() && trackToHits.at(p_trk.key()).size()) {
-            for (const auto& hit_ptr : trackToHits.at(p_trk.key())) {
-                track_hits.push_back(hit_ptr.get());
-            }
-        }
-
-        // Accumulate IDE energy per MCParticle that contributed to those hits
-        std::map<int, double> energy_by_trackid;
-        for (const recob::Hit* hit : track_hits) {
-            std::vector<sim::TrackIDE> ides = bt_serv->HitToTrackIDEs(clockData, *hit);
-            for (const auto& ide : ides) {
-                energy_by_trackid[ide.trackID] += ide.energy; // unit: MeV
-            }
-        }
-
-        if (use_fallback) {
-            std::cout << "\t[Matching Fallback]" << std::endl;
-
-            auto const& mcp_handle = e.getValidHandle<std::vector<simb::MCParticle>>(tag_mcp);
-            double min_dist = std::numeric_limits<double>::max();
-            simb::MCParticle const* best_mcp = nullptr;
-
-            for (auto const& mcp_cand : *mcp_handle) {
-                if (std::abs(mcp_cand.PdgCode()) != 13) continue;
-                if (mcp_cand.EndProcess() == "Transportation") continue;
-
-                int trackID = mcp_cand.TrackId();
-
-                // Require this particle contributed significant IDE energy to reco hits
-                auto it = energy_by_trackid.find(trackID);
-                if (it == energy_by_trackid.end()) continue;
-                if (it->second < 0.5) continue; // IDE energy threshold
-
-                double dx = p_trk->End().X() - mcp_cand.EndX();
-                double dy = p_trk->End().Y() - mcp_cand.EndY();
-                double dz = p_trk->End().Z() - mcp_cand.EndZ();
-                double dist = std::sqrt(dx * dx + dy * dy + dz * dz);
-
-                if (dist < min_dist) {
-                    min_dist = dist;
-                    best_mcp = &mcp_cand;
-                }
-            }
-
-            // Add debug logging before decision
-            std::cout << "\t[Matching Fallback] min_dist = " << min_dist << std::endl;
-
-
-            if (best_mcp && min_dist < 15.0) {
-                mcp = best_mcp;
-                std::cout << "\t[Matching Fallback] Match accepted" << std::endl;
-            }
-            else {
-                std::cout << "\t[Matching Fallback] No valid match " << std::endl;
-                mcp = nullptr;
-            }
-            
-        }
-
-
-        // Step 3: Reject if no usable match
-        if (!mcp) {
-                std::cout << "\tNo usable MC match." << std::endl;
-                continue;
-        }
-        //------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-        if (!mcp) continue; //Shu: No match, jump; 20250703---
-        if (abs(mcp->PdgCode()) != 13) continue; //Shu: If the track is not mu^- / mu^+, jump; 20250703---
-
-
-        if (mcp->EndProcess() == "Transportation") continue; //Shu: through-going muons, jump; 20250703---
-
-        if (mcp->PdgCode() > 0) { //Shu: count mu^-; 20250703---
+        if (mcp->PdgCode() > 0) {
             n_mum++;
             map_mum_endproc[mcp->EndProcess()]++;
         } else {
@@ -376,9 +254,9 @@ void ana::Truechecks::analyze(art::Event const& e)
         unsigned tp_n_muioni=0;
         std::vector<int> tp_dau_pdg;
         std::vector<std::string> tp_dau_process;
-        for (int i_dau=0; i_dau<mcp->NumberDaughters(); i_dau++) { //Shu: loop over mu's daughter particles, 20250703---
+        for (int i_dau=0; i_dau<mcp->NumberDaughters(); i_dau++) {
             simb::MCParticle const * mcp_dau = pi_serv->TrackIdToParticle_P(mcp->Daughter(i_dau));
-            if (!mcp_dau) continue; //Shu: No daughter particle; jump; 20250703---
+            if (!mcp_dau) continue;
 
             tp_n_dau++;
 
@@ -395,7 +273,7 @@ void ana::Truechecks::analyze(art::Event const& e)
         dau_pdg.push_back(tp_dau_pdg);
         dau_process.push_back(tp_dau_process);
     
-        if (mcp->NumberDaughters() < 3) continue; //Shu: For real decay of muon, at least 3 daughter particles, 20250703---
+        if (mcp->NumberDaughters() < 3) continue;
 
         bool has_numu=false, has_nue=false;
         simb::MCParticle const * mcp_mich = nullptr;
@@ -412,8 +290,10 @@ void ana::Truechecks::analyze(art::Event const& e)
 
         if (!(has_nue and has_numu and mcp_mich)) continue;
 
-        if (mcp->PdgCode() > 0) n_mem++; //Shu: # of decayed mu^-, 20250703---
+        if (mcp->PdgCode() > 0) n_mem++;
         else n_mep++;
+
+        map_el_proc_count[mcp_mich->Process()]++;
 
         std::vector<const recob::Hit*> v_hit_michel = truthUtil.GetMCParticleHits(clockData, *mcp_mich, e, tag_hit.label());
         if (mcp->EndProcess() == "muMinusCaptureAtRest") {
@@ -425,59 +305,74 @@ void ana::Truechecks::analyze(art::Event const& e)
             }
         }
 
-
-        std::cout << "\t[Michel observed!] (" << GetParticleName(mcp_mich->PdgCode()) << ") / mcp::TrackID: " <<  mcp_mich->TrackId() << " / " << v_hit_michel.size() << " hits" << std::endl;
-        //Modified by Shu, 20250703---
-        std::cout << "\tMichel True K-energy : " << (mcp_mich->E() - mcp_mich->Mass()) * 1e3 << " MeV" << std::endl;
-        std::cout << "\tMichel origin position: (x, y, z, t)[cm, ns]   = (" << mcp_mich->Vx() << ", " << mcp_mich->Vy() << ", " << mcp_mich->Vz() << ", " << mcp_mich->T() << ")" << std::endl;
-        std::cout << "\tMCTruth muon stops at (x1, y1, z1, t1)[cm, ns] = (" << mcp->EndX() << ", " << mcp->EndY() << ", " << mcp->EndZ() << ", " << mcp->EndT() << ")" << std::endl;
-        std::cout << "\tMCTruth muon starts at (x0, y0, z0, t0)[cm, ns]= (" << mcp->Vx() << ", " << mcp->Vy() << ", " << mcp->Vz() << ", " << mcp->T() << ")" << std::endl;
-        std::cout << "\tMCTruth muon lifetime [us]: " << (mcp->EndT() - mcp->T()) * 1e-3 << std::endl;  
-        
-        
-
-
-
-
+        std::cout << "\tlooking at michel (" << GetParticleName(mcp_mich->PdgCode()) << ") / mcp::TrackID: " <<  mcp_mich->TrackId() << " / " << v_hit_michel.size() << " hits" << std::endl;
         float mich_ide_energy = 0;
         float mich_hit_energy = 0;
 
-//        unsigned i_hit=0;
+        unsigned i_hit=0;
         for (const recob::Hit* hit_michel : v_hit_michel) {
             if (hit_michel->View() != geo::kW) continue;
 
             mich_hit_energy += hit_michel->Integral() * fADCtoMeV;
 
             std::vector<sim::TrackIDE> v_tid = bt_serv->HitToTrackIDEs(clockData, *hit_michel); 
-//            std::cout << "\thit#" << i_hit++
-//                << " Integral: " << hit_michel->Integral() * fADCtoMeV
-//                << " MeV  / ROIADC: " << hit_michel->ROISummedADC() * fADCtoMeV
-//                << " MeV / "  << v_tid.size() << " trackIDEs"
-//                << std::endl;
+            std::cout << "\thit#" << i_hit++
+                << " Integral: " << hit_michel->Integral() * fADCtoMeV
+                << " MeV  / ROIADC: " << hit_michel->ROISummedADC() * fADCtoMeV
+                << " MeV / "  << v_tid.size() << " trackIDEs"
+                << std::endl;
 
-//            unsigned i_tid=0;
+            unsigned i_tid=0;
             for (const sim::TrackIDE& tid : v_tid) {
-//                simb::MCParticle const * mcp_tid = pi_serv->TrackIdToParticle_P(tid.trackID);
-                // std::cout << "\t\t\ttIDE#" << i_tid++
-                //     << " trackID: " << (tid.trackID == mcp_mich->TrackId() ? "\033[92m" : "\033[91m") << tid.trackID << "\033[0m"
-                //     << " (" << GetParticleName(mcp_tid->PdgCode()) << ")"
-                //     << " energy: " << tid.energy
-                //     << " energyFrac: " << tid.energyFrac
-                //     << " numElectrons: " << tid.numElectrons
-                //     << " (" << tid.numElectrons * feltoMeV << " MeV)"
-                //     << std::endl;
+                simb::MCParticle const * mcp_tid = pi_serv->TrackIdToParticle_P(tid.trackID);
+                std::cout << "\t\t\ttIDE#" << i_tid++
+                    << " trackID: " << (tid.trackID == mcp_mich->TrackId() ? "\033[92m" : "\033[91m") << tid.trackID << "\033[0m"
+                    << " (" << GetParticleName(mcp_tid->PdgCode()) << ")"
+                    << " energy: " << tid.energy
+                    << " energyFrac: " << tid.energyFrac
+                    << " numElectrons: " << tid.numElectrons
+                    << " (" << tid.numElectrons * feltoMeV << " MeV)"
+                    << std::endl;
                 if (tid.trackID == mcp_mich->TrackId()) {
                    mich_ide_energy += tid.energy; 
                 }
             }
         }
 
-//        std::cout << "\tMichel IDE energy: " << mich_ide_energy << " MeV"
-//            << " / Michel Hit energy: " << mich_hit_energy << " MeV"
-//            << std::endl;
+        std::cout << "\tMichel IDE energy: " << mich_ide_energy << " MeV"
+            << " / Michel Hit energy: " << mich_hit_energy << " MeV"
+            << " / Michel True K-energy: " << (mcp_mich->E() - mcp_mich->Mass()) * 1e3 << " MeV"
+            << std::endl;
     }
 
+    // std::cout << "======= MU END PROC =======" << std::endl;
 
+    // for (auto const& [key, val] : map_decay_count) {
+    //     std::cout << key << ": " << val << std::endl;
+    // }
+
+    // std::cout << "======= MICHEL PROC =======" << std::endl;
+
+    // for (auto const& [key, val] : map_el_proc_count) {
+    //     std::cout << key << ": " << val << std::endl;
+    // }
+
+    // std::cout << "======= DAU DETAILS =======" << std::endl;
+
+    // for (unsigned i=0; i<n_dau.size(); i++) {
+    //     char ith[4];
+    //     switch (i) {
+    //         case 0: strcpy(ith, "st"); break;
+    //         case 1: strcpy(ith, "nd"); break;
+    //         case 2: strcpy(ith, "rd"); break;
+    //         default: strcpy(ith, "th"); break;
+    //     } 
+    //     std::cout << i+1 << ith << " µ has " << n_dau[i] << " daughters" << std::endl;
+    //     std::cout << "  e- muIoni (x" << n_muioni[i] << ")" << std::endl;
+    //     for (unsigned j=0; j<dau_pdg[i].size(); j++) {
+    //         std::cout << "  " << std::setw(6) << GetParticleName(dau_pdg[i][j]) << " " << dau_process[i][j] << std::endl;
+    //     }
+    // }
 
     if (iLogLevel >= kBasics) std::cout << "\033[93m" << "End of Truechecks::analyze =======================================================" << "\033[0m" << std::endl;
 } // end analyze
@@ -501,15 +396,13 @@ void ana::Truechecks::endJob()
     for (auto const& [key, val] : map_mum_endproc) {
         std::cout << "  " << key << ": " << val << std::endl;
     }
-    std::cout << "µ- decaying after capture: " << 100.*(n_cme_wh + n_cme_nh) / map_mum_endproc["muMinusCaptureAtRest"] << "% (" << (n_cme_wh + n_cme_nh) << ")" << std::endl;
+    std::cout << "µ- decaying after capture: " << n_cme_wh + n_cme_nh << "% (" << (n_cme_wh + n_cme_nh) / map_mum_endproc["muMinusCaptureAtRest"] << ")" << std::endl;
     std::cout << "  w/ hits: " << n_cme_wh << " (~" << mean_cme_h/n_cme_wh << " hits/michel)" << std::endl;
     std::cout << "  w/o hit: " << n_cme_nh << std::endl;
 
 
-    if (iLogLevel >= kBasics) std::cout << "\033[93m" << "End of Truechecks::endJob ========================================================" << "\033[0m\n\n" << std::endl;
+    if (iLogLevel >= kBasics) std::cout << "\033[93m" << "End of Truechecks::endJob ========================================================" << "\033[0m" << std::endl;
 } // end endJob
-
-
 
 
 bool ana::Truechecks::Log(bool cond, int flag, int tab, std::string msg, std::string succ, std::string fail) {
