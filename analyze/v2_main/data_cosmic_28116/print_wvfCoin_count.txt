@@ -1,5 +1,5 @@
-Processed 13382 files. Results written to ./print_wvfCoin_count.txt.
-D2_opNum5.root: 5
+wvfFind_event27807_trackID25_opNum2.root: 2
+wvfFind_event17279_trackID2_opNum5.root: 5
 wvfFind_event46751_trackID14_opNum1.root: 1
 wvfFind_event59963_trackID8_opNum8.root: 8
 wvfFind_event50829_trackID15_opNum5.root: 5

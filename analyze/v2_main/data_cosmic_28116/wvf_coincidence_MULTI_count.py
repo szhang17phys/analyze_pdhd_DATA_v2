@@ -27,4 +27,4 @@ with open(output_txt, "w") as f:
     for filename, count in results:
         f.write(f"{filename}: {count}\n")
 
-print(f"Processed {len(results)} files. Results written to {output_txt}.")
+#print(f"Processed {len(results)} files. Results written to {output_txt}.")
