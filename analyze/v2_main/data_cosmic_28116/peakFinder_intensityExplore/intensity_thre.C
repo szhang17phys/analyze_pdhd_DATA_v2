@@ -113,53 +113,60 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     });
 
     // Record top 3 peak bin indices
-    std::vector<int> topTotalPeaks;
+    std::vector<int> topTotalPeaks_index;
+    std::vector<double> topTotalPeaks_intensity;
     for (size_t i = 0; i < std::min<size_t>(3, peaks.size()); ++i) {
-        topTotalPeaks.push_back(peaks[i].binIndex);
+        topTotalPeaks_index.push_back(peaks[i].binIndex);
+        topTotalPeaks_intensity.push_back(std::min(peaks[i].leftHeight, peaks[i].rightHeight));        
     }
 
     // Handle special case if only one peak
-    if (topTotalPeaks.size() == 1) {
-        topTotalPeaks.push_back(0);
+    if (topTotalPeaks_index.size() == 1) {
+        topTotalPeaks_index.push_back(0);
+        topTotalPeaks_intensity.push_back(0);
     }
 
 
-    // Example debug print for topTotalPeaks
+    // Example debug print for topTotalPeaks_index
     std::cout << "Top total peaks (by true height): ";
-    for (int bin : topTotalPeaks) {
+    for (int bin : topTotalPeaks_index) {
         std::cout << bin << " ";
     }
     std::cout << std::endl;
 
     inputFile->Close();
     delete inputFile;
-    //---------------------------------------------------------------------------------    
-
-
-    
-
-    
+    //------------------------------------------------    
 
     //Store muon and Michel candidates-------------------------------------------------
     std::cout << "\n---- Saving Time info of muon and Michel candidates ----" << std::endl;
 
-    std::ofstream muonFile("peakFinder_muonTime_intensity.txt", std::ios::app);
-    std::ofstream michelTimeFile("peakFinder_michelTime_intensity.txt", std::ios::app);
+    std::ofstream muonFile("peakFinder_muonTime_index.txt", std::ios::app);
+    std::ofstream michelFile("peakFinder_michelTime_index.txt", std::ios::app);
+    std::ofstream muonFile_2("peakFinder_muonTime_intensity.txt", std::ios::app);
+    std::ofstream michelFile_2("peakFinder_michelTime_intensity.txt", std::ios::app);    
 
     // Save first peak (muon time) unconditionally
-    if (!topTotalPeaks.empty()) {
-        muonFile << inputFileName << ": " << topTotalPeaks[0] << "\n";
-        std::cout << "[Saved] Muon time peak: " << topTotalPeaks[0] << std::endl;
+    if (!topTotalPeaks_index.empty()) {
+        muonFile << inputFileName << ": " << topTotalPeaks_index[0] << "\n";
+        muonFile_2 << inputFileName << ": " << topTotalPeaks_intensity[0] << "\n";
+        std::cout << "[Saved] Muon time peak index: " << topTotalPeaks_index[0] << std::endl;
+        std::cout << "        Intensity: " << topTotalPeaks_intensity[0] << std::endl;        
     }
 
     // Save second peak (Michel time)
-    if (topTotalPeaks.size() >= 2) {
-        michelTimeFile << inputFileName << ": " << topTotalPeaks[1] << "\n";
-        std::cout << "[Saved] Michel time peak: " << topTotalPeaks[1] << std::endl;
+    if (topTotalPeaks_index.size() >= 2) {
+        michelFile << inputFileName << ": " << topTotalPeaks_index[1] << "\n";
+        michelFile_2 << inputFileName << ": " << topTotalPeaks_intensity[1] << "\n";        
+        std::cout << "[Saved] Michel time peak: " << topTotalPeaks_index[1] << std::endl;
+        std::cout << "        Intensity: " << topTotalPeaks_intensity[1] << std::endl;
     }
 
+
     muonFile.close();
-    michelTimeFile.close();
+    michelFile.close();
+    muonFile_2.close();
+    michelFile_2.close();    
     // --------------------------------------------------------------------------------
 
 }
@@ -223,12 +230,16 @@ void intensity_thre() {
     gROOT->cd(); 
 
     // Clear output files before starting (20250529): Necessary!!!
-    std::ofstream clear1("peakFinder_muonTime_intensity.txt");
-    std::ofstream clear2("peakFinder_michelTime_intensity.txt");
+    std::ofstream clear1("peakFinder_muonTime_index.txt");
+    std::ofstream clear2("peakFinder_michelTime_index.txt");
+    std::ofstream clear3("peakFinder_muonTime_intensity.txt");
+    std::ofstream clear4("peakFinder_michelTime_intensity.txt");    
     clear1.close();
     clear2.close();
+    clear3.close();
+    clear4.close();    
 
     const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_applyCut";
-    processDirectory(inputDirectory, 2.8);//Threshold for summed wvf---
+    processDirectory(inputDirectory, 0.5);//Threshold for summed wvf---
 }
 
