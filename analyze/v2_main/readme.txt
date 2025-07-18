@@ -68,3 +68,21 @@ Structure of folder data_src_decon_20250604:
 #-----------------------------------------------------
 Structure of folder data_cosmic_28116:
 Added by Shu @ 20250718---
+
+wvf_coincidence_MULTI_merged.py: process single event downloaded from server;
+merge waveform with time < 256ns; save PDS group(s) for each event
+
+wvf_coincidence_MULTI_applyCut.py: apply #wvf cut, request >=5 wvfs for each event
+
+wvf_coincidence_MULTI_count.py: count the exact number of wvfs for each root peakFinder_michelCoincidence
+
+michel_peakFinder_new20250602.C: apply peakFinder on single wvf; This one is "old"
+The incorrect #coincidence and summed wvf peak cut joint analysis
+
+peakFinder_extractDecayPoint.py; extract 3D decay points of candidates passing all cuts
+
+2ndPDS_extractDecayPoint.py: To extract 3D decays of candidates with 2nd PDS group
+
+peakFinder_intensityExplore:
+    intensity_thre.C: The intensity-only peakFinder; applying different cuts
+    peakFinder_extractDecayPoint.py: extract 3D decay points of events after intensity_thre.C
