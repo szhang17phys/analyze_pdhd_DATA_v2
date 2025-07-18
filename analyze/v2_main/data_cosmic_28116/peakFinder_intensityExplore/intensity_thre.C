@@ -239,7 +239,7 @@ void intensity_thre() {
     clear3.close();
     clear4.close();    
 
-    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_applyCut";
+    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/ttt";
     processDirectory(inputDirectory, 0.5);//Threshold for summed wvf---
 }
 

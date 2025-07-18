@@ -58,3 +58,13 @@ Structure of folder data_src_decon_20250604:
 2. All the scripts are from data_src_decon_20250528
 3. The purpose is to check the effect of new matching window
 4. data_src_decon_20250528: [-0.12, 0.03];  data_src_decon_20250604: [-0.1, 0.02]
+
+
+
+
+
+
+
+#-----------------------------------------------------
+Structure of folder data_cosmic_28116:
+Added by Shu @ 20250718---
