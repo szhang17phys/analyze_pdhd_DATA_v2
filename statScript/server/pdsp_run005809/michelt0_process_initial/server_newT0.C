@@ -97,20 +97,13 @@
     //Test---
     std::cout<<"#pdt0 of the event: "<<pdt0->size()<<"\n"<<std::endl;
 
-    for(size_t i = 0; i<pandorat0->size(); ++i){
-      //pandorat0: track---
-      std::cout<<"\npandorat0 (T0 TRACK COUNT)-------------------: "<<i<<std::endl;
-
-
-    }
-
 
 
     //Shu: loop over tracks with t0 tagging---
     for(size_t i = 0; i<pandorat0->size(); ++i){
+      std::cout<<"\npandorat0 (T0 TRACK COUNT)-------------------: "<<i<<std::endl;
 
       //Shu: track contains Michel e candidate---
-//      if ((*michelscore)[i]>0.1 && (*endx)[i]<-209.0 && (*endx)[i]>-209.1){
       if ((*michelscore)[i]>0.001){
 
         //Shu:---
@@ -119,7 +112,9 @@
         cout<<"Michel score: "<<(*michelscore)[i]<<",  Michel hits: "<<(*michelhits)[i]<<endl;
         cout<<"Run: "<<run<<",  Event: "<<event<<",  TrackID: "<<(*trkid)[i]<<endl;
         cout<<"Vertex(x, y, z) = ("<<(*vtxx)[i]<<", "<<(*vtxy)[i]<<", "<<(*vtxz)[i]<<")"<<endl;//starting point!---
-        cout<<"End(x, y, z) = ("<<(*endx)[i]<<", "<<(*endy)[i]<<", "<<(*endz)[i]<<")\n\n"<<endl;
+        cout<<"End(x, y, z) = ("<<(*endx)[i]<<", "<<(*endy)[i]<<", "<<(*endz)[i]<<")"<<endl;
+        cout<<"Pandora t0: "<<((*pandorat0)[i] * 1e-3)<<"\n\n"<<endl;
+
       }
     }
 

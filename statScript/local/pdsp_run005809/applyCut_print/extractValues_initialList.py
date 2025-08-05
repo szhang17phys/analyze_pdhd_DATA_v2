@@ -1,7 +1,7 @@
 import re
 
 # Input file
-input_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/pdsp_run005809/michelt0_process_initial/print_stage1.txt"
+input_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/pdsp_data/michelt0_process_initial/print_stage2.txt"
 
 # Output files
 decay_x_file = "./extract_initialList/decayX_initial.txt"
@@ -16,6 +16,7 @@ start_z_file = "./extract_initialList/startZ_initial.txt"
 eventID_file = "./extract_initialList/eventID_initial.txt"
 trackID_file = "./extract_initialList/trackID_initial.txt"
 
+pandora_file = "./extract_initialList/pandoraT0.txt"
 
 # Initialize counters
 michel_count = 0
@@ -30,7 +31,8 @@ with open(decay_x_file, "w") as dx, \
      open(start_y_file, "w") as sy, \
      open(start_z_file, "w") as sz, \
      open(eventID_file, "w") as eid, \
-     open(trackID_file, "w") as tid:
+     open(trackID_file, "w") as tid, \
+     open(pandora_file, "w") as t0:
     
     # Read input file line by line
     with open(input_file, "r") as f:
@@ -69,7 +71,14 @@ with open(decay_x_file, "w") as dx, \
                 if end_match:
                     dx.write(end_match.group(1) + "\n")
                     dy.write(end_match.group(2) + "\n")
-                    dz.write(end_match.group(3) + "\n")            
+                    dz.write(end_match.group(3) + "\n")   
+
+            # Extract pandora t0
+            elif "Pandora t0" in line:      
+                    time_match = re.search(r"Pandora t0:\s*(-?[0-9\.]+)", line)
+                    if time_match:
+                        t0_value = time_match.group(1)
+                        t0.write(t0_value + "\n") 
 
 
 # Print counts
