@@ -1,0 +1,533 @@
+%MSG-i MF_INIT_OK:  Early 06-Aug-2025 15:59:21 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+Info in <TGeoManager::Import>: Reading geometry from file: /exp/dune/app/users/szh2/michel_Jul2025/build_slf7.x86_64/dunecore/gdml/protodunehd_v6_refactored.gdml
+Info in <TGeoManager::TGeoManager>: Geometry GDMLImport, Geometry imported from GDML created
+Info in <TGeoManager::SetTopVolume>: Top volume is volWorld. Master volume is volWorld
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 5, max placements = 1148
+Info in <TGeoManager::CloseGeometry>: 25610 nodes/ 5537 volume UID's in Geometry imported from GDML
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+%MSG-i AuxDetGeometryCore:  Early 06-Aug-2025 15:59:23 CDT JobSetup
+New detector geometry loaded from
+	/exp/dune/app/users/szh2/michel_Jul2025/build_slf7.x86_64/dunecore/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 06-Aug-2025 15:59:23 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 06-Aug-2025 15:59:23 CDT JobSetup
+New detector geometry loaded from
+	/exp/dune/app/users/szh2/michel_Jul2025/build_slf7.x86_64/dunecore/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 06-Aug-2025 15:59:23 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 06-Aug-2025 15:59:23 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  06-Aug-2025 15:59:23 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c pdhd_Truechecks.fcl -s /pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250804/cosmic_reco_207_20250804T223134Z.root
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0xa473b00
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0xa35f5f0
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.025
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0x682c080
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+DuneToolManager::getPrivate: ERROR: No such tool name: pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: ERROR: Unable to retrieve display tool pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x5322c20
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+%MSG-i SignalShapingServiceDUNE:  Early 06-Aug-2025 15:59:26 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 06-Aug-2025 15:59:26 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+Warning in <TFile::Append>: Replacing existing TH1: FieldResponse_U (Potential memory leak).
+Warning in <TFile::Append>: Replacing existing TH1: FieldResponse_V (Potential memory leak).
+Warning in <TFile::Append>: Replacing existing TH1: FieldResponse_Y (Potential memory leak).
+
+
+[93mTruechecks::Truechecks: =================[0m
+[93mEnd of Truechecks::Truechecks ==========[0m
+
+06-Aug-2025 15:59:27 CDT  Initiating request to open input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250804/cosmic_reco_207_20250804T223134Z.root"
+%MSG-i Root_Information:  Truechecks:checks@Construction TClass::Init()  06-Aug-2025 15:59:27 CDT ModuleConstruction
+no dictionary for class sim::IDE is available
+ROOT severity: 2000
+%MSG
+06-Aug-2025 15:59:27 CDT  Opened input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250804/cosmic_reco_207_20250804T223134Z.root"
+[93mTruechecks::beginJob: ============================================================[0m
+[93mEnd of Truechecks::beginJob ======================================================[0m
+db: runtime408465675
+Begin processing the 1st record. run: 1 subRun: 0 event: 1 at 06-Aug-2025 15:59:28 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 06-Aug-2025 15:59:32 CDT  run: 1 subRun: 0 event: 1
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#    1 ====================================[0m
+LOOPING over 94 tracks...
+trk#0	MuonRecoEnd (-388.379, 116.003, 456.045) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 266.528
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#1	MuonRecoEnd (214.224, 20.9207, 394.271) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 363.359
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#2	MuonRecoEnd (-39.4596, 8.26676, 11.0446) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 269.815
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#3	MuonRecoEnd (188.884, 7.29154, 69.0751) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 827.379
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#4	MuonRecoEnd (237.058, 7.0135, 445.896) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 340.933
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#5	MuonRecoEnd (-102.213, 63.171, 462.252) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 340.706
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#6	MuonRecoEnd (-65.569, 11.7356, 293.483) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 452.987
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#7	MuonRecoEnd (-269.942, 144.497, 327.461) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 2449.42
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#8	MuonRecoEnd (184.649, 383.558, 240.711) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#9	MuonRecoEnd (-143.298, 334.032, 275.299) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 110.3
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#10	MuonRecoEnd (-391.115, 288.762, 100.605) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1118.54
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#11	MuonRecoEnd (246.175, 283.552, 258.475) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 242.92
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#12	MuonRecoEnd (101.43, 136.546, 2.78339) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 75.2639
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#13	MuonRecoEnd (81.6781, 203.302, 0.0249455) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 115.676
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#14	MuonRecoEnd (23.2427, 382.934, 461.98) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 2499.59
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#15	MuonRecoEnd (-30.773, 471.056, -0.0693734) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 392.923
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#16	MuonRecoEnd (-277.64, 330.543, 505.634) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 397.155
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#17	MuonRecoEnd (191.556, 5.18686, 70.7815) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 601.45
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#18	MuonRecoEnd (107.54, 7.21003, 174.752) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 919.962
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#19	MuonRecoEnd (66.5517, 190.864, 304.498) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1055.86
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#20	MuonRecoEnd (-82.6864, 7.69802, 363.163) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1147.31
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#21	MuonRecoEnd (-14.3562, 285.781, 255.595) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1154.49
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#22	MuonRecoEnd (116.909, 8.04409, 112.589) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 946.912
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#23	MuonRecoEnd (36.6953, 79.5253, 36.4788) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 252.699
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#24	MuonRecoEnd (391.682, 262.877, 189.334) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1072.69
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#25	MuonRecoEnd (-391.963, 406.695, 386.009) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 172.43
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#26	MuonRecoEnd (-346.585, 200.114, 229.342) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 231.304
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#27	MuonRecoEnd (-67.2219, 58.8845, 417.742) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 246.079
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#28	MuonRecoEnd (14.5056, 314.014, 27.5334) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 178.661
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#29	MuonRecoEnd (-41.2346, 464.228, 462.464) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 521.904
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#30	MuonRecoEnd (-74.2088, 556.123, 462.465) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 289.315
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#31	MuonRecoEnd (360.227, 517.435, 215.04) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1741.5
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#32	MuonRecoEnd (-67.2905, 555.503, 279.88) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#33	MuonRecoEnd (-264.102, 65.0348, 461.955) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1195.99
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#34	MuonRecoEnd (-391.437, 501.455, 171.415) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1195.79
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#35trk#36	MuonRecoEnd (374.925, 232.245, -48.212) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1171.01
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#37trk#38	MuonRecoEnd (46.512, 387.243, 462.424) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1221.05
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#39	MuonRecoEnd (213.263, 349.495, 204.87) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72trk#73trk#74trk#75trk#76trk#77trk#78trk#79trk#80trk#81trk#82trk#83trk#84trk#85trk#86trk#87trk#88trk#89trk#90trk#91trk#92trk#93[93mEnd of Truechecks::analyze =======================================================[0m
+Begin processing the 2nd record. run: 1 subRun: 0 event: 2 at 06-Aug-2025 15:59:32 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 06-Aug-2025 15:59:36 CDT  run: 1 subRun: 0 event: 2
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#    2 ====================================[0m
+LOOPING over 98 tracks...
+trk#0	MuonRecoEnd (240.499, 28.8256, -0.0661294) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 783.496
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#1	MuonRecoEnd (-146.015, 58.2185, 133.202) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 502.678
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#2	MuonRecoEnd (-273.494, 7.09385, 278.83) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 139.789
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#3	MuonRecoEnd (190.742, 7.14753, 88.216) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 742.195
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#4	MuonRecoEnd (-174.437, 8.60665, 237.094) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 34.436
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#5	MuonRecoEnd (-23.274, 7.17705, 192.067) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 336.579
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#6	MuonRecoEnd (237.128, 7.71952, 68.362) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 762.618
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#7	MuonRecoEnd (-210.731, 348.932, 395.623) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 253.686
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#8	MuonRecoEnd (103.231, 18.3338, 115.876) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 707.54
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#9	MuonRecoEnd (177.597, 159.429, 347.392) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 169.906
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#10	MuonRecoEnd (327.475, 135.457, 223.133) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 344.628
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#11	MuonRecoEnd (52.6113, 339.85, 460.638) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#12	MuonRecoEnd (-155.413, 260.229, 211.507) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 628.201
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#13	MuonRecoEnd (125.942, 462.85, 0.317818) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 733.715
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#14	MuonRecoEnd (-67.1815, 186.837, 40.1292) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#15	MuonRecoEnd (-126.944, 357.852, 329.471) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1083.84
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#16	MuonRecoEnd (-282.975, 6.92769, 337.158) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 175.259
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#17	MuonRecoEnd (16.2193, 526.108, 461.374) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1203.1
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#18	MuonRecoEnd (67.0243, 188.813, 350.485) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 259.252
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#19	MuonRecoEnd (176.698, 483.716, 462.537) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 171.905
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#20	MuonRecoEnd (283.615, 7.04922, 248.227) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1394.6
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#21	MuonRecoEnd (-55.1144, 648.618, 345.977) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 951.318
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#22	MuonRecoEnd (233.415, 7.08231, 241.092) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 218.507
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#23	MuonRecoEnd (-320.323, 105.918, 0.0777119) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#24	MuonRecoEnd (287.517, 189.844, 416.381) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1.79769e+308
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#25	MuonRecoEnd (-146.793, 508.836, 302.572) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 141.863
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#26	MuonRecoEnd (175.036, 487.397, 461.967) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 1100.17
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#27	MuonRecoEnd (-54.1098, 229.425, 337.923) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 260.135
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#28	MuonRecoEnd (-8.13408, 29.3868, 338.044) 
+	[Matching Fallback]
+	[Matching Fallback] min_dist = 683.464
+	[Matching Fallback] No valid match 
+	No usable MC match.
+trk#29trk#30trk#31trk#32	MuonRecoEnd (343.051, 196.296, 107.881) 
+trk#33trk#34trk#35trk#36trk#37trk#38trk#39trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72trk#73trk#74trk#75trk#76trk#77trk#78trk#79trk#80trk#81trk#82trk#83trk#84trk#85trk#86trk#87trk#88trk#89trk#90trk#91trk#92trk#93trk#94trk#95trk#96trk#97[93mEnd of Truechecks::analyze =======================================================[0m
+06-Aug-2025 15:59:36 CDT  Closed input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250804/cosmic_reco_207_20250804T223134Z.root"
+[93mTruechecks::endJob: ==============================================================[0m
+µ+ decay rate: -nan% (0)
+µ- decay rate: 0% (1)
+  muMinusCaptureAtRest: 1
+µ- decaying after capture: 0% (0)
+  w/ hits: 0 (~-nan hits/michel)
+  w/o hit: 0
+[93mEnd of Truechecks::endJob ========================================================[0m
+
+
+
+====================================================================================================================
+TimeTracker printout (sec)            Min           Avg           Max         Median          RMS         nEvts   
+====================================================================================================================
+Full event                         0.365842      0.415428      0.465013      0.415428      0.0495854        2     
+--------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)            0.000271961   0.00936156     0.0184512    0.00936156     0.0090896        2     
+end_path:checks:Truechecks         0.365483      0.405874      0.446266      0.405874      0.0403919        2     
+====================================================================================================================
+%MSG-i NuRandomService:  Truechecks:checks@EndJob 06-Aug-2025 15:59:36 CDT  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 68775543
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 2 passed = 2 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport          2          2          0 checks
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 7.504620 Real = 8.693611
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 4047.02 VmHWM = 2695.05
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.

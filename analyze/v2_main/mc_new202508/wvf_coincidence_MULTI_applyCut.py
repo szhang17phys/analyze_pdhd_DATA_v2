@@ -7,8 +7,8 @@ import shutil
 #Could change #wvf>=5 -> #wvf>=4
 
 # Define source and destination directories
-source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_merged"
-dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_applyCut"
+source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250804_MC/decon_wvf_coincidence_merged"
+dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250804_MC/decon_wvf_coincidence_applyCut"
 
 # Create destination directory if it doesn't exist
 if not os.path.exists(dest_dir):

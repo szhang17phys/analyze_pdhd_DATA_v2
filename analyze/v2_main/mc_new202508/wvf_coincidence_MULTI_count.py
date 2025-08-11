@@ -2,7 +2,7 @@ import os
 import ROOT
 
 # For results after merge
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/cosmic_28116/decon_wvf_coincidence_merged"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250804_MC/decon_wvf_coincidence_merged"
 output_txt = "./print_wvfCoin_count.txt"
 
 # List to hold (filename, count) tuples

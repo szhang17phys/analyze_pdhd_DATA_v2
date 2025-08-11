@@ -4,7 +4,7 @@ import os
 
 # Directories for input and output files
 input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250804_MC/decon_event_wvf_extract/"
-output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/data_28116_fullRun/decon_wvf_coincidence_merged/"
+output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250804_MC/decon_wvf_coincidence_merged/"
 
 # Get list of all ROOT files in the input directory
 input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith(".root")]
@@ -73,7 +73,7 @@ for input_file in input_files:
 
     # Extract event and track parts from the input filename.
     basename = os.path.basename(input_file)
-    match_et = re.search(r"extractDecon_(event\d+_trackID\d+)\.root", basename)
+    match_et = re.search(r"mcHD_(.+)\.root", basename)
     if match_et:
         event_track_part = match_et.group(1)
     else:
