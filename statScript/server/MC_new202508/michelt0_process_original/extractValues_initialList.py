@@ -1,7 +1,7 @@
 import re
 
 # Input file
-input_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_202508/michelt0_process_original/print_pdhd_New20250804_MC.txt"
+input_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/michelt0_process_original/print_New20250809_initial.txt"
 
 # Output files
 decay_x_file = "./extract_initialList/decayX_initial.txt"
