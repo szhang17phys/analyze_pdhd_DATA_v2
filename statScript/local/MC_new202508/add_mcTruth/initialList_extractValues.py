@@ -22,6 +22,10 @@ lifetime_file = "./extract_initialList/lifetime_New20250811_initial.txt"
 # Initialize counters
 michel_count = 0
 
+# Regex for floats (accepts decimals and scientific notation)
+FLOAT = r'[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?'
+MICHEL_RE = re.compile(rf'Michel score:\s*({FLOAT}),\s*Michel hits:\s*(\d+)')
+
 # Open files for writing
 with open(decay_x_file, "w") as dx, \
      open(decay_y_file, "w") as dy, \
@@ -47,13 +51,12 @@ with open(decay_x_file, "w") as dx, \
             
             # Extract Michel score & Michel hits
             elif "Michel score:" in line:
-                score_match = re.search(r"Michel score: ([0-9\.]+),\s*Michel hits: (\d+)", line)
+                score_match = MICHEL_RE.search(line)
                 if score_match:
                     ms.write(score_match.group(1) + "\n")
                     mh.write(score_match.group(2) + "\n")
             
-
-
+            # Extract Run / Event / TrackID / TrueE / lifetime
             elif "Run:" in line and "Event:" in line and "TrackID:" in line and "TrueE[MeV]" in line and "lifetime" in line:
                 try:
                     parts = line.split(':')
@@ -74,11 +77,6 @@ with open(decay_x_file, "w") as dx, \
 
 
 
-
-
-
-
-
             # Extract Vertex(x, y, z) values (start vertex of track)
             elif "Vertex(x, y, z) =" in line:
                 start_match = re.search(r"Vertex\(x, y, z\) = \((-?[0-9\.]+), (-?[0-9\.]+), (-?[0-9\.]+)\)", line)
@@ -93,10 +91,9 @@ with open(decay_x_file, "w") as dx, \
                 if end_match:
                     dx.write(end_match.group(1) + "\n")
                     dy.write(end_match.group(2) + "\n")
-                    dz.write(end_match.group(3) + "\n")   
+                    dz.write(end_match.group(3) + "\n")  
 
 
 
 # Print counts
 print(f"\n===Total Michel Candidates: {michel_count}")
-

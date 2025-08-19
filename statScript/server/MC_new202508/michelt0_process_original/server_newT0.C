@@ -144,10 +144,10 @@
 
       //Shu: track contains Michel e candidate---
 //      if ((*michelscore)[i]>0.1 && (*endx)[i]<-209.0 && (*endx)[i]>-209.1){
-      if ((*michelscore)[i]>0.01){
+      if ((*michelscore)[i]>0.0000000001){
 
         //Shu:---
-        std::cout<<"======Michel e CAND! (score>0.01) COUNT (DECON)======"<<std::endl;
+        std::cout<<"======Michel e CAND! (score>0.0000000001) COUNT (DECON)======"<<std::endl;
 
         cout<<"Michel score: "<<(*michelscore)[i]<<",  Michel hits: "<<(*michelhits)[i]<<endl;
         cout<<"Run: "<<run<<",  Event: "<<event<<",  TrackID: "<<(*trkid)[i]<<endl;
