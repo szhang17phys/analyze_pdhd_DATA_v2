@@ -1,7 +1,7 @@
 import re
 
 # Define output file path
-E_path = "wvfCoin_trueInfoE_20250809.txt"
+E_path = "print_trueInfo20250809.txt"
 
 # Open output file in write mode
 with open(E_path, "w") as E_out:
@@ -13,7 +13,7 @@ with open(E_path, "w") as E_out:
     #================================================================
 
     # Process each line in the wvfCoin count file
-    with open("../print_wvfCoin_count20250809.txt", "r") as f:
+    with open("./print_wvfCoin_count20250809.txt", "r") as f:
         for line in f:
             # Extract event and trackID from filenames like:
             # wvfFind_event2036_trackID20_opNum1_6.root: 1

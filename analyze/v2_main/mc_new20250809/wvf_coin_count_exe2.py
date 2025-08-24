@@ -2,8 +2,8 @@ import os
 import ROOT
 
 # For results after merge
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250809"
-output_txt = "./print_wvfCoin_count.txt"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/tmp_merge0809"
+output_txt = "./tmp_count.txt"
 
 # List to hold (filename, count) tuples
 results = []

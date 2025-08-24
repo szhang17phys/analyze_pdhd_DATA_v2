@@ -6,10 +6,11 @@ import math
 # ============================================================
 # SECTION: Directories for input and output files
 # ============================================================
-input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/event_wvf_extract_20250809/"
-output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250809/"
+input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/event_wvf_extract_20250811/"
+output_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250811/"
 
-runID = "1000"
+runID = "17"
+
 
 # Channels to ignore completely
 exclude_channels = {86, 87, 97, 107, 117, 116, 147, 3, 135}

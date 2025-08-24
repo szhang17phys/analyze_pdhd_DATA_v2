@@ -3,7 +3,7 @@ import ROOT
 
 # For results after merge
 input_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250811"
-output_txt = "./print_wvfCoin_count.txt"
+output_txt = "./print_trueInfo20250811.txt"
 
 # List to hold (filename, count) tuples
 results = []

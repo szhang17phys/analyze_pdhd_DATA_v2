@@ -10,10 +10,11 @@ with open(E_path, "w") as E_out:
     # Load all lines from the mcTruth input into memory
     with open("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/MC_new202508/add_mcTruth/updated_New20250811_initial.txt", "r") as f:
         filtered_lines = f.readlines()
-    #================================================================
 
     # Process each line in the wvfCoin count file
-    with open("../print_wvfCoin_count20250811.txt", "r") as f:
+    with open("./print_wvfCoin_count20250811.txt", "r") as f:
+    #================================================================
+
         for line in f:
             # Extract event and trackID from filenames like:
             # wvfFind_event2036_trackID20_opNum1_6.root: 1
