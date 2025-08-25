@@ -2,8 +2,8 @@ import re
 
 # --- Input txt file list ---
 input_files = [
-    "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/event_wvf_extract/print_new20250809.txt",
-    "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/event_wvf_extract/print_new20250811.txt"
+    "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/event_wvf_extract/print_new20250819.txt",
+    "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/event_wvf_extract/print_new20250820.txt"
 ]
 
 # --- Output files ---

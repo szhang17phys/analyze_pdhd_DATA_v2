@@ -4,11 +4,10 @@ import uproot
 import shutil
 
 #Shu: Based on merged result; 20250417---
-#Could change #wvf>=5 -> #wvf>=4
 
 # Define source and destination directories
-source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250811"
-dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_applyCut_20250811"
+source_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_20250819"
+dest_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_applyCut_20250819"
 
 # Create destination directory if it doesn't exist
 if not os.path.exists(dest_dir):
