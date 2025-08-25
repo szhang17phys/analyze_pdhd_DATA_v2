@@ -1,23 +1,23 @@
 import re
 
 # Input file
-input_file = "./updated_New20250811_initial.txt"
+input_file = "./updated_New20250820_initial.txt"
 
 # Output files
-decay_x_file = "./extract_initialList/decayX_New20250811_initial.txt"
-decay_y_file = "./extract_initialList/decayY_New20250811_initial.txt"
-decay_z_file = "./extract_initialList/decayZ_New20250811_initial.txt"  # end point of track
-michel_score_file = "./extract_initialList/michelScore_New20250811_initial.txt"
-michel_hits_file = "./extract_initialList/michelHits_New20250811_initial.txt"
-start_x_file = "./extract_initialList/startX_New20250811_initial.txt"   # start point of track
-start_y_file = "./extract_initialList/startY_New20250811_initial.txt"
-start_z_file = "./extract_initialList/startZ_New20250811_initial.txt"
+decay_x_file = "./extract_initialList/decayX_New20250820_initial.txt"
+decay_y_file = "./extract_initialList/decayY_New20250820_initial.txt"
+decay_z_file = "./extract_initialList/decayZ_New20250820_initial.txt"  # end point of track
+michel_score_file = "./extract_initialList/michelScore_New20250820_initial.txt"
+michel_hits_file = "./extract_initialList/michelHits_New20250820_initial.txt"
+start_x_file = "./extract_initialList/startX_New20250820_initial.txt"   # start point of track
+start_y_file = "./extract_initialList/startY_New20250820_initial.txt"
+start_z_file = "./extract_initialList/startZ_New20250820_initial.txt"
 
-eventID_file = "./extract_initialList/eventID_New20250811_initial.txt"
-trackID_file = "./extract_initialList/trackID_New20250811_initial.txt"
+eventID_file = "./extract_initialList/eventID_New20250820_initial.txt"
+trackID_file = "./extract_initialList/trackID_New20250820_initial.txt"
 
-energy_file = "./extract_initialList/energy_New20250811_initial.txt"
-lifetime_file = "./extract_initialList/lifetime_New20250811_initial.txt"
+energy_file = "./extract_initialList/energy_New20250820_initial.txt"
+lifetime_file = "./extract_initialList/lifetime_New20250820_initial.txt"
 
 # Initialize counters
 michel_count = 0
