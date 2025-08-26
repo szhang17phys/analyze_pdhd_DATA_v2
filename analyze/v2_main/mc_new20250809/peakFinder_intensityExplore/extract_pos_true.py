@@ -17,8 +17,8 @@ with open(x_path, "w") as x_out, open(y_path, "w") as y_out, open(z_path, "w") a
         filtered_lines = f.readlines()
     #================================================================
 
-    # Process each line in peakFinder_muonTime_intensity.txt
-    with open("./peakFinder_muonTime_intensity.txt", "r") as f:
+    # Process each line in muon_time_20250809.txt
+    with open("./muon_time_20250809.txt", "r") as f:
         for line in f:
             # Extract event and trackID from the line
             match = re.search(r"event(\d+)_trackID(\d+)", line)

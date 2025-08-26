@@ -239,11 +239,7 @@ void intensity_thre() {
     clear3.close();
     clear4.close();    
 
-
-
-    //==================================================================
     const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_applyCut_20250811";
     processDirectory(inputDirectory, 0.3);//Threshold for summed wvf---
-    //==================================================================
 }
 

@@ -1,29 +1,24 @@
 import re
 
 # Define output file paths
-x_path = "posX_extract_20250811.txt"
-y_path = "posY_extract_20250811.txt"
-z_path = "posZ_extract_20250811.txt"
-E_path = "energy_extract_20250811.txt"
-L_path = "lifetime_extract_20250811.txt"
+x_path = "posX_extract_20250819.txt"
+y_path = "posY_extract_20250819.txt"
+z_path = "posZ_extract_20250819.txt"
+E_path = "energy_extract_20250819.txt"
+L_path = "lifetime_extract_20250819.txt"
 
 # Open output files in write mode
 with open(x_path, "w") as x_out, open(y_path, "w") as y_out, open(z_path, "w") as z_out, \
      open(E_path, "w") as E_out, open(L_path, "w") as L_out:
 
-
-
     #================================================================
     # Load all lines from filtered input into memory
-    with open("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/MC_new202508/add_mcTruth/updated_New20250811_initial.txt", "r") as f:
+    with open("/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/MC_new202508/add_mcTruth/updated_New20250819_initial.txt", "r") as f:
         filtered_lines = f.readlines()
-
-    # Process each line in peakFinder_muonTime_intensity.txt
-    with open("./michel_time_20250811.txt", "r") as f:
     #================================================================
 
-
-
+    # Process each line in muon_time_20250819.txt
+    with open("./muon_time_20250819.txt", "r") as f:
         for line in f:
             # Extract event and trackID from the line
             match = re.search(r"event(\d+)_trackID(\d+)", line)

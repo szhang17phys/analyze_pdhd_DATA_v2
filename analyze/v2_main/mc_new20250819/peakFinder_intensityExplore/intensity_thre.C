@@ -141,10 +141,10 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     //Store muon and Michel candidates-------------------------------------------------
     std::cout << "\n---- Saving Time info of muon and Michel candidates ----" << std::endl;
 
-    std::ofstream muonFile("muon_time_20250811.txt", std::ios::app);
-    std::ofstream michelFile("michel_time_20250811.txt", std::ios::app);
-    std::ofstream muonFile_2("muon_intensity_20250811.txt", std::ios::app);
-    std::ofstream michelFile_2("michel_intensity_20250811.txt", std::ios::app);    
+    std::ofstream muonFile("muon_time_20250819.txt", std::ios::app);
+    std::ofstream michelFile("michel_time_20250819.txt", std::ios::app);
+    std::ofstream muonFile_2("muon_intensity_20250819.txt", std::ios::app);
+    std::ofstream michelFile_2("michel_intensity_20250819.txt", std::ios::app);    
 
     // Save first peak (muon time) unconditionally
     if (!topTotalPeaks_index.empty()) {
@@ -230,20 +230,16 @@ void intensity_thre() {
     gROOT->cd(); 
 
     // Clear output files before starting (20250529): Necessary!!!
-    std::ofstream clear1("muon_time_20250811.txt");
-    std::ofstream clear2("michel_time_20250811.txt");
-    std::ofstream clear3("muon_intensity_20250811.txt");
-    std::ofstream clear4("michel_intensity_20250811.txt");    
+    std::ofstream clear1("muon_time_20250819.txt");
+    std::ofstream clear2("michel_time_20250819.txt");
+    std::ofstream clear3("muon_intensity_20250819.txt");
+    std::ofstream clear4("michel_intensity_20250819.txt");    
     clear1.close();
     clear2.close();
     clear3.close();
     clear4.close();    
 
-
-
-    //==================================================================
-    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_applyCut_20250811";
+    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/wvf_merged_applyCut_20250819";
     processDirectory(inputDirectory, 0.3);//Threshold for summed wvf---
-    //==================================================================
 }
 

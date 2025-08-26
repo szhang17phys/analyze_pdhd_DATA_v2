@@ -141,10 +141,10 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     //Store muon and Michel candidates-------------------------------------------------
     std::cout << "\n---- Saving Time info of muon and Michel candidates ----" << std::endl;
 
-    std::ofstream muonFile("peakFinder_muonTime_index.txt", std::ios::app);
-    std::ofstream michelFile("peakFinder_michelTime_index.txt", std::ios::app);
-    std::ofstream muonFile_2("peakFinder_muonTime_intensity.txt", std::ios::app);
-    std::ofstream michelFile_2("peakFinder_michelTime_intensity.txt", std::ios::app);    
+    std::ofstream muonFile("muon_time_20250809.txt", std::ios::app);
+    std::ofstream michelFile("michel_time_20250809.txt", std::ios::app);
+    std::ofstream muonFile_2("muon_intensity_20250809.txt", std::ios::app);
+    std::ofstream michelFile_2("michel_intensity_20250809.txt", std::ios::app);    
 
     // Save first peak (muon time) unconditionally
     if (!topTotalPeaks_index.empty()) {
@@ -230,10 +230,10 @@ void intensity_thre() {
     gROOT->cd(); 
 
     // Clear output files before starting (20250529): Necessary!!!
-    std::ofstream clear1("peakFinder_muonTime_index.txt");
-    std::ofstream clear2("peakFinder_michelTime_index.txt");
-    std::ofstream clear3("peakFinder_muonTime_intensity.txt");
-    std::ofstream clear4("peakFinder_michelTime_intensity.txt");    
+    std::ofstream clear1("muon_time_20250809.txt");
+    std::ofstream clear2("michel_time_20250809.txt");
+    std::ofstream clear3("muon_intensity_20250809.txt");
+    std::ofstream clear4("michel_intensity_20250809.txt");    
     clear1.close();
     clear2.close();
     clear3.close();
