@@ -457,15 +457,6 @@ void ana::Truechecks::analyze(art::Event const& e)
 
 //            unsigned i_tid=0;
             for (const sim::TrackIDE& tid : v_tid) {
-//                simb::MCParticle const * mcp_tid = pi_serv->TrackIdToParticle_P(tid.trackID);
-                // std::cout << "\t\t\ttIDE#" << i_tid++
-                //     << " trackID: " << (tid.trackID == mcp_mich->TrackId() ? "\033[92m" : "\033[91m") << tid.trackID << "\033[0m"
-                //     << " (" << GetParticleName(mcp_tid->PdgCode()) << ")"
-                //     << " energy: " << tid.energy
-                //     << " energyFrac: " << tid.energyFrac
-                //     << " numElectrons: " << tid.numElectrons
-                //     << " (" << tid.numElectrons * feltoMeV << " MeV)"
-                //     << std::endl;
                 if (tid.trackID == mcp_mich->TrackId()) {
                    mich_ide_energy += tid.energy; 
                 }

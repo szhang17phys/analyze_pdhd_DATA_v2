@@ -18,7 +18,7 @@
 //  const char* directory = "/exp/dune/app/users/szh2/running_result/pdhd_MC/result_2k/current/";
 
   //New MC production (since 20250804): New TPC + New PDS
-  const char* directory = "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/michelt0_20250809/";
+  const char* directory = "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/michelt0_20250825/";
 
 
 

@@ -2,7 +2,7 @@ import os
 import re
 
 # Input and output directories
-data_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/mcTruth_20250820"
+data_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250808_MC/mcTruth_20250825"
 output_file = "info_jeremy_stage1.txt"
 
 # Storage for extracted data

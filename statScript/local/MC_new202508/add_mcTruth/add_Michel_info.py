@@ -2,9 +2,9 @@ import os
 import re
 
 # Input and output file paths
-initial_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/michelt0_process_original/print_New20250820_initial.txt"
+initial_file = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/server/MC_new202508/michelt0_process_original/print_New20250825_initial.txt"
 info_file = "./info_jeremy_stage2.txt"
-output_file = "./updated_New20250820_initial.txt"
+output_file = "./updated_New20250825_initial.txt"
 
 # --------------------------------------------------------------------
 # Build a lookup: (run, event, track_id) -> (trueE, lifetime)

@@ -205,8 +205,6 @@ ana::Truechecks::Truechecks(fhicl::ParameterSet const& p)
 
 
 
-
-
 void ana::Truechecks::analyze(art::Event const& e)
 {
 
@@ -230,41 +228,89 @@ void ana::Truechecks::analyze(art::Event const& e)
 
 
 
-    //Print MC truth====================================================
-    std::cout<<"True-level Michel scan for current event!"<<std::endl;
-    std::cout<<"Within TPC (-356<x<356, 0<y<610, 0<z<465)"<<std::endl;
 
-    // Loop over all MC particles and print true Michel electrons
+    //Print MC truth========================================================
+    std::cout << "True-level Michel scan for current event!" << std::endl;
+    std::cout << "Within TPC (-356<x<356, 0<y<610, 0<z<465)" << std::endl;
+
+    // Get full list of MC particles in event
     auto const& mcps = *e.getValidHandle<std::vector<simb::MCParticle>>(tag_mcp);
+
+    // Loop over all particles to find candidate Michel electrons
     for (auto const& part : mcps) {
-        // Step 1: must be e-/e+
+        // Step 1: Must be e-/e+
         if (std::abs(part.PdgCode()) != 11) continue;
 
-        // Step 2: must be from a decay process
-        if (part.Process() != "Decay") continue;
-
-        // Step 3: parent must exist and be a muon
-        const simb::MCParticle* parent = pi_serv->TrackIdToParticle_P(part.Mother());
+        // Step 2: Parent must be a muon
+        int mother_id = part.Mother();
+        if (mother_id <= 0) continue;  // <-- prevents PI (print) warnings
+        const simb::MCParticle* parent = pi_serv->TrackIdToParticle_P(mother_id);
         if (!parent) continue;
         if (std::abs(parent->PdgCode()) != 13) continue;
 
-        // Step 4: Michel electron within TPC volume
+        // Step 3: Require Michel e⁻ to be within TPC
         double x = part.Vx();
         double y = part.Vy();
         double z = part.Vz();
+        double t = part.T();
         if (x < -356 || x > 356) continue;
         if (y < 0    || y > 610) continue;
         if (z < 0    || z > 465) continue;
 
-        // If we reach here → this is a true Michel electron
-        double KE = (part.E() - part.Mass()) * 1e3;                // kinetic energy in MeV
-        double lifetime_us = (parent->EndT() - parent->T()) * 1e-3; // muon lifetime in µs
+        // Step 4: Michel e⁻ must originate near muon's end point
+        double dx = x - parent->EndX();
+        double dy = y - parent->EndY();
+        double dz = z - parent->EndZ();
+        double dist2 = dx*dx + dy*dy + dz*dz;
+        if (dist2 > 25.0) continue;  // >5 cm^2 → not from muon decay point
 
-        std::cout << "Michel (trackID=" << part.TrackId() << "): Kinetic = "
-            << KE << " MeV, lifetime = " << lifetime_us << " us" << std::endl;
-        std::cout << " start(x,y,z,t)[cm,ns] = (" << x << ", " << y << ", " << z << ", " 
-            << part.T() << ")" << std::endl;
-        std::cout << "---------------" << std::endl;
+        // Step 5: Must have at least ONE neutrino (ν_e or ν_μ) from the SAME vertex (space + time)
+        // Use squared distance in cm^2 to avoid sqrt.
+        const double r2Match = 25.0;   // (5 cm)^2
+        const double tMatch  = 5.0;    // ns
+
+        bool hasNuSibling = false;     // at least one of |PDG| == 12 or 14
+        int  nNuAtVertex  = 0;
+        for (auto const& sibling : mcps) {
+            if (sibling.Mother() != parent->TrackId()) continue;
+            int apdg = std::abs(sibling.PdgCode());
+            if (apdg != 12 && apdg != 14) continue; // only ν_e / ν_μ (and anti)
+
+            double ddx = sibling.Vx() - x;
+            double ddy = sibling.Vy() - y;
+            double ddz = sibling.Vz() - z;
+            double ddt = std::abs(sibling.T() - t);
+            if (ddx*ddx + ddy*ddy + ddz*ddz <= r2Match && ddt <= tMatch) {
+                hasNuSibling = true;
+                ++nNuAtVertex; // keep count for diagnostics
+            }
+        }
+        if (!hasNuSibling) continue;
+
+        // Step 6: Simply reject delta-like electrons outright
+        const std::string eproc = part.Process();
+        auto isDeltaLike = [&](const std::string& p){
+            return (p == "muIoni" || p == "hIoni" || p == "eIoni" ||
+                    p == "muBrems" || p == "compt" || p == "phot"  ||
+                    p == "conv"    || p == "annihil");
+        };
+        if (isDeltaLike(eproc)) continue;
+
+        // Step 7: Request Kinetic Energy > 1 MeV
+        double KE = (part.E() - part.Mass()) * 1e3; // kinetic energy in MeV
+        if (KE < 1.0) continue;
+
+
+        // If we reach here → robust true Michel electron!
+//        double lifetime_end_us = (parent->EndT() - parent->T()) * 1e-3; // official: muon birth → muon end
+        double lifetime_e_us   = (part.T() - parent->T()) * 1e-3; //muon birth → Michel birth
+
+
+        std::cout << "Michel (PDG = " << part.PdgCode() << ") (trackID = " << part.TrackId() << "): Kinetic = "
+            << KE << " MeV, lifetime = " << lifetime_e_us << " us"
+            << "\n  Start (x,y,z,t) = (" << x << ", " << y << ", " << z << ", " << part.T() << " ns)\n"
+            << "    e⁻ Process = " << part.Process() << ", muon end process = " << parent->EndProcess()
+            << "\n---------------" << std::endl;
     }
 
 
@@ -291,8 +337,6 @@ void ana::Truechecks::analyze(art::Event const& e)
                   << p_trk->End().Z() << ") " << std::endl;
 
 
-
-
         //Shu: The key, all info of track particle can be acquired here, 20250703---
         //Shu: (ChatGPT) For a certain Pandora reco track, find the most likely MC truth particle---
         //Shu: This method is convenient, but not always accurate, especially in dense or noisy events. 
@@ -308,105 +352,44 @@ void ana::Truechecks::analyze(art::Event const& e)
         // Does NOT require matching of track endpoints or similar energy
         simb::MCParticle const* mcp = truthUtil.GetMCParticleFromRecoTrack(clockData, *p_trk, e, tag_trk.label());
 
-        bool use_fallback = false;
-        double dist_truthutil = 9999.0;
-
-        if (mcp && std::abs(mcp->PdgCode()) == 13 && mcp->EndProcess() != "Transportation") {
-            double dx = p_trk->End().X() - mcp->EndX();
-            double dy = p_trk->End().Y() - mcp->EndY();
-            double dz = p_trk->End().Z() - mcp->EndZ();
-            dist_truthutil = std::sqrt(dx * dx + dy * dy + dz * dz);
-            if (dist_truthutil > 15.0) 
-                use_fallback = true;
-        } 
-        else {
-            use_fallback = true;
-        }
-
-
-        // Step 2: Fallback — match by closest muon decay point with IDE energy threshold
-        // Compute energy_by_trackid earlier in the loop
-
-        // Get hits associated with current RECO track p_trk; vh_trk, hits vectors for track
-        auto const& vh_trk = e.getValidHandle<std::vector<recob::Track>>(tag_trk);
-        art::FindManyP<recob::Hit> trackToHits(vh_trk, e, tag_trk.label());
-
-        std::vector<const recob::Hit*> track_hits;
-        if (trackToHits.isValid() && trackToHits.at(p_trk.key()).size()) {
-            for (const auto& hit_ptr : trackToHits.at(p_trk.key())) {
-                track_hits.push_back(hit_ptr.get());
-            }
-        }
-
-        // Accumulate IDE energy per MCParticle that contributed to those hits
-        //This gives you a per-MCParticle score for how much it contributed to this track.
-        std::map<int, double> energy_by_trackid;
-        for (const recob::Hit* hit : track_hits) {
-            std::vector<sim::TrackIDE> ides = bt_serv->HitToTrackIDEs(clockData, *hit);
-            for (const auto& ide : ides) { //ides: list of true MC particles---
-                energy_by_trackid[ide.trackID] += ide.energy; // unit: MeV
-            }
-        }
-
-        if (use_fallback) { //Shu: how to deal with the failed matching---
-            std::cout << "\t[Matching Fallback]" << std::endl;
-
-            auto const& mcp_handle = e.getValidHandle<std::vector<simb::MCParticle>>(tag_mcp);
-            double min_dist = std::numeric_limits<double>::max();
-            simb::MCParticle const* best_mcp = nullptr;
-
-            for (auto const& mcp_cand : *mcp_handle) {
-                if (std::abs(mcp_cand.PdgCode()) != 13) continue;
-                if (mcp_cand.EndProcess() == "Transportation") continue;
-
-                int trackID = mcp_cand.TrackId();
-
-                // Require this particle contributed significant IDE energy to reco hits
-                auto it = energy_by_trackid.find(trackID);
-                if (it == energy_by_trackid.end()) continue;
-                if (it->second < 0.5) continue; // IDE energy threshold
-
-                double dx = p_trk->End().X() - mcp_cand.EndX();
-                double dy = p_trk->End().Y() - mcp_cand.EndY();
-                double dz = p_trk->End().Z() - mcp_cand.EndZ();
-                double dist = std::sqrt(dx * dx + dy * dy + dz * dz);
-
-                if (dist < min_dist) {
-                    min_dist = dist;
-                    best_mcp = &mcp_cand;
-                }
-            }
-
-            // Add debug logging before decision
-            std::cout << "\t[Matching Fallback] min_dist = " << min_dist << std::endl;
-
-            if (best_mcp && min_dist < 15.0) { // This seems never happen...
-                mcp = best_mcp;
-                std::cout << "\t[Matching Fallback] Match accepted" << std::endl;
-            }
-            else {
-                std::cout << "\t[Matching Fallback] No valid match " << std::endl;
-                mcp = nullptr;
-            }
-            
-        }
-
-        // Step 3: Reject if no usable match
         if (!mcp) {
-                std::cout << "\tNo usable MC match." << std::endl;
-                continue;
+            std::cout << "\t[No usable MC match]" << std::endl;
+            continue;
+        }
+        if (abs(mcp->PdgCode()) != 13) { // If the track is not mu^- / mu^+, jump; 20250703---
+            std::cout << "\t[No e match]" << std::endl;
+            continue;
+        }
+        if (mcp->EndProcess() == "Transportation") {
+            std::cout << "\t[Transportation]" << std::endl;
+            continue;            
+        }
+        
+
+        auto endpoint_distance_cm = [&](const recob::Track& trk, const simb::MCParticle& tru){
+            double dxE = trk.End().X()   - tru.EndX();
+            double dyE = trk.End().Y()   - tru.EndY();
+            double dzE = trk.End().Z()   - tru.EndZ();
+            double dE  = std::sqrt(dxE*dxE + dyE*dyE + dzE*dzE);
+
+            double dxS = trk.Start().X() - tru.EndX();//larsoft confuses start and end points during reconstruction
+            double dyS = trk.Start().Y() - tru.EndY();
+            double dzS = trk.Start().Z() - tru.EndZ();
+            double dS  = std::sqrt(dxS*dxS + dyS*dyS + dzS*dzS);
+
+            return std::min(dS, dE);
+        };
+
+        double dist_truthutil = endpoint_distance_cm(*p_trk, *mcp);
+
+        if (dist_truthutil > 15.0) {
+            std::cout << "\t[Far distance (Reco; True)]" << std::endl;
+            continue;
         }
         //------------------------------------------------------------------------------------------------
 
 
 
-
-
-
-        //Shu: here mcp has passed the fallback check---
-        if (abs(mcp->PdgCode()) != 13) continue; //Shu: If the track is not mu^- / mu^+, jump; 20250703---
-
-        if (mcp->EndProcess() == "Transportation") continue; //Shu: through-going muons, jump; 20250703---
 
         if (mcp->PdgCode() > 0) { //Shu: count mu^-; 20250703---
             n_mum++;
@@ -416,71 +399,90 @@ void ana::Truechecks::analyze(art::Event const& e)
             map_mup_endproc[mcp->EndProcess()]++;
         }
 
-        unsigned tp_n_dau=0;
-        unsigned tp_n_muioni=0;
-        std::vector<int> tp_dau_pdg;
-        std::vector<std::string> tp_dau_process;
-        for (int i_dau=0; i_dau<mcp->NumberDaughters(); i_dau++) { //Shu: loop over mu's daughter particles, 20250703---
-            simb::MCParticle const * mcp_dau = pi_serv->TrackIdToParticle_P(mcp->Daughter(i_dau));
-            if (!mcp_dau) continue; //Shu: No daughter particle; jump; 20250703---
-
-            tp_n_dau++; //total number of daughters---
-
-            if (mcp_dau->Process() == "muIoni" && mcp_dau->PdgCode() == 11) {
-                tp_n_muioni++; // number of ionization electrons---
-                continue;
-            }
-
-            tp_dau_pdg.push_back(mcp_dau->PdgCode());//pdg of all daughters---
-            tp_dau_process.push_back(mcp_dau->Process());//process of all daughters---
-        }
-        n_dau.push_back(tp_n_dau);
-        n_muioni.push_back(tp_n_muioni);
-        dau_pdg.push_back(tp_dau_pdg);
-        dau_process.push_back(tp_dau_process);
     
+
+        // Michel electron finding----------------------------------------------------------------------
         //Shu: For real decay of muon, at least 3 daughter particles, 20250703---
         //continue: end current track processing
         if (mcp->NumberDaughters() < 3) continue; 
 
-        
 
-
-        //match for Michel signature-------------------------------
-        bool has_numu=false, has_nue=false;
-        simb::MCParticle const * mcp_mich = nullptr;
         //Not only consider last three daughter particles: In ideal physics, decay particles are the last 
         //daughter particles, while in real simulation, "late delta rays", 'finals-tate interactions', 
         //'trakcing artificts' are likely to be added to daughter() list after decay---
+        simb::MCParticle const * mcp_mich = nullptr;
 
-        for (int i_dau = 0; i_dau < mcp->NumberDaughters(); ++i_dau) {
-            simb::MCParticle const* mcp_dau = pi_serv->TrackIdToParticle_P(mcp->Daughter(i_dau));
-            if (!mcp_dau) continue;
+        // Tunables
+        const double r2Stop   = 25.0;  // (5 cm)^2: electron must be near muon stop
+        const double r2ENu    = 25.0;  // (5 cm)^2: e–ν spatial match
+        const double tENu     = 5.0;   // 5 ns:     e–ν time match
+        const double KEminMeV = 1.0;   // MeV:      minimum Michel KE
 
-            int pdg = std::abs(mcp_dau->PdgCode());
-            std::string proc = mcp_dau->Process(); // Optional: for more precise filtering
+        auto inTPC = [&](double x, double y, double z){
+                return (x >= -356 && x <= 356) && (y >= 0 && y <= 610) && (z >= 0 && z <= 465);
+        };
+        auto isDeltaLike = [&](const std::string& p){
+                return (p == "muIoni" || p == "hIoni" || p == "eIoni" ||
+                        p == "muBrems" || p == "compt" || p == "phot"  ||
+                        p == "conv"    || p == "annihil");
+        };
 
-            // Accept only those that came from muon decay process
-            if (proc != "Decay") continue;
+        // Cache muon stop position
+        const double mx = mcp->EndX();
+        const double my = mcp->EndY();
+        const double mz = mcp->EndZ();
 
-            switch (pdg) {
-                case 14: has_numu = true; break;             // νμ or anti-νμ
-                case 12: has_nue  = true; break;             // νe or anti-νe
-                case 11: mcp_mich = mcp_dau; break;          // Michel electron/positron
-                default: break;
+        // Search for best Michel electron among daughters
+        double best_ke = -1.0;
+
+        for (int i = 0; i < mcp->NumberDaughters(); ++i) {
+            const simb::MCParticle* d = pi_serv->TrackIdToParticle_P(mcp->Daughter(i));
+            if (!d) continue; //No decay daughter
+            if (std::abs(d->PdgCode()) != 11) continue; // e± only
+
+            // Electron vertex
+            double x = d->Vx(), y = d->Vy(), z = d->Vz(), t = d->T();
+            if (!inTPC(x,y,z)) continue;
+
+            // Must be close to muon stop
+            double dx = x - mx, dy = y - my, dz = z - mz;
+            if (dx*dx + dy*dy + dz*dz > r2Stop) continue;
+
+            // Reject obvious delta-like processes
+            if (isDeltaLike(d->Process())) continue;
+
+            // KE cut
+            double KE = (d->E() - d->Mass()) * 1e3; // MeV
+            if (KE < KEminMeV) continue;
+
+            // Require ≥1 neutrino sibling co-vertexed (space + time)
+            bool hasNuSibling = false;
+            for (int j = 0; j < mcp->NumberDaughters(); ++j) {
+                const simb::MCParticle* s = pi_serv->TrackIdToParticle_P(mcp->Daughter(j));
+                if (!s) continue;
+                int apdg = std::abs(s->PdgCode());
+                if (apdg != 12 && apdg != 14) continue;
+
+                double ddx = s->Vx() - x, ddy = s->Vy() - y, ddz = s->Vz() - z;
+                double ddt = std::abs(s->T() - t);
+                if (ddx*ddx + ddy*ddy + ddz*ddz <= r2ENu && ddt <= tENu) {
+                    hasNuSibling = true;
+                    break;
+                }
             }
+            if (!hasNuSibling) continue;
 
-            // Optional: early exit if all 3 are found
-            if (has_nue && has_numu && mcp_mich) break;
+            // Keep the highest-KE candidate
+            // At this point, mcp_mich is nullptr if no Michel daughter passed the cuts,
+            // or points to the best (highest KE) Michel electron/positron.
+            if (KE > best_ke) {
+                best_ke  = KE;
+                mcp_mich = d;
+            }
         }
 
         // If not a full Michel signature, skip this muon
-        if (!(has_nue && has_numu && mcp_mich)) continue;
-
-
-
-        if (mcp->PdgCode() > 0) n_mem++; //Shu: # of decayed mu^-, 20250703---
-        else n_mep++;
+        if (!(mcp_mich)) continue;
 
         //All reconstructed hits (recob::Hit) in the event that were primarily caused by the given MCParticle
         std::vector<const recob::Hit*> v_hit_michel = truthUtil.GetMCParticleHits(clockData, *mcp_mich, e, tag_hit.label());
@@ -493,17 +495,16 @@ void ana::Truechecks::analyze(art::Event const& e)
             }
         }
 
+        double lifetime_eM_us   = (mcp_mich->T() - mcp->T()) * 1e-3; //muon birth → Michel birth
 
-        std::cout << "\t[Michel observed!] (" << GetParticleName(mcp_mich->PdgCode()) << ") / mcp::TrackID: " <<  mcp_mich->TrackId() << " / " << v_hit_michel.size() << " hits" << std::endl;
+        std::cout << "\t[Michel observed!] (PDG: " << mcp_mich->PdgCode() << ") / mcp::TrackID: " <<  mcp_mich->TrackId() << " / " << v_hit_michel.size() << " hits" << std::endl;
         //Modified by Shu, 20250703---
-        std::cout << "\tMichel True K-energy : " << (mcp_mich->E() - mcp_mich->Mass()) * 1e3 << " MeV" << std::endl;
-        std::cout << "\tMichel origin position: (x, y, z, t)[cm, ns]   = (" << mcp_mich->Vx() << ", " << mcp_mich->Vy() << ", " << mcp_mich->Vz() << ", " << mcp_mich->T() << ")" << std::endl;
-        std::cout << "\tMCTruth muon stops at (x1, y1, z1, t1)[cm, ns] = (" << mcp->EndX() << ", " << mcp->EndY() << ", " << mcp->EndZ() << ", " << mcp->EndT() << ")" << std::endl;
-        std::cout << "\tMCTruth muon starts at (x0, y0, z0, t0)[cm, ns]= (" << mcp->Vx() << ", " << mcp->Vy() << ", " << mcp->Vz() << ", " << mcp->T() << ")" << std::endl;
-        std::cout << "\tMCTruth muon lifetime [us]: " << (mcp->EndT() - mcp->T()) * 1e-3 << std::endl;  
-        
-        
-
+        std::cout << "\tMichel True K-energy : " << (mcp_mich->E() - mcp_mich->Mass()) * 1e3 
+        << " MeV  /  lifetime [us]: " << lifetime_eM_us << std::endl;
+        std::cout << "\tMichel origin: (x, y, z, t)[cm, ns]        = (" << mcp_mich->Vx() << ", " << mcp_mich->Vy() << ", " << mcp_mich->Vz() << ", " << mcp_mich->T() << ")" << std::endl;
+        std::cout << "\tMCTruth muon End (x1, y1, z1, t1)[cm, ns]  = (" << mcp->EndX() << ", " << mcp->EndY() << ", " << mcp->EndZ() << ", " << mcp->EndT() << ")" << std::endl;
+        std::cout << "\tMCTruth muon Start (x0, y0, z0, t0)[cm, ns]= (" << mcp->Vx() << ", " << mcp->Vy() << ", " << mcp->Vz() << ", " << mcp->T() << ")" << std::endl; 
+        std::cout << "\tMichel Process = " << mcp_mich->Process() << " / muon end process = " << mcp->EndProcess() << std::endl;
 
 
         float mich_ide_energy = 0;

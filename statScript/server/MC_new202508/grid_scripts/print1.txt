@@ -1,0 +1,770 @@
+%MSG-i MF_INIT_OK:  Early 28-Aug-2025 17:23:25 CDT JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+%MSG-i AuxDetGeometryCore:  Early 28-Aug-2025 17:23:30 CDT JobSetup
+New detector geometry loaded from
+	/exp/dune/app/users/szh2/michel_Jul2025/localProducts_larsoft_v10_08_02d00_e26_prof/dunecore/v10_08_02d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 28-Aug-2025 17:23:30 CDT JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 28-Aug-2025 17:23:30 CDT JobSetup
+New detector geometry loaded from
+	/exp/dune/app/users/szh2/michel_Jul2025/localProducts_larsoft_v10_08_02d00_e26_prof/dunecore/v10_08_02d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 28-Aug-2025 17:23:30 CDT JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 28-Aug-2025 17:23:30 CDT JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  28-Aug-2025 17:23:30 CDT JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c pdhd_Truechecks.fcl -s /pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250806/cosmic_reco_91_eventID456_20250808T211206Z_16971.root
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0x76f2b90
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0xa58d340
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.025
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0xa555c70
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+DuneToolManager::getPrivate: ERROR: No such tool name: pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: ERROR: Unable to retrieve display tool pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x305fff0
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+%MSG-i SignalShapingServiceDUNE:  Early 28-Aug-2025 17:23:34 CDT JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 28-Aug-2025 17:23:34 CDT JobSetup
+ using the field response provided from a .root file 
+%MSG
+
+
+[93mTruechecks::Truechecks: =================[0m
+[93mEnd of Truechecks::Truechecks ==========[0m
+
+28-Aug-2025 17:23:34 CDT  Initiating request to open input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250806/cosmic_reco_91_eventID456_20250808T211206Z_16971.root"
+%MSG-i Root_Information:  Truechecks:checks@Construction TClass::Init()  28-Aug-2025 17:23:35 CDT ModuleConstruction
+no dictionary for class sim::IDE is available
+ROOT severity: 2000
+%MSG
+28-Aug-2025 17:23:36 CDT  Opened input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250806/cosmic_reco_91_eventID456_20250808T211206Z_16971.root"
+[93mTruechecks::beginJob: ============================================================[0m
+[93mEnd of Truechecks::beginJob ======================================================[0m
+db: runtime408545048
+Begin processing the 1st record. run: 1 subRun: 0 event: 456 at 28-Aug-2025 17:23:37 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 28-Aug-2025 17:23:41 CDT  run: 1 subRun: 0 event: 456
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#  456 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = 11) (trackID = 33052): Kinetic = 40.8202 MeV, lifetime = 0.19892 us
+  Start (x,y,z,t) = (156.518, 80.6148, 312.619, -2.20093e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 131036): Kinetic = 39.2325 MeV, lifetime = 0.500165 us
+  Start (x,y,z,t) = (-175.269, 269.705, 77.9501, -2.31463e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 189376): Kinetic = 40.2058 MeV, lifetime = 0.142241 us
+  Start (x,y,z,t) = (-47.4681, 585.38, 81.5874, -584598 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 198424): Kinetic = 36.0307 MeV, lifetime = 4.46907 us
+  Start (x,y,z,t) = (263.834, 25.2747, 295.714, 2.00962e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = 11) (trackID = 270892): Kinetic = 44.9334 MeV, lifetime = 0.200535 us
+  Start (x,y,z,t) = (310.538, 414.427, 206.317, 168429 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 295543): Kinetic = 25.1968 MeV, lifetime = 1.16815 us
+  Start (x,y,z,t) = (52.2039, 355.106, 326.938, 134909 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 348279): Kinetic = 39.3345 MeV, lifetime = 1.38695 us
+  Start (x,y,z,t) = (-307.658, 167.317, 7.50922, -787869 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 386216): Kinetic = 43.6318 MeV, lifetime = 0.340068 us
+  Start (x,y,z,t) = (285.402, 270.716, 327.868, 282594 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 421250): Kinetic = 40.7583 MeV, lifetime = 13.7226 us
+  Start (x,y,z,t) = (-336.297, 179.823, 125.844, -3.14756e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 423407): Kinetic = 50.7444 MeV, lifetime = 0.898529 us
+  Start (x,y,z,t) = (-198.769, 509.715, 184.659, -2.70135e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 547361): Kinetic = 31.7427 MeV, lifetime = 0.0368724 us
+  Start (x,y,z,t) = (353.402, 439.704, 124.24, 2.17068e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 585666): Kinetic = 40.924 MeV, lifetime = 1.19592 us
+  Start (x,y,z,t) = (246.147, 446.629, 227.422, 3.05617e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 650828): Kinetic = 41.6354 MeV, lifetime = 0.639629 us
+  Start (x,y,z,t) = (-101.55, 313.008, 421.467, -1.00113e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+
+LOOPING over 73 tracks...
+trk#0	MuonRecoEnd (-257.637, 91.4511, 422.546) 
+	[Far distance (Reco; True)]
+trk#1	MuonRecoEnd (-54.3669, 7.42499, 416.441) 
+	[Transportation]
+trk#2	MuonRecoEnd (-156.501, 134.81, 432.875) 
+	[Far distance (Reco; True)]
+trk#3	MuonRecoEnd (133.148, 7.48742, 149.129) 
+	[Far distance (Reco; True)]
+trk#4	MuonRecoEnd (276.989, 86.5429, 245.501) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (109.82, 83.3415, 359.018) 
+	[Transportation]
+trk#6	MuonRecoEnd (115.908, 9.09931, 223.805) 
+	[Far distance (Reco; True)]
+trk#7	MuonRecoEnd (-122.835, 55.6395, 1.68693) 
+	[Transportation]
+trk#8	MuonRecoEnd (-392.02, 285.49, 377.049) 
+	[Transportation]
+trk#9	MuonRecoEnd (-67.1077, 166.241, 122.187) 
+	[Far distance (Reco; True)]
+trk#10	MuonRecoEnd (135.147, 47.2042, 82.7996) 
+	[Far distance (Reco; True)]
+trk#11	MuonRecoEnd (164.93, 437, 177.4) 
+	[Transportation]
+trk#12	MuonRecoEnd (15.4626, 306.918, 462.025) 
+	[Transportation]
+trk#13	MuonRecoEnd (-150.388, 25.2095, 160.456) 
+	[Transportation]
+trk#14	MuonRecoEnd (67.0541, 333.431, 239.675) 
+	[Far distance (Reco; True)]
+trk#15	MuonRecoEnd (-15.1822, 7.65183, 296.479) 
+	[Far distance (Reco; True)]
+trk#16	MuonRecoEnd (243.631, 269.71, 323.036) 
+	[Far distance (Reco; True)]
+trk#17	MuonRecoEnd (-50.9884, 24.8542, 296.158) 
+	[Far distance (Reco; True)]
+trk#18	MuonRecoEnd (-305.459, 371.386, 234.949) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (-154.615, 330.909, 285.015) 
+	[Far distance (Reco; True)]
+trk#20	MuonRecoEnd (33.0135, 358.39, 328.503) 
+	[Far distance (Reco; True)]
+trk#21	MuonRecoEnd (357.89, 7.57616, 103.338) 
+	[Far distance (Reco; True)]
+trk#22	MuonRecoEnd (62.6351, 6.94111, 172.093) 
+	[Far distance (Reco; True)]
+trk#23	MuonRecoEnd (286.031, 411.523, 206.938) 
+	[Far distance (Reco; True)]
+trk#24	MuonRecoEnd (66.171, 446.101, 211.859) 
+	[Far distance (Reco; True)]
+trk#25	MuonRecoEnd (321.81, 7.13821, 420.159) 
+	[Transportation]
+trk#26	MuonRecoEnd (-273.948, 219.526, 9.26598) 
+	[Far distance (Reco; True)]
+trk#27	MuonRecoEnd (-258.232, 311.786, 421.607) 
+	[Far distance (Reco; True)]
+trk#28	MuonRecoEnd (66.6642, 56.6222, 444.409) 
+	[Transportation]
+trk#29	MuonRecoEnd (381.78, -111.185, 413.072) 
+	[Far distance (Reco; True)]
+trk#30	MuonRecoEnd (78.4273, 564.625, 161.547) 
+	[Transportation]
+trk#31	MuonRecoEnd (49.2347, 6.19309, 156.345) 
+	[Far distance (Reco; True)]
+trk#32trk#33trk#34trk#35trk#36trk#37trk#38trk#39trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72[93mEnd of Truechecks::analyze =======================================================[0m
+Begin processing the 2nd record. run: 1 subRun: 0 event: 457 at 28-Aug-2025 17:23:41 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 28-Aug-2025 17:23:45 CDT  run: 1 subRun: 0 event: 457
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#  457 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = 11) (trackID = 104882): Kinetic = 36.8608 MeV, lifetime = 0.534759 us
+  Start (x,y,z,t) = (243.258, 257.274, 452.631, -95422.2 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 234253): Kinetic = 50.989 MeV, lifetime = 0.411902 us
+  Start (x,y,z,t) = (-46.1551, 468.996, 455.067, -1.4581e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 268139): Kinetic = 29.2761 MeV, lifetime = 1.45229 us
+  Start (x,y,z,t) = (269.678, 283.124, 424.498, 2.66184e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 545520): Kinetic = 32.3656 MeV, lifetime = 14.6246 us
+  Start (x,y,z,t) = (-174.804, 435.491, 411.92, 232406 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 556414): Kinetic = 31.7119 MeV, lifetime = 1.56567 us
+  Start (x,y,z,t) = (-89.8807, 482.071, 71.9878, 2.27653e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+
+LOOPING over 99 tracks...
+trk#0	MuonRecoEnd (-47.1251, 81.3942, 19.2164) 
+	[Transportation]
+trk#1	MuonRecoEnd (-266.331, 13.4158, 459.499) 
+	[Transportation]
+trk#2	MuonRecoEnd (-54.5329, 7.34795, 31.3246) 
+	[Far distance (Reco; True)]
+trk#3	MuonRecoEnd (204.565, 316.967, 157.37) 
+	[Far distance (Reco; True)]
+trk#4	MuonRecoEnd (-67.2778, 65.2434, 116.497) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (-26.2527, 7.18383, 271.797) 
+	[Far distance (Reco; True)]
+trk#6	MuonRecoEnd (159.552, 462.077, 25.0088) 
+	[Transportation]
+trk#7	MuonRecoEnd (116.661, 7.1391, 261.486) 
+	[Far distance (Reco; True)]
+trk#8	MuonRecoEnd (303.785, 375.931, 439.524) 
+	[Transportation]
+trk#9	MuonRecoEnd (-66.393, 158.271, 462.383) 
+	[Far distance (Reco; True)]
+trk#10	MuonRecoEnd (56.2786, 280.415, 412.729) 
+	[Transportation]
+trk#11	MuonRecoEnd (-143.882, 362.494, 378.024) 
+	[Far distance (Reco; True)]
+trk#12	MuonRecoEnd (317.961, 75.2861, 216.387) 
+	[Far distance (Reco; True)]
+trk#13	MuonRecoEnd (-88.8685, 7.44107, 168.672) 
+	[Far distance (Reco; True)]
+trk#14	MuonRecoEnd (321.66, 7.52943, 323.254) 
+	[Far distance (Reco; True)]
+trk#15	MuonRecoEnd (66.6942, 199.441, 332.273) 
+	[Transportation]
+trk#16	MuonRecoEnd (66.9918, 392.551, 38.6369) 
+	[Far distance (Reco; True)]
+trk#17	MuonRecoEnd (-57.8941, 415.229, 0.108598) 
+	[Far distance (Reco; True)]
+trk#18	MuonRecoEnd (14.2462, 360.574, 462.269) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (-251.251, 6.5202, 196.336) 
+	[Transportation]
+trk#20	MuonRecoEnd (-67.046, 464.249, 340.033) 
+	[Far distance (Reco; True)]
+trk#21	MuonRecoEnd (-261.29, 10.2571, 389.308) 
+	[Far distance (Reco; True)]
+trk#22	MuonRecoEnd (342.888, 21.3851, 95.2517) 
+	[Transportation]
+trk#23	MuonRecoEnd (99.7199, 527.226, 186.453) 
+	[Far distance (Reco; True)]
+trk#24	MuonRecoEnd (-391.408, 329.858, 54.2603) 
+	[Transportation]
+trk#25	MuonRecoEnd (67.1385, 333.694, 72.6259) 
+	[Transportation]
+trk#26	MuonRecoEnd (281.47, 239.408, 231.782) 
+	[Far distance (Reco; True)]
+trk#27	MuonRecoEnd (285.954, 526.983, 295.571) 
+	[Far distance (Reco; True)]
+trk#28	MuonRecoEnd (-139.99, 439.425, 415.56) 
+	[Far distance (Reco; True)]
+trk#29	MuonRecoEnd (-41.4658, 138.599, 125.392) 
+	[Transportation]
+trk#30	MuonRecoEnd (-175.274, -14.4208, 79.8961) 
+	[Far distance (Reco; True)]
+trk#31	MuonRecoEnd (-67.4455, 506.468, 268.083) 
+	[Far distance (Reco; True)]
+trk#32	MuonRecoEnd (-67.1686, 167.669, 68.5913) 
+	[Far distance (Reco; True)]
+trk#33	MuonRecoEnd (-45.2299, 469.736, 455.076) 
+	[Michel observed!] (PDG: -11) / mcp::TrackID: 234253 / 118 hits
+	Michel True K-energy : 50.989 MeV  /  lifetime [us]: 0.411902
+	Michel origin: (x, y, z, t)[cm, ns]        = (-46.1551, 468.996, 455.067, -1.4581e+06)
+	MCTruth muon End (x1, y1, z1, t1)[cm, ns]  = (-46.1551, 468.996, 455.067, -1.4581e+06)
+	MCTruth muon Start (x0, y0, z0, t0)[cm, ns]= (285.726, 865, 490.717, -1.45851e+06)
+	MCTruth muon lifetime [us]: 0.411902
+	Michel Process = Decay / muon end process = Decay
+trk#34	MuonRecoEnd (-9.71637, 327.733, 114.417) 
+	[Transportation]
+trk#35	MuonRecoEnd (-66.8296, 565.109, 412.238) 
+	[Far distance (Reco; True)]
+trk#36	MuonRecoEnd (66.794, 595.949, 354.834) 
+	[Transportation]
+trk#37trk#38	MuonRecoEnd (-117.023, 239.018, 496.37) 
+	[Far distance (Reco; True)]
+trk#39	MuonRecoEnd (-67.189, 574.742, 68.0618) 
+	[Transportation]
+trk#40	MuonRecoEnd (275.681, 547.092, 164.633) 
+	[No e match]
+trk#41	MuonRecoEnd (41.3584, 567.392, 0.00687517) 
+	[Far distance (Reco; True)]
+trk#42	MuonRecoEnd (-84.8589, 159.808, 522.343) 
+	[Far distance (Reco; True)]
+trk#43trk#44trk#45trk#46	MuonRecoEnd (-56.6912, -8.57088, 217.507) 
+	[Transportation]
+trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72trk#73trk#74trk#75trk#76trk#77trk#78trk#79trk#80trk#81trk#82trk#83trk#84trk#85trk#86trk#87trk#88trk#89trk#90trk#91trk#92trk#93trk#94trk#95trk#96trk#97trk#98[93mEnd of Truechecks::analyze =======================================================[0m
+Begin processing the 3rd record. run: 1 subRun: 0 event: 458 at 28-Aug-2025 17:23:45 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 28-Aug-2025 17:23:48 CDT  run: 1 subRun: 0 event: 458
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#  458 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = -11) (trackID = 45463): Kinetic = 8.35861 MeV, lifetime = 4.00594 us
+  Start (x,y,z,t) = (253.318, 449.734, 440.41, -3.10418e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 78471): Kinetic = 42.4321 MeV, lifetime = 3.59163 us
+  Start (x,y,z,t) = (22.6264, 369.161, 271.072, -2.30128e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = 11) (trackID = 397105): Kinetic = 40.787 MeV, lifetime = 2.21204 us
+  Start (x,y,z,t) = (-312.884, 407.375, 276.549, -1.34756e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 405154): Kinetic = 50.6206 MeV, lifetime = 1.02798 us
+  Start (x,y,z,t) = (-355.246, 382.294, 10.8942, -1.92442e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 418763): Kinetic = 38.0893 MeV, lifetime = 1.32422 us
+  Start (x,y,z,t) = (190.292, 456.218, 41.2139, 240555 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 428628): Kinetic = 40.9968 MeV, lifetime = 2.70717 us
+  Start (x,y,z,t) = (-63.5333, 432.938, 107.511, 47007.2 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 509285): Kinetic = 49.083 MeV, lifetime = 3.86948 us
+  Start (x,y,z,t) = (-242.285, 476.674, 369.659, -550011 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 571861): Kinetic = 49.3126 MeV, lifetime = 3.89278 us
+  Start (x,y,z,t) = (-268.982, 486.701, 271.544, -2.44352e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 579622): Kinetic = 27.8716 MeV, lifetime = 0.662565 us
+  Start (x,y,z,t) = (145.231, 324.703, 323.11, 3.11566e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 585900): Kinetic = 32.0636 MeV, lifetime = 0.60038 us
+  Start (x,y,z,t) = (208.347, 417.62, 116.244, 1.10122e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+
+LOOPING over 115 tracks...
+trk#0	MuonRecoEnd (111.782, 58.4105, 462.354) 
+	[Transportation]
+trk#1	MuonRecoEnd (15.8643, 26.8394, 376.084) 
+	[Transportation]
+trk#2	MuonRecoEnd (-230.369, 294.42, 12.3756) 
+	[Transportation]
+trk#3	MuonRecoEnd (106.762, 274.729, 462.463) 
+	[Transportation]
+trk#4	MuonRecoEnd (-287.011, 117.118, 199.199) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (-381.724, 20.4238, 23.0472) 
+	[Far distance (Reco; True)]
+trk#6	MuonRecoEnd (-51.9734, 434.861, 117.77) 
+	[Far distance (Reco; True)]
+trk#7	MuonRecoEnd (-70.1379, 202.571, 33.4932) 
+	[Transportation]
+trk#8	MuonRecoEnd (-391.632, 294.095, 277.427) 
+	[Far distance (Reco; True)]
+trk#9	MuonRecoEnd (391.374, 418.947, 270.396) 
+	[Transportation]
+trk#10	MuonRecoEnd (-391.44, 323.245, 146.843) 
+	[Far distance (Reco; True)]
+trk#11	MuonRecoEnd (12.5324, 7.53913, 181.235) 
+	[Far distance (Reco; True)]
+trk#12	MuonRecoEnd (-46.1274, 433.465, 39.3042) 
+	[Far distance (Reco; True)]
+trk#13	MuonRecoEnd (260.712, 239.913, 364.804) 
+	[Far distance (Reco; True)]
+trk#14	MuonRecoEnd (391.59, 430.977, 90.9185) 
+	[Far distance (Reco; True)]
+trk#15	MuonRecoEnd (66.9777, 495.922, 9.8867) 
+	[Far distance (Reco; True)]
+trk#16	MuonRecoEnd (108.221, 493.734, 0.535226) 
+	[Far distance (Reco; True)]
+trk#17	MuonRecoEnd (83.3864, 543.675, 226.742) 
+	[Far distance (Reco; True)]
+trk#18	MuonRecoEnd (292.381, 494.137, 127.094) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (-260.17, 494.106, 28.0901) 
+	[Far distance (Reco; True)]
+trk#20	MuonRecoEnd (144.455, 450.382, 44.6646) 
+	[Far distance (Reco; True)]
+trk#21	MuonRecoEnd (200.103, 232.13, 30.7003) 
+	[Far distance (Reco; True)]
+trk#22	MuonRecoEnd (22.6179, 368.354, 270.911) 
+	[Michel observed!] (PDG: -11) / mcp::TrackID: 78471 / 93 hits
+	Michel True K-energy : 42.4321 MeV  /  lifetime [us]: 3.59163
+	Michel origin: (x, y, z, t)[cm, ns]        = (22.6264, 369.161, 271.072, -2.30128e+06)
+	MCTruth muon End (x1, y1, z1, t1)[cm, ns]  = (22.6264, 369.161, 271.072, -2.30128e+06)
+	MCTruth muon Start (x0, y0, z0, t0)[cm, ns]= (-187.845, 865, 206.143, -2.30487e+06)
+	MCTruth muon lifetime [us]: 3.59163
+	Michel Process = Decay / muon end process = Decay
+trk#23	MuonRecoEnd (-67.4301, 491.441, 112.748) 
+	[Far distance (Reco; True)]
+trk#24	MuonRecoEnd (-382.023, 506.848, 395.977) 
+	[Far distance (Reco; True)]
+trk#25trk#26	MuonRecoEnd (-335.223, 9.86013, 39.9) 
+	[Far distance (Reco; True)]
+trk#27	MuonRecoEnd (361.044, 7.04844, 203.428) 
+	[Transportation]
+trk#28	MuonRecoEnd (-390.826, 359.735, 398.064) 
+	[Far distance (Reco; True)]
+trk#29	MuonRecoEnd (-347.728, 177.524, -37.6505) 
+	[Transportation]
+trk#30	MuonRecoEnd (49.2037, 647.469, 281.871) 
+	[Far distance (Reco; True)]
+trk#31	MuonRecoEnd (-71.7124, 53.3628, 43.8952) 
+	[Far distance (Reco; True)]
+trk#32trk#33trk#34trk#35trk#36trk#37trk#38trk#39trk#40trk#41	MuonRecoEnd (-391.911, 374.216, 416.063) 
+	[No e match]
+trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72trk#73trk#74trk#75trk#76trk#77trk#78trk#79trk#80trk#81trk#82trk#83trk#84trk#85trk#86trk#87trk#88trk#89trk#90trk#91trk#92trk#93trk#94trk#95trk#96trk#97trk#98trk#99trk#100trk#101trk#102trk#103trk#104trk#105trk#106trk#107trk#108trk#109trk#110trk#111trk#112trk#113trk#114[93mEnd of Truechecks::analyze =======================================================[0m
+Begin processing the 4th record. run: 1 subRun: 0 event: 459 at 28-Aug-2025 17:23:49 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 28-Aug-2025 17:23:52 CDT  run: 1 subRun: 0 event: 459
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#  459 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = -11) (trackID = 55991): Kinetic = 24.7353 MeV, lifetime = 2.91121 us
+  Start (x,y,z,t) = (192.642, 593.292, 4.81431, 1.7803e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 123120): Kinetic = 5.22338 MeV, lifetime = 3.7282 us
+  Start (x,y,z,t) = (-303.643, 34.5536, 427.486, 1.47889e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 173293): Kinetic = 37.382 MeV, lifetime = 6.57758 us
+  Start (x,y,z,t) = (-135.904, 403.555, 428.92, 2.44743e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 175092): Kinetic = 44.2024 MeV, lifetime = 6.18278 us
+  Start (x,y,z,t) = (140.719, 424.004, 404.427, -266442 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = 11) (trackID = 219732): Kinetic = 55.4616 MeV, lifetime = 0.560564 us
+  Start (x,y,z,t) = (163.249, 313.444, 276.823, -3.26812e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 220070): Kinetic = 35.1972 MeV, lifetime = 2.15223 us
+  Start (x,y,z,t) = (307.128, 318.749, 358.682, -429662 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 268886): Kinetic = 48.7636 MeV, lifetime = 0.965551 us
+  Start (x,y,z,t) = (293.573, 448.622, 212.181, 2.00498e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 442200): Kinetic = 31.0671 MeV, lifetime = 4.23676 us
+  Start (x,y,z,t) = (304.666, 228.099, 288.94, 435974 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 483252): Kinetic = 23.943 MeV, lifetime = 4.24235 us
+  Start (x,y,z,t) = (-302.232, 300.344, 460.587, -3.19975e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 538699): Kinetic = 29.4553 MeV, lifetime = 7.62848 us
+  Start (x,y,z,t) = (196.414, 379.519, 133.837, 146315 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+
+LOOPING over 103 tracks...
+trk#0	MuonRecoEnd (-58.184, 65.52, 462.341) 
+	[Far distance (Reco; True)]
+trk#1	MuonRecoEnd (248.319, 6.99209, 117.938) 
+	[Transportation]
+trk#2	MuonRecoEnd (19.5421, 190.202, 462.253) 
+	[Far distance (Reco; True)]
+trk#3	MuonRecoEnd (54.747, 218.298, 461.083) 
+	[Far distance (Reco; True)]
+trk#4	MuonRecoEnd (95.872, 8.40697, 251.78) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (93.2649, 136.202, 153.989) 
+	[Transportation]
+trk#6	MuonRecoEnd (64.7348, 254.461, 438.809) 
+trk#7	MuonRecoEnd (-10.7313, 23.2703, 146.572) 
+	[Far distance (Reco; True)]
+trk#8	MuonRecoEnd (174.898, 374.426, 133.862) 
+	[Far distance (Reco; True)]
+trk#9	MuonRecoEnd (-57.5917, 32.5465, 77.9561) 
+	[Far distance (Reco; True)]
+trk#10	MuonRecoEnd (36.64, 296.634, 462.532) 
+	[Far distance (Reco; True)]
+trk#11	MuonRecoEnd (80.2474, 7.20362, 2.79063) 
+	[Transportation]
+trk#12	MuonRecoEnd (183.016, 422.781, 403.502) 
+	[Far distance (Reco; True)]
+trk#13	MuonRecoEnd (123.032, 485.541, 393.966) 
+	[Far distance (Reco; True)]
+trk#14	MuonRecoEnd (-122.312, 88.1722, 9.30457) 
+	[Transportation]
+trk#15	MuonRecoEnd (1.55977, 296.26, 0.728026) 
+	[Far distance (Reco; True)]
+trk#16	MuonRecoEnd (315.164, 558.68, 189.143) 
+	[No e match]
+trk#17	MuonRecoEnd (168.688, 493.945, 0.315415) 
+	[Far distance (Reco; True)]
+trk#18	MuonRecoEnd (-16.3474, 7.13616, 49.2552) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (3.78484, 497.68, 211.606) 
+	[Far distance (Reco; True)]
+trk#20trk#21	MuonRecoEnd (66.9321, 286.838, 122.679) 
+	[Far distance (Reco; True)]
+trk#22	MuonRecoEnd (107.345, 549.084, 176.683) 
+	[Transportation]
+trk#23	MuonRecoEnd (66.9818, 226.855, 619.189) 
+	[Far distance (Reco; True)]
+trk#24	MuonRecoEnd (-71.7512, 30.4715, 428.374) 
+	[Far distance (Reco; True)]
+trk#25	MuonRecoEnd (20.2425, 481.326, 149.606) 
+	[Far distance (Reco; True)]
+trk#26trk#27	MuonRecoEnd (53.3783, 527.436, 19.6267) 
+	[Far distance (Reco; True)]
+trk#28	MuonRecoEnd (-20.1307, 355.176, -95.1597) 
+	[Far distance (Reco; True)]
+trk#29	MuonRecoEnd (66.2887, -86.7803, 64.0214) 
+	[Far distance (Reco; True)]
+trk#30	MuonRecoEnd (373.769, 318.121, 358.765) 
+	[Far distance (Reco; True)]
+trk#31	MuonRecoEnd (324.975, 554.83, 176.353) 
+	[No e match]
+trk#32trk#33trk#34trk#35trk#36trk#37trk#38trk#39trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67trk#68trk#69trk#70trk#71trk#72trk#73trk#74trk#75trk#76trk#77trk#78trk#79trk#80trk#81trk#82trk#83trk#84trk#85trk#86trk#87trk#88trk#89trk#90trk#91trk#92trk#93trk#94trk#95trk#96trk#97trk#98trk#99trk#100trk#101trk#102[93mEnd of Truechecks::analyze =======================================================[0m
+Begin processing the 5th record. run: 1 subRun: 0 event: 460 at 28-Aug-2025 17:23:53 CDT
+%MSG-w PhotonBackTrackerService:  ProcessEvent 28-Aug-2025 17:23:56 CDT  run: 1 subRun: 0 event: 460
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt#  460 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = 11) (trackID = 98587): Kinetic = 39.8009 MeV, lifetime = 0.666999 us
+  Start (x,y,z,t) = (354.961, 230.517, 56.6398, -1.98593e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = 11) (trackID = 104649): Kinetic = 36.6667 MeV, lifetime = 0.328729 us
+  Start (x,y,z,t) = (222.965, 169.473, 61.4523, -477441 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = 11) (trackID = 179044): Kinetic = 18.6017 MeV, lifetime = 0.83622 us
+  Start (x,y,z,t) = (9.457, 65.7968, 377.814, 273808 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 250709): Kinetic = 33.0981 MeV, lifetime = 1.41748 us
+  Start (x,y,z,t) = (-102.769, 253.092, 216.942, 2.14066e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 380872): Kinetic = 39.5401 MeV, lifetime = 0.16158 us
+  Start (x,y,z,t) = (292.962, 72.9236, 191.426, 1.88832e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = 11) (trackID = 381894): Kinetic = 34.5751 MeV, lifetime = 0.0689618 us
+  Start (x,y,z,t) = (134.859, 609.81, 40.245, 2.01292e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+---------------
+Michel (PDG = -11) (trackID = 410499): Kinetic = 51.3088 MeV, lifetime = 5.95458 us
+  Start (x,y,z,t) = (-215.511, 394.389, 383.182, -1.53592e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 426498): Kinetic = 47.9232 MeV, lifetime = 0.590577 us
+  Start (x,y,z,t) = (139.882, 175.028, 361.466, 65010.9 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+Michel (PDG = -11) (trackID = 570389): Kinetic = 44.7904 MeV, lifetime = 3.40317 us
+  Start (x,y,z,t) = (-48.7383, 453.125, 416.286, 2.99759e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+---------------
+
+LOOPING over 68 tracks...
+trk#0	MuonRecoEnd (-335.494, 7.36827, 79.5557) 
+	[Far distance (Reco; True)]
+trk#1	MuonRecoEnd (128.895, 170.735, 360.142) 
+	[Michel observed!] (PDG: -11) / mcp::TrackID: 426498 / 108 hits
+	Michel True K-energy : 47.9232 MeV  /  lifetime [us]: 0.590577
+	Michel origin: (x, y, z, t)[cm, ns]        = (139.882, 175.028, 361.466, 65010.9)
+	MCTruth muon End (x1, y1, z1, t1)[cm, ns]  = (139.882, 175.028, 361.466, 65010.9)
+	MCTruth muon Start (x0, y0, z0, t0)[cm, ns]= (272.803, 865, -537.348, 64420.4)
+	MCTruth muon lifetime [us]: 0.590577
+	Michel Process = Decay / muon end process = Decay
+trk#2	MuonRecoEnd (128.255, 244.739, 299.892) 
+	[Far distance (Reco; True)]
+trk#3	MuonRecoEnd (-127.046, 7.26128, 306.154) 
+	[Far distance (Reco; True)]
+trk#4	MuonRecoEnd (306.842, 351.491, 0.315863) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (53.8164, 6.51867, 251.394) 
+	[Far distance (Reco; True)]
+trk#6	MuonRecoEnd (-202.209, 152.102, 249.387) 
+	[Transportation]
+trk#7	MuonRecoEnd (6.98006, 7.0069, 310.733) 
+	[Far distance (Reco; True)]
+trk#8	MuonRecoEnd (331.432, 39.6977, 448.153) 
+	[Transportation]
+trk#9	MuonRecoEnd (-61.4304, 366.924, 408.406) 
+	[Far distance (Reco; True)]
+trk#10	MuonRecoEnd (391.408, 338.836, 282.832) 
+	[Far distance (Reco; True)]
+trk#11	MuonRecoEnd (-67.2232, 479.197, 335.302) 
+	[Transportation]
+trk#12	MuonRecoEnd (-112.881, 362.146, 462.602) 
+	[Transportation]
+trk#13	MuonRecoEnd (259.912, 7.7182, 116.613) 
+	[Far distance (Reco; True)]
+trk#14	MuonRecoEnd (-261.394, 403.483, -0.617163) 
+	[Far distance (Reco; True)]
+trk#15	MuonRecoEnd (-66.5565, 444.546, 292.611) 
+	[Transportation]
+trk#16	MuonRecoEnd (19.8853, 504.773, 182.013) 
+	[Far distance (Reco; True)]
+trk#17	MuonRecoEnd (11.8512, 432.976, 213.29) 
+	[Far distance (Reco; True)]
+trk#18	MuonRecoEnd (-67.3188, 151.246, 145.716) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (4.81436, 30.0691, 91.3812) 
+	[Far distance (Reco; True)]
+trk#20	MuonRecoEnd (303.95, 166.802, 70.8497) 
+	[Far distance (Reco; True)]
+trk#21	MuonRecoEnd (-19.0478, 31.6194, 462.05) 
+	[Transportation]
+trk#22	MuonRecoEnd (15.0799, 61.1575, 33.4615) 
+	[Far distance (Reco; True)]
+trk#23	MuonRecoEnd (31.4526, 479.313, 149.483) 
+	[Transportation]
+trk#24	MuonRecoEnd (192.686, 7.57802, 416.293) 
+	[Far distance (Reco; True)]
+trk#25	MuonRecoEnd (11.508, 566.265, 0.343747) 
+	[Far distance (Reco; True)]
+trk#26	MuonRecoEnd (-2.91096, 74.4787, 193.007) 
+	[Far distance (Reco; True)]
+trk#27	MuonRecoEnd (104.51, 527.923, 421.949) 
+	[Far distance (Reco; True)]
+trk#28	MuonRecoEnd (391.327, 523.298, 213.96) 
+	[Far distance (Reco; True)]
+trk#29	MuonRecoEnd (382.268, 556.33, 445.616) 
+	[Far distance (Reco; True)]
+trk#30	MuonRecoEnd (140.774, 137.424, 217.951) 
+	[Transportation]
+trk#31	MuonRecoEnd (61.1079, 542.362, 252.189) 
+	[Far distance (Reco; True)]
+trk#32	MuonRecoEnd (66.5577, 402.564, 179.706) 
+	[Far distance (Reco; True)]
+trk#33	MuonRecoEnd (66.5534, 476.757, 232.78) 
+	[Far distance (Reco; True)]
+trk#34trk#35	MuonRecoEnd (331.862, 679.5, 448.907) 
+	[Transportation]
+trk#36trk#37trk#38trk#39trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50trk#51trk#52trk#53trk#54trk#55trk#56trk#57trk#58trk#59trk#60trk#61trk#62trk#63trk#64trk#65trk#66trk#67[93mEnd of Truechecks::analyze =======================================================[0m
+28-Aug-2025 17:23:57 CDT  Closed input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/my_production_20250806/cosmic_reco_91_eventID456_20250808T211206Z_16971.root"
+[93mTruechecks::endJob: ==============================================================[0m
+[93mEnd of Truechecks::endJob ========================================================[0m
+
+
+
+====================================================================================================================
+TimeTracker printout (sec)            Min           Avg           Max         Median          RMS         nEvts   
+====================================================================================================================
+Full event                         0.356414      0.452808      0.507805       0.45002      0.0544891        5     
+--------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)            0.00028771    0.00274969     0.0104697     0.0010862    0.00389124        5     
+end_path:checks:Truechecks         0.356009      0.449917       0.50661      0.449621      0.0525682        5     
+====================================================================================================================
+%MSG-i NuRandomService:  Truechecks:checks@EndJob 28-Aug-2025 17:23:57 CDT  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 845107549
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 5 passed = 5 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport          5          5          0 checks
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 14.334563 Real = 19.697622
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 3607.56 VmHWM = 2225.68
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.
