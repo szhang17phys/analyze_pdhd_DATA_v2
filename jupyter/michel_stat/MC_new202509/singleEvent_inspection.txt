@@ -1,0 +1,276 @@
+#events with |diff| <= 500:  2223 / 3411 (65.17%)
+
+#events with |diff| > 500 :  1188 / 3411 (34.83%)
+Event 0: PdsEventNew(muon_time=126, michel_time=486, muon_intensity=13.0164, michel_intensity=1.85365, posX=76.696, posY=459.051, posZ=74.0443, energy=-1.0, lifetime=-1.0, pdg=0, eventID=10104, trackID=18, date=20250828, reco_lifetime=5760, true_lifetime=-1000.0, diff_lifetime=6760.0)
+
+
+
+Event 1: PdsEventNew(muon_time=125, michel_time=342, muon_intensity=12.9291, michel_intensity=0.934101, posX=33.8829, posY=241.002, posZ=64.4633, energy=36.2918, lifetime=1.73362, pdg=-11, eventID=10143, trackID=8, date=20250828, reco_lifetime=3472, true_lifetime=1733.62, diff_lifetime=1738.38)
+
+
+Event 2: PdsEventNew(muon_time=128, michel_time=654, muon_intensity=15.5115, michel_intensity=8.10843, posX=51.8687, posY=193.018, posZ=349.94, energy=-1.0, lifetime=-1.0, pdg=0, eventID=10198, trackID=3, date=20250828, reco_lifetime=8416, true_lifetime=-1000.0, diff_lifetime=9416.0)
+
+
+Event 3: PdsEventNew(muon_time=127, michel_time=457, muon_intensity=37.8399, michel_intensity=13.6497, posX=-127.833, posY=316.117, posZ=327.628, energy=45.5743, lifetime=2.85266, pdg=-11, eventID=10319, trackID=9, date=20250828, reco_lifetime=5280, true_lifetime=2852.6600000000003, diff_lifetime=2427.3399999999997)
+
+
+
+Event 4: PdsEventNew(muon_time=126, michel_time=225, muon_intensity=9.06636, michel_intensity=1.14842, posX=105.909, posY=263.96, posZ=423.251, energy=23.5228, lifetime=0.472586, pdg=11, eventID=10381, trackID=1, date=20250828, reco_lifetime=1584, true_lifetime=472.586, diff_lifetime=1111.414)
+Event 5: PdsEventNew(muon_time=129, michel_time=267, muon_intensity=34.3986, michel_intensity=0.977697, posX=13.0929, posY=520.651, posZ=351.712, energy=36.3868, lifetime=0.39231, pdg=11, eventID=10400, trackID=26, date=20250828, reco_lifetime=2208, true_lifetime=392.31, diff_lifetime=1815.69)
+Event 6: PdsEventNew(muon_time=126, michel_time=190, muon_intensity=7.62599, michel_intensity=1.4681, posX=-81.4658, posY=301.13, posZ=288.451, energy=29.8811, lifetime=0.378507, pdg=-11, eventID=10468, trackID=15, date=20250828, reco_lifetime=1024, true_lifetime=378.507, diff_lifetime=645.4929999999999)
+
+Event 7: PdsEventNew(muon_time=126, michel_time=254, muon_intensity=5.89942, michel_intensity=1.07608, posX=-72.8389, posY=287.209, posZ=284.413, energy=15.4084, lifetime=0.12414, pdg=-11, eventID=1051, trackID=9, date=20250828, reco_lifetime=2048, true_lifetime=124.14, diff_lifetime=1923.86)
+Event 8: PdsEventNew(muon_time=127, michel_time=270, muon_intensity=26.6148, michel_intensity=1.26604, posX=135.841, posY=78.2309, posZ=131.411, energy=47.6294, lifetime=0.298415, pdg=-11, eventID=10560, trackID=18, date=20250828, reco_lifetime=2288, true_lifetime=298.41499999999996, diff_lifetime=1989.585)
+Event 9: PdsEventNew(muon_time=127, michel_time=300, muon_intensity=19.1852, michel_intensity=0.951744, posX=-174.011, posY=319.383, posZ=411.973, energy=46.6937, lifetime=0.177301, pdg=-11, eventID=10566, trackID=0, date=20250828, reco_lifetime=2768, true_lifetime=177.301, diff_lifetime=2590.699)
+Event 10: PdsEventNew(muon_time=128, michel_time=474, muon_intensity=361.995, michel_intensity=1.62084, posX=25.3024, posY=357.038, posZ=386.341, energy=22.3811, lifetime=0.0520045, pdg=-11, eventID=10674, trackID=24, date=20250828, reco_lifetime=5536, true_lifetime=52.0045, diff_lifetime=5483.9955)
+
+
+
+Event 11: PdsEventNew(muon_time=128, michel_time=638, muon_intensity=18.3482, michel_intensity=13.9977, posX=157.489, posY=165.45, posZ=317.131, energy=34.115, lifetime=0.618639, pdg=11, eventID=10715, trackID=4, date=20250828, reco_lifetime=8160, true_lifetime=618.639, diff_lifetime=7541.361)
+
+
+Event 12: PdsEventNew(muon_time=126, michel_time=218, muon_intensity=11.9782, michel_intensity=0.925006, posX=67.4774, posY=367.692, posZ=70.7808, energy=34.3535, lifetime=0.287815, pdg=11, eventID=10850, trackID=22, date=20250828, reco_lifetime=1472, true_lifetime=287.815, diff_lifetime=1184.185)
+
+Event 13: PdsEventNew(muon_time=127, michel_time=216, muon_intensity=11.0738, michel_intensity=1.86276, posX=84.4426, posY=308.489, posZ=117.502, energy=29.7488, lifetime=0.379228, pdg=11, eventID=10881, trackID=7, date=20250828, reco_lifetime=1424, true_lifetime=379.228, diff_lifetime=1044.772)
+
+
+Event 14: PdsEventNew(muon_time=128, michel_time=204, muon_intensity=12.5628, michel_intensity=0.995195, posX=45.2989, posY=364.551, posZ=390.702, energy=-1.0, lifetime=-1.0, pdg=0, eventID=10912, trackID=21, date=20250828, reco_lifetime=1216, true_lifetime=-1000.0, diff_lifetime=2216.0)
+
+
+Event 15: PdsEventNew(muon_time=129, michel_time=278, muon_intensity=86.5773, michel_intensity=1.44818, posX=-352.168, posY=139.412, posZ=357.069, energy=-1.0, lifetime=-1.0, pdg=0, eventID=11064, trackID=0, date=20250828, reco_lifetime=2384, true_lifetime=-1000.0, diff_lifetime=3384.0)
+
+Event 16: PdsEventNew(muon_time=127, michel_time=231, muon_intensity=55.6879, michel_intensity=2.87538, posX=186.35, posY=184.045, posZ=68.6864, energy=18.9068, lifetime=0.229379, pdg=11, eventID=11074, trackID=8, date=20250828, reco_lifetime=1664, true_lifetime=229.379, diff_lifetime=1434.621)
+Event 17: PdsEventNew(muon_time=129, michel_time=430, muon_intensity=216.895, michel_intensity=1.0981, posX=311.792, posY=126.159, posZ=130.078, energy=42.4307, lifetime=0.314296, pdg=11, eventID=11140, trackID=0, date=20250828, reco_lifetime=4816, true_lifetime=314.296, diff_lifetime=4501.704)
+
+Event 18: PdsEventNew(muon_time=129, michel_time=290, muon_intensity=59.3558, michel_intensity=1.01237, posX=164.228, posY=243.872, posZ=371.55, energy=-1.0, lifetime=-1.0, pdg=0, eventID=11142, trackID=0, date=20250828, reco_lifetime=2576, true_lifetime=-1000.0, diff_lifetime=3576.0)
+
+Event 19: PdsEventNew(muon_time=127, michel_time=358, muon_intensity=17.7352, michel_intensity=1.18924, posX=73.1653, posY=59.8681, posZ=69.7326, energy=-1.0, lifetime=-1.0, pdg=0, eventID=11157, trackID=1, date=20250828, reco_lifetime=3696, true_lifetime=-1000.0, diff_lifetime=4696.0)
+
+
+Event 20: PdsEventNew(muon_time=127, michel_time=257, muon_intensity=11.5038, michel_intensity=1.27735, posX=-208.316, posY=136.968, posZ=427.807, energy=36.506, lifetime=0.670808, pdg=-11, eventID=11165, trackID=3, date=20250828, reco_lifetime=2080, true_lifetime=670.808, diff_lifetime=1409.192)
+
+Event 21: PdsEventNew(muon_time=125, michel_time=248, muon_intensity=3.90477, michel_intensity=3.05756, posX=49.8455, posY=121.794, posZ=120.489, energy=35.6535, lifetime=0.857131, pdg=-11, eventID=11189, trackID=6, date=20250828, reco_lifetime=1968, true_lifetime=857.131, diff_lifetime=1110.8690000000001)
+
+Event 22: PdsEventNew(muon_time=129, michel_time=349, muon_intensity=257.008, michel_intensity=2.37617, posX=291.056, posY=200.458, posZ=127.31, energy=47.1502, lifetime=0.105642, pdg=-11, eventID=11211, trackID=19, date=20250828, reco_lifetime=3520, true_lifetime=105.642, diff_lifetime=3414.358)
+
+Event 23: PdsEventNew(muon_time=128, michel_time=709, muon_intensity=220.14, michel_intensity=202.077, posX=345.001, posY=92.3599, posZ=113.328, energy=49.2961, lifetime=1.3056, pdg=-11, eventID=11385, trackID=0, date=20250828, reco_lifetime=9296, true_lifetime=1305.6000000000001, diff_lifetime=7990.4)
+
+Event 24: PdsEventNew(muon_time=128, michel_time=234, muon_intensity=20.4108, michel_intensity=1.1897, posX=145.833, posY=82.4002, posZ=400.997, energy=43.0755, lifetime=0.192122, pdg=-11, eventID=11426, trackID=1, date=20250828, reco_lifetime=1696, true_lifetime=192.12199999999999, diff_lifetime=1503.878)
+
+Event 25: PdsEventNew(muon_time=127, michel_time=297, muon_intensity=13.2146, michel_intensity=0.997159, posX=111.625, posY=385.125, posZ=401.025, energy=15.4106, lifetime=0.887926, pdg=11, eventID=11582, trackID=16, date=20250828, reco_lifetime=2720, true_lifetime=887.926, diff_lifetime=1832.074)
+
+Event 26: PdsEventNew(muon_time=129, michel_time=358, muon_intensity=50.5751, michel_intensity=0.929425, posX=230.348, posY=202.529, posZ=348.784, energy=40.4439, lifetime=0.194875, pdg=-11, eventID=11595, trackID=4, date=20250828, reco_lifetime=3664, true_lifetime=194.875, diff_lifetime=3469.125)
+
+Event 27: PdsEventNew(muon_time=127, michel_time=198, muon_intensity=16.5626, michel_intensity=1.59752, posX=106.151, posY=115.78, posZ=213.878, energy=26.5459, lifetime=2.20281, pdg=-11, eventID=11612, trackID=9, date=20250828, reco_lifetime=1136, true_lifetime=2202.81, diff_lifetime=-1066.81)
+
+Event 28: PdsEventNew(muon_time=127, michel_time=221, muon_intensity=8.32696, michel_intensity=1.31598, posX=93.1815, posY=127.439, posZ=418.267, energy=41.4749, lifetime=0.758868, pdg=-11, eventID=11647, trackID=5, date=20250828, reco_lifetime=1504, true_lifetime=758.8679999999999, diff_lifetime=745.1320000000001)
+Event 29: PdsEventNew(muon_time=127, michel_time=277, muon_intensity=12.9169, michel_intensity=0.997264, posX=86.0593, posY=469.418, posZ=143.961, energy=39.3805, lifetime=0.0456112, pdg=-11, eventID=11731, trackID=22, date=20250828, reco_lifetime=2400, true_lifetime=45.6112, diff_lifetime=2354.3888)
+
+Event 30: PdsEventNew(muon_time=127, michel_time=211, muon_intensity=28.2905, michel_intensity=2.156, posX=-213.762, posY=197.021, posZ=395.337, energy=46.7265, lifetime=0.242597, pdg=-11, eventID=11775, trackID=4, date=20250828, reco_lifetime=1344, true_lifetime=242.597, diff_lifetime=1101.403)
+
+Event 31: PdsEventNew(muon_time=124, michel_time=332, muon_intensity=6.13901, michel_intensity=1.03748, posX=13.6294, posY=208.614, posZ=48.9278, energy=31.0369, lifetime=4.46047, pdg=-11, eventID=11794, trackID=6, date=20250828, reco_lifetime=3328, true_lifetime=4460.47, diff_lifetime=-1132.4700000000003)
+
+Event 32: PdsEventNew(muon_time=127, michel_time=404, muon_intensity=18.9928, michel_intensity=0.91764, posX=80.5808, posY=141.994, posZ=51.8131, energy=31.977, lifetime=0.319098, pdg=11, eventID=1179, trackID=4, date=20250828, reco_lifetime=4432, true_lifetime=319.098, diff_lifetime=4112.902)
+
+Event 33: PdsEventNew(muon_time=128, michel_time=794, muon_intensity=43.27, michel_intensity=10.3257, posX=187.562, posY=279.17, posZ=349.395, energy=49.2385, lifetime=0.993967, pdg=-11, eventID=11823, trackID=10, date=20250828, reco_lifetime=10656, true_lifetime=993.9670000000001, diff_lifetime=9662.033)
+
+
+Event 34: PdsEventNew(muon_time=126, michel_time=365, muon_intensity=9.58032, michel_intensity=1.14999, posX=30.4988, posY=129.437, posZ=215.288, energy=-1.0, lifetime=-1.0, pdg=0, eventID=11824, trackID=5, date=20250828, reco_lifetime=3824, true_lifetime=-1000.0, diff_lifetime=4824.0)
+
+Event 35: PdsEventNew(muon_time=125, michel_time=232, muon_intensity=5.2597, michel_intensity=0.972677, posX=31.4404, posY=263.713, posZ=347.079, energy=34.0201, lifetime=7.49252, pdg=-11, eventID=11869, trackID=16, date=20250828, reco_lifetime=1712, true_lifetime=7492.5199999999995, diff_lifetime=-5780.5199999999995)
+
+
+Event 36: PdsEventNew(muon_time=124, michel_time=191, muon_intensity=7.01122, michel_intensity=1.70207, posX=26.0215, posY=235.719, posZ=151.77, energy=-1.0, lifetime=-1.0, pdg=0, eventID=11973, trackID=14, date=20250828, reco_lifetime=1072, true_lifetime=-1000.0, diff_lifetime=2072.0)
+
+
+Event 37: PdsEventNew(muon_time=129, michel_time=333, muon_intensity=195.581, michel_intensity=1.76548, posX=185.362, posY=295.87, posZ=315.105, energy=-1.0, lifetime=-1.0, pdg=0, eventID=1202, trackID=2, date=20250828, reco_lifetime=3264, true_lifetime=-1000.0, diff_lifetime=4264.0)
+
+
+
+Event 38: PdsEventNew(muon_time=129, michel_time=312, muon_intensity=49.3092, michel_intensity=0.924475, posX=-246.69, posY=38.0378, posZ=360.161, energy=-1.0, lifetime=-1.0, pdg=0, eventID=12073, trackID=6, date=20250828, reco_lifetime=2928, true_lifetime=-1000.0, diff_lifetime=3928.0)
+
+
+
+
+Event 39: PdsEventNew(muon_time=127, michel_time=237, muon_intensity=19.504, michel_intensity=1.15947, posX=112.309, posY=300.167, posZ=48.0877, energy=34.0902, lifetime=0.0762407, pdg=-11, eventID=1226, trackID=14, date=20250828, reco_lifetime=1760, true_lifetime=76.24069999999999, diff_lifetime=1683.7593)
+
+
+
+Event 40: PdsEventNew(muon_time=129, michel_time=948, muon_intensity=50.2562, michel_intensity=29.6519, posX=-41.7571, posY=521.782, posZ=275.698, energy=-1.0, lifetime=-1.0, pdg=0, eventID=12309, trackID=23, date=20250828, reco_lifetime=13104, true_lifetime=-1000.0, diff_lifetime=14104.0)
+
+
+
+Event 41: PdsEventNew(muon_time=125, michel_time=187, muon_intensity=7.57896, michel_intensity=0.962033, posX=35.0572, posY=97.6057, posZ=196.537, energy=52.9091, lifetime=0.295543, pdg=11, eventID=12344, trackID=20, date=20250828, reco_lifetime=992, true_lifetime=295.543, diff_lifetime=696.457)
+
+
+Event 42: PdsEventNew(muon_time=126, michel_time=301, muon_intensity=9.03239, michel_intensity=1.46097, posX=43.1118, posY=173.064, posZ=159.932, energy=34.4981, lifetime=1.89036, pdg=-11, eventID=12363, trackID=7, date=20250828, reco_lifetime=2800, true_lifetime=1890.3600000000001, diff_lifetime=909.6399999999999)
+
+
+
+
+
+Event 43: PdsEventNew(muon_time=126, michel_time=216, muon_intensity=6.34727, michel_intensity=1.15977, posX=49.0002, posY=460.751, posZ=144.137, energy=43.6634, lifetime=0.208029, pdg=-11, eventID=12397, trackID=19, date=20250828, reco_lifetime=1440, true_lifetime=208.029, diff_lifetime=1231.971)
+
+Event 44: PdsEventNew(muon_time=125, michel_time=184, muon_intensity=8.86211, michel_intensity=0.956664, posX=34.1675, posY=187.766, posZ=170.975, energy=41.0012, lifetime=0.0990042, pdg=-11, eventID=12435, trackID=2, date=20250828, reco_lifetime=944, true_lifetime=99.0042, diff_lifetime=844.9958)
+
+Event 45: PdsEventNew(muon_time=126, michel_time=168, muon_intensity=5.73347, michel_intensity=1.07856, posX=38.6358, posY=438.995, posZ=247.98, energy=27.4084, lifetime=2.36273, pdg=-11, eventID=12497, trackID=10, date=20250828, reco_lifetime=672, true_lifetime=2362.73, diff_lifetime=-1690.73)
+
+
+
+Event 46: PdsEventNew(muon_time=123, michel_time=587, muon_intensity=3.46066, michel_intensity=1.62368, posX=-73.24, posY=300.898, posZ=350.427, energy=27.0542, lifetime=0.397477, pdg=11, eventID=12574, trackID=6, date=20250828, reco_lifetime=7424, true_lifetime=397.47700000000003, diff_lifetime=7026.523)
+
+Event 47: PdsEventNew(muon_time=127, michel_time=210, muon_intensity=18.3126, michel_intensity=1.18425, posX=126.069, posY=201.407, posZ=235.083, energy=39.2597, lifetime=0.366661, pdg=-11, eventID=12592, trackID=6, date=20250828, reco_lifetime=1328, true_lifetime=366.661, diff_lifetime=961.3389999999999)
+
+
+Event 48: PdsEventNew(muon_time=128, michel_time=171, muon_intensity=136.477, michel_intensity=3.2095, posX=-187.21, posY=269.858, posZ=343.836, energy=-1.0, lifetime=-1.0, pdg=0, eventID=125, trackID=0, date=20250828, reco_lifetime=688, true_lifetime=-1000.0, diff_lifetime=1688.0)
+
+
+
+Event 49: PdsEventNew(muon_time=128, michel_time=348, muon_intensity=116.97, michel_intensity=2.05051, posX=264.443, posY=76.7352, posZ=142.626, energy=22.1813, lifetime=0.275915, pdg=-11, eventID=12708, trackID=3, date=20250828, reco_lifetime=3520, true_lifetime=275.915, diff_lifetime=3244.085)
+Event 50: PdsEventNew(muon_time=126, michel_time=182, muon_intensity=5.50077, michel_intensity=0.91533, posX=49.0944, posY=361.881, posZ=395.617, energy=24.662, lifetime=2.38513, pdg=-11, eventID=12766, trackID=19, date=20250828, reco_lifetime=896, true_lifetime=2385.13, diff_lifetime=-1489.13)
+
+
+Event 51: PdsEventNew(muon_time=128, michel_time=170, muon_intensity=30.1205, michel_intensity=1.81996, posX=-180.425, posY=301.025, posZ=314.977, energy=43.4971, lifetime=0.0897913, pdg=-11, eventID=12854, trackID=6, date=20250828, reco_lifetime=672, true_lifetime=89.7913, diff_lifetime=582.2087)
+
+Event 52: PdsEventNew(muon_time=126, michel_time=206, muon_intensity=5.34614, michel_intensity=1.16879, posX=35.7877, posY=283.686, posZ=365.563, energy=10.9052, lifetime=5.2427, pdg=-11, eventID=12867, trackID=11, date=20250828, reco_lifetime=1280, true_lifetime=5242.7, diff_lifetime=-3962.7)
+
+
+Event 53: PdsEventNew(muon_time=125, michel_time=596, muon_intensity=4.68465, michel_intensity=2.28458, posX=44.5411, posY=308.682, posZ=153.773, energy=37.5804, lifetime=1.43459, pdg=-11, eventID=12889, trackID=17, date=20250828, reco_lifetime=7536, true_lifetime=1434.5900000000001, diff_lifetime=6101.41)
+
+
+
+Event 54: PdsEventNew(muon_time=127, michel_time=558, muon_intensity=11.7103, michel_intensity=9.03956, posX=46.9553, posY=404.974, posZ=136.574, energy=32.1684, lifetime=0.332529, pdg=11, eventID=13011, trackID=26, date=20250828, reco_lifetime=6896, true_lifetime=332.529, diff_lifetime=6563.471)
+
+Event 55: PdsEventNew(muon_time=128, michel_time=294, muon_intensity=240.397, michel_intensity=1.69442, posX=-345.012, posY=378.302, posZ=363.52, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13037, trackID=30, date=20250828, reco_lifetime=2656, true_lifetime=-1000.0, diff_lifetime=3656.0)
+
+
+Event 56: PdsEventNew(muon_time=129, michel_time=216, muon_intensity=27.4298, michel_intensity=1.07903, posX=158.101, posY=39.1112, posZ=300.181, energy=51.1884, lifetime=0.146155, pdg=-11, eventID=13090, trackID=3, date=20250828, reco_lifetime=1392, true_lifetime=146.155, diff_lifetime=1245.845)
+
+
+Event 57: PdsEventNew(muon_time=125, michel_time=720, muon_intensity=6.43929, michel_intensity=5.18406, posX=35.4544, posY=104.305, posZ=82.2952, energy=49.6718, lifetime=0.73591, pdg=-11, eventID=130, trackID=16, date=20250828, reco_lifetime=9520, true_lifetime=735.91, diff_lifetime=8784.09)
+
+Event 58: PdsEventNew(muon_time=127, michel_time=384, muon_intensity=33.8538, michel_intensity=4.67957, posX=123.918, posY=161.592, posZ=143.487, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13122, trackID=2, date=20250828, reco_lifetime=4112, true_lifetime=-1000.0, diff_lifetime=5112.0)
+
+
+Event 59: PdsEventNew(muon_time=124, michel_time=216, muon_intensity=2.99, michel_intensity=1.1026, posX=-74.2791, posY=330.576, posZ=278.573, energy=33.4819, lifetime=0.838975, pdg=-11, eventID=13171, trackID=13, date=20250828, reco_lifetime=1472, true_lifetime=838.975, diff_lifetime=633.025)
+
+
+
+Event 60: PdsEventNew(muon_time=126, michel_time=172, muon_intensity=8.8216, michel_intensity=1.20313, posX=32.6247, posY=322.059, posZ=175.002, energy=14.8436, lifetime=2.27846, pdg=-11, eventID=13283, trackID=9, date=20250828, reco_lifetime=736, true_lifetime=2278.46, diff_lifetime=-1542.46)
+
+
+
+
+Event 61: PdsEventNew(muon_time=129, michel_time=189, muon_intensity=49.001, michel_intensity=23.0965, posX=78.9249, posY=80.2576, posZ=232.099, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13321, trackID=10, date=20250828, reco_lifetime=960, true_lifetime=-1000.0, diff_lifetime=1960.0)
+
+
+Event 62: PdsEventNew(muon_time=128, michel_time=207, muon_intensity=147.236, michel_intensity=1.65643, posX=269.645, posY=207.938, posZ=196.065, energy=29.7096, lifetime=0.0393696, pdg=11, eventID=13325, trackID=11, date=20250828, reco_lifetime=1264, true_lifetime=39.3696, diff_lifetime=1224.6304)
+Event 63: PdsEventNew(muon_time=129, michel_time=217, muon_intensity=44.8411, michel_intensity=2.27007, posX=213.745, posY=317.713, posZ=291.409, energy=36.2723, lifetime=0.174443, pdg=-11, eventID=13329, trackID=5, date=20250828, reco_lifetime=1408, true_lifetime=174.44299999999998, diff_lifetime=1233.557)
+Event 64: PdsEventNew(muon_time=128, michel_time=338, muon_intensity=48.1492, michel_intensity=1.90635, posX=-265.943, posY=348.656, posZ=258.671, energy=46.4543, lifetime=0.305684, pdg=11, eventID=13338, trackID=0, date=20250828, reco_lifetime=3360, true_lifetime=305.684, diff_lifetime=3054.316)
+
+
+
+Event 65: PdsEventNew(muon_time=127, michel_time=308, muon_intensity=11.5524, michel_intensity=3.77921, posX=102.734, posY=372.871, posZ=349.401, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13432, trackID=6, date=20250828, reco_lifetime=2896, true_lifetime=-1000.0, diff_lifetime=3896.0)
+
+
+Event 66: PdsEventNew(muon_time=128, michel_time=343, muon_intensity=29.5222, michel_intensity=1.3781, posX=78.0882, posY=78.1537, posZ=67.0815, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13528, trackID=4, date=20250828, reco_lifetime=3440, true_lifetime=-1000.0, diff_lifetime=4440.0)
+
+
+Event 67: PdsEventNew(muon_time=126, michel_time=252, muon_intensity=15.7393, michel_intensity=1.27696, posX=-101.192, posY=262.273, posZ=426.135, energy=46.6547, lifetime=2.7742, pdg=-11, eventID=13540, trackID=11, date=20250828, reco_lifetime=2016, true_lifetime=2774.2, diff_lifetime=-758.1999999999998)
+
+
+
+
+Event 68: PdsEventNew(muon_time=126, michel_time=200, muon_intensity=8.58563, michel_intensity=1.43726, posX=-111.974, posY=335.65, posZ=247.954, energy=38.21, lifetime=2.3339, pdg=-11, eventID=1357, trackID=7, date=20250828, reco_lifetime=1184, true_lifetime=2333.8999999999996, diff_lifetime=-1149.8999999999996)
+
+
+
+
+Event 69: PdsEventNew(muon_time=126, michel_time=181, muon_intensity=20.5967, michel_intensity=2.54575, posX=66.2509, posY=209.503, posZ=109.523, energy=43.8725, lifetime=0.202644, pdg=11, eventID=13745, trackID=10, date=20250828, reco_lifetime=880, true_lifetime=202.64399999999998, diff_lifetime=677.356)
+
+Event 70: PdsEventNew(muon_time=129, michel_time=227, muon_intensity=75.0758, michel_intensity=1.04303, posX=148.652, posY=253.543, posZ=396.193, energy=-1.0, lifetime=-1.0, pdg=0, eventID=13949, trackID=3, date=20250828, reco_lifetime=1568, true_lifetime=-1000.0, diff_lifetime=2568.0)
+Event 71: PdsEventNew(muon_time=125, michel_time=165, muon_intensity=3.84148, michel_intensity=1.08818, posX=28.6646, posY=395.388, posZ=130.506, energy=52.2302, lifetime=5.33049, pdg=-11, eventID=14037, trackID=16, date=20250828, reco_lifetime=640, true_lifetime=5330.49, diff_lifetime=-4690.49)
+
+
+
+
+Event 72: PdsEventNew(muon_time=129, michel_time=190, muon_intensity=89.3971, michel_intensity=1.13988, posX=-243.118, posY=113.858, posZ=277.16, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14077, trackID=0, date=20250828, reco_lifetime=976, true_lifetime=-1000.0, diff_lifetime=1976.0)
+
+
+Event 73: PdsEventNew(muon_time=128, michel_time=262, muon_intensity=132.646, michel_intensity=21.8973, posX=-160.217, posY=308.689, posZ=320.373, energy=28.9867, lifetime=0.138395, pdg=11, eventID=14091, trackID=6, date=20250828, reco_lifetime=2144, true_lifetime=138.39499999999998, diff_lifetime=2005.605)
+
+
+Event 74: PdsEventNew(muon_time=126, michel_time=213, muon_intensity=19.3181, michel_intensity=1.37731, posX=67.4594, posY=80.7914, posZ=127.158, energy=43.8177, lifetime=0.0674956, pdg=11, eventID=14119, trackID=8, date=20250828, reco_lifetime=1392, true_lifetime=67.4956, diff_lifetime=1324.5044)
+
+
+Event 75: PdsEventNew(muon_time=123, michel_time=490, muon_intensity=5.06865, michel_intensity=2.58743, posX=17.3587, posY=282.211, posZ=43.8542, energy=42.4696, lifetime=0.839868, pdg=-11, eventID=14139, trackID=9, date=20250828, reco_lifetime=5872, true_lifetime=839.8679999999999, diff_lifetime=5032.132)
+
+
+
+Event 76: PdsEventNew(muon_time=128, michel_time=342, muon_intensity=250.426, michel_intensity=2.26092, posX=164.697, posY=238.587, posZ=158.84, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14178, trackID=0, date=20250828, reco_lifetime=3424, true_lifetime=-1000.0, diff_lifetime=4424.0)
+
+Event 77: PdsEventNew(muon_time=128, michel_time=388, muon_intensity=39.5096, michel_intensity=2.1974, posX=137.457, posY=230.794, posZ=136.431, energy=49.8338, lifetime=0.210676, pdg=11, eventID=14241, trackID=1, date=20250828, reco_lifetime=4160, true_lifetime=210.67600000000002, diff_lifetime=3949.324)
+
+Event 78: PdsEventNew(muon_time=129, michel_time=266, muon_intensity=72.7638, michel_intensity=1.7566, posX=83.0306, posY=396.974, posZ=262.985, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14253, trackID=11, date=20250828, reco_lifetime=2192, true_lifetime=-1000.0, diff_lifetime=3192.0)
+Event 79: PdsEventNew(muon_time=128, michel_time=195, muon_intensity=62.2224, michel_intensity=1.59518, posX=142.572, posY=76.4059, posZ=32.2993, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14253, trackID=6, date=20250828, reco_lifetime=1072, true_lifetime=-1000.0, diff_lifetime=2072.0)
+
+
+Event 80: PdsEventNew(muon_time=126, michel_time=290, muon_intensity=11.135, michel_intensity=1.04676, posX=38.1905, posY=272.71, posZ=66.2833, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14283, trackID=15, date=20250828, reco_lifetime=2624, true_lifetime=-1000.0, diff_lifetime=3624.0)
+
+
+Event 81: PdsEventNew(muon_time=126, michel_time=172, muon_intensity=7.59699, michel_intensity=1.09778, posX=-84.5752, posY=198.208, posZ=350.927, energy=48.3321, lifetime=1.37906, pdg=-11, eventID=14313, trackID=3, date=20250828, reco_lifetime=736, true_lifetime=1379.06, diff_lifetime=-643.06)
+
+
+
+
+Event 82: PdsEventNew(muon_time=129, michel_time=217, muon_intensity=73.2402, michel_intensity=1.35986, posX=-259.361, posY=103.258, posZ=407.757, energy=-1.0, lifetime=-1.0, pdg=0, eventID=14597, trackID=1, date=20250828, reco_lifetime=1408, true_lifetime=-1000.0, diff_lifetime=2408.0)
+
+
+Event 83: PdsEventNew(muon_time=126, michel_time=190, muon_intensity=11.3609, michel_intensity=1.84238, posX=70.4368, posY=282.318, posZ=82.9078, energy=33.4928, lifetime=0.329983, pdg=11, eventID=14722, trackID=17, date=20250828, reco_lifetime=1024, true_lifetime=329.983, diff_lifetime=694.017)
+
+Event 84: PdsEventNew(muon_time=126, michel_time=327, muon_intensity=13.1593, michel_intensity=0.961484, posX=65.6502, posY=171.412, posZ=62.5513, energy=41.1662, lifetime=0.242718, pdg=-11, eventID=14805, trackID=10, date=20250828, reco_lifetime=3216, true_lifetime=242.718, diff_lifetime=2973.282)
+
+
+Event 85: PdsEventNew(muon_time=125, michel_time=251, muon_intensity=7.47695, michel_intensity=1.5661, posX=33.7235, posY=218.262, posZ=78.6423, energy=-1.0, lifetime=-1.0, pdg=0, eventID=1482, trackID=5, date=20250828, reco_lifetime=2016, true_lifetime=-1000.0, diff_lifetime=3016.0)
+
+
+Event 86: PdsEventNew(muon_time=126, michel_time=236, muon_intensity=5.86658, michel_intensity=1.15383, posX=35.0462, posY=43.503, posZ=336.026, energy=42.0542, lifetime=0.984418, pdg=-11, eventID=14852, trackID=12, date=20250828, reco_lifetime=1760, true_lifetime=984.418, diff_lifetime=775.582)
+
+
+
+Event 87: PdsEventNew(muon_time=127, michel_time=199, muon_intensity=21.5597, michel_intensity=13.4346, posX=73.1479, posY=141.009, posZ=275.519, energy=16.7385, lifetime=3.77222, pdg=-11, eventID=14974, trackID=4, date=20250828, reco_lifetime=1152, true_lifetime=3772.22, diff_lifetime=-2620.22)
+
+
+Event 88: PdsEventNew(muon_time=129, michel_time=390, muon_intensity=131.763, michel_intensity=1.51526, posX=48.2532, posY=555.542, posZ=387.411, energy=-1.0, lifetime=-1.0, pdg=0, eventID=15007, trackID=33, date=20250828, reco_lifetime=4176, true_lifetime=-1000.0, diff_lifetime=5176.0)
+
+
+Event 89: PdsEventNew(muon_time=128, michel_time=366, muon_intensity=55.3032, michel_intensity=1.81841, posX=190.797, posY=220.784, posZ=146.251, energy=44.0593, lifetime=0.156101, pdg=-11, eventID=15048, trackID=9, date=20250828, reco_lifetime=3808, true_lifetime=156.101, diff_lifetime=3651.899)
+
+
+Event 90: PdsEventNew(muon_time=128, michel_time=167, muon_intensity=67.2505, michel_intensity=5.36156, posX=-86.368, posY=283.666, posZ=232.389, energy=-1.0, lifetime=-1.0, pdg=0, eventID=15199, trackID=11, date=20250828, reco_lifetime=624, true_lifetime=-1000.0, diff_lifetime=1624.0)
+
+
+Event 91: PdsEventNew(muon_time=127, michel_time=163, muon_intensity=18.8, michel_intensity=1.67924, posX=101.597, posY=283.93, posZ=131.524, energy=16.861, lifetime=2.23039, pdg=-11, eventID=15243, trackID=12, date=20250828, reco_lifetime=576, true_lifetime=2230.39, diff_lifetime=-1654.3899999999999)
+
+
+
+
+Event 92: PdsEventNew(muon_time=127, michel_time=712, muon_intensity=16.2683, michel_intensity=2.9874, posX=45.7327, posY=77.1392, posZ=52.6463, energy=-1.0, lifetime=-1.0, pdg=0, eventID=15309, trackID=5, date=20250828, reco_lifetime=9360, true_lifetime=-1000.0, diff_lifetime=10360.0)
+
+
+Event 93: PdsEventNew(muon_time=127, michel_time=395, muon_intensity=16.2648, michel_intensity=1.08147, posX=48.877, posY=103.388, posZ=48.7628, energy=17.8477, lifetime=3.56739, pdg=-11, eventID=15485, trackID=5, date=20250828, reco_lifetime=4288, true_lifetime=3567.39, diff_lifetime=720.6100000000001)
+Event 94: PdsEventNew(muon_time=126, michel_time=372, muon_intensity=10.242, michel_intensity=2.74192, posX=33.8768, posY=69.4893, posZ=143.854, energy=33.7048, lifetime=2.9234, pdg=-11, eventID=15562, trackID=3, date=20250828, reco_lifetime=3936, true_lifetime=2923.4, diff_lifetime=1012.5999999999999)
+
+
+
+Event 95: PdsEventNew(muon_time=129, michel_time=379, muon_intensity=167.473, michel_intensity=1.55221, posX=334.687, posY=126.869, posZ=423.779, energy=-1.0, lifetime=-1.0, pdg=0, eventID=15614, trackID=0, date=20250828, reco_lifetime=4000, true_lifetime=-1000.0, diff_lifetime=5000.0)
+
+
+Event 96: PdsEventNew(muon_time=127, michel_time=349, muon_intensity=8.56584, michel_intensity=2.77119, posX=67.7247, posY=406.037, posZ=272.385, energy=38.0925, lifetime=0.0629779, pdg=11, eventID=15646, trackID=19, date=20250828, reco_lifetime=3552, true_lifetime=62.977900000000005, diff_lifetime=3489.0221)
+
+Event 97: PdsEventNew(muon_time=129, michel_time=330, muon_intensity=164.584, michel_intensity=2.43933, posX=128.521, posY=299.423, posZ=370.546, energy=-1.0, lifetime=-1.0, pdg=0, eventID=15663, trackID=2, date=20250828, reco_lifetime=3216, true_lifetime=-1000.0, diff_lifetime=4216.0)
+
+Event 98: PdsEventNew(muon_time=129, michel_time=353, muon_intensity=33.9286, michel_intensity=0.940786, posX=197.667, posY=115.466, posZ=236.615, energy=30.9218, lifetime=0.212105, pdg=-11, eventID=1578, trackID=0, date=20250828, reco_lifetime=3584, true_lifetime=212.105, diff_lifetime=3371.895)
+
+
+Event 99: PdsEventNew(muon_time=125, michel_time=246, muon_intensity=4.83694, michel_intensity=1.10304, posX=24.1003, posY=335.063, posZ=321.74, energy=43.0239, lifetime=1.23793, pdg=-11, eventID=1586, trackID=11, date=20250828, reco_lifetime=1936, true_lifetime=1237.93, diff_lifetime=698.0699999999999)
