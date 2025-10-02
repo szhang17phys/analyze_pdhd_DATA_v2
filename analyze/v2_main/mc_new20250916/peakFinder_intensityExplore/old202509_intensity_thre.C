@@ -23,14 +23,13 @@
 //------------------------------------------------------------------------------
 
 
-// Define Peak struct with turning points included
+// Structure to hold peak information
 struct Peak {
-    int binCenter;
+    int binIndex;
     double leftHeight;
     double rightHeight;
-    int leftTurn;   // new
-    int rightTurn;  // new
 };
+
 
 // Function to find peaks in a histogram with a given height threshold
 std::vector<Peak> findPeaks(TH1D* hist, double heightThreshold) {
@@ -40,32 +39,30 @@ std::vector<Peak> findPeaks(TH1D* hist, double heightThreshold) {
     // Loop over bins, avoiding the extreme edges
     for (int i = 2; i < numBins; ++i) {
         double centerVal = hist->GetBinContent(i);
-        double leftVal   = hist->GetBinContent(i - 1);
-        double rightVal  = hist->GetBinContent(i + 1);
+        double leftVal = hist->GetBinContent(i - 1);
+        double rightVal = hist->GetBinContent(i + 1);
 
         // Check if current bin is a local maximum
         if (centerVal > leftVal && centerVal > rightVal) {
             int leftIndex = i - 1;
-            while (leftIndex > 1 &&
-                   hist->GetBinContent(leftIndex - 1) < hist->GetBinContent(leftIndex)) {
+            while (leftIndex > 1 && hist->GetBinContent(leftIndex - 1) < hist->GetBinContent(leftIndex)) {
                 leftIndex--;
             }
             int rightIndex = i + 1;
-            while (rightIndex < numBins &&
-                   hist->GetBinContent(rightIndex + 1) < hist->GetBinContent(rightIndex)) {
+            while (rightIndex < numBins && hist->GetBinContent(rightIndex + 1) < hist->GetBinContent(rightIndex)) {
                 rightIndex++;
             }
-
-            double leftHeight  = centerVal - hist->GetBinContent(leftIndex);
+            double leftHeight = centerVal - hist->GetBinContent(leftIndex);
             double rightHeight = centerVal - hist->GetBinContent(rightIndex);
-
+            
             if (leftHeight > heightThreshold && rightHeight > heightThreshold) {
-                peaks.push_back({i, leftHeight, rightHeight, leftIndex, rightIndex});
+                peaks.push_back({i, leftHeight, rightHeight});
             }
         }
     }
     return peaks;
-};
+}
+
 
 
 
@@ -79,6 +76,7 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
         return;
     }
 
+
     // Retrieve the "total" histogram
     TH1D* hist = dynamic_cast<TH1D*>(inputFile->Get("total"));
     if (!hist) {
@@ -88,8 +86,11 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     }
     hist->SetDirectory(0);  // Disconnect from file
 
-    // Set threshold
+
+    // Set threshold for total histogram===========================
     double thresholdToUse = thre_summed;
+    //=============================================================
+
 
     // Find peaks
     std::vector<Peak> peaks = findPeaks(hist, thresholdToUse);
@@ -97,10 +98,10 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     // Print peaks
     std::cout << "Histogram: total" << std::endl;
     for (const auto& peak : peaks) {
-        std::cout << "    Peak at bin " << peak.binCenter 
-                  << ", Left turn bin (height): " << peak.leftTurn << "(" << peak.leftHeight 
-                  << "), Right turn: " << peak.rightTurn <<"(" << peak.rightHeight 
-                  << ")" << std::endl;
+        std::cout << "    Peak at bin " << peak.binIndex 
+                  << ", Left Height: " << peak.leftHeight 
+                  << ", Right Height: " << peak.rightHeight 
+                  << std::endl;
     }
     std::cout << std::endl;
 
@@ -111,65 +112,65 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
         return heightA > heightB;
     });
 
+    // Record top 3 peak bin indices
+    std::vector<int> topTotalPeaks_index;
+    std::vector<double> topTotalPeaks_intensity;
+    for (size_t i = 0; i < std::min<size_t>(3, peaks.size()); ++i) {
+        topTotalPeaks_index.push_back(peaks[i].binIndex);
+        topTotalPeaks_intensity.push_back(std::min(peaks[i].leftHeight, peaks[i].rightHeight));        
+    }
+
+    // Handle special case if only one peak
+    if (topTotalPeaks_index.size() == 1) {
+        topTotalPeaks_index.push_back(0);
+        topTotalPeaks_intensity.push_back(0);
+    }
+
+
+    // Example debug print for topTotalPeaks_index
+    std::cout << "Top total peaks (by true height): ";
+    for (int bin : topTotalPeaks_index) {
+        std::cout << bin << " ";
+    }
+    std::cout << std::endl;
+
     inputFile->Close();
     delete inputFile;
     //------------------------------------------------    
 
-    // Store muon and Michel candidates ------------------------------------------------
+    //Store muon and Michel candidates-------------------------------------------------
     std::cout << "\n---- Saving Time info of muon and Michel candidates ----" << std::endl;
 
-    std::ofstream muonFile("muon_total_20250828.txt", std::ios::app);
-    std::ofstream michelFile("michel_total_20250828.txt", std::ios::app);
+    std::ofstream muonFile("muon_time_20250916.txt", std::ios::app);
+    std::ofstream michelFile("michel_time_20250916.txt", std::ios::app);
+    std::ofstream muonFile_2("muon_intensity_20250916.txt", std::ios::app);
+    std::ofstream michelFile_2("michel_intensity_20250916.txt", std::ios::app);    
 
-    // --- Save first peak (muon) ---
-    if (peaks.size() >= 1) {
-        const auto& muonPeak = peaks[0];
-        double finalIntensity = std::min(muonPeak.leftHeight, muonPeak.rightHeight);
-
-        muonFile << inputFileName << ": "
-                 << muonPeak.binCenter << ", "
-                 << finalIntensity << ", "
-                 << muonPeak.leftTurn << ", " << muonPeak.leftHeight << ", "
-                 << muonPeak.rightTurn << ", " << muonPeak.rightHeight << "\n";
-
-        std::cout << "[Saved] Muon time peak: " << muonPeak.binCenter << std::endl;
-        std::cout << "        Final intensity (min side): " << finalIntensity << std::endl;
-        std::cout << "        Left turn: " << muonPeak.leftTurn
-                  << " (height=" << muonPeak.leftHeight << ")" << std::endl;
-        std::cout << "        Right turn: " << muonPeak.rightTurn
-                  << " (height=" << muonPeak.rightHeight << ")" << std::endl;
-    } else {
-        muonFile << inputFileName << ": 0, 0, 0, 0, 0, 0\n";
-        std::cout << "[Saved] Muon peak missing → filled with zeros" << std::endl;     
+    // Save first peak (muon time) unconditionally
+    if (!topTotalPeaks_index.empty()) {
+        muonFile << inputFileName << ": " << topTotalPeaks_index[0] << "\n";
+        muonFile_2 << inputFileName << ": " << topTotalPeaks_intensity[0] << "\n";
+        std::cout << "[Saved] Muon time peak index: " << topTotalPeaks_index[0] << std::endl;
+        std::cout << "        Intensity: " << topTotalPeaks_intensity[0] << std::endl;        
     }
 
-    // --- Save second peak (Michel) ---
-    if (peaks.size() >= 2) {
-        const auto& michelPeak = peaks[1];
-        double finalIntensity = std::min(michelPeak.leftHeight, michelPeak.rightHeight);
-
-        michelFile << inputFileName << ": "
-                   << michelPeak.binCenter << ", "
-                   << finalIntensity << ", "
-                   << michelPeak.leftTurn << ", " << michelPeak.leftHeight << ", "
-                   << michelPeak.rightTurn << ", " << michelPeak.rightHeight << "\n";
-
-        std::cout << "[Saved] Michel time peak: " << michelPeak.binCenter << std::endl;
-        std::cout << "        Final intensity (min side): " << finalIntensity << std::endl;
-        std::cout << "        Left turn: " << michelPeak.leftTurn
-                  << " (height=" << michelPeak.leftHeight << ")" << std::endl;
-        std::cout << "        Right turn: " << michelPeak.rightTurn
-                  << " (height=" << michelPeak.rightHeight << ")" << std::endl;
-    } else {
-        michelFile << inputFileName << ": 0, 0, 0, 0, 0, 0\n";
-        std::cout << "[Saved] Michel peak missing → filled with zeros" << std::endl;
+    // Save second peak (Michel time)
+    if (topTotalPeaks_index.size() >= 2) {
+        michelFile << inputFileName << ": " << topTotalPeaks_index[1] << "\n";
+        michelFile_2 << inputFileName << ": " << topTotalPeaks_intensity[1] << "\n";        
+        std::cout << "[Saved] Michel time peak: " << topTotalPeaks_index[1] << std::endl;
+        std::cout << "        Intensity: " << topTotalPeaks_intensity[1] << std::endl;
     }
+
 
     muonFile.close();
     michelFile.close();
+    muonFile_2.close();
+    michelFile_2.close();    
     // --------------------------------------------------------------------------------
 
-};
+}
+
 
 
 
@@ -229,12 +230,16 @@ void intensity_thre() {
     gROOT->cd(); 
 
     // Clear output files before starting (20250529): Necessary!!!
-    std::ofstream clear1("muon_total_20250828.txt");
-    std::ofstream clear2("michel_total_20250828.txt");
+    std::ofstream clear1("muon_time_20250916.txt");
+    std::ofstream clear2("michel_time_20250916.txt");
+    std::ofstream clear3("muon_intensity_20250916.txt");
+    std::ofstream clear4("michel_intensity_20250916.txt");    
     clear1.close();
-    clear2.close();   
+    clear2.close();
+    clear3.close();
+    clear4.close();    
 
-    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new20250828_MC/wvf_merged_applyCut_20250828";
+    const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new202509_MC/wvf_merged_applyCut_20250916";
     processDirectory(inputDirectory, 0.3);//Threshold for summed wvf---
 }
 
