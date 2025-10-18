@@ -116,10 +116,11 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
     //------------------------------------------------    
 
     // Store muon and Michel candidates ------------------------------------------------
-    std::cout << "\n---- Saving Time info of muon and Michel candidates ----" << std::endl;
+    std::cout << "\n---- Saving Time info of muon, Michel and 3rd candidates ----" << std::endl;
 
     std::ofstream muonFile("muon_total_20250917.txt", std::ios::app);
     std::ofstream michelFile("michel_total_20250917.txt", std::ios::app);
+    std::ofstream thirdFile("third_total_20250917.txt", std::ios::app);
 
     // --- Save first peak (muon) ---
     if (peaks.size() >= 1) {
@@ -165,8 +166,32 @@ void processSingleFile(const char* inputFileName, const double thre_summed) {
         std::cout << "[Saved] Michel peak missing → filled with zeros" << std::endl;
     }
 
+    // --- Save third peak ---
+    if (peaks.size() >= 3) {
+        const auto& thirdPeak = peaks[2];
+        double finalIntensity = std::min(thirdPeak.leftHeight, thirdPeak.rightHeight);
+
+        thirdFile << inputFileName << ": "
+                  << thirdPeak.binCenter << ", "
+                  << finalIntensity << ", "
+                  << thirdPeak.leftTurn << ", " << thirdPeak.leftHeight << ", "
+                  << thirdPeak.rightTurn << ", " << thirdPeak.rightHeight << "\n";
+
+        std::cout << "[Saved] Third time peak: " << thirdPeak.binCenter << std::endl;
+        std::cout << "        Final intensity (min side): " << finalIntensity << std::endl;
+        std::cout << "        Left turn: " << thirdPeak.leftTurn
+                  << " (height=" << thirdPeak.leftHeight << ")" << std::endl;
+        std::cout << "        Right turn: " << thirdPeak.rightTurn
+                  << " (height=" << thirdPeak.rightHeight << ")" << std::endl;
+    } else {
+        thirdFile << inputFileName << ": 0, 0, 0, 0, 0, 0\n";
+        std::cout << "[Saved] Third peak missing → filled with zeros" << std::endl;
+    }
+
+
     muonFile.close();
     michelFile.close();
+    thirdFile.close();
     // --------------------------------------------------------------------------------
 
 };
@@ -231,8 +256,10 @@ void intensity_thre() {
     // Clear output files before starting (20250529): Necessary!!!
     std::ofstream clear1("muon_total_20250917.txt");
     std::ofstream clear2("michel_total_20250917.txt");
+    std::ofstream clear3("third_total_20250917.txt");  // NEW
     clear1.close();
     clear2.close();   
+    clear3.close();
 
     const char* inputDirectory = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new202509_MC/wvf_merged_applyCut_20250917";
     processDirectory(inputDirectory, 0.3);//Threshold for summed wvf---
