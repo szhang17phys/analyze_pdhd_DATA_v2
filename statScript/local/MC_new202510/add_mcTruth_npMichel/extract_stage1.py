@@ -1,9 +1,23 @@
 import os
 import re
+import argparse
 
-# Input and output directories
-data_dir = "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/t0_rootFiles/new202510_MC/mcTruth_20251002"
+# ================================================================
+# Require data_dir to be passed from shell script
+# ================================================================
+parser = argparse.ArgumentParser(description="Stage 1 extraction script")
+parser.add_argument("--data_dir", required=True, help="Path to input data directory")
+args = parser.parse_args()
+
+data_dir = args.data_dir
 output_file = "info_jeremy_stage1.txt"
+
+print(f"[extract_stage1] Using data_dir: {data_dir}")
+print(f"[extract_stage1] Output file: {output_file}")
+# ================================================================
+
+
+
 
 # Storage for extracted data
 extracted_lines = []
