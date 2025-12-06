@@ -1,0 +1,2284 @@
+# Produced from 'fhicl-dump' using:
+#   Input  : standard_detsim_protodunehd.fcl
+#   Policy : cet::filepath_maker
+#   Path   : "FHICL_FILE_PATH"
+
+adcPlotDftTemplate: {
+   ChannelSelection: ""
+   ChannelStatusFlag: 0
+   HistSummaryTitle: ""
+   LogLevel: 1
+   PlotChannelGroups: []
+   PlotChannelRanges: []
+   PlotDataView: ""
+   PlotName: ""
+   PlotOverlayGroups: 1
+   PlotSizeX: 1400
+   PlotSizeY: 1000
+   PlotSplitX: 4
+   PlotSplitY: 4
+   PlotSummaryNames: []
+   SampleFreq: 2000
+   XMax: 0
+   XMin: 0
+   YMinLog: 0
+   tool_type: "AdcChannelDftPlotter"
+}
+adcSampleFreq: 2000
+data: {
+   dune_ClockUnit: "Mtick"
+   dune_TriggerClockRate: 5e7
+}
+outputs: {
+   out1: {
+      compressionLevel: 1
+      dataTier: "detector-simulated"
+      fastCloning: true
+      fileName: "%ifb_detsim.root"
+      module_type: "RootOutput"
+      outputCommands: [
+         "keep *",
+         "drop sim::SimEnergyDeposit*_*_*_*"
+      ]
+   }
+}
+physics: {
+   end_paths: [
+      "stream1"
+   ]
+   producers: {
+      crt: {
+         DACThreshold: 100
+         Deadtime: 5
+         GeVToADC: 500000
+         IntegrationTime: 20
+         ReadoutWindowSize: 4
+         SimLabel: "largeant:LArG4DetectorServicevolAuxDetSensitiveCRTPaddle"
+         module_type: "CRTSimRefac"
+      }
+      opdigi: {
+         CrossTalk: 9e-2
+         CustomPDEperOpDet: true
+         CustomSPEAmplitudeperOpDet: true
+         DarkCountRate: 415
+         DefaultSimWindow: true
+         DynamicRangeSaturation: 16384
+         ExportWaveformTree: false
+         FullStreamingChannels: [
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159
+         ]
+         InputModules: [
+            "PDFastSim",
+            "PDFastSimExternal"
+         ]
+         LineNoiseRMS: 4.5
+         NegativeSignal: false
+         PDE: 3e-2
+         PDEVector: [
+            2.17e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            2.17e-2,
+            1.58e-2,
+            1.59e-2,
+            2.22e-2,
+            1.59e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            1.59e-2,
+            2.22e-2,
+            1.59e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            1.59e-2,
+            2.22e-2,
+            1.59e-2,
+            2.17e-2,
+            1.58e-2,
+            2.22e-2,
+            2.22e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            1.59e-2,
+            2.22e-2,
+            1.59e-2,
+            2.17e-2,
+            2.22e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            2.22e-2,
+            1.59e-2,
+            2.17e-2,
+            1.59e-2,
+            2.17e-2,
+            1.58e-2,
+            1.58e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            1.59e-2,
+            2.17e-2,
+            1.58e-2,
+            1.58e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.22e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.17e-2,
+            1.59e-2,
+            1.59e-2,
+            2.22e-2,
+            2.22e-2,
+            1.58e-2,
+            2.22e-2,
+            2.17e-2,
+            1.59e-2,
+            2.22e-2,
+            1.58e-2,
+            2.17e-2,
+            1.59e-2,
+            1.58e-2,
+            2.22e-2,
+            1.59e-2,
+            1.58e-2,
+            1.59e-2,
+            1.58e-2,
+            2.22e-2,
+            1.58e-2,
+            2.17e-2,
+            1.59e-2,
+            1.58e-2,
+            2.22e-2,
+            1.59e-2,
+            1.58e-2,
+            1.59e-2,
+            1.58e-2,
+            2.22e-2,
+            1.58e-2,
+            2.17e-2,
+            2.17e-2,
+            2.22e-2,
+            2.22e-2,
+            1.59e-2,
+            1.58e-2,
+            1.59e-2,
+            1.58e-2,
+            2.22e-2,
+            1.58e-2,
+            2.17e-2,
+            2.17e-2,
+            2.22e-2,
+            2.22e-2,
+            1.59e-2,
+            1.58e-2,
+            1.59e-2,
+            1.58e-2
+         ]
+         Padding: 400
+         Pedestal: 8200
+         SPEAmplitude: 15
+         SPEAmplitudeVector: [
+            1.511e1,
+            1.473e1,
+            1.465e1,
+            15,
+            1.141e1,
+            1.484e1,
+            1.614e1,
+            1.49e1,
+            1.627e1,
+            1.588e1,
+            1.485e1,
+            1.465e1,
+            1.43e1,
+            1.455e1,
+            1.086e1,
+            1.136e1,
+            1.642e1,
+            1.546e1,
+            1.634e1,
+            1.247e1,
+            1.455e1,
+            1.484e1,
+            1.503e1,
+            1.443e1,
+            1.124e1,
+            1.523e1,
+            1.579e1,
+            1.532e1,
+            1.06e1,
+            1.614e1,
+            1.455e1,
+            1.497e1,
+            1.458e1,
+            1.485e1,
+            1.079e1,
+            1.559e1,
+            1.49e1,
+            1.536e1,
+            1.517e1,
+            1.573e1,
+            1.111e1,
+            9.73,
+            1.258e1,
+            1.49e1,
+            1.562e1,
+            1.335e1,
+            1.201e1,
+            1.25e1,
+            1.548e1,
+            1.223e1,
+            1.069e1,
+            1.434e1,
+            1.233e1,
+            1.454e1,
+            1.508e1,
+            1.436e1,
+            1.186e1,
+            1.327e1,
+            1.501e1,
+            1.209e1,
+            1.048e1,
+            1.416e1,
+            1.21e1,
+            1.472e1,
+            1.443e1,
+            1.281e1,
+            1.197e1,
+            1.379e1,
+            1.482e1,
+            1.237e1,
+            1.076e1,
+            1.458e1,
+            1.215e1,
+            1.41e1,
+            1.516e1,
+            1.402e1,
+            1.171e1,
+            1.417e1,
+            1.518e1,
+            1.302e1,
+            1.412e1,
+            1.463e1,
+            1.443e1,
+            1.226e1,
+            1.18e1,
+            1.306e1,
+            15,
+            15,
+            1.521e1,
+            1.524e1,
+            1.407e1,
+            1.403e1,
+            1.481e1,
+            1.42e1,
+            1.321e1,
+            1.322e1,
+            9.66,
+            15,
+            1.472e1,
+            1.536e1,
+            1.441e1,
+            1.453e1,
+            1.521e1,
+            1.233e1,
+            1.086e1,
+            1.048e1,
+            9.69,
+            15,
+            1.461e1,
+            1.59e1,
+            1.429e1,
+            1.482e1,
+            1.439e1,
+            1.457e1,
+            1.075e1,
+            1.107e1,
+            15,
+            15,
+            1.46e1,
+            1.491e1,
+            1.087e1,
+            1.102e1,
+            1.427e1,
+            1.417e1,
+            1.075e1,
+            1.009e1,
+            1.075e1,
+            1.017e1,
+            15,
+            1.255e1,
+            1.081e1,
+            1.332e1,
+            1.421e1,
+            1.523e1,
+            7.93,
+            1.065e1,
+            9.21,
+            1.177e1,
+            1.559e1,
+            1.186e1,
+            1.088e1,
+            1.147e1,
+            1.446e1,
+            1.472e1,
+            1.111e1,
+            1.072e1,
+            1.167e1,
+            1.13e1,
+            1.64e1,
+            1.23e1,
+            1.131e1,
+            1.22e1,
+            1.507e1,
+            1.516e1,
+            1.143e1,
+            1.065e1,
+            1.16e1,
+            1.111e1,
+            1.674e1,
+            1.21e1
+         ]
+         SPETemplateMap: [
+            [
+               "SPE_NP04_FBK_2024_without_pretrigger.dat",
+               [
+                  4,
+                  14,
+                  24,
+                  34,
+                  40,
+                  42,
+                  45,
+                  46,
+                  47,
+                  49,
+                  50,
+                  52,
+                  55,
+                  56,
+                  57,
+                  59,
+                  60,
+                  62,
+                  65,
+                  66,
+                  67,
+                  69,
+                  70,
+                  72,
+                  75,
+                  76,
+                  77,
+                  79,
+                  84,
+                  85,
+                  86,
+                  87,
+                  94,
+                  95,
+                  96,
+                  97,
+                  104,
+                  105,
+                  106,
+                  107,
+                  114,
+                  115,
+                  116,
+                  117,
+                  120,
+                  121,
+                  124,
+                  125,
+                  127,
+                  129,
+                  130,
+                  131,
+                  134,
+                  135,
+                  137,
+                  139,
+                  140,
+                  141,
+                  144,
+                  145,
+                  147,
+                  149,
+                  150,
+                  151,
+                  154,
+                  155,
+                  157,
+                  159
+               ]
+            ],
+            [
+               "SPE_NP04_HPK_2024_without_pretrigger.dat",
+               [
+                  0,
+                  1,
+                  2,
+                  3,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  41,
+                  43,
+                  44,
+                  48,
+                  51,
+                  53,
+                  54,
+                  58,
+                  61,
+                  63,
+                  64,
+                  68,
+                  71,
+                  73,
+                  74,
+                  78,
+                  80,
+                  81,
+                  82,
+                  83,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  108,
+                  109,
+                  110,
+                  111,
+                  112,
+                  113,
+                  118,
+                  119,
+                  122,
+                  123,
+                  126,
+                  128,
+                  132,
+                  133,
+                  136,
+                  138,
+                  142,
+                  143,
+                  146,
+                  148,
+                  152,
+                  153,
+                  156,
+                  158
+               ]
+            ]
+         ]
+         SSP_LED_DigiTree: false
+         SelfTrigger_DaphneThreshold: 65
+         SelfTrigger_DaphneThresholdMap: [
+            [
+               45,
+               [
+                  34,
+                  24,
+                  14,
+                  4
+               ]
+            ]
+         ]
+         SelfTrigger_Pretrigger: 128
+         SelfTrigger_ReadoutWindow: 1024
+         TimeBegin: -20
+         TimeEnd: 20
+         module_type: "OpDetDigitizerProtoDUNEHD"
+      }
+      rns: {
+         module_type: "RandomNumberSaver"
+      }
+      tpcrawdecoder: {
+         module_type: "WireCellToolkit"
+         wcls_main: {
+            apps: [
+               "Pgrapher"
+            ]
+            configs: [
+               "pgrapher/experiment/pdhd/wcls-sim-drift-simchannel-priorSCE.jsonnet"
+            ]
+            inputers: [
+               "wclsSimDepoSource:"
+            ]
+            outputers: [
+               "wclsSimChannelSink:postdrift",
+               "wclsFrameSaver:simdigits"
+            ]
+            params: {}
+            plugins: [
+               "WireCellPgraph",
+               "WireCellGen",
+               "WireCellSio",
+               "WireCellLarsoft"
+            ]
+            structs: {
+               DL: 4
+               DT: 8.8
+               Nbit: 14
+               driftSpeed: 1.565
+               elecGain: 14
+               lifetime: 35
+            }
+            tool_type: "WCLS"
+         }
+      }
+   }
+   simulate: [
+      "rns",
+      "tpcrawdecoder",
+      "opdigi",
+      "crt"
+   ]
+   stream1: [
+      "out1"
+   ]
+   trigger_paths: [
+      "simulate"
+   ]
+}
+process_name: "Detsim"
+services: {
+   ActionHolder: {}
+   AuxDetGeometry: {
+      GDML: "protodunehd_v6_refactored.gdml"
+      Name: "protodunehdv6"
+      SortingParameters: {
+         tool_type: "AuxDetGeoObjectSorterYZX"
+      }
+   }
+   ChannelStatusService: {
+      BadChannels: []
+      NoisyChannels: []
+      service_provider: "SimpleChannelStatusService"
+   }
+   DatabaseUtil: {
+      DBHostName: "fnalpgsdev.fnal.gov"
+      DBName: "dune_dev"
+      DBUser: "dune_reader"
+      PassFileName: ".lpswd"
+      Port: 5438
+      ShouldConnect: false
+      TableName: "main_run"
+      ToughErrorTreatment: false
+   }
+   DetectorClocksService: {
+      ClockSpeedExternal: 3.125e1
+      ClockSpeedOptical: 6.25e1
+      ClockSpeedTPC: 2
+      ClockSpeedTrigger: 16
+      DefaultBeamTime: 250
+      DefaultTrigTime: 250
+      FramePeriod: 1600
+      G4RefTime: -250
+      InheritClockConfig: false
+      TrigModuleName: ""
+      TriggerOffsetTPC: -250
+      service_provider: "DetectorClocksServiceStandard"
+   }
+   DetectorHolder: {}
+   DetectorPropertiesService: {
+      DriftVelFudgeFactor: 1
+      Efield: [
+         4.867e-1,
+         6.66e-1,
+         8e-1
+      ]
+      Electronlifetime: 35000
+      ElectronsToADC: 6.8906513e-3
+      IncludeInterPlanePitchInXTickOffsets: true
+      NumberTimeSamples: 6000
+      ReadOutWindowSize: 6000
+      SimpleBoundaryProcess: true
+      SternheimerA: 1.956e-1
+      SternheimerCbar: 5.2146
+      SternheimerK: 3
+      SternheimerX0: 2e-1
+      SternheimerX1: 3
+      Temperature: 8.768e1
+      TimeOffsetU: 0
+      TimeOffsetV: 0
+      TimeOffsetZ: 0
+      UseIcarusMicrobooneDriftModel: false
+      service_provider: "DetectorPropertiesServiceStandard"
+   }
+   FileCatalogMetadata: {
+      applicationFamily: "art"
+      applicationVersion: "development"
+      fileType: "mc"
+      group: "dune"
+      runType: "physics"
+   }
+   Geometry: {
+      GDML: "protodunehd_v6_refactored.gdml"
+      Name: "protodunehdv6"
+      SortingParameters: {
+         tool_type: "GeoObjectSorterAPA"
+      }
+      SurfaceY: 147828
+   }
+   GeometryConfigurationWriter: {}
+   LArFFT: {
+      FFTOption: ""
+      FFTSize: 0
+      FitBins: 5
+   }
+   LArG4Detector: {
+      category: "world"
+      gdmlFileName_: "protodunehd_v6_refactored.gdml"
+      stepLimits: [
+         3e-1,
+         3e-1
+      ]
+      volumeNames: [
+         "volTPCActiveInner",
+         "volTPCActiveOuter"
+      ]
+   }
+   LArG4Parameters: {
+      CosmogenicK0Bias: 0
+      CosmogenicXSMNBiasFactor: 1
+      CosmogenicXSMNBiasOn: 0
+      DisableWireplanes: false
+      ElectronClusterSize: 600
+      EllipsModBoxA: 9.04e-1
+      EllipsModBoxB: 2.04e-1
+      EllipsModBoxR: 1.25
+      EnabledPhysics: [
+         "Em",
+         "FastOptical",
+         "SynchrotronAndGN",
+         "Ion",
+         "Hadron",
+         "Decay",
+         "HadronElastic",
+         "Stopping"
+      ]
+      KeepEMShowerDaughters: false
+      LarqlAlpha: 3.72e-2
+      LarqlBeta: 1.24e-2
+      LarqlChi0A: 3.38427e-3
+      LarqlChi0B: -6.57037
+      LarqlChi0C: 1.88418
+      LarqlChi0D: 1.29379e-4
+      LongitudinalDiffusion: 6.2e-9
+      MinNumberOfElCluster: 0
+      ModBoxA: 9.3e-1
+      ModBoxB: 2.12e-1
+      ModifyProtonCut: false
+      NewProtonCut: 0
+      OpticalParamModels: [
+         "OverlaidWireplanes"
+      ]
+      OpticalParamOrientations: [
+         0
+      ]
+      OpticalParamParameters: [
+         [
+            [
+               60,
+               3,
+               1.5e-1
+            ],
+            [
+               -60,
+               3,
+               1.5e-1
+            ],
+            [
+               0,
+               3,
+               1.5e-1
+            ]
+         ]
+      ]
+      OpticalParamVolumes: [
+         "volTPCPlaneVert_PV"
+      ]
+      OpticalSimVerbosity: 0
+      ParticleKineticEnergyCut: 1e-5
+      QAlpha: 7.2e-1
+      RecombA: 8e-1
+      Recombk: 4.86e-2
+      SkipWireSignalInTPCs: []
+      StoreTrajectories: true
+      TransverseDiffusion: 1.63e-8
+      UseCustomPhysics: true
+      UseEllipsModBoxRecomb: false
+      UseLitePhotons: true
+      UseModBoxRecomb: true
+      UseModLarqlRecomb: false
+      VisualizationEnergyCut: 1e-2
+      VisualizeNeutrals: false
+      Wph: 1.95e1
+   }
+   LArPropertiesService: {
+      AbsLengthEnergies: [
+         4,
+         5,
+         6,
+         7,
+         8,
+         9,
+         10,
+         11
+      ]
+      AbsLengthSpectrum: [
+         8000,
+         8000,
+         8000,
+         8000,
+         8000,
+         2000,
+         2000,
+         2000
+      ]
+      AlphaScintYield: 16800
+      AlphaScintYieldRatio: 5.6e-1
+      Argon39DecayRate: 0
+      AtomicMass: 3.9948e1
+      AtomicNumber: 18
+      ElectronScintYield: 20000
+      ElectronScintYieldRatio: 2.7e-1
+      EnableCerenkovLight: false
+      ExcitationEnergy: 188
+      FastScintEnergies: [
+         7.2,
+         7.9,
+         8.3,
+         8.6,
+         8.9,
+         9.1,
+         9.3,
+         9.6,
+         9.7,
+         9.8,
+         10,
+         1.02e1,
+         1.03e1,
+         1.06e1,
+         11,
+         1.16e1,
+         1.19e1
+      ]
+      FastScintSpectrum: [
+         0,
+         4e-2,
+         1.2e-1,
+         2.7e-1,
+         4.4e-1,
+         6.2e-1,
+         8e-1,
+         9.1e-1,
+         9.2e-1,
+         8.5e-1,
+         7e-1,
+         5e-1,
+         3.1e-1,
+         1.3e-1,
+         4e-2,
+         1e-2,
+         0
+      ]
+      KaonScintYield: 24000
+      KaonScintYieldRatio: 2.3e-1
+      LoadExtraMatProperties: true
+      MuonScintYield: 24000
+      MuonScintYieldRatio: 2.3e-1
+      PionScintYield: 24000
+      PionScintYieldRatio: 2.3e-1
+      ProtonScintYield: 19200
+      ProtonScintYieldRatio: 2.9e-1
+      RIndexEnergies: [
+         1.18626,
+         1.68626,
+         2.18626,
+         2.68626,
+         3.18626,
+         3.68626,
+         4.18626,
+         4.68626,
+         5.18626,
+         5.68626,
+         6.18626,
+         6.68626,
+         7.18626,
+         7.68626,
+         8.18626,
+         8.68626,
+         9.18626,
+         9.68626,
+         1.01863e1,
+         1.06863e1,
+         1.11863e1
+      ]
+      RIndexSpectrum: [
+         1.24664,
+         1.2205,
+         1.22694,
+         1.22932,
+         1.23124,
+         1.23322,
+         1.23545,
+         1.23806,
+         1.24116,
+         1.24489,
+         1.24942,
+         1.25499,
+         1.26197,
+         1.2709,
+         1.28263,
+         1.29865,
+         1.32169,
+         1.35747,
+         1.42039,
+         1.56011,
+         2.16626
+      ]
+      RadiationLength: 1.955e1
+      RayleighEnergies: [
+         1.18626,
+         1.68626,
+         2.18626,
+         2.68626,
+         3.18626,
+         3.68626,
+         4.18626,
+         4.68626,
+         5.18626,
+         5.68626,
+         6.18626,
+         6.68626,
+         7.18626,
+         7.68626,
+         8.18626,
+         8.68626,
+         9.18626,
+         9.68626,
+         1.01863e1,
+         1.06863e1,
+         1.11863e1
+      ]
+      RayleighSpectrum: [
+         1.2008e6,
+         390747,
+         128633,
+         5.49691e4,
+         2.71918e4,
+         1.48537e4,
+         8.7169e3,
+         5.39742e3,
+         3.48137e3,
+         2.31651e3,
+         1.57763e3,
+         1.09202e3,
+         7.63045e2,
+         5.34232e2,
+         3.71335e2,
+         2.52942e2,
+         1.6538e2,
+         9.99003e1,
+         5.12653e1,
+         1.7495e1,
+         9.64341e-1
+      ]
+      ReflectiveSurfaceDiffuseFractions: [
+         [
+            5e-1,
+            5e-1,
+            5e-1
+         ]
+      ]
+      ReflectiveSurfaceEnergies: [
+         7,
+         9,
+         10
+      ]
+      ReflectiveSurfaceNames: [
+         "STEEL_STAINLESS_Fe7Cr2Ni"
+      ]
+      ReflectiveSurfaceReflectances: [
+         [
+            2.5e-1,
+            2.5e-1,
+            2.5e-1
+         ]
+      ]
+      ScintBirksConstant: 6.9e-2
+      ScintByParticleType: false
+      ScintFastTimeConst: 6
+      ScintPreScale: 1
+      ScintResolutionScale: 1
+      ScintSlowTimeConst: 1590
+      ScintYield: 24000
+      ScintYieldRatio: 2.3e-1
+      SlowScintEnergies: [
+         7.2,
+         7.9,
+         8.3,
+         8.6,
+         8.9,
+         9.1,
+         9.3,
+         9.6,
+         9.7,
+         9.8,
+         10,
+         1.02e1,
+         1.03e1,
+         1.06e1,
+         11,
+         1.16e1,
+         1.19e1
+      ]
+      SlowScintSpectrum: [
+         0,
+         4e-2,
+         1.2e-1,
+         2.7e-1,
+         4.4e-1,
+         6.2e-1,
+         8e-1,
+         9.1e-1,
+         9.2e-1,
+         8.5e-1,
+         7e-1,
+         5e-1,
+         3.1e-1,
+         1.3e-1,
+         4e-2,
+         1e-2,
+         0
+      ]
+      TpbAbsorptionEnergies: [
+         5e-2,
+         1.77,
+         2.0675,
+         7.42,
+         7.75,
+         8.16,
+         8.73,
+         9.78,
+         1.069e1,
+         5.039e1
+      ]
+      TpbAbsorptionSpectrum: [
+         100000,
+         100000,
+         100000,
+         1e-3,
+         1e-11,
+         1e-11,
+         1e-11,
+         1e-11,
+         1e-11,
+         1e-11
+      ]
+      TpbEmmisionEnergies: [
+         5e-2,
+         1,
+         1.5,
+         2.25,
+         2.481,
+         2.819,
+         2.952,
+         2.988,
+         3.024,
+         3.1,
+         3.14,
+         3.1807,
+         3.54,
+         5.5,
+         5.039e1
+      ]
+      TpbEmmisionSpectrum: [
+         0,
+         0,
+         0,
+         5.88e-2,
+         2.35e-1,
+         8.53e-1,
+         1,
+         1,
+         9.259e-1,
+         7.04e-1,
+         2.96e-2,
+         1.1e-2,
+         0,
+         0,
+         0
+      ]
+      TpbTimeConstant: 2.5
+      service_provider: "LArPropertiesServiceStandard"
+   }
+   LArVoxelCalculator: {
+      VoxelEnergyCut: 1e-6
+      VoxelOffsetT: -2500
+      VoxelOffsetX: 0
+      VoxelOffsetY: 0
+      VoxelOffsetZ: 0
+      VoxelSizeT: 5000
+      VoxelSizeX: 3e-2
+      VoxelSizeY: 3e-2
+      VoxelSizeZ: 3e-2
+   }
+   MCTruthEventAction: {
+      service_type: "MCTruthEventActionService"
+   }
+   MagneticField: {
+      FieldDescriptions: [
+         {
+            ConstantField: [
+               0,
+               0,
+               0
+            ]
+            MagnetizedVolume: "volWorld"
+            UseField: 0
+         }
+      ]
+      service_provider: "MagneticFieldServiceStandard"
+   }
+   MemoryTracker: {
+      dbOutput: {
+         filename: "mem.db"
+         overwrite: true
+      }
+      includeMallocInfo: true
+   }
+   NuRandomService: {
+      endOfJobSummary: true
+      policy: "random"
+   }
+   OpDetResponseInterface: {
+      QuantumEfficiency: 1
+      service_provider: "DefaultOpDetResponse"
+   }
+   ParticleInventoryService: {
+      ParticleInventory: {
+         EveIdCalculator: "EmEveIdCalculator"
+         G4ModuleLabel: "largeant"
+      }
+   }
+   ParticleListAction: {
+      EnergyCut: 1e-5
+      KeepSecondToLast: true
+      KeepTransportation: true
+      SparsifyMargin: 1.5e-2
+      SparsifyTrajectories: true
+      keepEMShowerDaughters: true
+      keepGenTrajectories: [
+         "generator"
+      ]
+      keepOnlyPrimaryFullTrajectories: false
+      service_type: "ParticleListActionService"
+      storeTrajectories: true
+   }
+   PhotonBackTrackerService: {
+      PhotonBackTracker: {
+         Delay: 260
+         G4ModuleLabels: [
+            "PDFastSim"
+         ]
+         MinimumHitEnergyFraction: 1e-1
+      }
+   }
+   PhotonVisibilityService: {
+      DoNotLoadLibrary: false
+      LibraryBuildJob: false
+      LibraryFile: "PhotonPropagation/LibraryData/Photon_library_protoDUNEhd_library_protoDUNEhd_v2_refactored_nonActive.root"
+      NX: 122
+      NY: 67
+      NZ: 93
+      UseCryoBoundary: false
+      XMax: 4.64512e2
+      XMin: -3.93392e2
+      YMax: 7.28635536e2
+      YMin: -7.5664356e1
+      ZMax: 6.671808e2
+      ZMin: -1.945944e2
+   }
+   PhysicsList: {
+      BoundaryInvokeSD: false
+      CerenkovMaxBetaChange: 10
+      CerenkovMaxNumPhotons: 100
+      CerenkovStackPhotons: false
+      DumpList: true
+      NeutronKinELimit: 0
+      NeutronTimeLimit: 0
+      PhysicsListName: "QGSP_BERT"
+      ScintillationByParticleType: false
+      ScintillationStackPhotons: false
+      ScintillationTrackInfo: false
+      ScintillationTrackSecondariesFirst: false
+      Verbosity: 1
+      WLSProfile: "delta"
+      enableAbsorption: false
+      enableBoundary: false
+      enableCerenkov: false
+      enableMieHG: false
+      enableNeutronLimit: false
+      enableOptical: false
+      enableRayleigh: false
+      enableScintillation: false
+      enableStepLimit: true
+      enableWLS: false
+   }
+   PhysicsListHolder: {}
+   RandomNumberGenerator: {}
+   SignalShapingServiceDUNE: {
+      ADCPerPCAtLowestASICGain: 13160
+      ASICGainInMVPerFC: [
+         14,
+         14,
+         14
+      ]
+      CalibResponseTOffset: [
+         0,
+         0,
+         0
+      ]
+      Col3DCorrection: 2.5
+      ColFieldParams: [
+         8,
+         16,
+         7.5e-1
+      ]
+      ColFieldRespAmp: 1
+      ColFieldShape: "x^[2]/(1.0+(x/[0])^[1])"
+      ColFilter: "(x>0.0)*gaus"
+      ColFilterParams: [
+         1,
+         0,
+         1e-1
+      ]
+      DebugFieldShape: false
+      DeconNorm: 200
+      FieldBins: 400
+      FieldResponseFname: "FieldResponse/dune35t_response_v1.0.root"
+      FieldResponseHistoName: "FieldResponse"
+      FieldResponseTOffset: [
+         -32500,
+         -32500,
+         -32500
+      ]
+      FilterFunctionFname: "uboone_filters_v0.1.root"
+      FilterHistoName: "noisefilter_%d"
+      GetFilterFromHisto: false
+      Ind3DCorrection: 1.5
+      IndUFieldParams: [
+         8.43e-3,
+         1.534e-1,
+         1.77,
+         0,
+         5e-1
+      ]
+      IndUFieldRespAmp: 1
+      IndUFieldShape: "[0]*(1.0+[3]*tanh(x-[4]))*([4]-x)*exp(-0.5*((x-[4])/[2])^2.0)"
+      IndUFilter: "(x>0.0)*gaus"
+      IndUFilterParams: [
+         1,
+         0,
+         1e-1
+      ]
+      IndVFieldParams: [
+         8.43e-3,
+         1.534e-1,
+         1.77,
+         0,
+         5e-1
+      ]
+      IndVFieldRespAmp: 1
+      IndVFieldShape: "[0]*(1.0+[3]*tanh(x-[4]))*([4]-x)*exp(-0.5*((x-[4])/[2])^2.0)"
+      IndVFilter: "(x>0.0)*gaus"
+      IndVFilterParams: [
+         1,
+         0,
+         1e-1
+      ]
+      InputFieldRespSamplingPeriod: 100
+      Nbit: 12
+      NoiseFactVec: [
+         [
+            1.12,
+            8.6e-1,
+            6e-1,
+            5.5e-1
+         ],
+         [
+            1.12,
+            8.6e-1,
+            6e-1,
+            5.5e-1
+         ],
+         [
+            8.9e-1,
+            6.6e-1,
+            4.8e-1,
+            4.3e-1
+         ]
+      ]
+      ShapeTimeConst: [
+         2,
+         2,
+         2
+      ]
+      UseFunctionFieldShape: false
+      UseHistogramFieldShape: true
+   }
+   SpaceCharge: {
+      CalibrationInputFilename: "SpaceChargeProtoDUNE/SCE_DataDriven_180kV_v4.root"
+      EDAXPosOffs: [
+         -3,
+         -3
+      ]
+      EDBZPosOffs: [
+         -1,
+         -1
+      ]
+      EDChargeLossZHigh: [
+         233,
+         465
+      ]
+      EDChargeLossZLow: [
+         229,
+         461
+      ]
+      EDZCenter: [
+         231,
+         463
+      ]
+      EDs: [
+         2.5,
+         2.5
+      ]
+      EnableCalEfieldSCE: false
+      EnableCalSpatialSCE: false
+      EnableCorrSCE: false
+      EnableElectronDiverterDistortions: [
+         true,
+         true
+      ]
+      EnableSimEfieldSCE: false
+      EnableSimSpatialSCE: false
+      InputFilename: "SpaceChargeProtoDUNE/SCE_DataDriven_180kV_v4.root"
+      RepresentationType: "Splines_TH3"
+      service_provider: "SpaceChargeServiceProtoDUNE"
+   }
+   TFileService: {
+      fileName: "detsim_single_protodunehd_hist.root"
+   }
+   TimeTracker: {
+      dbOutput: {
+         filename: "time.db"
+         overwrite: true
+      }
+      printSummary: true
+   }
+   WireReadout: {
+      ChannelsPerOpDet: 1
+      WireReadoutClass: "DuneApaWireReadout"
+      service_provider: "DUNEWireReadout"
+   }
+}
+source: {
+   fileNames: [
+      "g4single_protodunehd.root"
+   ]
+   maxEvents: 30000
+   module_type: "RootInput"
+}
+tools: {
+   adcChannelDumper: {
+      FileName: ""
+      MaxSample: 0
+      NewFile: false
+      Prefix: "ADC dump: "
+      tool_type: "AdcChannelDumper"
+   }
+   adcChannelNotSignalRmsPlotter: {
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      DataView: ""
+      HistName: "hchnsgrms_%0RUN%_%0EVENT%_%0CHAN1%_%0CHAN2%"
+      HistTitle: "ADC not-signal RMS for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MetadataFlags: []
+      Metric: "nsgRms"
+      MetricBins: 0
+      MetricLabel: "RMS [ke]"
+      MetricMax: 11
+      MetricMin: 0
+      MetricSummaryView: ""
+      PedestalReference: ""
+      PlotFileName: "%TPMPRE%hchnsgrms_run%0RUN%_evt%0EVENT%_chans%0CHAN1%-%0CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 500
+      PlotUsesStatus: 0
+      RootFileName: ""
+      tool_type: "AdcChannelMetric"
+   }
+   adcChannelPedestalPlotter: {
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      DataView: ""
+      HistName: "hchped_%0RUN%_%0EVENT%_%0CHAN1%_%0CHAN2%"
+      HistTitle: "ADC pedestals for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MetadataFlags: []
+      Metric: "pedestal"
+      MetricBins: 0
+      MetricLabel: "Pedestal"
+      MetricMax: 4096
+      MetricMin: 0
+      MetricSummaryView: ""
+      PedestalReference: ""
+      PlotFileName: "%TPMPRE%hchped_run%0RUN%_evt%0EVENT%_chans%0CHAN1%-%0CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 500
+      PlotUsesStatus: 0
+      RootFileName: ""
+      tool_type: "AdcChannelMetric"
+   }
+   adcChannelPedestalRmsPlotter: {
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      DataView: ""
+      HistName: "hchpedrms_%0RUN%_%0EVENT%_%0CHAN1%_%0CHAN2%"
+      HistTitle: "ADC pedestal RMS for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MetadataFlags: []
+      Metric: "pedestalRms"
+      MetricBins: 0
+      MetricLabel: "RMS"
+      MetricMax: 11
+      MetricMin: 0
+      MetricSummaryView: ""
+      PedestalReference: ""
+      PlotFileName: "%TPMPRE%hchpedrms_run%0RUN%_evt%0EVENT%_chans%0CHAN1%-%0CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 500
+      PlotUsesStatus: 0
+      RootFileName: ""
+      tool_type: "AdcChannelMetric"
+   }
+   adcChannelSamplelRmsPlotter: {
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      DataView: ""
+      HistName: "hchsamrms_%0RUN%_%0EVENT%_%0CHAN1%_%0CHAN2%"
+      HistTitle: "ADC sample RMS for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MetadataFlags: []
+      Metric: "samRms"
+      MetricBins: 0
+      MetricLabel: "RMS [ke]"
+      MetricMax: 11
+      MetricMin: 0
+      MetricSummaryView: ""
+      PedestalReference: ""
+      PlotFileName: "%TPMPRE%hchsamrms_run%0RUN%_evt%0EVENT%_chans%0CHAN1%-%0CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 500
+      PlotUsesStatus: 0
+      RootFileName: ""
+      tool_type: "AdcChannelMetric"
+   }
+   adcChannelSignalRmsPlotter: {
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      DataView: ""
+      HistName: "hchsigrms_%0RUN%_%0EVENT%_%0CHAN1%_%0CHAN2%"
+      HistTitle: "ADC signal RMS for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MetadataFlags: []
+      Metric: "sigRms"
+      MetricBins: 0
+      MetricLabel: "RMS [ke]"
+      MetricMax: 11
+      MetricMin: 0
+      MetricSummaryView: ""
+      PedestalReference: ""
+      PlotFileName: "%TPMPRE%hchsigrms_run%0RUN%_evt%0EVENT%_chans%0CHAN1%-%0CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 500
+      PlotUsesStatus: 0
+      RootFileName: ""
+      tool_type: "AdcChannelMetric"
+   }
+   adcDPhase3x1x1LocalRoiBuilder: {
+      BinsToAverageForPedestal: 100
+      BinsToSkip: 2
+      LogLevel: 1
+      NConsecBinsAboveThreshold1: 9
+      NConsecBinsAboveThreshold2: 4
+      NSigmaEnd1: 0
+      NSigmaMax: 5
+      NSigmaStart1: 5e-1
+      NSigmaStart2: 1.8
+      PadHigh: 30
+      PadLow: 10
+      UseStandardDeviation: true
+      tool_type: "AdcDPhase3x1x1LocalRoiBuilder"
+   }
+   adcDPhase3x1x1RoiBuilder: {
+      BinsToAverageForRMS: 100
+      BinsToSkip: 0
+      LogLevel: 1
+      NConsecBinsAboveThreshold1: 30
+      NConsecBinsAboveThreshold2: 10
+      NSigmaEnd1: 0
+      NSigmaMax: 7
+      NSigmaStart1: 1
+      NSigmaStart2: 2
+      PadHigh: 50
+      PadLow: 20
+      UseStandardDeviation: false
+      tool_type: "AdcDPhase3x1x1RoiBuilder"
+   }
+   adcDumper: {
+      FileName: ""
+      LogLevel: 1
+      NewFile: false
+      Prefix: "ADC dump for "
+      ShowChannelCount: true
+      ShowFirst: 10
+      ShowFlags: false
+      ShowMax: 20
+      ShowOpt: 2
+      ShowPrepared: true
+      ShowRaw: false
+      ShowRebin: 5
+      ShowThreshold: 10
+      ShowTickCounts: false
+      tool_type: "AdcDataDumper"
+   }
+   adcDuneSignalFinder: {
+      LogLevel: 1
+      NSigmaEnd: 1
+      NSigmaStart: 3
+      NoiseSigma: 0
+      TicksAfter: 50
+      TicksBefore: 50
+      tool_type: "DuneAdcSignalFinder"
+   }
+   adcFFT: {
+      Action: 3
+      DataView: ""
+      FirstTick: 0
+      LogLevel: 1
+      NTick: 0
+      NormOpt: 1
+      ReturnOpt: 1
+      tool_type: "AdcChannelFFT"
+   }
+   adcFFTinv: {
+      Action: 13
+      DataView: ""
+      FirstTick: 0
+      LogLevel: 1
+      NTick: 0
+      NormOpt: 1
+      ReturnOpt: 10
+      tool_type: "AdcChannelFFT"
+   }
+   adcKeepAllSignalFinder: {
+      DataPath: ""
+      LogLevel: 1
+      tool_type: "AdcKeepAllSignalFinder"
+   }
+   adcNoiseSignalFinder: {
+      BinsAfter: 20
+      BinsBefore: 10
+      FlagNegative: true
+      FlagPositive: true
+      LogLevel: 1
+      MaxLoop: 20
+      SigFracMax: 8e-1
+      ThresholdMin: 20
+      ThresholdRatio: 4
+      ThresholdRatioTol: 1e-1
+      tool_type: "AdcNoiseSignalFinder"
+   }
+   adcPlotDftMag: {
+      ChannelSelection: ""
+      ChannelStatusFlag: 0
+      HistName: "hdftmags_run%0RUN%_evt%0EVENT%_ch%0CHAN%"
+      HistSummaryTitle: ""
+      HistTitle: "DFT amplitudes for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      PlotChannelGroups: []
+      PlotChannelRanges: []
+      PlotDataView: ""
+      PlotName: "%TPMPRE%dftmag_run%0RUN%_evt%0EVENT%_ch%0CHAN%%TPMSUF%"
+      PlotOverlayGroups: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      PlotSummaryNames: []
+      SampleFreq: 2000
+      Variable: "magnitude"
+      XMax: 0
+      XMin: 0
+      YMax: 50
+      YMinLog: 0
+      tool_type: "AdcChannelDftPlotter"
+   }
+   adcPlotDftPhase: {
+      ChannelSelection: ""
+      ChannelStatusFlag: 0
+      HistName: "hdftphas_run%0RUN%_evt%0EVENT%_ch%0CHAN%"
+      HistSummaryTitle: ""
+      HistTitle: "DFT phases for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      PlotChannelGroups: []
+      PlotChannelRanges: []
+      PlotDataView: ""
+      PlotName: "%TPMPRE%dftpha_run%0RUN%_evt%0EVENT%_ch%0CHAN%%TPMSUF%"
+      PlotOverlayGroups: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      PlotSummaryNames: []
+      SampleFreq: 2000
+      Variable: "phase"
+      XMax: 0
+      XMin: 0
+      YMinLog: 0
+      tool_type: "AdcChannelDftPlotter"
+   }
+   adcPlotDftPower: {
+      ChannelSelection: ""
+      ChannelStatusFlag: 0
+      HistName: "hdftpower_run%0RUN%_evt%0EVENT%_ch%0CHAN%"
+      HistSummaryTitle: ""
+      HistSummaryTitles: [
+         "DFT power for run %RUN%",
+         "DFT power for run %RUN% event %EVENT%"
+      ]
+      HistTitle: "DFT power for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      NBinX: 50
+      PlotChannelGroups: []
+      PlotChannelRanges: []
+      PlotDataView: ""
+      PlotName: "%TPMPRE%dftpower_run%0RUN%_evt%0EVENT%_ch%0CHAN%%TPMSUF%"
+      PlotOverlayGroups: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      PlotSummaryNames: []
+      SampleFreq: 2000
+      Variable: "power"
+      XMax: 0
+      XMin: 0
+      YMax: 10000
+      YMinLog: 0
+      tool_type: "AdcChannelDftPlotter"
+   }
+   adcPlotDftTickPower: {
+      ChannelSelection: ""
+      ChannelStatusFlag: 0
+      HistName: "hdftpowt_run%0RUN%_evt%0EVENT%_ch%0CHAN%"
+      HistSummaryTitle: ""
+      HistSummaryTitles: [
+         "DFT power for run %RUN%",
+         "DFT power for run %RUN% event %EVENT%"
+      ]
+      HistTitle: "DFT power for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      NBinX: 50
+      PlotChannelGroups: []
+      PlotChannelRanges: []
+      PlotDataView: ""
+      PlotName: "%TPMPRE%dftpowt_run%0RUN%_evt%0EVENT%_ch%0CHAN%%TPMSUF%"
+      PlotOverlayGroups: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      PlotSummaryNames: [
+         "%TPMPRE%dftpowtlog_run%0RUN%%TPMSUF",
+         ""
+      ]
+      SampleFreq: 2000
+      Variable: "power/tick"
+      XMax: 0
+      XMin: 0
+      YMax: -2
+      YMinLog: 0
+      tool_type: "AdcChannelDftPlotter"
+   }
+   adcPlotDftTickPowerLog: {
+      ChannelSelection: ""
+      ChannelStatusFlag: 0
+      HistName: "hdftpowtlog_run%0RUN%_evt%0EVENT%_ch%0CHAN%"
+      HistSummaryTitle: ""
+      HistSummaryTitles: [
+         "DFT power for run %RUN%",
+         "DFT power for run %RUN% event %EVENT%"
+      ]
+      HistTitle: "DFT power for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      NBinX: 50
+      PlotChannelGroups: []
+      PlotChannelRanges: []
+      PlotDataView: ""
+      PlotName: "%TPMPRE%dftpowtlog_run%0RUN%_evt%0EVENT%_ch%0CHAN%%TPMSUF%"
+      PlotOverlayGroups: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      PlotSummaryNames: [
+         "%TPMPRE%dftpowtlog_run%0RUN%%TPMSUF",
+         ""
+      ]
+      SampleFreq: 2000
+      Variable: "power/tick"
+      XMax: 0
+      XMin: 0
+      YMax: 100
+      YMinLog: 1e-2
+      tool_type: "AdcChannelDftPlotter"
+   }
+   adcPlotPrepared: {
+      ColorBad: 633
+      ColorNoisy: 636
+      HistName: "adc_%TYPE%_ev%EVENT%_ch%CHAN%"
+      HistTitle: "ADC %TYPE% run %RUN% event %EVENT% channel %CHAN%"
+      HistTypes: [
+         "prepared"
+      ]
+      LabelSize: 1e-2
+      LogLevel: 1
+      PlotDistMax: 0
+      PlotDistMin: 0
+      PlotFileName: ""
+      PlotSamMax: 1000
+      PlotSamMin: 0
+      PlotSigMax: 0
+      PlotSigMin: 0
+      PlotSigOpt: "full"
+      RootFileName: ""
+      SkipFlags: []
+      tool_type: "AdcChannelPlotter"
+   }
+   adcPlotRaw: {
+      ColorBad: 633
+      ColorNoisy: 636
+      HistName: "adc_%TYPE%_ev%EVENT%_ch%CHAN%"
+      HistTitle: "ADC %TYPE% run %RUN% event %EVENT% channel %CHAN%"
+      HistTypes: [
+         "raw"
+      ]
+      LabelSize: 1e-2
+      LogLevel: 1
+      PlotDistMax: 0
+      PlotDistMin: 0
+      PlotFileName: ""
+      PlotSamMax: 1000
+      PlotSamMin: 0
+      PlotSigMax: 0
+      PlotSigMin: 100
+      PlotSigOpt: "pedestal"
+      RootFileName: ""
+      SkipFlags: []
+      tool_type: "AdcChannelPlotter"
+   }
+   adcPlotRawDist: {
+      ColorBad: 633
+      ColorNoisy: 636
+      HistName: "adc_%TYPE%_ev%EVENT%_ch%CHAN%"
+      HistTitle: "ADC %TYPE% run %RUN% event %EVENT% channel %CHAN%"
+      HistTypes: [
+         "rawdist"
+      ]
+      LabelSize: 1e-2
+      LogLevel: 1
+      PlotDistMax: 0
+      PlotDistMin: 0
+      PlotFileName: ""
+      PlotSamMax: 1000
+      PlotSamMin: 0
+      PlotSigMax: 0
+      PlotSigMin: 0
+      PlotSigOpt: "full"
+      RootFileName: ""
+      SkipFlags: []
+      tool_type: "AdcChannelPlotter"
+   }
+   adcRawDumper: {
+      FileName: ""
+      LogLevel: 1
+      NewFile: false
+      Prefix: "ADC raw dump for "
+      ShowChannelCount: true
+      ShowFirst: 0
+      ShowFlags: false
+      ShowMax: 20
+      ShowOpt: 1
+      ShowPrepared: false
+      ShowRaw: true
+      ShowRebin: 0
+      ShowThreshold: 10
+      ShowTickCounts: false
+      tool_type: "AdcDataDumper"
+   }
+   adcRoiFitter: {
+      ChanSumHists: []
+      ChanSumRootFileName: ""
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      FitOpt: 1
+      LogLevel: 1
+      MaxRoiPlots: 1000
+      PlotLabels: []
+      PulserChargeUnit: ""
+      PulserDacOffset: 0
+      PulserStepCharge: 0
+      RoiHistOpt: 1
+      RoiPlotOpt: 2
+      RoiPlotPadX: 4
+      RoiPlotPadY: 4
+      RoiRootFileName: ""
+      RunDataTool: ""
+      SigThresh: 0
+      StartTime: 0
+      SumHists: []
+      SumNegate: false
+      SumPlotPadX: 4
+      SumPlotPadY: 4
+      SumRootFileName: ""
+      TickBorder: 0
+      TickOffsetTool: ""
+      tool_type: "AdcRoiViewer"
+   }
+   adcRoiTreeMaker: {
+      LogLevel: 1
+      MetadataFields: []
+      OutFile: "adcrois.root"
+      tool_type: "AdcRoiToTree"
+   }
+   adcRoiViewer: {
+      ChanSumHists: []
+      ChanSumRootFileName: ""
+      ChannelLineModulus: 0
+      ChannelLinePattern: []
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      FitOpt: 0
+      LogLevel: 1
+      MaxRoiPlots: 1000
+      PlotLabels: []
+      PulserChargeUnit: ""
+      PulserDacOffset: 0
+      PulserStepCharge: 0
+      RoiHistOpt: 1
+      RoiPlotOpt: 2
+      RoiPlotPadX: 4
+      RoiPlotPadY: 4
+      RoiRootFileName: ""
+      RunDataTool: ""
+      SigThresh: 0
+      StartTime: 0
+      SumHists: []
+      SumNegate: false
+      SumPlotPadX: 4
+      SumPlotPadY: 4
+      SumRootFileName: ""
+      TickBorder: 0
+      TickOffsetTool: ""
+      tool_type: "AdcRoiViewer"
+   }
+   adcSampleCalibration: {
+      AdcOverflowDefault: 4095
+      AdcUnderflowDefault: 0
+      GainDefault: 0
+      GainTool: "areaGain_calib20191213_dec18ext"
+      LogLevel: 1
+      ScaleFactor: 1
+      Unit: "ke/tick"
+      tool_type: "FloatArrayGainCalibration"
+   }
+   adcSampleFiller: {
+      AdcOverflow: 4095
+      AdcUnderflow: 0
+      LogLevel: 1
+      tool_type: "AdcSampleFiller"
+   }
+   adcScaleAdcToKe: {
+      InputUnit: "ADC count"
+      LogLevel: 1
+      OutputUnit: "ke/tick"
+      ScaleFactor: 2.5e-2
+      tool_type: "AdcSampleScaler"
+   }
+   adcScaleKeToAdc: {
+      InputUnit: "ke/tick"
+      LogLevel: 1
+      OutputUnit: "ADC count"
+      ScaleFactor: 40
+      tool_type: "AdcSampleScaler"
+   }
+   adcSliceNotRoi: {
+      CopyRaw: false
+      LogLevel: 1
+      OutViewName: "notrois"
+      SliceOpt: 2
+      tool_type: "AdcRoiSlicer"
+   }
+   adcSliceRoi: {
+      CopyRaw: false
+      LogLevel: 1
+      OutViewName: "rois"
+      SliceOpt: 1
+      tool_type: "AdcRoiSlicer"
+   }
+   adcStringBuilder: {
+      ChannelWidth: 5
+      CountWidth: 4
+      EventWidth: 6
+      FembWidth: 3
+      LogLevel: 1
+      RunWidth: 6
+      SubRunWidth: 4
+      TpmPrefix: ""
+      TpmSuffix: ".png"
+      TrigNames: [
+         "flag 0",
+         "flag 1",
+         "flag 2",
+         "flag 3",
+         "flag 4",
+         "flag 5",
+         "flag 6",
+         "flag 7",
+         "random",
+         "flag 9",
+         "flag 10",
+         "flag 11",
+         "beam",
+         "CRT",
+         "NGT"
+      ]
+      TriggerWidth: 2
+      tool_type: "StandardAdcChannelStringTool"
+   }
+   adcSubtractBaseline: {
+      BaseSampleBins: 32
+      BaseVarCut: 5
+      LogLevel: 1
+      tool_type: "SubtractBaseline"
+   }
+   adcThresholdSignalFinder: {
+      BinsAfter: 20
+      BinsBefore: 10
+      FlagNegative: true
+      FlagPositive: true
+      LogLevel: 1
+      Threshold: "3.0"
+      tool_type: "AdcThresholdSignalFinder"
+   }
+   adcVintageDeconvoluter: {
+      LogLevel: 1
+      tool_type: "VintageDeconvoluter"
+   }
+   adcsim_ideal: {
+      Nbit: 12
+      Vsen: 1
+      tool_type: "IdealAdcSimulator"
+   }
+   adcsim_noisy: {
+      Nbit: 12
+      Noise: 5
+      Vsen: 1
+      tool_type: "NoisyAdcSimulator"
+   }
+   apa_evtviewNfemb: {
+      ChannelRangeLabel: ""
+      ChannelRanges: []
+      ClockRate: 5e7
+      ClockUnit: "Mtick"
+      EventGraphs: [
+         "event:events:1:nfemb:0:21"
+      ]
+      EventHists: [
+         "hnfemb:21:0:21"
+      ]
+      LogLevel: 2
+      tool_type: "AdcEventViewer"
+   }
+   calibNoiseSignalFinder: {
+      BinsAfter: 20
+      BinsBefore: 10
+      FlagNegative: true
+      FlagPositive: true
+      LogLevel: 1
+      MaxLoop: 20
+      SigFracMax: 8e-1
+      ThresholdMin: 2e-1
+      ThresholdRatio: 4
+      ThresholdRatioTol: 1e-1
+      tool_type: "AdcNoiseSignalFinder"
+   }
+   calibThresholdSignalFinder: {
+      BinsAfter: 20
+      BinsBefore: 10
+      FlagNegative: true
+      FlagPositive: true
+      LogLevel: 1
+      Threshold: 5e-1
+      tool_type: "AdcThresholdSignalFinder"
+   }
+   channelStatus: {
+      LogLevel: 1
+      tool_type: "ChannelStatusServiceTool"
+   }
+   channelStatusFromService: {
+      LogLevel: 1
+      tool_type: "ChannelStatusServiceTool"
+   }
+   def_adcPedestalFit: {
+      AdcFitRange: 100
+      AdcRange: 4096
+      FitOpt: 0
+      FitPrecision: 1
+      FitRmsMax: 20
+      FitRmsMin: 1
+      HistManager: ""
+      HistName: "adcped_ev%0EVENT%_ch%0CHAN%"
+      HistTitle: "ADC pedestal fit for run %RUN% event %EVENT% channel %CHAN%"
+      LogLevel: 1
+      PlotFileName: ""
+      PlotShowFit: 1
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotSplitX: 4
+      PlotSplitY: 4
+      RemoveStickyCode: false
+      RootFileName: ""
+      SkipFlags: []
+      tool_type: "AdcPedestalFitter"
+   }
+   digitReader: {
+      LogLevel: 1
+      tool_type: "AcdDigitReader"
+   }
+   hdcbRunDataTool: {
+      FileNames: [
+         "rundata/hdcb/rundata.fcl",
+         "rundata/hdcb/rundata%RUN%.fcl"
+      ]
+      LogLevel: 1
+      tool_type: "FclRunDataTool"
+   }
+   histMgr: {
+      LogLevel: 1
+      tool_type: "SimpleHistogramManager"
+   }
+   jobRanges: {
+      LogLevel: 1
+      events: {
+         begin: 0
+         end: 0
+         labels: []
+      }
+      tool_type: "FclIndexRangeTool"
+   }
+   lemEfficiency: {
+      DefaultValue: 0
+      FileNames: [
+         "crp/protodunedp/lem_efficiency_v29102019.fcl"
+      ]
+      Label: "lem_eff_29102019"
+      LogLevel: 1
+      tool_type: "FclFileFloatArray"
+   }
+   preparedAdcPlotter: {
+      ChannelLineModulus: 2560
+      ChannelLinePattern: [
+         0,
+         800,
+         1600,
+         2080
+      ]
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      ClockFactor: 0
+      ClockOffset: 0
+      DataType: 0
+      DataView: ""
+      EmptyColor: 18
+      FembTickOffsets: []
+      HistName: "hadcprp_evt%EVENT%_ch_%CHAN1%"
+      HistTitle: "Prepared ADC for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MaxSignal: 200
+      Palette: 2020
+      PlotFileName: "%TPMPRE%adcprep_evt%EVENT%_ch%CHAN1%-%CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotTitle: ""
+      RootFileName: ""
+      SkipChannelStatus: []
+      TickRange: "plotTicks"
+      TickRebin: 1
+      tool_type: "AdcDataPlotter"
+   }
+   protoduneRunDataTool: {
+      FileNames: [
+         "rundata/protodune/rundata.fcl",
+         "rundata/protodune/rundata%RUN%.fcl"
+      ]
+      LogLevel: 1
+      tool_type: "FclRunDataTool"
+   }
+   rawAdcPlotter: {
+      ChannelLineModulus: 2560
+      ChannelLinePattern: [
+         0,
+         800,
+         1600,
+         2080
+      ]
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      ClockFactor: 0
+      ClockOffset: 0
+      DataType: 1
+      DataView: ""
+      EmptyColor: 18
+      FembTickOffsets: []
+      HistName: "hadcraw_evt%EVENT%_ch_%CHAN1%"
+      HistTitle: "Raw ADC for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MaxSignal: 200
+      Palette: 2020
+      PlotFileName: "%TPMPRE%adcrawRun%0RUN%Event%0EVENT%Chan%CHAN1%-%CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotTitle: ""
+      RootFileName: ""
+      SkipChannelStatus: []
+      TickRange: "plotTicks"
+      TickRebin: 1
+      tool_type: "AdcDataPlotter"
+   }
+   signalAdcPlotter: {
+      ChannelLineModulus: 2560
+      ChannelLinePattern: [
+         0,
+         800,
+         1600,
+         2080
+      ]
+      ChannelLinePatternSolid: []
+      ChannelRanges: []
+      ClockFactor: 0
+      ClockOffset: 0
+      DataType: 2
+      DataView: ""
+      EmptyColor: 18
+      FembTickOffsets: []
+      HistName: "hadcsig_evt%EVENT%_ch_%CHAN1%"
+      HistTitle: "Signal ADC for run %RUN% event %EVENT%"
+      LogLevel: 1
+      MaxSignal: 200
+      Palette: 2020
+      PlotFileName: "%TPMPRE%adcsig_evt%EVENT%_ch%CHAN1%-%CHAN2%%TPMSUF%"
+      PlotSizeX: 1400
+      PlotSizeY: 1000
+      PlotTitle: ""
+      RootFileName: ""
+      SkipChannelStatus: []
+      TickRange: "plotTicks"
+      TickRebin: 1
+      tool_type: "AdcDataPlotter"
+   }
+   tickRanges: {
+      LogLevel: 1
+      allTicks: {
+         begin: 0
+         end: 0
+         labels: [
+            "All ticks"
+         ]
+      }
+      plotAllTicks: {
+         begin: 0
+         end: 0
+         labels: [
+            "All ticks"
+         ]
+      }
+      plotTicks: {
+         begin: 3000
+         end: 4000
+         labels: [
+            "Plot ticks"
+         ]
+      }
+      tool_type: "FclIndexRangeTool"
+   }
+}

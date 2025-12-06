@@ -1,0 +1,57 @@
+======Michel e CAND! (score>0.1) COUNT (DECON)======
+Michel score: 0.722651,  Michel hits: 23
+Run: 28116,  Event: 105122,  TrackID: 0
+Vertex(x, y, z) = (-178.359, 578.858, 453.636)
+End(x, y, z) = (105.844, 178.808, 9.68737)
+
+Distance to APA plane (+/-): 250.502 cm
+
+Closest OpCh (y, z): (153.66, 35.4612); Label: 77
+56 66 76 
+57 67 77 
+58 68 78
+
+michelt0_decon_run028116_0424_dataflow2_datawriter_0_20240724T123350.root
+
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/3b/04/np04hd_raw_run028116_0424_dataflow2_datawriter_0_20240724T123350_reco_stage1_reco_stage2_20240910T074231_keepup.root
+
+
+
+
+======Michel e CAND! (score>0.1) COUNT (DECON)======
+Michel score: 0.763438,  Michel hits: 24
+Run: 28116,  Event: 48476,  TrackID: 0
+Vertex(x, y, z) = (-341.325, 485.279, 448.604)
+End(x, y, z) = (176.547, 42.4503, 301.465)
+
+Distance to APA plane (+/-): 179.799 cm
+
+Closest OpCh (y, z): (32.16, 316.671); Label: 29
+17 27 37 
+18 28 38 
+19 29 39 
+
+michelt0_decon_run028116_0195_dataflow4_datawriter_0_20240724T104446.root
+
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/74/f7/np04hd_raw_run028116_0195_dataflow4_datawriter_0_20240724T104446_reco_stage1_reco_stage2_20240910T063419_keepup.root
+
+
+
+
+======Michel e CAND! (score>0.1) COUNT (DECON)======
+Michel score: 0.793756,  Michel hits: 16
+Run: 28116,  Event: 38472,  TrackID: 1
+Vertex(x, y, z) = (-18.6684, 584.512, 232.632)
+End(x, y, z) = (278.942, 175.902, 121.775)
+
+Distance to APA plane (+/-): 77.4044 cm
+
+Closest OpCh (y, z): (153.66, 145.861); Label: 57
+46 56 66 
+47 57 67 
+48 58 68 
+
+michelt0_decon_run028116_0155_dataflow0_datawriter_0_20240724T102551.root
+
+root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr/dune/persistent/staging/hd-protodune-det-reco/30/be/np04hd_raw_run028116_0155_dataflow0_datawriter_0_20240724T102551_reco_stage1_reco_stage2_20240910T063452_keepup.root
+

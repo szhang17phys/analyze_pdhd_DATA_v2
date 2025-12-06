@@ -46,10 +46,11 @@ physics: {
             -300,
             300
          ]
+         NShowersPerEvent: 3
          ProjectToHeight: 865
          RandomXZShift: 1000
          SampleTime: 6.45e-3
-         ShowerAreaExtension: 2000
+         ShowerAreaExtension: 5000
          ShowerFluxConstants: [
             17200,
             9200,
@@ -425,7 +426,7 @@ services: {
       ]
       OpticalSimVerbosity: 0
       ParticleKineticEnergyCut: 1e-5
-      QAlpha: 7.2e-1
+      QAlpha: 4.3e-1
       RecombA: 8e-1
       Recombk: 4.86e-2
       SkipWireSignalInTPCs: []

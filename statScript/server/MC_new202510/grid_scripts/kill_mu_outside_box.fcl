@@ -1,0 +1,28 @@
+BEGIN_PROLOG
+
+# Tool configuration for stopping through-going muons during Geant4
+# ---------------------------------------------------------------
+# This defines the active detector volume by XYZ bounds (in cm)
+# and kills muon tracks (mu^+, mu^-) that do NOT stop inside this region.
+# The rest of the event continues to run normally.
+
+killMuOutsideActive: {
+  tool_type: KillMuonsOutsideBox
+
+  PDGs: [ 13, -13 ]
+
+  # Detector active volume boundaries (in centimeters)
+  # Adjust these for your geometry  example: ProtoDUNE_HD
+  BoundsX: [ -391,  463 ]   # drift direction
+  BoundsY: [ -65,  725 ]   # vertical
+  BoundsZ: [    -193, 661 ]   # beam direction
+
+  # Tolerance to avoid edge jitter effects (cm)
+  EdgeTolerance: 0.05
+
+  #Default energy is infinte; GeV; filter muons above 10 GeV
+  MaxMuonEnergy: 10.0  
+
+}
+
+END_PROLOG

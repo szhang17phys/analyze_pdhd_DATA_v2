@@ -1,0 +1,33 @@
+# Combine Detsim Stage 1 and Stage 2
+#include "standard_detsim_protodunehd.fcl"
+
+process_name: DetsimCombined
+
+services:
+{
+  TFileService: { fileName: "detsim_combined_hist.root" }
+  TimeTracker:          @local::dune_time_tracker
+  MemoryTracker:        @local::dune_memory_tracker
+  RandomNumberGenerator: {}   # ART native RNG
+  FileCatalogMetadata:  @local::art_file_catalog_mc
+  WireReadout:          @local::dune_wire_readout
+  Geometry:             @local::protodunehdv6_geo
+}
+
+# Combine the two simulate lists
+physics.simulate: [
+    tpcrawdecoder,   # Stage 1
+    rns, opdigi, crt # Stage 2
+]
+
+# Use a single output file
+outputs:
+{
+  out1:
+  {
+    module_type: RootOutput
+    fileName: "%ifb_detsim_combined.root"
+    dataTier: "detector"
+    compressionLevel: 1
+  }
+}

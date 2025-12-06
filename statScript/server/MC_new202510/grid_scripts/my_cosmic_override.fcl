@@ -1,0 +1,20 @@
+BEGIN_PROLOG
+
+# Use the standard ProtoDUNE cosmic generator
+MyCosmicGenerator: @local::protodune_corsika_cmc
+
+# --- Adjust only what you need ---------------------------------
+
+# Increase muon statistics by enlarging the sampling area (cm)
+MyCosmicGenerator.ShowerAreaExtension: 5000   # original 2000
+
+# Multiple showers per event
+MyCosmicGenerator.NShowersPerEvent: 3
+
+# (Optional) slightly enlarge the buffer box (cm)
+# MyCosmicGenerator.BufferBox: [ -400, 400, -400, 400, -400, 400 ]
+
+# (Optional) random shower core shift (cm)
+# MyCosmicGenerator.RandomXZShift: 1500
+
+END_PROLOG

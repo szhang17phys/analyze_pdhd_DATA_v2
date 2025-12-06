@@ -106,3 +106,16 @@ physics.producers.th232apaboards.volume_gen: ".*G10Board.*"
 physics.producers.u238apaboards.volume_gen:  ".*G10Board.*"
 
 
+
+
+# ----------------------------------------------------------------------
+# Override CORSIKA input to use my PNFS copy instead of CVMFS
+# ----------------------------------------------------------------------
+physics.producers.cosmicgenerator.ShowerInputFiles: [
+  "/pnfs/dune/persistent/users/szh2/CORSIKA_DB/p_showers_*.db",
+  "/pnfs/dune/persistent/users/szh2/CORSIKA_DB/He_showers_*.db",
+  "/pnfs/dune/persistent/users/szh2/CORSIKA_DB/N_showers_*.db",
+  "/pnfs/dune/persistent/users/szh2/CORSIKA_DB/Mg_showers_*.db",
+  "/pnfs/dune/persistent/users/szh2/CORSIKA_DB/Fe_showers_*.db"
+]
+
