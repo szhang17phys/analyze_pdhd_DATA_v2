@@ -14,7 +14,7 @@ with open(x_path, "w") as x_out, open(y_path, "w") as y_out, open(z_path, "w") a
     #================================================================
     # Load all lines from filtered input into memory
     #================================================================
-    with open("/Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/cosmic28116_applyCut_print/filtered_28116New20251201_print.txt", "r") as f:
+    with open("/Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/cosmic28116/filtered_28116New20251201_print.txt", "r") as f:
         filtered_lines = f.readlines()
 
     #================================================================

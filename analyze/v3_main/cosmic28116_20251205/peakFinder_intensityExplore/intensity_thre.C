@@ -261,7 +261,7 @@ void intensity_thre() {
     clear2.close();   
     clear3.close();
 
-    const char* inputDirectory = "/Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/cosmicData_new202512/28116/wvf_merged_applyCut";
+    const char* inputDirectory = "/Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/cosmicData_new202512/28116/wvf_merged_applyCut_thre3";
     processDirectory(inputDirectory, 0.3);//Threshold for summed wvf---
 }
 

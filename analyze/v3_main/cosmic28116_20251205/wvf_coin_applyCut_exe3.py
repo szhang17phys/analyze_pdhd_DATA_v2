@@ -7,7 +7,7 @@ import shutil
 
 # Define source and destination directories
 source_dir = "/Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/cosmicData_new202512/28116/wvf_merged"
-dest_dir = "/Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/cosmicData_new202512/28116/wvf_merged_applyCut"
+dest_dir = "/Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/cosmicData_new202512/28116/wvf_merged_applyCut_thre3"
 
 # Create destination directory if it doesn't exist
 if not os.path.exists(dest_dir):
@@ -30,7 +30,7 @@ for file_path in glob.glob(os.path.join(source_dir, "*.root")):
 
 
             #wvfCoin cut-----------------------------------------------------------------------
-            if count_ms_ch >= 4:
+            if count_ms_ch >= 3:
 
 
                 shutil.copy(file_path, dest_dir)

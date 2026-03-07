@@ -30,7 +30,7 @@ for file_path in glob.glob(os.path.join(source_dir, "*.root")):
 
 
             #wvfCoin cut-----------------------------------------------------------------------
-            if count_ms_ch >= 4:
+            if count_ms_ch >= 3:
 
 
                 shutil.copy(file_path, dest_dir)

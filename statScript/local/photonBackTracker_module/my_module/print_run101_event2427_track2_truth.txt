@@ -1,0 +1,279 @@
+%MSG-i MF_INIT_OK:  Early 06-Feb-2026 16:09:16 CST JobSetup
+Messagelogger initialization complete.
+%MSG
+DuneDeconvolutionService::ctor: DuneDeconvolutionService:
+DuneDeconvolutionService::ctor:                LogLevel: 1
+DuneRoiBuildingService::ctor: DuneRoiBuildingService:
+DuneRoiBuildingService::ctor:     LogLevel: 1
+DuneRoiBuildingService::ctor:  NSigmaStart: 3
+DuneRoiBuildingService::ctor:    NSigmaEnd: 1
+DuneRoiBuildingService::ctor:       PadLow: 50
+DuneRoiBuildingService::ctor:      PadHigh: 50
+StandardAdcWireBuildingService::ctor: StandardAdcWireBuildingService:
+StandardAdcWireBuildingService::ctor:     LogLevel: 1
+%MSG-i AuxDetGeometryCore:  Early 06-Feb-2026 16:09:18 CST JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_17_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i GeometryCore:  Early 06-Feb-2026 16:09:18 CST JobSetup
+Sorting volumes...
+%MSG
+%MSG-i GeometryCore:  Early 06-Feb-2026 16:09:18 CST JobSetup
+New detector geometry loaded from
+	/cvmfs/dune.opensciencegrid.org/products/dune/dunecore/v10_17_00d00/gdml/protodunehd_v6_refactored.gdml
+%MSG
+%MSG-i DuneApaWireReadoutGeom:  Early 06-Feb-2026 16:09:18 CST JobSetup
+Initializing wire readout...
+%MSG
+Cryostat 0:
+  10240 total channels
+  4 APAs
+  For all identical APA:
+    Number of channels per APA = 2560
+    U channels per APA = 800
+    V channels per APA = 800
+    Z channels per APA = 960
+    Pitch in U Plane = 0.4669
+    Pitch in V Plane = 0.4669
+    Pitch in Z Plane = 0.4792
+GeoApaChannelGroupService::ctor: Group 0 (apa0) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 1 (apa1) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 2 (apa2) has 2560 channels from 4/4 readout planes.
+GeoApaChannelGroupService::ctor: Group 3 (apa3) has 2560 channels from 4/4 readout planes.
+%MSG-i SimpleChannelStatusService:  Early 06-Feb-2026 16:09:18 CST JobSetup
+Loaded from configuration:
+  - 0 bad channels
+  - 0 noisy channels
+  - largest channel ID: 10239, largest present: 10239
+%MSG
+%MSG-i setupProvider<DetectorPropertiesStandard>:  Early  06-Feb-2026 16:09:18 CST JobSetup
+Asked to ignore 1 keys: 'InheritNumberTimeSamples'
+%MSG
+PDSP Channel Map: Building RCE TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building FELIX TPC wiremap from file protoDUNETPCChannelMap_RCE_v4.txt
+PDSP Channel Map: Building SSP channel map from file protoDUNESSPChannelMap_v1.txt
+DuneToolManager::fclFilename: Taking fcl name from command line: lar -c pdhd_Truechecks.fcl -s /pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/artFile_20251101/cosmic_reco_run101_job485_eventID2426_20251225T043137Z_20013.root -e 101:0:2427 -n 1
+AcdDigitReader::ctor:     LogLevel: 1
+DuneToolManager::getPrivate: ERROR: Tool name is blank
+StandardRawDigitExtractService::ctor: Retrieved digit read tool digitReader
+StandardRawDigitExtractService::ctor: StandardRawDigitExtractService:
+StandardRawDigitExtractService::ctor:         LogLevel: 1
+StandardRawDigitExtractService::ctor:    DigitReadTool: digitReader
+StandardRawDigitExtractService::ctor:   PedestalOption: 1
+StandardRawDigitExtractService::ctor:     FlagStuckOff: 0
+StandardRawDigitExtractService::ctor:      FlagStuckOn: 0
+ToolBasedRawDigitPrepService::ctor:      Fetching digitReader
+AcdDigitReader::ctor:     LogLevel: 1
+ToolBasedRawDigitPrepService::ctor:     Found tool digitReader @ 0x9b24e50
+ToolBasedRawDigitPrepService::ctor:      Fetching adcSampleFiller
+AdcSampleFiller::ctor: Configuration parameters:
+AdcSampleFiller::ctor:       LogLevel: 1
+AdcSampleFiller::ctor:   AdcUnderflow: 0
+AdcSampleFiller::ctor:    AdcOverflow: 4095
+ToolBasedRawDigitPrepService::ctor:     Found tool adcSampleFiller @ 0x9da0000
+ToolBasedRawDigitPrepService::ctor:      Fetching adcScaleAdcToKe
+AdcSampleScaler::ctor: Parameters:
+AdcSampleScaler::ctor:          LogLevel: 1
+AdcSampleScaler::ctor:       ScaleFactor: 0.025
+AdcSampleScaler::ctor:        OutputUnit: ke/tick
+AdcSampleScaler::ctor:         InputUnit: ADC count
+ToolBasedRawDigitPrepService::ctor:     Found tool adcScaleAdcToKe @ 0xa415b50
+ToolBasedRawDigitPrepService::ctor:      Fetching pdspTailPedRemovalZKe
+DuneToolManager::getPrivate: ERROR: No such tool name: pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: ERROR: Unable to retrieve display tool pdspTailPedRemovalZKe
+ToolBasedRawDigitPrepService::ctor: Fetching wire building service.
+ToolBasedRawDigitPrepService::ctor:   Wire building service: @0x2da6d40
+ToolBasedRawDigitPrepService::ctor: ToolBasedRawDigitPrepService:
+ToolBasedRawDigitPrepService::ctor:                     LogLevel: 3
+ToolBasedRawDigitPrepService::ctor:                      DoWires: 1
+ToolBasedRawDigitPrepService::ctor:      ADC channel tools:
+ToolBasedRawDigitPrepService::ctor:            digitReader
+ToolBasedRawDigitPrepService::ctor:            adcSampleFiller
+ToolBasedRawDigitPrepService::ctor:            adcScaleAdcToKe
+%MSG-i SignalShapingServiceDUNE:  Early 06-Feb-2026 16:09:22 CST JobSetup
+Getting Filter from .fcl file
+%MSG
+%MSG-i SignalShapingServiceDUNE:  Early 06-Feb-2026 16:09:22 CST JobSetup
+ using the field response provided from a .root file 
+%MSG
+
+
+[93mTruechecks::Truechecks: =================[0m
+[93mEnd of Truechecks::Truechecks ==========[0m
+
+06-Feb-2026 16:09:23 CST  Initiating request to open input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/artFile_20251101/cosmic_reco_run101_job485_eventID2426_20251225T043137Z_20013.root"
+%MSG-i Root_Information:  Truechecks:checks@Construction TClass::Init()  06-Feb-2026 16:09:23 CST ModuleConstruction
+no dictionary for class sim::IDE is available
+ROOT severity: 2000
+%MSG
+06-Feb-2026 16:09:23 CST  Opened input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/artFile_20251101/cosmic_reco_run101_job485_eventID2426_20251225T043137Z_20013.root"
+[93mTruechecks::beginJob: ============================================================[0m
+[93mEnd of Truechecks::beginJob ======================================================[0m
+db: runtime411327257
+Begin processing the 1st record. run: 101 subRun: 0 event: 2427 at 06-Feb-2026 16:09:24 CST
+%MSG-w PhotonBackTrackerService:  ProcessEvent 06-Feb-2026 16:09:27 CST  run: 101 subRun: 0 event: 2427
+Rebuild failed to get the OpDetBTRs. This is expected when running on a generation or simulation step.
+%MSG
+
+
+
+[93mTruechecks::analyze: Initialization evt# 2427 ====================================[0m
+True-level Michel scan for current event!
+Within TPC (-356<x<356, 0<y<610, 0<z<465)
+Michel (PDG = 11) (trackID = 6542): Kinetic = 19.4653 MeV, lifetime = 0.156138 us
+  Start (x,y,z,t) = (-153.477, 108.51, 425.44, -2.13514e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+  Mu(x0,y0,z0,t0) = (-90.6732, 865, 747.787, -2.1353e+06 ns)
+  Mu(x1,y1,z1,t1) = (-153.477, 108.51, 425.44, -2.13527e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 56438): Kinetic = 43.6672 MeV, lifetime = 3.99977 us
+  Start (x,y,z,t) = (-32.7646, 312.751, 299.148, 1.39966e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (-61.843, 865, -83.2639, 1.39566e+06 ns)
+  Mu(x1,y1,z1,t1) = (-32.7646, 312.751, 299.148, 1.39966e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 77794): Kinetic = 27.6371 MeV, lifetime = 3.96204 us
+  Start (x,y,z,t) = (277.388, 431.599, 407.745, 1.4186e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (478.981, 865, 466.95, 1.41464e+06 ns)
+  Mu(x1,y1,z1,t1) = (277.388, 431.599, 407.745, 1.4186e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 98626): Kinetic = 14.0029 MeV, lifetime = 0.83507 us
+  Start (x,y,z,t) = (-145.362, 68.8351, 400.967, -195731 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (678.558, 865, 1090.03, -196566 ns)
+  Mu(x1,y1,z1,t1) = (-145.362, 68.8351, 400.967, -195731 ns)
+---------------
+Michel (PDG = -11) (trackID = 182096): Kinetic = 23.2624 MeV, lifetime = 0.942963 us
+  Start (x,y,z,t) = (-198.541, 56.7637, 273.721, -433953 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (-757.141, 865, 431.753, -434896 ns)
+  Mu(x1,y1,z1,t1) = (-198.541, 56.7637, 273.721, -433953 ns)
+---------------
+Michel (PDG = -11) (trackID = 211877): Kinetic = 46.8568 MeV, lifetime = 4.0778 us
+  Start (x,y,z,t) = (-165.632, 422.59, 127.594, -1.90615e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (-389.073, 865, -12.1337, -1.91022e+06 ns)
+  Mu(x1,y1,z1,t1) = (-165.632, 422.59, 127.594, -1.90615e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 264850): Kinetic = 41.1559 MeV, lifetime = 1.46715 us
+  Start (x,y,z,t) = (273.57, 108.233, 438.723, -3.29347e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (636.852, 865, 1146.95, -3.29494e+06 ns)
+  Mu(x1,y1,z1,t1) = (273.57, 108.233, 438.723, -3.29347e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 267917): Kinetic = 49.7208 MeV, lifetime = 1.87517 us
+  Start (x,y,z,t) = (289.03, 179.605, 341.521, -1.02347e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (409.486, 865, 106.476, -1.02534e+06 ns)
+  Mu(x1,y1,z1,t1) = (289.03, 179.605, 341.521, -1.02347e+06 ns)
+---------------
+Michel (PDG = 11) (trackID = 428372): Kinetic = 22.2821 MeV, lifetime = 0.20728 us
+  Start (x,y,z,t) = (33.6469, 59.5988, 299.444, 1.01915e+06 ns)
+    e⁻ Process = muMinusCaptureAtRest, muon end process = muMinusCaptureAtRest
+  Mu(x0,y0,z0,t0) = (-21.5432, 865, 484.82, 1.01895e+06 ns)
+  Mu(x1,y1,z1,t1) = (33.6469, 59.5988, 299.444, 1.01898e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 582869): Kinetic = 46.8383 MeV, lifetime = 4.9617 us
+  Start (x,y,z,t) = (74.6115, 162.662, 284.77, -3.29391e+06 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (-125.781, 865, 102.716, -3.29888e+06 ns)
+  Mu(x1,y1,z1,t1) = (74.6115, 162.662, 284.77, -3.29391e+06 ns)
+---------------
+Michel (PDG = -11) (trackID = 603491): Kinetic = 49.9085 MeV, lifetime = 4.33514 us
+  Start (x,y,z,t) = (323.163, 14.9039, 235.001, -630691 ns)
+    e⁻ Process = Decay, muon end process = Decay
+  Mu(x0,y0,z0,t0) = (479.217, 865, 191.75, -635026 ns)
+  Mu(x1,y1,z1,t1) = (323.163, 14.9039, 235.001, -630691 ns)
+---------------
+
+LOOPING over 51 tracks...
+trk#0	MuonRecoEnd (-162.609, 7.78081, 458.653) 
+	[Transportation]
+trk#1	MuonRecoEnd (64.0467, 206.581, 462.231) 
+	[Transportation]
+trk#2	MuonRecoEnd (239.134, 45.7006, 305.586) 
+	[Transportation]
+trk#3	MuonRecoEnd (-346.039, 7.04926, 244.021) 
+	[Far distance (Reco; True)]
+trk#4	MuonRecoEnd (81.9153, 7.2468, 116.264) 
+	[Far distance (Reco; True)]
+trk#5	MuonRecoEnd (49.7931, 8.03333, 1.94456) 
+	[Far distance (Reco; True)]
+trk#6	MuonRecoEnd (228.913, 462.133, 38.3332) 
+	[Transportation]
+trk#7	MuonRecoEnd (-390.707, 80.0769, 417.49) 
+	[Far distance (Reco; True)]
+trk#8	MuonRecoEnd (2.02832, 482.742, 232.79) 
+	[Far distance (Reco; True)]
+trk#9	MuonRecoEnd (-105.17, 7.21419, 149.745) 
+	[Far distance (Reco; True)]
+trk#10	MuonRecoEnd (66.956, 306.892, 257.19) 
+	[Far distance (Reco; True)]
+trk#11	MuonRecoEnd (-265.564, 56.4286, 272.848) 
+	[Far distance (Reco; True)]
+trk#12	MuonRecoEnd (40.3866, 5.12934, 315.323) 
+	[Far distance (Reco; True)]
+trk#13	MuonRecoEnd (53.6949, 431.18, 406.544) 
+	[Far distance (Reco; True)]
+trk#14	MuonRecoEnd (-210.147, 526.065, 3.50046) 
+	[Far distance (Reco; True)]
+trk#15	MuonRecoEnd (232.056, 493.37, 0.050984) 
+	[Transportation]
+trk#16	MuonRecoEnd (-175.485, 68.5948, 400.832) 
+	[Far distance (Reco; True)]
+trk#17	MuonRecoEnd (-66.8316, 433.799, 373.35) 
+	[Transportation]
+trk#18	MuonRecoEnd (-31.5346, 504.097, 395.376) 
+	[Far distance (Reco; True)]
+trk#19	MuonRecoEnd (-55.1472, 564.768, 462.17) 
+	[Far distance (Reco; True)]
+trk#20trk#21	MuonRecoEnd (-190.31, 7.27008, 33.6419) 
+	[Transportation]
+trk#22	MuonRecoEnd (-67.3204, 422.051, 11.7941) 
+	[Far distance (Reco; True)]
+trk#23trk#24trk#25trk#26trk#27trk#28trk#29trk#30trk#31trk#32trk#33trk#34trk#35trk#36trk#37trk#38trk#39trk#40trk#41trk#42trk#43trk#44trk#45trk#46trk#47trk#48trk#49trk#50[93mEnd of Truechecks::analyze =======================================================[0m
+06-Feb-2026 16:09:27 CST  Closed input file "/pnfs/dune/scratch/users/szh2/MC_pdhd_Michel/artFile_20251101/cosmic_reco_run101_job485_eventID2426_20251225T043137Z_20013.root"
+[93mTruechecks::endJob: ==============================================================[0m
+[93mEnd of Truechecks::endJob ========================================================[0m
+
+
+
+====================================================================================================================
+TimeTracker printout (sec)            Min           Avg           Max         Median          RMS         nEvts   
+====================================================================================================================
+Full event                         0.309005      0.309005      0.309005      0.309005          0            1     
+--------------------------------------------------------------------------------------------------------------------
+source:RootInput(read)            0.000391989   0.000391989   0.000391989   0.000391989        0            1     
+end_path:checks:Truechecks         0.308189      0.308189      0.308189      0.308189          0            1     
+====================================================================================================================
+%MSG-i NuRandomService:  Truechecks:checks@EndJob 06-Feb-2026 16:09:27 CST  ModuleEndJob
+
+Summary of seeds computed by the NuRandomService
+Random policy: 'random'
+  master seed: 676197266
+  seed within: [ 1 ; 900000000 ]
+
+%MSG
+
+TrigReport ---------- Event summary -------------
+TrigReport Events total = 1 passed = 1 failed = 0
+
+TrigReport ---------- Modules in End-path ----------
+TrigReport        Run    Success      Error Name
+TrigReport          1          1          0 checks
+
+TimeReport ---------- Time summary [sec] -------
+TimeReport CPU = 3.267746 Real = 3.314768
+
+MemReport  ---------- Memory summary [base-10 MB] ------
+MemReport  VmPeak = 3427.63 VmHWM = 2079.06
+
+ToolBasedRawDigitPrepService:dtor: Event count: 0
+ToolBasedRawDigitPrepService:dtor:  Call count: 0
+ToolBasedRawDigitPrepService:dtor: Time report for 4 tools.
+ToolBasedRawDigitPrepService:dtor:                    digitReader:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcSampleFiller:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:                adcScaleAdcToKe:   0.00 sec
+ToolBasedRawDigitPrepService:dtor:          pdspTailPedRemovalZKe:   0.00 sec
+Art has completed and will exit with status 0.
