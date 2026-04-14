@@ -1,0 +1,6 @@
+[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part1_print.txt
+[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part2_print.txt
+[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part3_print.txt
+[INFO] Total filtered candidates indexed: 36803
+[SUCCESS] TPC info extraction completed.
+[INFO] Matched entries: 26710/26710
