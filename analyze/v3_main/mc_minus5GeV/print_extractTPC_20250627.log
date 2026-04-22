@@ -1,6 +1,8 @@
-[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part1_print.txt
-[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part2_print.txt
-[INFO] Reading filtered txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/applyCut_print/MCminus5GeV/filtered_minus5GeV_part3_print.txt
-[INFO] Total filtered candidates indexed: 36803
-[SUCCESS] TPC info extraction completed.
-[INFO] Matched entries: 26710/26710
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus5GeV_part1_initial.txt
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus5GeV_part2_initial.txt
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus5GeV_part3_initial.txt
+[INFO] Total mcTruth candidates indexed: 163329
+Traceback (most recent call last):
+  File "/Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/analyze/v3_main/mc_minus5GeV/extract_tpc_info_exe6.py", line 157, in <module>
+    with open(args.muon_txt, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'muon_total_20250627.txt'

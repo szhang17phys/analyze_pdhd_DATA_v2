@@ -1,0 +1,6 @@
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus1GeV_part1_initial.txt
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus1GeV_part2_initial.txt
+[INFO] Reading mcTruth txt: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_minus1GeV_part3_initial.txt
+[INFO] Total mcTruth candidates indexed: 177290
+[SUCCESS] TPC / truth info extraction completed.
+[INFO] Matched entries: 29370/29370

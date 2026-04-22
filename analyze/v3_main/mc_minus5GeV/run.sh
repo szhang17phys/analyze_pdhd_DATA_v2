@@ -16,13 +16,12 @@ base_file="/Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local"
 # Make sure all related files in proper place:
 # 1. updated_xxx_print for step 2' (extract true Info)
 # 2. print.log for step 4 (removeBeam)
-# 3. filtered_${runID}new202602_print.txt for step 6 (extractTPC)
 
 # Configurations:
 runFolder="minus5GeV"  # <-- change this for each dataset          
 runID="20250627"                    # <-- full official MC, runID is shown at event_wvf_extract
 
-# Step 2'
+# Step 2' and Step 6
 mcTruth_file1="${base_file}/add_mcTruth_npMichel/updated_${runFolder}_part1_initial.txt"
 mcTruth_file2="${base_file}/add_mcTruth_npMichel/updated_${runFolder}_part2_initial.txt"
 mcTruth_file3="${base_file}/add_mcTruth_npMichel/updated_${runFolder}_part3_initial.txt"
@@ -35,12 +34,6 @@ log_files=(
     "${base_file}/event_wvf_extract/MC${runFolder}/print_part3.log"
 )
 
-# Step 6
-filtered_txts=(
-    "${base_file}/applyCut_print/MC${runFolder}/filtered_${runFolder}_part1_print.txt"    
-    "${base_file}/applyCut_print/MC${runFolder}/filtered_${runFolder}_part2_print.txt"
-    "${base_file}/applyCut_print/MC${runFolder}/filtered_${runFolder}_part3_print.txt"
-)
 # ------------------------------------------------------------------------
 
 
@@ -51,6 +44,7 @@ merged_dir="${base_root}/${runFolder}/wvf_merged/"
 
 # Step 2:------
 output_txt="./print_count_${runID}.txt"
+remove_folder="${base_root}/${runFolder}/wvf_merged_10wvfEvents/"
 
 
 # Step 2':------
@@ -82,7 +76,9 @@ y_txt="posY_extract_${runID}.txt"
 z_txt="posZ_extract_${runID}.txt"
 score_txt="michelScore_extract_${runID}.txt"
 hits_txt="michelHits_extract_${runID}.txt"
-log_exe6="print_extractTPC_${runID}.log"
+energy_txt="energy_extract_${runID}.txt"
+lifetime_txt="lifetime_extract_${runID}.txt"
+pdg_txt="pdg_extract_${runID}.txt"
 
 
 # Log files------
@@ -155,14 +151,16 @@ echo "=================================================================="
 # echo ""
 # echo ""
 # echo "=================== Step 2: Coincidence Count ==================="
-# echo "[INFO] Input directory : ${merged_dir}"
-# echo "[INFO] Output txt file : ${output_txt}"
-# echo "[INFO] Log file        : ${log_exe2}"
+# echo "[INFO] Input directory    : ${merged_dir}"
+# echo "[INFO] 'Remove' directory : ${remove_folder}"
+# echo "[INFO] Output txt file    : ${output_txt}"
+# echo "[INFO] Log file           : ${log_exe2}"
 # echo "--------------------------------------------------------"
 
 # python3 wvf_coin_count_exe2.py \
 #     --input_dir "${merged_dir}" \
 #     --output_txt "${output_txt}" \
+#     --remove_dir "${remove_folder}" \
 #     > "${log_exe2}" 2>&1
 
 # if [ $? -ne 0 ]; then
@@ -358,27 +356,34 @@ echo ""
 echo ""
 echo "======== Step 6: Extract TPC Info =========="
 
-echo "[INFO] Filtered txt files:"
-for txt in "${filtered_txts[@]}"; do
-    echo "       ${txt}"
-done
+echo "[INFO] mcTruth file 1   : ${mcTruth_file1}"
+echo "[INFO] mcTruth file 2   : ${mcTruth_file2}"
+echo "[INFO] mcTruth file 3   : ${mcTruth_file3}"
 echo "[INFO] Muon txt         : ${muon_txt}"
 echo "[INFO] X output         : ${x_txt}"
 echo "[INFO] Y output         : ${y_txt}"
 echo "[INFO] Z output         : ${z_txt}"
 echo "[INFO] Score output     : ${score_txt}"
 echo "[INFO] Hits output      : ${hits_txt}"
+echo "[INFO] TrueE output     : ${energy_txt}"
+echo "[INFO] PDG output       : ${pdg_txt}"
+echo "[INFO] Lifetime output  : ${lifetime_txt}"
 echo "[INFO] Log file         : ${log_exe6}"
 echo "--------------------------------------------------------"
 
 python3 extract_tpc_info_exe6.py \
-    --filtered_txts "${filtered_txts[@]}" \
+    --mcTruth_file1 "${mcTruth_file1}" \
+    --mcTruth_file2 "${mcTruth_file2}" \
+    --mcTruth_file3 "${mcTruth_file3}" \
     --muon_txt "${muon_txt}" \
     --x_out "${x_txt}" \
     --y_out "${y_txt}" \
     --z_out "${z_txt}" \
     --score_out "${score_txt}" \
     --hits_out "${hits_txt}" \
+    --E_out "${energy_txt}" \
+    --PDG_out "${pdg_txt}" \
+    --lifetime_out "${lifetime_txt}" \
     > "${log_exe6}" 2>&1
 
 if [ $? -ne 0 ]; then
