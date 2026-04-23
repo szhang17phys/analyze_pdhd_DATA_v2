@@ -1,0 +1,131 @@
+#!/bin/bash
+:<<'EOF'
+
+PDHD Data; Michel electron analysis
+
+EOF
+
+
+# fcl file and DUNE software version/qualifier to be used
+DECON_FCL=${DECON_FCL:-protodunehd_deconvolution_run.fcl}
+MICHEL_FCL=${MICHEL_FCL:-michelTimingDataDeconHD_analysis.fcl}
+DUNE_VERSION=${DUNE_VERSION:-v10_17_00d00}
+DUNE_QUALIFIER=${DUNE_QUALIFIER:-e26:prof}
+
+
+# number of events to process from the input file
+if [ "$NUM_EVENTS" != "" ] ; then
+ events_option="-n $NUM_EVENTS"
+fi
+
+# First get an unprocessed file from this stage
+echo "[JOB] JUSTIN_SITE=${JUSTIN_SITE:-NA} GLIDEIN_Site=${GLIDEIN_Site:-NA} OSG_SITE_NAME=${OSG_SITE_NAME:-NA}"
+
+did_pfn_rse="$("$JUSTIN_PATH/justin-get-file" || true)"
+
+echo "[JOB] did_pfn_rse='${did_pfn_rse}'"
+
+
+
+if [ "$did_pfn_rse" = "" ] ; then
+  echo "Nothing to process - exit jobscript"
+  exit 0
+fi
+
+# Keep a record of all input DIDs, for pdjson2meta file -> DID mapping
+echo "$did_pfn_rse" | cut -f1 -d' ' >>all-input-dids.txt
+
+# pfn is also needed when creating justin-processed-pfns.txt
+pfn=`echo $did_pfn_rse | cut -f2 -d' '`
+echo "Input PFN = $pfn"
+
+# Derive a stable output name from input file
+base="$(basename "${pfn}")"
+#extracted="$(echo "${base}" | awk -F'_' '{print $3"_"$4"_"$5"_"$6"_"$7"_"$8}')"
+extracted="${base%_reco_data_*}"
+extracted="${extracted%.root}"     # removes trailing .root if present
+out="michelt0_decon_${extracted}.root"
+echo ""
+echo "[JOB] base=${base}"
+echo "[JOB] extracted=${extracted}"
+echo "[JOB] final out=${out}"
+
+# Setup DUNE environment
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+
+# Test ifdh
+#echo "[env check]: test ifdh"
+#which ifdh
+#echo "[env check]: test over"
+
+# the xroot lib for streaming non-root files is in testproducts, 
+# so add it to the start of the path
+export PRODUCTS=/cvmfs/dune.opensciencegrid.org/products/dune/testproducts:${PRODUCTS}
+setup dunesw "$DUNE_VERSION" -q "$DUNE_QUALIFIER"
+export TF_NUM_THREADS=${JUSTIN_PROCESSORS}   
+export OPENBLAS_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export JULIA_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export MKL_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export NUMEXPR_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export OMP_NUM_THREADS=${JUSTIN_PROCESSORS}  
+
+
+# Construct out from input $pfn 
+now=$(date -u +"%Y%m%dT%H%M%SZ")
+Ffname=`echo $pfn | awk -F/ '{print $NF}'`
+fname=`echo $Ffname | awk -F. '{print $1}'`
+
+log1="decon_${fname}_${now}.log"
+log2="michelt0_${fname}_${now}.log"
+
+campaign="justIN.w${JUSTIN_WORKFLOW_ID}s${JUSTIN_STAGE_ID}"
+ 
+(
+# Do the scary preload stuff in a subshell!
+export LD_PRELOAD=${XROOTD_LIB}/libXrdPosixPreload.so
+echo "$LD_PRELOAD"
+
+# Step 1: decon
+echo "[JOB] Running deconvolution..."
+lar -c "${DECON_FCL}" ${events_option} "${pfn}" > "${log1}" 2>&1
+test -f deconv_gen.root || { echo "[JOB][FATAL] deconv_gen.root missing"; tail -50 "${log1}" || true; exit 10; }
+
+
+# Step 2: michelt0
+echo "[JOB] Running Michel timing..."
+lar -c "${MICHEL_FCL}" ${events_option} -s deconv_gen.root > "${log2}" 2>&1
+test -f michelt0_Decon.root || { echo "[JOB][FATAL] michelt0_Decon.root missing"; tail -50 "${log2}" || true; exit 10; }
+
+# Rename final output file
+mv -f michelt0_Decon.root "${out}"
+
+
+# Step 3: save output files to scratch disk
+# Use SCRATCH_DIR from submit.sh, or fail clearly if not provided
+SCRATCH_DIR=${SCRATCH_DIR:?SCRATCH_DIR is not defined}
+
+echo "[JOB] Copying output to ${SCRATCH_DIR}"
+ifdh cp -D "${out}" "${SCRATCH_DIR}/"
+rc=$?
+echo "[JOB] ifdh cp rc=${rc}"
+
+if [ ${rc} -ne 0 ]; then
+    echo "[JOB][FATAL] Scratch copy failed"
+    exit 20
+fi
+
+# SUCCESS LATCH: once here, we consider the job done.
+echo "$pfn" > justin-processed-pfns.txt
+echo "[JOB] Marked processed: $pfn"
+echo "[JOB] SUCCESS-LATCH reached (scratch copy ok)."
+exit 0
+
+)
+
+# Subshell exit code (0 means everything succeeded, including scratch copy)
+larExit=$?
+echo "[JOB] subshell exit code = $larExit"
+exit $larExit
+
+
+

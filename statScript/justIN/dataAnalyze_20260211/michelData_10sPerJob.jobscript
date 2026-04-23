@@ -1,0 +1,162 @@
+#!/bin/bash
+:<<'EOF'
+
+PDHD Data; Michel electron analysis
+Process multiple input files per job via justin-get-file loop.
+Outputs are copied to scratch disk directly (by the --output-pattern option)
+
+EOF
+
+
+# fcl file and DUNE software version/qualifier to be used
+DECON_FCL=${DECON_FCL:-protodunehd_deconvolution_run.fcl}
+MICHEL_FCL=${MICHEL_FCL:-michelTimingDataDeconHD_analysis.fcl}
+DUNE_VERSION=${DUNE_VERSION:-v10_17_00d00}
+DUNE_QUALIFIER=${DUNE_QUALIFIER:-e26:prof}
+
+FILES_PER_JOB=${FILES_PER_JOB:-10}
+
+# number of events to process from the input file
+events_option=""
+if [ "${NUM_EVENTS:-}" != "" ] && [ "${NUM_EVENTS:-0}" -gt 0 ] 2>/dev/null; then
+    events_option="-n ${NUM_EVENTS}"
+fi
+
+# First get an unprocessed file from this stage
+echo "[JOB] JUSTIN_SITE=${JUSTIN_SITE:-NA} GLIDEIN_Site=${GLIDEIN_Site:-NA} OSG_SITE_NAME=${OSG_SITE_NAME:-NA}"
+echo "[JOB] FILES_PER_JOB=${FILES_PER_JOB}  NUM_EVENTS=${NUM_EVENTS:-}  events_option='${events_option}'"
+
+
+# Setup DUNE environment
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+
+
+# the xroot lib for streaming non-root files is in testproducts, 
+# so add it to the start of the path
+export PRODUCTS=/cvmfs/dune.opensciencegrid.org/products/dune/testproducts:${PRODUCTS}
+setup dunesw "$DUNE_VERSION" -q "$DUNE_QUALIFIER"
+export TF_NUM_THREADS=${JUSTIN_PROCESSORS}   
+export OPENBLAS_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export JULIA_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export MKL_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export NUMEXPR_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export OMP_NUM_THREADS=${JUSTIN_PROCESSORS}  
+
+
+# Start clean: these are the contract files justIN cares about
+: > all-input-dids.txt
+: > justin-processed-pfns.txt
+
+ok_count=0
+fail_count=0
+got_any_file=0
+
+ 
+
+(
+# Do the scary preload stuff in a subshell!
+export LD_PRELOAD=${XROOTD_LIB}/libXrdPosixPreload.so
+echo "$LD_PRELOAD"
+
+i=1
+while [ "${i}" -le "${FILES_PER_JOB}" ]; do
+    # First get an unprocessed file from this stage
+    did_pfn_rse="$("$JUSTIN_PATH/justin-get-file" || true)"
+    echo "[JOB] did_pfn_rse='${did_pfn_rse}'"
+
+    if [ "${did_pfn_rse}" = "" ] ; then
+        echo "[JOB] No files available from this stage (i=${i})"
+        break
+    fi
+
+    got_any_file=1
+
+    # Keep a record of all input DIDs, for pdjson2meta file -> DID mapping
+    echo "$did_pfn_rse" | cut -f1 -d' ' >> all-input-dids.txt
+
+    # pfn is also needed when creating justin-processed-pfns.txt
+    pfn="$(echo "$did_pfn_rse" | cut -f2 -d' ')"
+    echo "[JOB] Input PFN = $pfn"
+
+    # Derive a stable output name from input file
+    base="$(basename "${pfn}")"
+    extracted="${base%_reco_data_*}"
+    extracted="${extracted%.root}"     # removes trailing .root if present
+    out="michelt0_decon_${extracted}.root"
+    echo ""
+    echo "[JOB] base=${base}"
+    echo "[JOB] extracted=${extracted}"
+    echo "[JOB] final out=${out}"
+
+    # Construct logs from input $pfn
+    now=$(date -u +"%Y%m%dT%H%M%SZ")
+    Ffname="$(echo "$pfn" | awk -F/ '{print $NF}')"
+    fname="$(echo "$Ffname" | awk -F. '{print $1}')"
+
+    log1="decon_${fname}_${now}.log"
+    log2="michelt0_${fname}_${now}.log"
+
+    # Clean per-file leftovers to avoid cross-talk between files
+    rm -f deconv_gen.root michelt0_Decon.root "${out}" deconv_hist.root *.db 2>/dev/null || true
+
+
+    # Step 1: decon
+    echo "[JOB] Running deconvolution..."
+    if ! lar -c "${DECON_FCL}" ${events_option} "${pfn}" > "${log1}" 2>&1; then
+        echo "[JOB][ERROR] decon lar failed for ${pfn}"
+        tail -50 "${log1}" || true
+        fail_count=$((fail_count+1))
+        i=$((i+1))
+        continue
+    fi
+    test -f deconv_gen.root || { echo "[JOB][ERROR] deconv_gen.root missing"; tail -50 "${log1}" || true; fail_count=$((fail_count+1)); i=$((i+1)); continue; }
+
+    # Step 2: michelt0
+    echo "[JOB] Running Michel timing..."
+    if ! lar -c "${MICHEL_FCL}" ${events_option} -s deconv_gen.root > "${log2}" 2>&1; then
+        echo "[JOB][ERROR] michel lar failed for ${pfn}"
+        tail -50 "${log2}" || true
+        fail_count=$((fail_count+1))
+        i=$((i+1))
+        continue
+    fi
+    test -f michelt0_Decon.root || { echo "[JOB][ERROR] michelt0_Decon.root missing"; tail -50 "${log2}" || true; fail_count=$((fail_count+1)); i=$((i+1)); continue; }
+
+    # Rename final output file
+    mv -f michelt0_Decon.root "${out}"
+
+
+    # SUCCESS LATCH (per-file): once copied, mark processed
+    echo "$pfn" >> justin-processed-pfns.txt
+    echo "[JOB] Marked processed: $pfn"
+    ok_count=$((ok_count+1))
+
+    i=$((i+1))
+
+done
+
+echo "[JOB] Summary: ok_count=${ok_count} fail_count=${fail_count}"
+
+
+# Job success policy:
+# - If we never got a file, this is NOT an error (stage likely exhausted). Exit 0 to avoid retry storms.
+# - If we got >=1 file but none succeeded, exit nonzero so workflow can retry.
+# - If >=1 succeeded, exit 0.
+if [ "${got_any_file}" -eq 0 ]; then
+    echo "[JOB] No files were assigned to this job. Stage likely exhausted -> exit 0."
+    exit 0
+elif [ "${ok_count}" -gt 0 ]; then
+    exit 0
+else
+    exit 40
+fi
+
+)
+
+# Subshell exit code (0 means everything succeeded per policy above)
+larExit=$?
+echo "[JOB] subshell exit code = $larExit"
+exit $larExit
+
+
+

@@ -1,0 +1,224 @@
+#!/bin/bash
+:<<'EOF'
+
+PDHD MC production
+One justIN Monte Carlo counter per job.
+Run:
+    GEN -> G4 -> detsim stage1 -> detsim stage2
+Outputs are copied to scratch disk directly by --output-pattern.
+
+EOF
+
+
+# fcl file and DUNE software version/qualifier to be used
+#MICHEL_FCL=${MICHEL_FCL:-michelTimingMcDeconHD_analysis.fcl}
+#TRUTH_FCL=${TRUTH_FCL:-pdhd_Truechecks.fcl}
+GEN_FCL="prod_cosmics_radiologicals_protodunehd.fcl"
+G4_FCL="photonlibrary_g4_protodunehd.fcl"
+DETSIM_ONE_FCL="standard_detsim_protodunehd_stage1.fcl"
+DETSIM_TWO_FCL="standard_detsim_protodunehd_stage2.fcl"
+
+DUNE_VERSION=${DUNE_VERSION:-v10_20_03d00}
+DUNE_QUALIFIER=${DUNE_QUALIFIER:-e26:prof}
+
+# Number of events generated in this job
+EVENTS_PER_JOB=${EVENTS_PER_JOB:-10}
+
+
+
+# First get an unprocessed file from this stage
+echo "[JOB] JUSTIN_SITE=${JUSTIN_SITE:-NA} GLIDEIN_Site=${GLIDEIN_Site:-NA} OSG_SITE_NAME=${OSG_SITE_NAME:-NA}"
+echo "[JOB] EVENTS_PER_JOB=${EVENTS_PER_JOB}"
+
+
+# Setup DUNE environment
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+
+# Keep testproducts available in case runtime components need it
+export PRODUCTS=/cvmfs/dune.opensciencegrid.org/products/dune/testproducts:${PRODUCTS}
+setup dunesw "$DUNE_VERSION" -q "$DUNE_QUALIFIER"
+export TF_NUM_THREADS=${JUSTIN_PROCESSORS}   
+export OPENBLAS_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export JULIA_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export MKL_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export NUMEXPR_NUM_THREADS=${JUSTIN_PROCESSORS} 
+export OMP_NUM_THREADS=${JUSTIN_PROCESSORS}  
+
+
+# Start clean: these are the contract files justIN cares about
+: > justin-processed-dids.txt
+
+
+
+# --------------------------------------------------
+# Claim one Monte Carlo counter from justIN
+# --------------------------------------------------
+did_pfn_rse="$("$JUSTIN_PATH/justin-get-file" || true)"
+echo "[JOB] did_pfn_rse='${did_pfn_rse}'"
+
+if [ -z "${did_pfn_rse}" ]; then
+    echo "[JOB] No MC counter assigned to this job. Exit 0."
+    exit 0
+fi
+
+did="$(echo "${did_pfn_rse}" | cut -f1 -d' ')"
+pfn="$(echo "${did_pfn_rse}" | cut -f2 -d' ')"
+rse="$(echo "${did_pfn_rse}" | cut -f3 -d' ')"
+
+echo "[JOB] DID = ${did}"
+echo "[JOB] PFN = ${pfn}"
+echo "[JOB] RSE = ${rse}"
+
+
+# --------------------------------------------------
+# Build unique job tag and valid art EventID
+# --------------------------------------------------
+timestamp="$(date -u +"%Y%m%dT%H%M%SZ")"
+
+run_part="$(echo "${did}" | awk -F- '{print $3}')"
+event_part="$(echo "${did}" | awk -F- '{print $4}')"
+
+START_RUN=$((10#${run_part}))
+START_SUBRUN=0
+START_EVENT=$((10#${event_part}))
+START_EVENT_ID="${START_RUN}:${START_SUBRUN}:${START_EVENT}"
+
+JOB_TAG="${START_RUN}_${START_EVENT}_${timestamp}"
+
+echo "[JOB] timestamp           = ${timestamp}"
+echo "[JOB] START_RUN           = ${START_RUN}"
+echo "[JOB] START_SUBRUN        = ${START_SUBRUN}"
+echo "[JOB] START_EVENT         = ${START_EVENT}"
+echo "[JOB] START_EVENT_ID      = ${START_EVENT_ID}"
+echo "[JOB] JOB_TAG             = ${JOB_TAG}"
+
+
+
+# --------------------------------------------------
+# Output / log names
+# --------------------------------------------------
+GEN_OUT="cosmic_gen_${JOB_TAG}.root"
+G4_OUT="cosmic_g4_${JOB_TAG}.root"
+DETSIM1_OUT="cosmic_detsim_stage1_${JOB_TAG}.root"
+DETSIM2_OUT="cosmic_detsim_stage2_${JOB_TAG}.root"
+
+GEN_LOG="gen_${JOB_TAG}.log"
+G4_LOG="g4_${JOB_TAG}.log"
+DETSIM1_LOG="detsim1_${JOB_TAG}.log"
+DETSIM2_LOG="detsim2_${JOB_TAG}.log"
+
+
+# --------------------------------------------------
+# Clean possible leftovers
+# --------------------------------------------------
+rm -f \
+    "${GEN_OUT}" \
+    "${G4_OUT}" \
+    "${DETSIM1_OUT}" \
+    "${DETSIM2_OUT}" \
+    "${GEN_LOG}" \
+    "${G4_LOG}" \
+    "${DETSIM1_LOG}" \
+    "${DETSIM2_LOG}" \
+    *.db 2>/dev/null || true
+
+
+
+# --------------------------------------------------
+# GEN stage
+# --------------------------------------------------
+echo "[INFO] Running GEN stage with ${GEN_FCL}"
+if ! lar -c "${GEN_FCL}" -o "${GEN_OUT}" -n "${EVENTS_PER_JOB}" -e "${START_EVENT_ID}" > "${GEN_LOG}" 2>&1; then
+    echo "[ERROR] GEN stage failed"
+    tail -50 "${GEN_LOG}" || true
+    exit 10
+fi
+
+test -f "${GEN_OUT}" || {
+    echo "[ERROR] GEN output missing: ${GEN_OUT}"
+    tail -50 "${GEN_LOG}" || true
+    exit 10
+}
+
+echo "[INFO] GEN stage completed successfully."
+ls -lh "${GEN_OUT}"
+
+
+# --------------------------------------------------
+# G4 stage
+# --------------------------------------------------
+echo "[INFO] Running G4 stage with ${G4_FCL}"
+if ! lar -c "${G4_FCL}" -s "${GEN_OUT}" -o "${G4_OUT}" > "${G4_LOG}" 2>&1; then
+    echo "[ERROR] G4 stage failed"
+    tail -50 "${G4_LOG}" || true
+    exit 11
+fi
+
+test -f "${G4_OUT}" || {
+    echo "[ERROR] G4 output missing: ${G4_OUT}"
+    tail -50 "${G4_LOG}" || true
+    exit 11
+}
+
+echo "[INFO] G4 stage completed successfully. Removing GEN output..."
+rm -f "${GEN_OUT}"
+ls -lh "${G4_OUT}"
+
+
+# --------------------------------------------------
+# Detsim stage 1
+# --------------------------------------------------
+echo "[INFO] Running detsim stage 1 with ${DETSIM_ONE_FCL}"
+if ! lar -c "${DETSIM_ONE_FCL}" -s "${G4_OUT}" -o "${DETSIM1_OUT}" > "${DETSIM1_LOG}" 2>&1; then
+    echo "[ERROR] Detsim stage 1 failed"
+    tail -50 "${DETSIM1_LOG}" || true
+    exit 12
+fi
+
+test -f "${DETSIM1_OUT}" || {
+    echo "[ERROR] Detsim stage 1 output missing: ${DETSIM1_OUT}"
+    tail -50 "${DETSIM1_LOG}" || true
+    exit 12
+}
+
+echo "[INFO] Detsim stage 1 completed successfully. Removing G4 output..."
+rm -f "${G4_OUT}"
+ls -lh "${DETSIM1_OUT}"
+
+
+# --------------------------------------------------
+# Detsim stage 2
+# --------------------------------------------------
+echo "[INFO] Running detsim stage 2 with ${DETSIM_TWO_FCL}"
+if ! lar -c "${DETSIM_TWO_FCL}" -s "${DETSIM1_OUT}" -o "${DETSIM2_OUT}" > "${DETSIM2_LOG}" 2>&1; then
+    echo "[ERROR] Detsim stage 2 failed"
+    tail -50 "${DETSIM2_LOG}" || true
+    exit 13
+fi
+
+test -f "${DETSIM2_OUT}" || {
+    echo "[ERROR] Detsim stage 2 output missing: ${DETSIM2_OUT}"
+    tail -50 "${DETSIM2_LOG}" || true
+    exit 13
+}
+
+echo "[INFO] Detsim stage 2 completed successfully. Removing detsim stage 1 output..."
+rm -f "${DETSIM1_OUT}"
+ls -lh "${DETSIM2_OUT}"
+
+
+
+# --------------------------------------------------
+# Success latch
+# --------------------------------------------------
+echo "${did}" >> justin-processed-dids.txt
+echo "[JOB] Marked processed DID: ${did}"
+
+echo "[JOB] Finished successfully."
+exit 0
+
+
+
+
+
+
