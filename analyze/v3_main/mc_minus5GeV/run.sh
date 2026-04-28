@@ -50,7 +50,8 @@ remove_folder="${base_root}/${runFolder}/wvf_merged_10wvfEvents/"
 # Step 2':------
 E_out="./print_trueE${runID}.txt"
 PDG_out="./print_truePDG${runID}.txt"
-
+MS_out="./print_trueMS${runID}.txt"
+MH_out="./print_trueMH${runID}.txt"
 
 # Step 3:------
 applyCut_dir="${base_root}/${runFolder}/wvf_merged_applyCut_thre3/"
@@ -188,6 +189,8 @@ echo "=================================================================="
 # echo "[INFO] wvfCoin file : ${output_txt}"
 # echo "[INFO] Output E     : ${E_out}"
 # echo "[INFO] Output PDG   : ${PDG_out}"
+# echo "[INFO] Output MS    : ${MS_out}"
+# echo "[INFO] Output MH    : ${MH_out}"
 # echo "[INFO] Log file     : ${log_exe2p}"
 # echo "--------------------------------------------------------"
 
@@ -198,6 +201,8 @@ echo "=================================================================="
 #     --wvfCoin_file "${output_txt}" \
 #     --E_out "${E_out}" \
 #     --PDG_out "${PDG_out}" \
+#     --MS_out "${MS_out}" \
+#     --MH_out "${MH_out}" \
 #     > "${log_exe2p}" 2>&1
 
 # if [ $? -ne 0 ]; then

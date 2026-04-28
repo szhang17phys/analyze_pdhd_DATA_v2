@@ -1,5 +1,0 @@
-[INFO] Using mcTruth file: /Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/MC_new202510/add_mcTruth_npMichel/updated_New20251012_initial.txt
-[INFO] Using wvfCoin file: ./print_wvfCoin_count20251012.txt
-[INFO] Output (E):  ./print_trueE20251012.txt
-[INFO] Output (PDG): ./print_truePDG20251012.txt
-[SUCCESS] True PDG and TrueE extraction completed.

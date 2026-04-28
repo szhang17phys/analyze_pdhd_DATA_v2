@@ -2,11 +2,13 @@
 [INFO] Using mcTruth file2: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_pos1GeV_part2_initial.txt
 [INFO] Using mcTruth file3: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_pos1GeV_part3_initial.txt
 [INFO] Using wvfCoin file: ./print_count_20250613.txt
-[INFO] Output (E):  ./print_trueE20250613.txt
+[INFO] Output (E):   ./print_trueE20250613.txt
 [INFO] Output (PDG): ./print_truePDG20250613.txt
+[INFO] Output (MS):  ./print_trueMS20250613.txt
+[INFO] Output (MH):  ./print_trueMH20250613.txt
 [INFO] Loading mcTruth entries from: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_pos1GeV_part1_initial.txt
 [INFO] Loading mcTruth entries from: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_pos1GeV_part2_initial.txt
 [INFO] Loading mcTruth entries from: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_pos1GeV_part3_initial.txt
 [INFO] Total unique mcTruth entries loaded: 164490
-[SUCCESS] True PDG and TrueE extraction completed.
+[SUCCESS] True PDG, TrueE, Michel score, and Michel hits extraction completed.
 [INFO] Matched entries: 31765/31765

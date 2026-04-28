@@ -1,0 +1,7 @@
+[INFO] Using mcTruth file: /Volumes/ssd_zhang/thesis_michel/server_processing/statScript_local/add_mcTruth_npMichel/updated_New20251073_initial.txt
+[INFO] Using wvfCoin file: ./print_wvfCoin_count20251073.txt
+[INFO] Output (E):   ./print_trueE20251073.txt
+[INFO] Output (PDG): ./print_truePDG20251073.txt
+[INFO] Output (MS):  ./print_trueMS20251073.txt
+[INFO] Output (MH):  ./print_trueMH20251073.txt
+[SUCCESS] True PDG, TrueE, Michel score, and Michel hits extraction completed.

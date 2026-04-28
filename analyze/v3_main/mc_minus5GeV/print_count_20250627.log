@@ -1,0 +1,3 @@
+[INFO] Using input_dir : /Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/Offical2025_mcProduction/minus5GeV/wvf_merged/
+[INFO] Writing results to: ./print_count_20250627.txt
+[INFO] Files with 10 ms_ch histograms will be moved to: /Volumes/ssd_zhang/thesis_michel/server_processing/t0_rootFiles/Offical2025_mcProduction/minus5GeV/wvf_merged_10wvfEvents/

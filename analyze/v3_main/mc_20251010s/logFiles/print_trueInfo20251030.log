@@ -1,0 +1,7 @@
+[INFO] Using mcTruth file: /Users/shuaixiangzhang/Work/current/FNAL_Work2024/michel_e/t0_tagging/pdhd_DATA_v2/analyze_pdhd_DATA_v2/statScript/local/MC_new202510/add_mcTruth_npMichel/updated_New20251030_initial.txt
+[INFO] Using wvfCoin file: ./print_wvfCoin_count20251030.txt
+[INFO] Output (E):   ./print_trueE20251030.txt
+[INFO] Output (PDG): ./print_truePDG20251030.txt
+[INFO] Output (MS):  ./print_trueMS20251030.txt
+[INFO] Output (MH):  ./print_trueMH20251030.txt
+[SUCCESS] True PDG, TrueE, Michel score, and Michel hits extraction completed.

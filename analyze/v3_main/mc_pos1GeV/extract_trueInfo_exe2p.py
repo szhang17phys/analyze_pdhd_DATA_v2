@@ -6,13 +6,15 @@ import os
 # ============================================================
 # Parse command-line arguments
 # ============================================================
-parser = argparse.ArgumentParser(description="Extract true PDG and energy info")
+parser = argparse.ArgumentParser(description="Extract true PDG, energy, Michel score, and Michel hits info")
 parser.add_argument("--mcTruth_file1", required=True, help="First input mcTruth txt file")
 parser.add_argument("--mcTruth_file2", required=True, help="Second input mcTruth txt file")
 parser.add_argument("--mcTruth_file3", required=True, help="Third input mcTruth txt file")
 parser.add_argument("--wvfCoin_file", required=True, help="Input waveform coincidence count txt file")
 parser.add_argument("--E_out", required=True, help="Output file for true energy (MeV)")
 parser.add_argument("--PDG_out", required=True, help="Output file for true PDG codes")
+parser.add_argument("--MS_out", required=True, help="Output file for Michel score")
+parser.add_argument("--MH_out", required=True, help="Output file for Michel hits")
 args = parser.parse_args()
 
 mcTruth_file1 = args.mcTruth_file1
@@ -21,19 +23,23 @@ mcTruth_file3 = args.mcTruth_file3
 wvfCoin_file = args.wvfCoin_file
 E_path = args.E_out
 PDG_path = args.PDG_out
+MS_path = args.MS_out
+MH_path = args.MH_out
 
 print(f"[INFO] Using mcTruth file1: {mcTruth_file1}")
 print(f"[INFO] Using mcTruth file2: {mcTruth_file2}")
 print(f"[INFO] Using mcTruth file3: {mcTruth_file3}")
 print(f"[INFO] Using wvfCoin file: {wvfCoin_file}")
-print(f"[INFO] Output (E):  {E_path}")
+print(f"[INFO] Output (E):   {E_path}")
 print(f"[INFO] Output (PDG): {PDG_path}")
+print(f"[INFO] Output (MS):  {MS_path}")
+print(f"[INFO] Output (MH):  {MH_path}")
 
 
 # ============================================================
 # Ensure output directory exists
 # ============================================================
-for out_path in [E_path, PDG_path]:
+for out_path in [E_path, PDG_path, MS_path, MH_path]:
     out_dir = os.path.dirname(out_path)
     if out_dir and not os.path.exists(out_dir):
         os.makedirs(out_dir, exist_ok=True)
@@ -43,12 +49,6 @@ for out_path in [E_path, PDG_path]:
 # Helper functions
 # ============================================================
 def normalize_file_id(file_id):
-    """
-    Normalize file ID so that:
-      waveform side:  file257707_35_1_20251204T225143Z
-      mcTruth side:   257707_35_1_20251204T225143Z
-    become the same key.
-    """
     if file_id is None:
         return None
     return file_id.strip().removeprefix("file")
@@ -57,7 +57,7 @@ def normalize_file_id(file_id):
 # ============================================================
 # Build lookup table from mcTruth files
 # Key = (fileID, event, trackID)
-# Val = (pdg, trueE)
+# Val = (pdg, trueE, michelScore, michelHits)
 # ============================================================
 truth_lookup = {}
 
@@ -65,10 +65,23 @@ for mc_file in [mcTruth_file1, mcTruth_file2, mcTruth_file3]:
     print(f"[INFO] Loading mcTruth entries from: {mc_file}")
 
     current_file_id = None
+    current_michel_score = ""
+    current_michel_hits = ""
 
     with open(mc_file, "r") as f:
         for line in f:
             line = line.strip()
+
+            # Example:
+            # Michel score: 0.0567113,  Michel hits: 1
+            m_ms_mh = re.search(
+                r"Michel score:\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?),\s*Michel hits:\s*(\d+)",
+                line
+            )
+            if m_ms_mh:
+                current_michel_score = m_ms_mh.group(1)
+                current_michel_hits = m_ms_mh.group(2)
+                continue
 
             # Example:
             # filename: 257707_35_1_20251204T225143Z
@@ -111,7 +124,12 @@ for mc_file in [mcTruth_file1, mcTruth_file2, mcTruth_file3]:
                     f"Keeping the first occurrence."
                 )
             else:
-                truth_lookup[key] = (pdg_val, trueE_val)
+                truth_lookup[key] = (
+                    pdg_val,
+                    trueE_val,
+                    current_michel_score,
+                    current_michel_hits,
+                )
 
 print(f"[INFO] Total unique mcTruth entries loaded: {len(truth_lookup)}")
 
@@ -122,7 +140,11 @@ print(f"[INFO] Total unique mcTruth entries loaded: {len(truth_lookup)}")
 n_found = 0
 n_total = 0
 
-with open(E_path, "w") as E_out, open(PDG_path, "w") as PDG_out:
+with open(E_path, "w") as E_out, \
+     open(PDG_path, "w") as PDG_out, \
+     open(MS_path, "w") as MS_out, \
+     open(MH_path, "w") as MH_out:
+
     with open(wvfCoin_file, "r") as f:
         for line in f:
             # Example:
@@ -143,17 +165,24 @@ with open(E_path, "w") as E_out, open(PDG_path, "w") as PDG_out:
             key = (file_id_wave, event_target, track_target)
 
             if key in truth_lookup:
-                pdg_val, trueE_val = truth_lookup[key]
+                pdg_val, trueE_val, ms_val, mh_val = truth_lookup[key]
+
                 PDG_out.write(pdg_val + "\n")
                 E_out.write(trueE_val + "\n")
+                MS_out.write(ms_val + "\n")
+                MH_out.write(mh_val + "\n")
+
                 n_found += 1
             else:
                 print(
                     f"[WARNING] No match found for "
                     f"fileID={file_id_wave}, event={event_target}, track={track_target}"
                 )
+
                 PDG_out.write("\n")
                 E_out.write("\n")
+                MS_out.write("\n")
+                MH_out.write("\n")
 
-print(f"[SUCCESS] True PDG and TrueE extraction completed.")
+print(f"[SUCCESS] True PDG, TrueE, Michel score, and Michel hits extraction completed.")
 print(f"[INFO] Matched entries: {n_found}/{n_total}")
