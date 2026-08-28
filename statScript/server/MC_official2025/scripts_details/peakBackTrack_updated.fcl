@@ -1,0 +1,77 @@
+#include "services_dune.fcl"
+#include "protodune_tools_dune.fcl"
+
+process_name: backTrackMCParticle
+
+services:
+{
+  # Load the service that manages ROOT files for histograms.
+  TFileService: { fileName: "tmp_hist.root" }
+  TimeTracker: {}
+  MemoryTracker: {}
+  RandomNumberGenerator: {}
+
+  @table::protodunehd_reco_services
+
+  # Added by Shu, 20241111.
+  Geometry: @local::protodunehdv6_geo
+
+  message: @local::standard_info
+  IFDH: {}
+}
+
+services.AuxDetGeometry.GDML: "protodunehd_v6_refactored.gdml"
+services.AuxDetGeometry.Name: "protodunehdv6"
+
+# Legacy PhotonBackTracker diagnostic only.
+# Select one PDFastSim source at a time because PhotonBackTracker does not
+# merge duplicate OpDetBacktrackerRecords from the separate PD-HD stages.
+# This preserves the behavior of the final override in the original FHiCL.
+services.PhotonBackTrackerService: {
+  PhotonBackTracker: {
+    G4ModuleLabels: ["PDFastSimTPC2::PDInternalTPC2"]
+    MinimumHitEnergyFraction: 0.0
+    Delay: 0
+  }
+}
+
+source:
+{
+  module_type: RootInput
+  maxEvents: 1000
+}
+
+outputs:
+{
+}
+
+physics:
+{
+  analyzers: {}
+
+  ana: [pbt]
+  stream1: []
+  trigger_paths: []
+  end_paths: [ana]
+}
+
+physics.analyzers.pbt: {
+  module_type: peakBackTrack
+
+  # Existing waveform selection.
+  OpWaveformTag: "opdec::Reco"
+  SelectChannel: 27
+  SelectWfTimeStamp: -808.815 # us
+  WindowStartTick: 260       # half-open interval [260, 275)
+  WindowEndTick: 275
+
+  # Added for the final-channel OpDetDivRec cross-check.
+  # This product already contains accepted photons from all PDFastSim inputs
+  # combined by opdigi and assigned to their final optical channels.
+  OpDetDivRecTag: "opdigi::Detsim"
+  SamplePeriodUs: 0.016
+
+  # DivRec query time = reconstructed waveform time + this offset.
+  # Start at zero; change only after measuring a prompt-pulse alignment.
+  RecoToDivRecOffsetNs: 0.0
+}
